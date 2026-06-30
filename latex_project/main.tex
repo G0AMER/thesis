@@ -1,0 +1,49 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[numbers]{natbib}
+\usepackage[french]{babel}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{geometry}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    citecolor=blue,
+    pdftitle={Rapport d'Avancement de Thèse},
+    pdfpagemode=FullScreen,
+}
+
+\usepackage{url}
+\usepackage{doi}
+
+
+\geometry{
+    a4paper,
+    total={170mm,257mm},
+    left=20mm,
+    top=20mm,
+}
+\title{Rapport d’Avancement de Thèse} 
+\author{Ameur Gargouri}
+\date{}%\author{} %\date{\today} \begin{document} \maketitle
+%\tableofcontents
+%\newpage
+\begin{document} \maketitle 
+
+\input{chapters/01_contexte}
+\input{chapters/02_travaux}
+\input{chapters/03_evolution}
+\input{chapters/04_recherche}
+\input{chapters/05_contribution}
+\input{chapters/06_avancement}
+\input{chapters/07_perspectives}
+
+\newpage
+\bibliographystyle{unsrtnat}
+\bibliography{references}
+
+\end{document}

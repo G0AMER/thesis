@@ -1,0 +1,107 @@
+{
+  "experiment": "hp_sweep_and_ordering",
+  "data_fix": "mico_joint_6_pos outliers clipped to median (3 samples in p109)",
+  "input_features": [
+    "axes_x",
+    "axes_y",
+    "axes_z",
+    "mico_joint_1_pos",
+    "mico_joint_2_pos",
+    "mico_joint_3_pos",
+    "mico_joint_4_pos",
+    "mico_joint_5_pos",
+    "mico_joint_6_pos",
+    "mico_end_effector_x",
+    "mico_end_effector_y",
+    "mico_end_effector_z"
+  ],
+  "target_features": [
+    "mico_joint_1_vel",
+    "mico_joint_2_vel",
+    "mico_joint_3_vel",
+    "mico_joint_4_vel",
+    "mico_joint_5_vel",
+    "mico_joint_6_vel"
+  ],
+  "hidden": [
+    256,
+    256
+  ],
+  "lr": 0.001,
+  "dropout": 0.1,
+  "epochs": 50,
+  "patience": 10,
+  "batch_size": 256,
+  "obs_dim": 12,
+  "act_dim": 6,
+  "n_tasks": 10,
+  "seed": 42,
+  "device": "cuda",
+  "hp_sweep": {
+    "DER++_buffer": [
+      1000,
+      2500,
+      5000,
+      10000
+    ],
+    "EWC_lambda": [
+      500,
+      1000,
+      5000,
+      10000
+    ],
+    "OnlineEWC_gamma": [
+      0.9,
+      0.95,
+      0.99
+    ],
+    "SI_c": [
+      0.01,
+      0.1,
+      1.0,
+      10.0
+    ]
+  },
+  "ordering": {
+    "n_orderings": 6,
+    "strategies": [
+      "Naive",
+      "DER++",
+      "Online EWC"
+    ]
+  },
+  "best_hyperparams": {
+    "DER++": {
+      "param": "buffer_size",
+      "value": 10000,
+      "mse": 0.42230965495109557,
+      "bwt": 0.16617250856426027,
+      "fwt": 0.667109483646022,
+      "time": 186.31215286254883
+    },
+    "EWC": {
+      "param": "ewc_lambda",
+      "value": 10000,
+      "mse": 0.6693820476531982,
+      "bwt": 0.2678326252433989,
+      "fwt": 0.5508123222324584,
+      "time": 209.07979941368103
+    },
+    "Online EWC": {
+      "param": "gamma",
+      "value": 0.99,
+      "mse": 0.6311470001935959,
+      "bwt": 0.26428579952981734,
+      "fwt": 0.5526928338739607,
+      "time": 136.31797313690186
+    },
+    "SI": {
+      "param": "si_c",
+      "value": 0.01,
+      "mse": 1.1943275719881057,
+      "bwt": 1.0355739378266864,
+      "fwt": 0.9590868006149927,
+      "time": 152.27968907356262
+    }
+  }
+}

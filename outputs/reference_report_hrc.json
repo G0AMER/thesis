@@ -1,0 +1,168 @@
+[
+  {
+    "title": "Kaiwu: A Multimodal Manipulation Dataset and Framework for Robot Learning and Human-Robot Interaction",
+    "doi": "10.48550/arXiv.2503.05231",
+    "release_date": "2025-03-07",
+    "venue": "arXiv (Submitted to IEEE Robotics and Automation Letters)",
+    "authors": "Shuo Jiang, Haonan Li, Ruochen Ren, Yanmin Zhou, Zhipeng Wang, Bin He",
+    "abstract": "This paper presents the Kaiwu multimodal dataset to address missing real-world synchronized multimodal data in sophisticated assembling scenarios. The dataset integrates human, environment and robot data from 20 subjects and 30 interaction objects, yielding 11,664 integrated action instances. For each demonstration, hand motions, operation pressures, assembly sounds, multi-view videos, high-precision motion capture, eye gaze with first-person videos, and electromyography signals are recorded. The dataset aims to facilitate robot learning, dexterous manipulation, human intention investigation, and human-robot collaboration research.",
+    "source_url": "https://www.semanticscholar.org/reader/7aca4e3ec6bc3b56169fb26670f1a98fc33f87ee",
+    "source": "arXiv",
+    "hrc_citing_papers": []
+  },
+  {
+    "title": "PoseTron: Enabling Close-Proximity Human-Robot Collaboration Through Multi-human Motion Prediction",
+    "doi": "10.1145/3610977.3635006",
+    "release_date": "2024-03-11",
+    "venue": "Proceedings of the 2024 ACM/IEEE International Conference on Human-Robot Interaction",
+    "authors": "Mohammad Samin Yasar, Md Mofijul Islam, Tariq Iqbal",
+    "abstract": "",
+    "source": "Crossref",
+    "source_url": "https://dl.acm.org/doi/10.1145/3610977.3635006",
+    "hrc_citing_papers": [
+      {
+        "title": "A Holistic Evaluation of Teleoperation Interfaces for Robotic Manipulation",
+        "release_date": "2025-12-15",
+        "venue": "ACM Trans. Hum. Robot Interact.",
+        "doi": "10.1145/3785141",
+        "authors": "Shaid Hasan, M. S. Yasar, Tariq Iqbal",
+        "abstract": "Robot teleoperation has become increasingly crucial for extending human capabilities in inaccessible or hazardous environments and facilitating human–robot collaboration. While significant advancements have been made in teleoperation interfaces, the success of these systems critically depends on how effectively humans can interact with and control robotic systems across diverse manipulation tasks. However, existing research primarily evaluates interfaces within specific tasks or applications, lacking systematic assessment across different manipulation scenarios. This limitation leads to suboptimal interface selection that can compromise task efficiency in critical domains and impede the collection of high-quality demonstrations for robot learning. To address these gaps, we first introduce a novel two-axis Robotic Manipulation Task Taxonomy that systematically categorizes manipulation tasks based on their fundamental control requirements: Motion Type (translation-dominant vs. rotation-dominant) and Engagement Type (rigid vs. non-rigid object interactions). We conducted a comprehensive user study ( \\(n=30\\) ) evaluating three distinct teleoperation interfaces (Gamepad, 3D Mouse, and Virtual Reality (VR) Controller) based on this taxonomy. Our results indicate that the Gamepad and 3D mouse significantly outperformed the VR Controller in task completion time across all task categories. In contrast, the VR Controller showed higher first-attempt success rates but caused significantly greater cognitive load across all NASA Task Load Index (NASA-TLX) subscales compared to the Gamepad interface, and specifically higher mental demand, physical demand, and effort compared to the 3D mouse. Our results also indicate that although prior familiarity with an interface lowered perceived workload and enhanced perceived performance, it did not translate into improvements in actual task success rates or completion times. These insights provide valuable guidelines for optimizing teleoperation interfaces based on task requirements and highlight the importance of considering both cognitive demands and user experience in interface design.",
+        "source": "Semantic Scholar"
+      },
+      {
+        "title": "Embodied Referring Expression Comprehension in Human-Robot Interaction",
+        "release_date": "2025-12-06",
+        "venue": "IEEE/ACM International Conference on Human-Robot Interaction",
+        "doi": "10.1145/3757279.3785601",
+        "authors": "Md. Mofijul Islam, Alexi Gladstone, Sujan Sarker, Ganesh Nanduru, M. Fahim, Keyan Du, Aman Chadha, Tariq Iqbal",
+        "abstract": "As robots enter human workspaces, there is a crucial need for them to comprehend embodied human instructions, enabling intuitive and fluent human-robot interaction (HRI). However, accurate comprehension is challenging due to a lack of large-scale datasets that capture natural embodied interactions in diverse HRI settings. Existing datasets suffer from perspective bias, single-view data collection, inadequate coverage of nonverbal gestures, and a predominant focus on indoor environments. To address these issues, we present the Refer360 dataset, a large-scale dataset of embodied verbal and nonverbal interactions collected across diverse viewpoints in both indoor and outdoor settings. Additionally, we introduce MuRes, a multimodal guided residual module designed to improve embodied referring expression comprehension. MuRes acts as an information bottleneck, extracting salient modality-specific signals and reinforcing them into pre-trained representations to form complementary features for downstream tasks. We conduct extensive experiments on four datasets, including our Refer360 dataset, and demonstrate that current multimodal models fail to capture embodied interactions comprehensively; however, augmenting them with MuRes consistently improves performance. These findings establish Refer360 as a valuable benchmark and exhibit the potential of guided residual learning to advance embodied referring expression comprehension in robots operating within human environments.",
+        "source": "Semantic Scholar"
+      },
+      {
+        "title": "LiHRA: A LiDAR-Based HRI Dataset for Automated Risk Monitoring Methods",
+        "release_date": "2025-09-08",
+        "venue": "IEEE/RJS International Conference on Intelligent RObots and Systems",
+        "doi": "10.1109/IROS60139.2025.11245888",
+        "authors": "Frederik Plahl, Georgios Katranis, I. Mamaev, Andrey Morozov",
+        "abstract": "We present LiHRA, a novel dataset designed to facilitate the development of automated, learning-based, or classical risk monitoring (RM) methods for Human-Robot Interaction (HRI) scenarios. The growing prevalence of collaborative robots in industrial environments has increased the need for reliable safety systems. However, the lack of high-quality datasets that capture realistic human-robot interactions, including potentially dangerous events, slows development. LiHRA addresses this challenge by providing a comprehensive, multi-modal dataset combining 3D LiDAR point clouds, human body keypoints, and robot joint states, capturing the complete spatial and dynamic context of human-robot collaboration. This combination of modalities allows for precise tracking of human movement, robot actions, and environmental conditions, enabling accurate RM during collaborative tasks. The LiHRA dataset covers six representative HRI scenarios involving collaborative and coexistent tasks, object handovers, and surface polishing, with safe and hazardous versions of each scenario. In total, the data set includes 4,431 labeled point clouds recorded at 10 Hz, providing a rich resource for training and benchmarking classical and AI-driven RM algorithms. Finally, to demonstrate LiHRA’s utility, we introduce an RM method that quantifies the risk level in each scenario over time. This method leverages contextual information, including robot states and the dynamic model of the robot. With its combination of high-resolution LiDAR data, precise human tracking, robot state data, and realistic collision events, LiHRA offers an essential foundation for future research into real-time RM and adaptive safety strategies in human-robot workspaces.",
+        "source": "Semantic Scholar"
+      },
+      {
+        "title": "Towards Human Motion Prediction for Collaborative Robotics with Text-to-Motion Data Generation",
+        "release_date": "2025-08-17",
+        "venue": "2025 IEEE 21st International Conference on Automation Science and Engineering (CASE)",
+        "doi": "10.1109/CASE58245.2025.11164020",
+        "authors": "Marco Casarin, M. Reggiani, S. Michieletto",
+        "abstract": "Human Motion Prediction (HMP) in Collaborative Robotics enables proactive adaptation of robot behavior, improving efficiency and safety. However, the available data from human-robot interaction scenarios is scarce and collecting new motion samples is a challenging and expensive process. In this work, we propose a novel approach for HMP that exploits synthetic human motion sequences to mitigate the need for real-world data collection. Our method consists of generating a large and diverse collection of human motions that are unified into a synthetic dataset for model pre-training. The pre-trained model is then fine-tuned on the small available dataset of real motion sequences from a target context. For a comprehensive evaluation of the effectiveness of our approach, we generate three synthetic datasets of increasing size and evaluate their impact on three HMP models with different architectures. We then compare the prediction accuracy of our approach with the same models trained exclusively on the target dataset. The results showed a strong improvement in HMP given by pre-training on synthetic sequences. The increase in prediction accuracy was consistent across all the models, reaching up to 19.49% error reduction. This outcome highlights the applicability of synthetic motion data in HMP independent of the specific model architecture. By using synthetic data for pre-training, our approach enables more effective model adaptation to real-world applications, making it a promising solution for enhancing human-robot collaboration.",
+        "source": "Semantic Scholar"
+      }
+    ]
+  },
+  {
+    "title": "Learning to Share Autonomy from Repeated Human-Robot Interaction",
+    "doi": "10.1109/iros51168.2021.9636748",
+    "release_date": "2021",
+    "venue": "2021 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
+    "authors": "Ananth Jonnavittula, Shaunak A. Mehta, Dylan P. Losey",
+    "abstract": "This paper proposes an approach to shared autonomy that learns assistance from scratch rather than relying on prior knowledge. The key insight is that operators repeat important tasks daily (e.g., opening the fridge, making coffee). By learning from repeated interactions, the robot can improve its understanding of user intent over time and provide increasingly effective assistance in shared autonomy scenarios.",
+    "source_url": "https://users.cs.utah.edu/~dsbrown/readings/learning_shared_autonomy.pdf",
+    "source": "IEEE",
+    "hrc_citing_papers": [
+      {
+        "title": "Adaptor: Advancing Assistive Teleoperation with Few-Shot Learning and Cross-Operator Generalization",
+        "release_date": "2026-04-10",
+        "venue": "Unknown venue",
+        "doi": null,
+        "authors": "Yu Liu, Yihang Yin, Tianlv Huang, Fei Yan, Yuan Xu, Weinan Hong, Wei Han, Yue Cao, et al.",
+        "abstract": "Assistive teleoperation enhances efficiency via shared control, yet inter-operator variability, stemming from diverse habits and expertise, induces highly heterogeneous trajectory distributions that undermine intent recognition stability. We present Adaptor, a few-shot framework for robust cross-operator intent recognition. The Adaptor bridges the domain gap through two stages: (i) preprocessing, which models intent uncertainty by synthesizing trajectory perturbations via noise injection and performs geometry-aware keyframe extraction; and (ii) policy learning, which encodes the processed trajectories with an Intention Expert and fuses them with the pre-trained vision-language model context to condition an Action Expert for action generation. Experiments on real-world and simulated benchmarks demonstrate that Adaptor achieves state-of-the-art performance, improving success rates and efficiency over baselines. Moreover, the method exhibits low variance across operators with varying expertise, demonstrating robust cross-operator generalization.",
+        "source": "Semantic Scholar"
+      },
+      {
+        "title": "A Probabilistic Inference Approach for Skill-Based Shared Autonomy in Assistive Robotic Manipulation",
+        "release_date": "2025-09-01",
+        "venue": "IEEE Robotics and Automation Letters",
+        "doi": "10.1109/LRA.2025.3595044",
+        "authors": "Umur Atan, Varun R. Bharadwaj, Chao Jiang",
+        "abstract": "We present a skill-based shared autonomy approach that addresses the policy blending problem by adaptively arbitrating control between human input and autonomous assistance. Our method uses Bayesian inference to continuously assess user skill from their control inputs and task performance, enabling dynamic adjustment of control authority to match user proficiency. This adaptive approach ensures that experienced users retain control while novices receive appropriate support. We evaluate our method in two teleoperation scenarios involving pick-and-place and cup-stacking tasks with a robotic arm. Simulation and real-robot experiment results show that our method improves task efficiency and success rates while enhancing user satisfaction compared to rigid arbitration strategies.",
+        "source": "Semantic Scholar"
+      },
+      {
+        "title": "Data-Efficient Learning from Human Interventions for Mobile Robots",
+        "release_date": "2025-03-06",
+        "venue": "IEEE International Conference on Robotics and Automation",
+        "doi": "10.1109/ICRA55743.2025.11128012",
+        "authors": "Zhenghao Peng, Zhizheng Liu, Bolei Zhou",
+        "abstract": "Mobile robots are essential in applications such as autonomous delivery and hospitality services. Applying learning-based methods to address mobile robot tasks has gained popularity due to its robustness and generalizability. Traditional methods such as Imitation Learning (IL) and Reinforcement Learning (RL) offer adaptability but require large datasets, carefully crafted reward functions, and face sim-to-real gaps, making them challenging for efficient and safe real-world deployment. We propose an online human-in-the-loop learning method PVP4Real that combines IL and RL to address these issues. PVP4Real enables efficient real-time policy learning from online human intervention and demonstration, without reward or any pretraining, significantly improving data efficiency and training safety. We validate our method by training two different robots—a legged quadruped, and a wheeled delivery robot—in two mobile robot tasks, one of which even uses raw RGBD image as observation. The training finishes within 15 minutes. Our experiments show the promising future of human-in-the-loop learning in addressing the data efficiency issue in real-world robotic tasks. More information is available at https://metadriverse.github.io/pvp4real/.",
+        "source": "Semantic Scholar"
+      },
+      {
+        "title": "Learning from Active Human Involvement through Proxy Value Propagation",
+        "release_date": "2025-02-05",
+        "venue": "Neural Information Processing Systems",
+        "doi": "10.48550/arXiv.2502.03369",
+        "authors": "Zhenghao Peng, Wen-An Mo, Chenda Duan, Quanyi Li, Bolei Zhou",
+        "abstract": "Learning from active human involvement enables the human subject to actively intervene and demonstrate to the AI agent during training. The interaction and corrective feedback from human brings safety and AI alignment to the learning process. In this work, we propose a new reward-free active human involvement method called Proxy Value Propagation for policy optimization. Our key insight is that a proxy value function can be designed to express human intents, wherein state-action pairs in the human demonstration are labeled with high values, while those agents' actions that are intervened receive low values. Through the TD-learning framework, labeled values of demonstrated state-action pairs are further propagated to other unlabeled data generated from agents' exploration. The proxy value function thus induces a policy that faithfully emulates human behaviors. Human-in-the-loop experiments show the generality and efficiency of our method. With minimal modification to existing reinforcement learning algorithms, our method can learn to solve continuous and discrete control tasks with various human control devices, including the challenging task of driving in Grand Theft Auto V. Demo video and code are available at: https://metadriverse.github.io/pvp",
+        "source": "Semantic Scholar"
+      }
+    ]
+  },
+  {
+    "title": "MultiPhysio-HRC: A Multimodal Physiological Signals Dataset for Industrial Human–Robot Collaboration",
+    "doi": "10.3390/robotics14120184",
+    "release_date": "2025-12-05",
+    "venue": "Robotics",
+    "authors": "Andrea Bussolan, Stefano Baraldo, Oliver Avram, Pablo Urcola, Luis Montesano, Luca Maria Gambardella, Anna Valente",
+    "abstract": "Human–robot collaboration (HRC) is a key focus of Industry 5.0, aiming to enhance worker productivity while ensuring well-being. The ability to perceive human psycho-physical states, such as stress and cognitive load, is crucial for adaptive and human-aware robotics. This paper introduces MultiPhysio-HRC, a multimodal dataset containing physiological, audio, and facial data collected during real-world HRC scenarios. The dataset includes electroencephalography (EEG), electrocardiography (ECG), electrodermal activity (EDA), respiration (RESP), electromyography (EMG), voice recordings, and facial action units. The dataset integrates controlled cognitive tasks, immersive virtual reality experiences, and industrial disassembly activities performed manually and with robotic assistance, to capture a holistic view of the participants’ mental states. Rich ground truth annotations were obtained using validated psychological self-assessment questionnaires. Baseline models were evaluated for stress and cognitive load classification, demonstrating the dataset’s potential for affective computing and human-aware robotics research. MultiPhysio-HRC is publicly available to support research in human-centered automation, workplace well-being, and intelligent robotic systems.",
+    "source": "Crossref",
+    "source_url": "https://www.mdpi.com/2218-6581/14/12/184",
+    "hrc_citing_papers": []
+  },
+  {
+    "title": "HARMONIC: A multimodal dataset of assistive human–robot collaboration",
+    "doi": "10.1177/02783649211050677",
+    "release_date": "2022-01",
+    "venue": "The International Journal of Robotics Research",
+    "authors": "Benjamin A. Newman, Reuben M. Aronson, Siddhartha S. Srinivasa, Kris Kitani, Henny Admoni",
+    "abstract": "We present the Human And Robot Multimodal Observations of Natural Interactive Collaboration (HARMONIC) dataset. This is a large multimodal dataset of human interactions with a robotic arm in a shared autonomy setting designed to imitate assistive eating. The dataset provides human, robot, and environmental data views of 24 different people engaged in an assistive eating task with a 6-degree-of-freedom (6-DOF) robot arm. From each participant, we recorded video of both eyes, egocentric video from a head-mounted camera, joystick commands, electromyography from the forearm used to operate the joystick, third-person stereo video, and the joint positions of the 6-DOF robot arm. Also included are several features that come as a direct result of these recordings, such as eye gaze projected onto the egocentric video, body pose, hand pose, and facial keypoints. These data streams were collected specifically because they have been shown to be closely related to human mental states and intention. This dataset could be of interest to researchers studying intention prediction, human mental state modeling, and shared autonomy. Data streams are provided in a variety of formats such as video and human-readable CSV and YAML files.",
+    "source": "Crossref",
+    "source_url": "https://journals.sagepub.com/doi/10.1177/02783649211050677",
+    "hrc_citing_papers": [
+      {
+        "title": "Adaptor: Advancing Assistive Teleoperation with Few-Shot Learning and Cross-Operator Generalization",
+        "release_date": "2026-04-10",
+        "venue": "Unknown venue",
+        "doi": null,
+        "authors": "Yu Liu, Yihang Yin, Tianlv Huang, Fei Yan, Yuan Xu, Weinan Hong, Wei Han, Yue Cao, et al.",
+        "abstract": "Assistive teleoperation enhances efficiency via shared control, yet inter-operator variability, stemming from diverse habits and expertise, induces highly heterogeneous trajectory distributions that undermine intent recognition stability. We present Adaptor, a few-shot framework for robust cross-operator intent recognition. The Adaptor bridges the domain gap through two stages: (i) preprocessing, which models intent uncertainty by synthesizing trajectory perturbations via noise injection and performs geometry-aware keyframe extraction; and (ii) policy learning, which encodes the processed trajectories with an Intention Expert and fuses them with the pre-trained vision-language model context to condition an Action Expert for action generation. Experiments on real-world and simulated benchmarks demonstrate that Adaptor achieves state-of-the-art performance, improving success rates and efficiency over baselines. Moreover, the method exhibits low variance across operators with varying expertise, demonstrating robust cross-operator generalization.",
+        "source": "Semantic Scholar"
+      },
+      {
+        "title": "A Multimodal Data Collection Framework for Dialogue-Driven Assistive Robotics to Clarify Ambiguities: A Wizard-of-Oz Pilot Study",
+        "release_date": "2026-01-23",
+        "venue": "arXiv.org",
+        "doi": "10.48550/arXiv.2601.16870",
+        "authors": "Guangping Liu, Nicholas Hawkins, Billy Madden, Tipu Sultan, Flavio Esposito, Madi Babaiasl",
+        "abstract": "Integrated control of wheelchairs and wheelchair-mounted robotic arms (WMRAs) has strong potential to increase independence for users with severe motor limitations, yet existing interfaces often lack the flexibility needed for intuitive assistive interaction. Although data-driven AI methods show promise, progress is limited by the lack of multimodal datasets that capture natural Human-Robot Interaction (HRI), particularly conversational ambiguity in dialogue-driven control. To address this gap, we propose a multimodal data collection framework that employs a dialogue-based interaction protocol and a two-room Wizard-of-Oz (WoZ) setup to simulate robot autonomy while eliciting natural user behavior. The framework records five synchronized modalities: RGB-D video, conversational audio, inertial measurement unit (IMU) signals, end-effector Cartesian pose, and whole-body joint states across five assistive tasks. Using this framework, we collected a pilot dataset of 53 trials from five participants and validated its quality through motion smoothness analysis and user feedback. The results show that the framework effectively captures diverse ambiguity types and supports natural dialogue-driven interaction, demonstrating its suitability for scaling to a larger dataset for learning, benchmarking, and evaluation of ambiguity-aware assistive control.",
+        "source": "Semantic Scholar"
+      },
+      {
+        "title": "Sequential Human Assembly and Disassembly Motions in Human-Robot Coexisting Environments",
+        "release_date": "2025-11-11",
+        "venue": "Scientific Data",
+        "doi": "10.1038/s41597-025-06042-0",
+        "authors": "Zhihao Liu, Tianyu Wang, Zhenrui Ji, Wenjun Xu, Lihui Wang, X. Wang",
+        "abstract": "As human-robot systems and autonomous robots become increasingly prevalent, the need for task-oriented datasets to study human behaviors in shared spaces has grown significantly. We present a novel dataset focusing on sequential human assembly and disassembly motions in human-robot coexisting environments. It contains over 10,000 samples recorded from multi-view camera setups, each comprising synchronized RGB videos and 2D and 3D human skeletons. Data were collected from 33 participants with diverse physical characteristics and behavior preferences. This dataset highlights practical challenges such as partial occlusions, similar repetitive motions, and varying human behaviors, which are often overlooked in existing datasets and research. Technical validation using benchmarking with state-of-the-art deep learning models reveals significant potential in using this dataset for practical applications. To support diverse research applications, this dataset provides raw and processed data with detailed annotations, including precise timestamps, procedure annotations, and Python codes for reproducibility. It aims to advance research in human motion prediction, task-oriented robotic sequential decision-making, motion and task planning of autonomous robots, and human-robot collaborative policies.",
+        "source": "Semantic Scholar"
+      },
+      {
+        "title": "OpenRoboCare: A Multimodal Multi-Task Expert Demonstration Dataset for Robot Caregiving",
+        "release_date": "2025-10-19",
+        "venue": "IEEE/RJS International Conference on Intelligent RObots and Systems",
+        "doi": "10.1109/IROS60139.2025.11247516",
+        "authors": "Xiaoyu Liang, Ziang Liu, Kelvin Lin, Edward Gu, Ruolin Ye, Tam Nguyen, Cynthia Hsu, Zhanxin Wu, et al.",
+        "abstract": "We present OpenRoboCare, a multimodal dataset for robot caregiving, capturing expert occupational therapist demonstrations of Activities of Daily Living (ADLs). Caregiving tasks involve complex physical human-robot interactions, requiring precise perception under occlusions, safe physical contact, and long-horizon planning. While recent advances in robot learning from demonstrations have shown promise, there is a lack of a large-scale, diverse, and expert-driven dataset that captures real-world caregiving routines. To address this gap, we collect data from 21 occupational therapists performing 15 ADL tasks on two manikins. The dataset spans five modalities—RGB-D video, pose tracking, eye-gaze tracking, task and action annotations, and tactile sensing, providing rich multimodal insights into caregiver movement, attention, force application, and task execution strategies. We further analyze expert caregiving principles and strategies, offering insights to improve robot efficiency and task feasibility. Additionally, our evaluations demonstrate that OpenRoboCare presents challenges for state-of-the-art robot perception and human activity recognition methods, both critical for developing safe and adaptive assistive robots, highlighting the value of our contribution. See our website for additional visualizations: https://emprise.cs.cornell.edu/robo-care/.",
+        "source": "Semantic Scholar"
+      }
+    ]
+  }
+]

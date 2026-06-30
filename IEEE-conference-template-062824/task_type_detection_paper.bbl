@@ -1,0 +1,33 @@
+\begin{thebibliography}{1}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+\providecommand{\doi}[1]{https://doi.org/#1}
+
+\bibitem{baltrusaitis2019multimodal}
+Baltru\v{s}aitis, T., Ahuja, C., Morency, L.P.: Multimodal machine learning: A survey and taxonomy. IEEE Transactions on Pattern Analysis and Machine Intelligence  \textbf{41}(2),  423--443 (2019). \doi{10.1109/TPAMI.2018.2798607}
+
+\bibitem{bussolan2025multiphysiohrc}
+Bussolan, A., Baraldo, S., Avram, O., Urcola, P., Montesano, L., Gambardella, L.M., Valente, A.: Multiphysio-hrc: A multimodal physiological signals dataset for industrial human-robot collaboration. Robotics  \textbf{14}(12), ~184 (2025). \doi{10.3390/robotics14120184}
+
+\bibitem{brodersen2010biostatistics}
+Collot, S., Fraser, C., Zhao, J., Shen, W.F., Willi, T., Leontiadis, I.: Balanced accuracy: The right metric for evaluating llm judges -- explained through youden's j statistic  (2026)
+
+\bibitem{delange2022continual}
+De~Lange, M., Aljundi, R., Masana, M., Parisot, S., Jia, X., Leonardis, A., Slabaugh, G., Tuytelaars, T.: A continual learning survey: Defying forgetting in classification tasks. IEEE Transactions on Pattern Analysis and Machine Intelligence  \textbf{44}(12),  9771--9788 (2022). \doi{10.1109/TPAMI.2021.3057446}
+
+\bibitem{fan2024continualhrc}
+Fan, Y., Antonelli, D., Simeone, A.: Continual learning supporting human-robot collaboration. In: Advances in Production Management Systems, pp. 42--49 (2024). \doi{10.1007/978-3-031-63851-0\_5}
+
+\bibitem{jeni2023imbalanced}
+Jeni, L.A., Cohn, J.F., De~La~Torre, F.: Facing imbalanced data--recommendations for the use of performance metrics pp. 245--251 (2013). \doi{10.1109/ACII.2013.47}
+
+\bibitem{selvaggio2021autonomy}
+Selvaggio, M., Cognetti, M., Nikolaidis, S., Ivaldi, S., Siciliano, B.: Autonomy in physical human-robot interaction: A brief survey. IEEE Robotics and Automation Letters  \textbf{6}(4),  7989--7996 (2021). \doi{10.1109/LRA.2021.3100603}
+
+\bibitem{sokolova2009systematic}
+Sokolova, M., Lapalme, G.: A systematic analysis of performance measures for classification tasks. Information Processing \& Management  \textbf{45}(4),  427--437 (2009). \doi{10.1016/j.ipm.2009.03.002}
+
+\bibitem{thumm2024hrgym}
+Thumm, J., Trost, F., Althoff, M.: Human-robot gym: Benchmarking reinforcement learning in human-robot collaboration. In: 2024 IEEE International Conference on Robotics and Automation (ICRA). pp. 4520--4527 (2024). \doi{10.1109/ICRA57147.2024.10610705}
+
+\end{thebibliography}

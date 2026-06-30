@@ -1,0 +1,57 @@
+This is BibTeX, Version 0.99d (TeX Live 2025)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: flair_paper.aux
+The style file: elsarticle-num.bst
+Database file #1: references.bib
+Warning--empty pages in javdani2018shared
+Warning--empty pages in reddy2018shared
+Warning--empty pages in buzzega2020dark
+Warning--empty pages in wang2022l2p
+Warning--empty pages in perez2018film
+Warning--empty pages in losey2018assistive
+Warning--empty pages in thumm2024hrgym
+Warning--empty pages in schwarz2018progress
+Warning--empty pages in chaudhry2018efficient
+Warning--empty pages in lopez2017gradient
+You've used 17 entries,
+            2952 wiz_defined-function locations,
+            771 strings with 9981 characters,
+and the built_in function-call counts, 5484 in all, are:
+= -- 455
+> -- 281
+< -- 0
++ -- 105
+- -- 88
+* -- 375
+:= -- 780
+add.period$ -- 17
+call.type$ -- 17
+change.case$ -- 34
+chr.to.int$ -- 0
+cite$ -- 27
+duplicate$ -- 183
+empty$ -- 638
+format.name$ -- 105
+if$ -- 1416
+int.to.chr$ -- 0
+int.to.str$ -- 17
+missing$ -- 17
+newline$ -- 59
+num.names$ -- 17
+pop$ -- 134
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 371
+stack$ -- 0
+substring$ -- 127
+swap$ -- 7
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 10
+while$ -- 23
+width$ -- 19
+write$ -- 161
+(There were 10 warnings)

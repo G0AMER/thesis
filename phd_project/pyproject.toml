@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "hrc-incremental"
+version = "0.1.0"
+description = "Incremental Human-Robot Collaboration with Behavioral Adaptation"
+readme = "ARCHITECTURE.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+    {name = "Ameur Gargouri"},
+]
+keywords = [
+    "human-robot-collaboration",
+    "incremental-learning",
+    "inverse-reinforcement-learning",
+    "behavioral-adaptation",
+    "cobotique",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-v --tb=short"
+
+[tool.black]
+line-length = 100
+target-version = ["py312"]
+
+[tool.isort]
+profile = "black"
+line_length = 100

@@ -1,0 +1,2291 @@
+{
+  "meta": {
+    "count": 9516,
+    "db_response_time_ms": 2508,
+    "page": 1,
+    "per_page": 5,
+    "groups_count": null,
+    "x_query": {
+      "oql": "works where full text has (collaborative robot safety deep learning collision detection)",
+      "oqo": {
+        "get_rows": "works",
+        "filter_rows": [
+          {
+            "column_id": "fulltext.search",
+            "value": "collaborative robot safety deep learning collision detection",
+            "operator": "has"
+          }
+        ],
+        "sort_by": [
+          {
+            "column_id": "cited_by_count",
+            "direction": "desc"
+          }
+        ],
+        "select": [
+          "id",
+          "display_name",
+          "publication_year",
+          "cited_by_count",
+          "abstract_inverted_index"
+        ],
+        "per_page": 5,
+        "page": 1
+      },
+      "url": "/works?filter=fulltext.search:collaborative robot safety deep learning collision detection&sort=cited_by_count:desc&select=id,display_name,publication_year,cited_by_count,abstract_inverted_index&per_page=5&page=1"
+    },
+    "cost_usd": 0.001
+  },
+  "results": [
+    {
+      "id": "https://openalex.org/W2134295053",
+      "display_name": "Internet of Things: A Survey on Enabling Technologies, Protocols, and Applications",
+      "publication_year": 2015,
+      "cited_by_count": 8329,
+      "abstract_inverted_index": {
+        "This": [
+          0,
+          104
+        ],
+        "paper": [
+          1,
+          105,
+          265
+        ],
+        "provides": [
+          2
+        ],
+        "an": [
+          3,
+          118,
+          195
+        ],
+        "overview": [
+          4,
+          111,
+          119,
+          196
+        ],
+        "of": [
+          5,
+          8,
+          55,
+          74,
+          100,
+          112,
+          120,
+          151,
+          197,
+          199,
+          213
+        ],
+        "the": [
+          6,
+          25,
+          71,
+          75,
+          78,
+          81,
+          113,
+          127,
+          140,
+          152,
+          173,
+          189,
+          200,
+          206,
+          220,
+          223,
+          241,
+          259,
+          264
+        ],
+        "Internet": [
+          7,
+          35
+        ],
+        "Things": [
+          9
+        ],
+        "(IoT)": [
+          10
+        ],
+        "with": [
+          11
+        ],
+        "emphasis": [
+          12
+        ],
+        "on": [
+          13,
+          171
+        ],
+        "enabling": [
+          14,
+          129
+        ],
+        "technologies,": [
+          15,
+          33,
+          130
+        ],
+        "protocols,": [
+          16,
+          131
+        ],
+        "and": [
+          17,
+          34,
+          63,
+          132,
+          156,
+          162,
+          188,
+          209,
+          225,
+          233,
+          235
+        ],
+        "application": [
+          18,
+          157,
+          163
+        ],
+        "issues.": [
+          19
+        ],
+        "The": [
+          20,
+          37,
+          57
+        ],
+        "IoT": [
+          21,
+          82,
+          128,
+          202,
+          224,
+          248,
+          271
+        ],
+        "is": [
+          22,
+          40,
+          83,
+          144
+        ],
+        "enabled": [
+          23
+        ],
+        "by": [
+          24,
+          93,
+          107
+        ],
+        "latest": [
+          26
+        ],
+        "developments": [
+          27
+        ],
+        "in": [
+          28,
+          60,
+          98,
+          139,
+          205,
+          263
+        ],
+        "RFID,": [
+          29
+        ],
+        "smart": [
+          30,
+          43
+        ],
+        "sensors,": [
+          31
+        ],
+        "communication": [
+          32
+        ],
+        "protocols.": [
+          36
+        ],
+        "basic": [
+          38
+        ],
+        "premise": [
+          39
+        ],
+        "to": [
+          41,
+          50,
+          85,
+          89,
+          126,
+          135,
+          145,
+          159,
+          165,
+          168,
+          178,
+          184,
+          256,
+          268
+        ],
+        "have": [
+          42
+        ],
+        "sensors": [
+          44
+        ],
+        "collaborate": [
+          45
+        ],
+        "directly": [
+          46
+        ],
+        "without": [
+          47,
+          182
+        ],
+        "human": [
+          48
+        ],
+        "involvement": [
+          49
+        ],
+        "deliver": [
+          51,
+          179,
+          269
+        ],
+        "a": [
+          52,
+          109,
+          147,
+          211
+        ],
+        "new": [
+          53,
+          91
+        ],
+        "class": [
+          54
+        ],
+        "applications.": [
+          56,
+          133
+        ],
+        "current": [
+          58
+        ],
+        "revolution": [
+          59
+        ],
+        "Internet,": [
+          61
+        ],
+        "mobile,": [
+          62
+        ],
+        "machine-to-machine": [
+          64
+        ],
+        "(M2M)": [
+          65
+        ],
+        "technologies": [
+          66,
+          88,
+          228
+        ],
+        "can": [
+          67
+        ],
+        "be": [
+          68
+        ],
+        "seen": [
+          69
+        ],
+        "as": [
+          70
+        ],
+        "first": [
+          72
+        ],
+        "phase": [
+          73
+        ],
+        "IoT.": [
+          76,
+          114
+        ],
+        "In": [
+          77
+        ],
+        "coming": [
+          79
+        ],
+        "years,": [
+          80
+        ],
+        "expected": [
+          84
+        ],
+        "bridge": [
+          86
+        ],
+        "diverse": [
+          87
+        ],
+        "enable": [
+          90,
+          160
+        ],
+        "applications": [
+          92
+        ],
+        "connecting": [
+          94
+        ],
+        "physical": [
+          95
+        ],
+        "objects": [
+          96
+        ],
+        "together": [
+          97,
+          177,
+          267
+        ],
+        "support": [
+          99
+        ],
+        "intelligent": [
+          101
+        ],
+        "decision": [
+          102
+        ],
+        "making.": [
+          103
+        ],
+        "starts": [
+          106
+        ],
+        "providing": [
+          108
+        ],
+        "horizontal": [
+          110,
+          245
+        ],
+        "Then,": [
+          115
+        ],
+        "we": [
+          116,
+          218,
+          251
+        ],
+        "give": [
+          117
+        ],
+        "some": [
+          121,
+          198
+        ],
+        "technical": [
+          122
+        ],
+        "details": [
+          123
+        ],
+        "that": [
+          124
+        ],
+        "pertain": [
+          125
+        ],
+        "Compared": [
+          134
+        ],
+        "other": [
+          136,
+          226
+        ],
+        "survey": [
+          137
+        ],
+        "papers": [
+          138
+        ],
+        "field,": [
+          141
+        ],
+        "our": [
+          142
+        ],
+        "objective": [
+          143
+        ],
+        "provide": [
+          146,
+          194,
+          210
+        ],
+        "more": [
+          148
+        ],
+        "thorough": [
+          149
+        ],
+        "summary": [
+          150,
+          212
+        ],
+        "most": [
+          153
+        ],
+        "relevant": [
+          154
+        ],
+        "protocols": [
+          155,
+          175,
+          261
+        ],
+        "issues": [
+          158
+        ],
+        "researchers": [
+          161
+        ],
+        "developers": [
+          164
+        ],
+        "get": [
+          166
+        ],
+        "up": [
+          167
+        ],
+        "speed": [
+          169
+        ],
+        "quickly": [
+          170
+        ],
+        "how": [
+          172,
+          258
+        ],
+        "different": [
+          174,
+          260
+        ],
+        "fit": [
+          176,
+          266
+        ],
+        "desired": [
+          180,
+          270
+        ],
+        "functionalities": [
+          181
+        ],
+        "having": [
+          183
+        ],
+        "go": [
+          185
+        ],
+        "through": [
+          186
+        ],
+        "RFCs": [
+          187
+        ],
+        "standards": [
+          190
+        ],
+        "specifications.": [
+          191
+        ],
+        "We": [
+          192,
+          238
+        ],
+        "also": [
+          193,
+          239
+        ],
+        "key": [
+          201
+        ],
+        "challenges": [
+          203
+        ],
+        "presented": [
+          204,
+          262
+        ],
+        "recent": [
+          207
+        ],
+        "literature": [
+          208
+        ],
+        "related": [
+          214
+        ],
+        "research": [
+          215
+        ],
+        "work.": [
+          216
+        ],
+        "Moreover,": [
+          217
+        ],
+        "explore": [
+          219
+        ],
+        "relation": [
+          221
+        ],
+        "between": [
+          222
+        ],
+        "emerging": [
+          227
+        ],
+        "including": [
+          229
+        ],
+        "big": [
+          230
+        ],
+        "data": [
+          231
+        ],
+        "analytics": [
+          232
+        ],
+        "cloud": [
+          234
+        ],
+        "fog": [
+          236
+        ],
+        "computing.": [
+          237
+        ],
+        "present": [
+          240,
+          252
+        ],
+        "need": [
+          242
+        ],
+        "for": [
+          243
+        ],
+        "better": [
+          244
+        ],
+        "integration": [
+          246
+        ],
+        "among": [
+          247
+        ],
+        "services.": [
+          249,
+          272
+        ],
+        "Finally,": [
+          250
+        ],
+        "detailed": [
+          253
+        ],
+        "service": [
+          254
+        ],
+        "use-cases": [
+          255
+        ],
+        "illustrate": [
+          257
+        ]
+      }
+    },
+    {
+      "id": "https://openalex.org/W2969625533",
+      "display_name": "Artificial Intelligence (AI): Multidisciplinary perspectives on emerging challenges, opportunities, and agenda for research, practice and policy",
+      "publication_year": 2019,
+      "cited_by_count": 4059,
+      "abstract_inverted_index": {
+        "As": [
+          0
+        ],
+        "far": [
+          1
+        ],
+        "back": [
+          2
+        ],
+        "as": [
+          3
+        ],
+        "the": [
+          4,
+          32,
+          46,
+          118,
+          127,
+          139,
+          153,
+          187,
+          197
+        ],
+        "industrial": [
+          5,
+          200
+        ],
+        "revolution,": [
+          6
+        ],
+        "significant": [
+          7,
+          140,
+          176
+        ],
+        "development": [
+          8
+        ],
+        "in": [
+          9,
+          14,
+          24,
+          81,
+          193
+        ],
+        "technical": [
+          10
+        ],
+        "innovation": [
+          11
+        ],
+        "has": [
+          12
+        ],
+        "succeeded": [
+          13
+        ],
+        "transforming": [
+          15
+        ],
+        "numerous": [
+          16
+        ],
+        "manual": [
+          17
+        ],
+        "tasks": [
+          18,
+          53
+        ],
+        "and": [
+          19,
+          48,
+          54,
+          63,
+          85,
+          112,
+          147,
+          164,
+          169,
+          171,
+          177,
+          183,
+          191,
+          199,
+          204
+        ],
+        "processes": [
+          20
+        ],
+        "that": [
+          21
+        ],
+        "had": [
+          22,
+          30
+        ],
+        "been": [
+          23
+        ],
+        "existence": [
+          25
+        ],
+        "for": [
+          26,
+          45,
+          70,
+          91
+        ],
+        "decades": [
+          27
+        ],
+        "where": [
+          28
+        ],
+        "humans": [
+          29
+        ],
+        "reached": [
+          31
+        ],
+        "limits": [
+          33
+        ],
+        "of": [
+          34,
+          51,
+          60,
+          68,
+          96,
+          120,
+          133,
+          144,
+          156,
+          161,
+          189,
+          206
+        ],
+        "physical": [
+          35
+        ],
+        "capacity.": [
+          36
+        ],
+        "Artificial": [
+          37
+        ],
+        "Intelligence": [
+          38
+        ],
+        "(AI)": [
+          39
+        ],
+        "offers": [
+          40,
+          175
+        ],
+        "this": [
+          41,
+          71
+        ],
+        "same": [
+          42
+        ],
+        "transformative": [
+          43
+        ],
+        "potential": [
+          44,
+          49,
+          148
+        ],
+        "augmentation": [
+          47
+        ],
+        "replacement": [
+          50
+        ],
+        "human": [
+          52
+        ],
+        "activities": [
+          55
+        ],
+        "within": [
+          56,
+          158
+        ],
+        "a": [
+          57,
+          131,
+          159
+        ],
+        "wide": [
+          58
+        ],
+        "range": [
+          59
+        ],
+        "industrial,": [
+          61
+        ],
+        "intellectual": [
+          62
+        ],
+        "social": [
+          64
+        ],
+        "applications.": [
+          65
+        ],
+        "The": [
+          66,
+          94,
+          123
+        ],
+        "pace": [
+          67,
+          203
+        ],
+        "change": [
+          69
+        ],
+        "new": [
+          72,
+          79,
+          89
+        ],
+        "AI": [
+          73,
+          97,
+          121,
+          157,
+          181,
+          207
+        ],
+        "technological": [
+          74
+        ],
+        "age": [
+          75
+        ],
+        "is": [
+          76
+        ],
+        "staggering,": [
+          77
+        ],
+        "with": [
+          78,
+          101
+        ],
+        "breakthroughs": [
+          80
+        ],
+        "algorithmic": [
+          82
+        ],
+        "machine": [
+          83
+        ],
+        "learning": [
+          84
+        ],
+        "autonomous": [
+          86
+        ],
+        "decision-making,": [
+          87
+        ],
+        "engendering": [
+          88
+        ],
+        "opportunities": [
+          90
+        ],
+        "continued": [
+          92
+        ],
+        "innovation.": [
+          93
+        ],
+        "impact": [
+          95,
+          185
+        ],
+        "could": [
+          98
+        ],
+        "be": [
+          99
+        ],
+        "significant,": [
+          100
+        ],
+        "industries": [
+          102
+        ],
+        "ranging": [
+          103
+        ],
+        "from:": [
+          104
+        ],
+        "finance,": [
+          105
+        ],
+        "healthcare,": [
+          106
+        ],
+        "manufacturing,": [
+          107
+        ],
+        "retail,": [
+          108
+        ],
+        "supply": [
+          109
+        ],
+        "chain,": [
+          110
+        ],
+        "logistics": [
+          111
+        ],
+        "utilities,": [
+          113
+        ],
+        "all": [
+          114
+        ],
+        "potentially": [
+          115
+        ],
+        "disrupted": [
+          116
+        ],
+        "by": [
+          117,
+          152
+        ],
+        "onset": [
+          119
+        ],
+        "technologies.": [
+          122
+        ],
+        "study": [
+          124
+        ],
+        "brings": [
+          125
+        ],
+        "together": [
+          126
+        ],
+        "collective": [
+          128
+        ],
+        "insight": [
+          129,
+          179
+        ],
+        "from": [
+          130
+        ],
+        "number": [
+          132,
+          160
+        ],
+        "leading": [
+          134
+        ],
+        "expert": [
+          135
+        ],
+        "contributors": [
+          136
+        ],
+        "to": [
+          137,
+          180
+        ],
+        "highlight": [
+          138
+        ],
+        "opportunities,": [
+          141
+        ],
+        "realistic": [
+          142
+        ],
+        "assessment": [
+          143
+        ],
+        "impact,": [
+          145
+        ],
+        "challenges": [
+          146
+        ],
+        "research": [
+          149,
+          174
+        ],
+        "agenda": [
+          150
+        ],
+        "posed": [
+          151
+        ],
+        "rapid": [
+          154
+        ],
+        "emergence": [
+          155
+        ],
+        "domains:": [
+          162
+        ],
+        "business": [
+          163
+        ],
+        "management,": [
+          165
+        ],
+        "government,": [
+          166
+        ],
+        "public": [
+          167
+        ],
+        "sector,": [
+          168
+        ],
+        "science": [
+          170
+        ],
+        "technology.": [
+          172
+        ],
+        "This": [
+          173
+        ],
+        "timely": [
+          178
+        ],
+        "technology": [
+          182
+        ],
+        "its": [
+          184
+        ],
+        "on": [
+          186,
+          202
+        ],
+        "future": [
+          188
+        ],
+        "industry": [
+          190
+        ],
+        "society": [
+          192
+        ],
+        "general,": [
+          194
+        ],
+        "whilst": [
+          195
+        ],
+        "recognising": [
+          196
+        ],
+        "societal": [
+          198
+        ],
+        "influence": [
+          201
+        ],
+        "direction": [
+          205
+        ],
+        "development.": [
+          208
+        ]
+      }
+    },
+    {
+      "id": "https://openalex.org/W4327810158",
+      "display_name": "GPT-4 Technical Report",
+      "publication_year": 2023,
+      "cited_by_count": 2372,
+      "abstract_inverted_index": {
+        "Abstract\u2014Large": [
+          0
+        ],
+        "Language": [
+          1
+        ],
+        "Models": [
+          2
+        ],
+        "(LLMs)": [
+          3
+        ],
+        "suffer": [
+          4
+        ],
+        "from": [
+          5
+        ],
+        "inherent": [
+          6
+        ],
+        "stochasticity,": [
+          7
+        ],
+        "limiting": [
+          8
+        ],
+        "their": [
+          9
+        ],
+        "utility": [
+          10
+        ],
+        "in": [
+          11
+        ],
+        "high-stakes": [
+          12
+        ],
+        "enterprise": [
+          13
+        ],
+        "environments": [
+          14
+        ],
+        "where": [
+          15
+        ],
+        "determinism": [
+          16
+        ],
+        "and": [
+          17,
+          58,
+          87,
+          100
+        ],
+        "auditability": [
+          18
+        ],
+        "are": [
+          19,
+          97
+        ],
+        "required.": [
+          20
+        ],
+        "This": [
+          21,
+          81
+        ],
+        "paper": [
+          22
+        ],
+        "introduces": [
+          23
+        ],
+        "the": [
+          24,
+          49,
+          59,
+          75,
+          84
+        ],
+        "MFOUR": [
+          25
+        ],
+        "Vibe": [
+          26,
+          66
+        ],
+        "Framework": [
+          27
+        ],
+        "(MVF),": [
+          28
+        ],
+        "a": [
+          29,
+          45,
+          70
+        ],
+        "platform-agnostic": [
+          30
+        ],
+        "architectural": [
+          31
+        ],
+        "standard": [
+          32
+        ],
+        "that": [
+          33,
+          96
+        ],
+        "transforms": [
+          34
+        ],
+        "probabilistic": [
+          35
+        ],
+        "natural": [
+          36
+        ],
+        "language": [
+          37
+        ],
+        "intent": [
+          38
+        ],
+        "into": [
+          39
+        ],
+        "deterministic": [
+          40
+        ],
+        "software": [
+          41
+        ],
+        "artifacts.": [
+          42
+        ],
+        "We": [
+          43
+        ],
+        "define": [
+          44
+        ],
+        "five-layer": [
+          46
+        ],
+        "topology,": [
+          47
+        ],
+        "comprising": [
+          48
+        ],
+        "Kernel": [
+          50
+        ],
+        "Identity,": [
+          51
+        ],
+        "Synaptic": [
+          52
+        ],
+        "Routing,": [
+          53
+        ],
+        "Interface": [
+          54
+        ],
+        "Contracts,": [
+          55
+        ],
+        "Context": [
+          56
+        ],
+        "Anchoring,": [
+          57
+        ],
+        "Mirror": [
+          60
+        ],
+        "Test.": [
+          61
+        ],
+        "Furthermore,": [
+          62
+        ],
+        "we": [
+          63
+        ],
+        "introduce": [
+          64
+        ],
+        "The": [
+          65
+        ],
+        "Integrity": [
+          67
+        ],
+        "Score": [
+          68
+        ],
+        "(VIS),": [
+          69
+        ],
+        "quantitative": [
+          71
+        ],
+        "metric": [
+          72
+        ],
+        "for": [
+          73,
+          90
+        ],
+        "evaluating": [
+          74
+        ],
+        "structural": [
+          76
+        ],
+        "adherence": [
+          77
+        ],
+        "of": [
+          78
+        ],
+        "generative": [
+          79
+        ],
+        "outputs.": [
+          80
+        ],
+        "specification": [
+          82
+        ],
+        "provides": [
+          83
+        ],
+        "foundational": [
+          85
+        ],
+        "schema": [
+          86
+        ],
+        "logic": [
+          88
+        ],
+        "protocols": [
+          89
+        ],
+        "building": [
+          91
+        ],
+        "\"Glass": [
+          92
+        ],
+        "Box\"": [
+          93
+        ],
+        "AI": [
+          94
+        ],
+        "systems": [
+          95
+        ],
+        "observable,": [
+          98
+        ],
+        "secure,": [
+          99
+        ],
+        "commercially": [
+          101
+        ],
+        "viable.": [
+          102
+        ]
+      }
+    },
+    {
+      "id": "https://openalex.org/W4213147678",
+      "display_name": "Unmanned Aerial Vehicles (UAVs): A Survey on Civil Applications and Key Research Challenges",
+      "publication_year": 2019,
+      "cited_by_count": 2235,
+      "abstract_inverted_index": {
+        "The": [
+          0
+        ],
+        "use": [
+          1
+        ],
+        "of": [
+          2,
+          27,
+          63,
+          81,
+          137
+        ],
+        "unmanned": [
+          3
+        ],
+        "aerial": [
+          4
+        ],
+        "vehicles": [
+          5
+        ],
+        "(UAVs)": [
+          6
+        ],
+        "is": [
+          7,
+          71
+        ],
+        "growing": [
+          8
+        ],
+        "rapidly": [
+          9
+        ],
+        "across": [
+          10
+        ],
+        "many": [
+          11
+        ],
+        "civil": [
+          12,
+          35,
+          59,
+          90,
+          118
+        ],
+        "application": [
+          13
+        ],
+        "domains,": [
+          14
+        ],
+        "including": [
+          15,
+          120
+        ],
+        "real-time": [
+          16
+        ],
+        "monitoring,": [
+          17
+        ],
+        "providing": [
+          18
+        ],
+        "wireless": [
+          19
+        ],
+        "coverage,": [
+          20
+        ],
+        "remote": [
+          21
+        ],
+        "sensing,": [
+          22
+        ],
+        "search": [
+          23
+        ],
+        "and": [
+          24,
+          30,
+          34,
+          66,
+          92,
+          102,
+          125,
+          128,
+          130,
+          146
+        ],
+        "rescue,": [
+          25
+        ],
+        "delivery": [
+          26
+        ],
+        "goods,": [
+          28
+        ],
+        "security": [
+          29
+        ],
+        "surveillance,": [
+          31
+        ],
+        "precision": [
+          32
+        ],
+        "agriculture,": [
+          33
+        ],
+        "infrastructure": [
+          36,
+          60,
+          70
+        ],
+        "inspection.": [
+          37
+        ],
+        "Smart": [
+          38
+        ],
+        "UAVs": [
+          39
+        ],
+        "are": [
+          40
+        ],
+        "the": [
+          41,
+          46,
+          98,
+          113,
+          138
+        ],
+        "next": [
+          42
+        ],
+        "big": [
+          43
+        ],
+        "revolution": [
+          44
+        ],
+        "in": [
+          45,
+          54,
+          58,
+          61
+        ],
+        "UAV": [
+          47,
+          82,
+          89,
+          108,
+          117
+        ],
+        "technology": [
+          48
+        ],
+        "promising": [
+          49
+        ],
+        "to": [
+          50,
+          73
+        ],
+        "provide": [
+          51,
+          103
+        ],
+        "new": [
+          52
+        ],
+        "opportunities": [
+          53
+        ],
+        "different": [
+          55
+        ],
+        "applications,": [
+          56,
+          119
+        ],
+        "especially": [
+          57
+        ],
+        "terms": [
+          62
+        ],
+        "reduced": [
+          64
+        ],
+        "risks": [
+          65
+        ],
+        "lower": [
+          67
+        ],
+        "cost.": [
+          68
+        ],
+        "Civil": [
+          69
+        ],
+        "expected": [
+          72
+        ],
+        "dominate": [
+          74
+        ],
+        "more": [
+          75
+        ],
+        "than": [
+          76
+        ],
+        "$45": [
+          77
+        ],
+        "Billion": [
+          78
+        ],
+        "market": [
+          79
+        ],
+        "value": [
+          80
+        ],
+        "usage.": [
+          83
+        ],
+        "In": [
+          84
+        ],
+        "this": [
+          85
+        ],
+        "paper,": [
+          86
+        ],
+        "we": [
+          87,
+          111,
+          141
+        ],
+        "present": [
+          88,
+          112
+        ],
+        "applications": [
+          91
+        ],
+        "their": [
+          93
+        ],
+        "challenges.": [
+          94,
+          132
+        ],
+        "We": [
+          95
+        ],
+        "also": [
+          96
+        ],
+        "discuss": [
+          97,
+          142
+        ],
+        "current": [
+          99
+        ],
+        "research": [
+          100,
+          144
+        ],
+        "trends": [
+          101
+        ],
+        "future": [
+          104
+        ],
+        "insights": [
+          105,
+          149
+        ],
+        "for": [
+          106,
+          116
+        ],
+        "potential": [
+          107
+        ],
+        "uses.": [
+          109
+        ],
+        "Furthermore,": [
+          110
+        ],
+        "key": [
+          114
+        ],
+        "challenges": [
+          115,
+          145,
+          153
+        ],
+        "charging": [
+          121
+        ],
+        "challenges,": [
+          122,
+          127
+        ],
+        "collision": [
+          123
+        ],
+        "avoidance": [
+          124
+        ],
+        "swarming": [
+          126
+        ],
+        "networking": [
+          129
+        ],
+        "security-related": [
+          131
+        ],
+        "Based": [
+          133
+        ],
+        "on": [
+          134,
+          150
+        ],
+        "our": [
+          135
+        ],
+        "review": [
+          136
+        ],
+        "recent": [
+          139
+        ],
+        "literature,": [
+          140
+        ],
+        "open": [
+          143
+        ],
+        "draw": [
+          147
+        ],
+        "high-level": [
+          148
+        ],
+        "how": [
+          151
+        ],
+        "these": [
+          152
+        ],
+        "might": [
+          154
+        ],
+        "be": [
+          155
+        ],
+        "approached.": [
+          156
+        ]
+      }
+    },
+    {
+      "id": "https://openalex.org/W4322576964",
+      "display_name": "On the Road to 6G: Visions, Requirements, Key Technologies, and Testbeds",
+      "publication_year": 2023,
+      "cited_by_count": 1919,
+      "abstract_inverted_index": {
+        "Fifth": [
+          0
+        ],
+        "generation": [
+          1,
+          53
+        ],
+        "(5G)": [
+          2
+        ],
+        "mobile": [
+          3
+        ],
+        "communication": [
+          4,
+          56
+        ],
+        "systems": [
+          5
+        ],
+        "have": [
+          6,
+          48,
+          66
+        ],
+        "entered": [
+          7
+        ],
+        "the": [
+          8,
+          89,
+          107,
+          116,
+          132,
+          141,
+          152,
+          172,
+          187
+        ],
+        "stage": [
+          9
+        ],
+        "of": [
+          10,
+          26,
+          60,
+          76,
+          131,
+          145,
+          151
+        ],
+        "commercial": [
+          11
+        ],
+        "deployment,": [
+          12
+        ],
+        "providing": [
+          13
+        ],
+        "users": [
+          14
+        ],
+        "with": [
+          15
+        ],
+        "new": [
+          16
+        ],
+        "services,": [
+          17
+        ],
+        "improved": [
+          18
+        ],
+        "user": [
+          19
+        ],
+        "experiences": [
+          20
+        ],
+        "as": [
+          21,
+          23
+        ],
+        "well": [
+          22
+        ],
+        "a": [
+          24,
+          98,
+          128,
+          148
+        ],
+        "host": [
+          25
+        ],
+        "novel": [
+          27
+        ],
+        "opportunities": [
+          28
+        ],
+        "to": [
+          29,
+          71,
+          96,
+          185,
+          194
+        ],
+        "various": [
+          30
+        ],
+        "industries.": [
+          31
+        ],
+        "However,": [
+          32
+        ],
+        "5G": [
+          33
+        ],
+        "still": [
+          34,
+          112
+        ],
+        "faces": [
+          35
+        ],
+        "many": [
+          36
+        ],
+        "challenges.": [
+          37
+        ],
+        "To": [
+          38
+        ],
+        "address": [
+          39
+        ],
+        "these": [
+          40
+        ],
+        "challenges,": [
+          41
+        ],
+        "international": [
+          42
+        ],
+        "industrial,": [
+          43
+        ],
+        "academic,": [
+          44
+        ],
+        "and": [
+          45,
+          63,
+          92,
+          115,
+          137,
+          156,
+          164,
+          180
+        ],
+        "standards": [
+          46
+        ],
+        "organizations": [
+          47
+        ],
+        "commenced": [
+          49
+        ],
+        "research": [
+          50,
+          178
+        ],
+        "on": [
+          51,
+          88,
+          100
+        ],
+        "sixth": [
+          52
+        ],
+        "(6G)": [
+          54
+        ],
+        "wireless": [
+          55
+        ],
+        "systems.": [
+          57
+        ],
+        "A": [
+          58
+        ],
+        "series": [
+          59
+        ],
+        "white": [
+          61
+        ],
+        "papers": [
+          62,
+          65
+        ],
+        "survey": [
+          64
+        ],
+        "been": [
+          67,
+          86
+        ],
+        "published,": [
+          68
+        ],
+        "which": [
+          69
+        ],
+        "aim": [
+          70
+        ],
+        "define": [
+          72
+        ],
+        "6G": [
+          73,
+          90,
+          102,
+          133,
+          153,
+          166,
+          197
+        ],
+        "in": [
+          74
+        ],
+        "terms": [
+          75
+        ],
+        "requirements,": [
+          77,
+          136
+        ],
+        "application": [
+          78,
+          138
+        ],
+        "scenarios,": [
+          79,
+          139
+        ],
+        "key": [
+          80,
+          157
+        ],
+        "technologies,": [
+          81
+        ],
+        "etc.": [
+          82
+        ],
+        "Although": [
+          83
+        ],
+        "ITU-R": [
+          84
+        ],
+        "has": [
+          85,
+          119
+        ],
+        "working": [
+          87
+        ],
+        "vision": [
+          91
+        ],
+        "it": [
+          93
+        ],
+        "is": [
+          94,
+          159
+        ],
+        "expected": [
+          95
+        ],
+        "reach": [
+          97
+        ],
+        "consensus": [
+          99
+        ],
+        "what": [
+          101
+        ],
+        "will": [
+          103
+        ],
+        "be": [
+          104
+        ],
+        "by": [
+          105
+        ],
+        "mid-2023,": [
+          106
+        ],
+        "related": [
+          108
+        ],
+        "global": [
+          109,
+          189
+        ],
+        "discussions": [
+          110
+        ],
+        "are": [
+          111,
+          169,
+          183,
+          199
+        ],
+        "wide": [
+          113
+        ],
+        "open": [
+          114,
+          122,
+          181
+        ],
+        "existing": [
+          117,
+          162
+        ],
+        "literature": [
+          118
+        ],
+        "identified": [
+          120,
+          184
+        ],
+        "numerous": [
+          121
+        ],
+        "issues.": [
+          123
+        ],
+        "This": [
+          124
+        ],
+        "paper": [
+          125
+        ],
+        "first": [
+          126,
+          173
+        ],
+        "provides": [
+          127
+        ],
+        "comprehensive": [
+          129
+        ],
+        "portrayal": [
+          130
+        ],
+        "vision,": [
+          134
+        ],
+        "technical": [
+          135
+        ],
+        "covering": [
+          140
+        ],
+        "current": [
+          142
+        ],
+        "common": [
+          143
+        ],
+        "understanding": [
+          144
+        ],
+        "6G.": [
+          146
+        ],
+        "Then,": [
+          147
+        ],
+        "critical": [
+          149
+        ],
+        "appraisal": [
+          150
+        ],
+        "network": [
+          154
+        ],
+        "architecture": [
+          155
+        ],
+        "technologies": [
+          158
+        ],
+        "presented.": [
+          160
+        ],
+        "Furthermore,": [
+          161
+        ],
+        "testbeds": [
+          163
+        ],
+        "advanced": [
+          165
+        ],
+        "verification": [
+          167
+        ],
+        "platforms": [
+          168
+        ],
+        "detailed": [
+          170
+        ],
+        "for": [
+          171
+        ],
+        "time.": [
+          174
+        ],
+        "In": [
+          175
+        ],
+        "addition,": [
+          176
+        ],
+        "future": [
+          177
+        ],
+        "directions": [
+          179
+        ],
+        "challenges": [
+          182
+        ],
+        "stimulate": [
+          186
+        ],
+        "on-going": [
+          188
+        ],
+        "debate.": [
+          190
+        ],
+        "Finally,": [
+          191
+        ],
+        "lessons": [
+          192
+        ],
+        "learned": [
+          193
+        ],
+        "date": [
+          195
+        ],
+        "concerning": [
+          196
+        ],
+        "networks": [
+          198
+        ],
+        "discussed.": [
+          200
+        ]
+      }
+    }
+  ],
+  "group_by": []
+}

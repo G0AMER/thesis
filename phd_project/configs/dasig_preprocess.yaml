@@ -1,0 +1,71 @@
+# ============================================================================
+# DASIG Preprocessing Configuration
+# ============================================================================
+
+dataset:
+  name: "DASIG"
+  root: "/content/data/dasig"          # Update for your environment
+  output_dir: "data/processed/dasig"
+
+preprocessing:
+  mimu:
+    sampling_rate_hz: 200.0            # Nominal; auto-detected from data
+    accel_lowpass_hz: 20.0
+    gyro_lowpass_hz: 15.0
+    filter_order: 4
+
+  # Alarm-based windowing (LA_L condition only)
+  alarm_windowing:
+    pre_s: 2.0                         # Seconds before alarm
+    post_s: 3.0                        # Seconds after alarm
+
+  # Sliding-window feature extraction
+  features:
+    window_s: 1.0
+    step_s: 0.5
+    # Channels to extract features from
+    channel_patterns:
+      - "_Acc_"
+      - "_Gyro_"
+
+  # Normalization
+  normalization:
+    method: "zscore"                   # "zscore" or "minmax"
+
+  # Abrupt motion detection
+  abrupt_detection:
+    jerk_threshold_percentile: 95.0
+
+# Body segments tracked by MIMU sensors
+segments:
+  - id: "RF"
+    name: "Right Forearm"
+  - id: "LF"
+    name: "Left Forearm"
+  - id: "ST"
+    name: "Sternum"
+  - id: "RUA"
+    name: "Right Upper Arm"
+  - id: "LUA"
+    name: "Left Upper Arm"
+
+# Experimental conditions
+conditions:
+  - id: "FR_L"
+    name: "Free movement, Left hand"
+    has_alarms: false
+  - id: "FR_R"
+    name: "Free movement, Right hand"
+    has_alarms: false
+  - id: "LA_L"
+    name: "Left arm with alarm interruptions"
+    has_alarms: true
+
+# Data splits
+splits:
+  seed: 42
+  train_ratio: 0.60
+  val_ratio: 0.20
+  test_ratio: 0.20
+  stratify_by_gender: true
+  output_path: "configs/splits/dasig_split.json"

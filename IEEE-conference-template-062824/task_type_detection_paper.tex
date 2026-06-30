@@ -1,0 +1,213 @@
+\documentclass{llncs}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+%\usepackage{acrodef}
+\usepackage[printonlyused]{acronym}
+\usepackage{orcidlink}
+\usepackage{placeins}
+\acrodef{HRC}{Human-Robot Collaboration}
+\acrodef{EEG}{Electroencephalography}
+\acrodef{EMG}{Electromyography}
+\acrodef{EDA}{Electrodermal Activity}
+\acrodef{ECG}{Electrocardiography}
+\acrodef{AI}{Artificial Intelligence}
+\acrodef{XGBoost}{eXtreme Gradient Boosting}
+\acrodef{MLP}{Multilayer Perceptron}
+\acrodef{ATTR}{Automatic Task-Type Recognition}
+% Sequence model acronyms removed — this manuscript focuses on an applied tabular-fusion solution
+
+\begin{document}
+
+\title{Task Recognition from Physiological Data Using Multimodal Sensor Fusion For Human-Robot Collaboration}
+
+\author{Ameur Gargouri\inst{1}\orcidlink{0009-0001-8293-037X} \and Mohamed Karray\inst{2}\orcidlink{0000-0001-7293-8696} \and Mohamed Ksantini\inst{3}\orcidlink{0000-0002-9928-8643}}
+
+\institute{ESME Research Lab \\
+ATISP Laboratory, ENET'Com\\
+University of Sfax\\
+Ivry-sur-Seine, France / Sfax, Tunisia\\
+\email{ameur.gargouri.doc@enetcom.usf.tn}
+\and
+ESME Research Lab\\
+Ivry-sur-Seine, France\\
+\email{mohamed.karray@esme.fr}
+\and
+ATISP Laboratory, ENET'Com\\
+University of Sfax\\
+Sfax, Tunisia\\
+\email{mohamed.ksantini@ipeis.usf.tn}}
+\maketitle
+
+\begin{abstract}
+Automatic Task-Type Recognition from operators physiological data is a key capability for adaptive assistive human-robot collaboration.
+%reste toujours un problème difficile à résoudre, en particulier dans les contextes industriels où les tâches peuvent être complexes et les signaux physiologiques bruyants.
+Assistance can be adapted in real time by enabling a robot to detect an operator's current task state from physiological signals quickly and reliably.
+This requires handling differences between operators, changes in sensor relationships over time, and imbalanced label distributions.
+We propose, in this paper, a compact multimodal pipeline that standardizes preprocessing, fuses sensor-derived features into a unified tabular representation, and trains detectors with class-aware objectives to improve robustness across operators and imbalanced labels.
+This pipeline addresses these issues by standardizing preprocessing and fusing modality features into a single tabular representation.
+%Physiological features are used to train and evaluate different artificial intelligence algorithms for five labels (cognitive load, high stress, industrial task, low load, and other). 
+Different task-types are recognized as cognitive load, high stress and industrial task, after physiological features training and evaluation using \ac{AI} algorithms.
+Results show that \ac{XGBoost} achieves the best performance with 0.9371 accuracy and 0.9142 macro-F1 scores. 
+These results indicate that task type recognition could be reliable, which allows its integration into adaptive human-robot collaboration and assistive systems.
+%Physiological features are used to train and evaluate different artificial intelligence algorithms for five labels (cognitive load, high stress, industrial task, low load, and other)
+\keywords{physiological signals, task recognition, multimodal fusion, human-robot collaboration, assistive systems}
+\end{abstract}
+
+\section{Introduction}
+\Ac{HRC} is a form of shared control in which a human operator and a robot coordinate actions in real time to accomplish a task safely, efficiently, and transparently \cite{selvaggio2021autonomy,thumm2024hrgym}. The robot must continuously interpret the operator's state and adjust its behavior as the interaction evolves. To achieve this, a training phase must be accomplished, based on data collected from sensors related to the operator and the robot. In this work, we will only treat data from the operator physiological signals. Human-side data include physiological and behavioral cues such as \ac{EEG}, \ac{EMG}, \ac{EDA}, \ac{ECG}, respiration, and related measurements that can reveal human intentions, obtained from a multimodal dataset by construction.
+
+Different sensors provide complementary information, but weak fusion can overfit subject-specific artifacts or fail to capture the relationships between modalities. Moreover, the target task labels are often imbalanced and may not be perfectly separable from the current representation, which can lead to overfitting and unreliable predictions.
+
+This paper presents an applied system for task-type recognition built on the MultiPhysio-HRC multimodal dataset containing five classes: cognitive load, high stress, industrial task, low load, and other \cite{bussolan2025multiphysiohrc}. We develop a compact multimodal fusion pipeline and evaluate the detector using a stratified 80/20 train-test split, reporting baselines suitable for integration in assistive \ac{HRC} applications.
+
+This paper is organized as follows: Section 2 reviews related work on physiological task recognition and multimodal fusion in \ac{HRC}. Section 3 describes the proposed methodology, including data preprocessing, model selection, training, and evaluation. Section 4 presents the results and discussion, and Section 5 concludes with future directions.
+\section{Related Work}
+Recent literature on physiological task understanding identifies several interconnected challenges: multimodal fusion must balance information and integration without overfitting subject-specific artifacts \cite{baltrusaitis2019multimodal}, system-level constraints such as reliability, transparency, and adaptation demand robust design \cite{selvaggio2021autonomy}, standardized evaluation pipelines remain scarce despite their importance for reproducibility \cite{thumm2024hrgym}, and class imbalance combined with user variation complicates model generalization \cite{delange2022continual}. 
+%vary from author to another the presentation way
+
+A foundational multimodal taxonomy was provided by Baltrusaitis et al. in~\cite{baltrusaitis2019multimodal}, showing that combining heterogeneous streams can improve robustness over single-modality inference. Their framework is broad and influential, but it does not target a concrete five-class physiological task benchmark with side-by-side classical and deep baselines.
+
+%The authors in~\cite{newman2022harmonic} introduced a multimodal assistive human-robot collaboration dataset that highlights the value of synchronized human and robot signals. This dataset perspective clarifies why multimodal sensing matters in collaborative contexts, but it does not directly answer which compact classifiers are strongest for fast task-type screening.
+
+From a system-level perspective, Selvaggio et al. in~\cite{selvaggio2021autonomy} surveyed autonomy in physical human-robot interaction and emphasized reliability, transparency, and adaptation as key constraints. These constraints are directly relevant to task-type recognition because predictions may trigger assistance and safety decisions, but the survey does not benchmark modern tabular and sequence models under one unified protocol.
+ 
+In a benchmark-oriented direction, Thumm et al. in~\cite{thumm2024hrgym} proposed an environment for human-robot collaboration that strengthens evaluation reproducibility. Their work demonstrates the importance of standardized evaluation pipelines, yet it remains focused on reinforcement-learning control rather than physiological task-type classification from fused tabular features.
+
+Regarding continual-learning fundamentals, Delange et al. in~\cite{delange2022continual} synthesized catastrophic-forgetting mitigation strategies and showed how replay, regularization, and architecture choices affect retention-plasticity tradeoffs. This insight motivates robust evaluation under class imbalance and user variation, but the survey does not provide direct evidence on the current five-class physiological task-label setting.
+
+For collaborative-robotics pipelines, Fan et al. in~\cite{fan2024continualhrc} discussed continual-learning workflows specialized for HRC. This work motivates our long-term direction, but it does not provide a compact baseline table for physiological task labels with both baseline and metrics.
+
+%contenu de c'est different études, on peux conclure que les travaux précédents ont abordé des aspects importants de la reconnaissance de tâches physiologiques et de la collaboration homme-robot, mais il existe encore un besoin de benchmarks compacts et reproductibles qui intègrent à la fois des modèles classiques et modernes pour évaluer les performances sur des tâches spécifiques.
+In summary, prior work highlights key challenges in multimodal physiological understanding for HRC, including robust fusion, reliable adaptation, and fair evaluation under class imbalance. Building on these insights, our work proposes a compact applied task-recognition approach and provides a clear comparative assessment of practical models for five task labels.
+
+%This paper directly addresses these gaps by proposing a unified benchmark that simultaneously tackles multimodal fusion, class-aware training, and systematic model comparison under one reproducible evaluation protocol.
+\section{Methodology}
+
+\subsection{Proposed Solution Pipeline}
+The proposed solution follows the pipeline summarized in Figure~\ref{fig:pipeline}. Physiological signals are first cleaned and normalized through the preprocessing stage, then transformed into a unified tabular fused representation and modality-specific feature groups used by the fusion model and compact candidate classifiers. These representations are passed to the selected detector models to ensure consistent input structure and robust downstream decision support for assistive behaviors.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=\columnwidth]{task_pipeline.png}
+\caption{Proposed pipeline for training and evaluation.}
+\label{fig:pipeline}
+\end{figure}
+
+\subsection{Data and Preprocessing}
+Reliable deployment of the proposed detector requires one consistent preprocessing path across algorithms. The main training data source is MultiPhysio-HRC, a multimodal industrial \ac{HRC} dataset combining physiological and behavioral measurements across controlled and realistic collaborative tasks \cite{bussolan2025multiphysiohrc}. Following the preprocessing workflow described above, we (1) remove metadata and non-feature columns, (2) coerce all candidate features to numeric values, (3) discard all-null columns, (4) map task labels into a unified five-class schema, as shown in Table \ref{tab:labels}, (5) apply median imputation for missing values, (6) standardize features with train-only statistics, and (7) prepare a unified tabular fused representation together with per-modality feature groups.
+
+\begin{table}[!h]
+\caption{Task labels used in the proposed system}
+\label{tab:labels}
+\centering
+\begin{tabular}{ll}
+\hline
+Label & Meaning \\
+\hline
+cognitive load & Mentally demanding task state \\
+high stress & Elevated workload or stress state \\
+industrial task & Operational or work-oriented task \\
+low load & Low-demand or relaxed task state \\
+other & Residual or uncategorized state \\
+\hline
+\end{tabular}
+\end{table}
+
+
+
+\subsection{Problem Formulation}
+Physiological task recognition in this work is formulated as a supervised five-class classification problem on multimodal sensor-derived representations. Let $z_i$ denote synchronized measurements acquired from the operator (e.g., EEG, EMG, EDA, ECG and related channels) over an observation interval. After preprocessing and fusion, each interval is mapped to a tabular feature vector $x_i \in \mathbb{R}^{d}$ with label $y_i \in \{1,\ldots,5\}$ (cognitive load, high stress, industrial task, low load, other).
+
+Given a model $f_\theta$, class posteriors are computed as $p_\theta(y=c\mid x_i)$. To handle class imbalance, training minimizes a class-weighted cross-entropy objective:
+\begin{equation}
+\mathcal{L}(\theta)= -\frac{1}{N}\sum_{i=1}^{N}\sum_{c=1}^{5} w_c\,\mathbf{1}[y_i=c] \log p_\theta(y=c\mid x_i),
+\end{equation}
+where $w_c$ is the weight associated with class $c$. The predicted label is obtained by
+\begin{equation}
+\hat{y}_i = \arg\max_{c\in\{1,\ldots,5\}} p_\theta(y=c\mid x_i).
+\end{equation}
+
+
+
+
+\subsection{Algorithm Selection}
+We focus on a pragmatic set of models that are practical for deployment on fused tabular features: logistic regression, random forest, \ac{XGBoost}, \ac{MLP}, and a compact two-tower fusion architecture. The two-tower model explicitly separates modality groups: each tower maps a modality-specific feature subset to a compact embedding; the embeddings are concatenated and passed to a lightweight prediction head. This design emphasizes an operational fusion pattern that is compact and suitable for integration in assistive systems.
+
+\subsection{Training Process}
+The training process is designed to be simple, transparent, and reproducible across algorithms: we create a stratified 80/20 train-test split, fit preprocessing only on training data, and then apply the same transforms to held-out data. For neural models, optimization uses Adam with class-weighted cross-entropy and early stopping under a fixed random seed. For classical models, class balancing is applied through model-specific weighting when supported. This unified protocol ensures that performance differences mainly reflect model behavior rather than inconsistent data handling.
+
+
+\subsection{Evaluation}
+For this five-class physiological dataset, metric choice is tied to the observed class imbalance and to the operational need for reliable performance across all task states \cite{jeni2023imbalanced}. We report accuracy as a global indicator of overall correct decisions, but we do not rely on it alone because majority classes can dominate this score. We therefore report balanced accuracy \cite{brodersen2010biostatistics}, which averages recall across classes and better reflects sensitivity to minority states such as low-load and other. We also report macro-F1 \cite{sokolova2009systematic} as the primary ranking metric because it jointly penalizes low precision and low recall at the class level while weighting all classes equally.
+
+To complement scalar scores, we analyze row-normalized confusion matrices and per-class precision/recall/F1 for the selected detector. These diagnostics identify which task pairs are confused and verify whether strong aggregate performance is maintained across individual classes under the same stratified 80/20 hold-out protocol.
+
+\section{Results and Discussion}
+In this part, we compare the proposed detector against the selected baselines under the stratified 80/20 hold-out and identify the strongest operating point for the fused physiological representation. Table~\ref{tab:results} then summarizes the resulting ranking, which is consistent with the structure of the fused features: tree-based and compact tabular methods lead the results, with \acs{XGBoost} delivering the strongest balance between global correctness and class-wise robustness.
+\begin{table}[!h]
+\caption{Final benchmark results on the physiological task-type dataset}
+\label{tab:results}
+\centering
+\begin{tabular}{lccc}
+\hline
+Model & Accuracy & Balanced Acc. & Macro-F1 \\
+\hline
+\acs{XGBoost} & 0.9371 & 0.8943 & 0.9142 \\
+Random Forest & 0.9211 & 0.8552 & 0.8836 \\
+\acs{MLP} & 0.9140 & 0.8727 & 0.8727 \\
+Two-Tower Fusion & 0.8874 & 0.8908 & 0.8635 \\
+Logistic Regression & 0.7739 & 0.7164 & 0.6730 \\
+\hline
+\end{tabular}
+\end{table}
+
+The pattern is stable across all reported metrics. Classical tree ensembles and the compact tabular neural model achieve the strongest scores, which suggests that the engineered fused representation already carries separable task structure. The two-tower fusion architecture remains competitive, indicating that explicit modality separation can preserve useful signal while keeping the model lightweight enough for deployment.
+
+\section{Evaluation}
+In this part, we inspect the selected detector at class level to understand which task states are recovered cleanly and where the remaining errors concentrate. 
+Figure~\ref{fig:cm} then shows how the selected \acs{XGBoost} model distributes its errors on the same stratified 80/20 test split. The diagonal entries are dominant, confirming that most task states are recovered reliably, while the remaining off-diagonal mass is concentrated in a small number of confusions among semantically close states. Table~\ref{tab:perclass} provides the corresponding class-level precision, recall, and F1-score, which explain the aggregate macro-F1 reported above.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.7\columnwidth]{/home/g0amer/Desktop/thesis/research_outputs/fusion_training/v2_classic_split_benchmark/confusion_matrix_tuned_xgboost.png}
+\caption{Row-normalized confusion matrix for XGBoost}
+\label{fig:cm}
+\end{figure}
+\FloatBarrier
+
+\begin{table}[!h]
+\caption{Per-class precision, recall and F1-score for XGBoost}
+\label{tab:perclass}
+\centering
+\begin{tabular}{lrrrr}
+\hline
+Class & Precision & Recall & F1-score  \\
+\hline
+cognitive\_load & 0.9058 & 0.8872 & 0.8964  \\
+high\_stress & 0.9535 & 0.9111 & 0.9318  \\
+industrial\_task & 0.9556 & 0.9944 & 0.9746  \\
+low\_load & 0.8696 & 0.7500 & 0.8054  \\
+other & 1.0000 & 0.9286 & 0.9630  \\
+\hline
+\end{tabular}
+\end{table}
+
+\acs{XGBoost} achieves the best macro-F1 (0.9142) and highest accuracy (0.9371), while Random Forest is the closest competitor by macro-F1 (0.8836). The per-class table clarifies this ordering: industrial task and other are recovered with very high recall, whereas low load remains the most difficult state, which is also visible in the confusion matrix. The \ac{MLP} and Two-Tower fusion models remain competitive, confirming that compact tabular and fusion-based detectors are both viable under the same data regime.
+
+
+\section{Conclusion}
+Adaptive human-robot collaboration requires reliable recognition of the operator's task state from multimodal and user-dependent physiological signals, because downstream assistance depends on timely and accurate interpretation of the current situation. In this paper, we proposed a compact applied task-recognition system based on fused physiological features, class-aware learning, and a unified training pipeline for five task labels. The results show that the fused representation supports strong task discrimination, with \ac{XGBoost} providing the best operating point in our experiments.
+
+Future work will focus on real-life deployment and on expanding the available task varieties in the dataset. This will help assess how the system behaves in practical settings and whether it remains effective when exposed to a broader range of physiological patterns and collaborative situations.
+
+% \section*{Acknowledgment}
+% This work is a draft for the thesis conference submission and can be adapted to the final author list and funding statement.
+
+\newpage
+\bibliographystyle{splncs04}
+\bibliography{task_type_detection_references}
+
+\end{document}

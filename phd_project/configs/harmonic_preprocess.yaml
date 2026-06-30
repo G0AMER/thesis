@@ -1,0 +1,68 @@
+# ============================================================================
+# HARMONIC Preprocessing Configuration
+# ============================================================================
+
+dataset:
+  name: "HARMONIC"
+  version: "1.0.0_text"
+  root: "/content/data/harmonic"       # Update for your environment
+  output_dir: "data/processed/harmonic"
+
+preprocessing:
+  target_rate_hz: 50.0
+
+  # EMG (Myo armband)
+  emg:
+    bandpass_low_hz: 20.0
+    bandpass_high_hz: 450.0
+    rms_window_ms: 100
+    # Note: Myo operates at ~50 Hz so standard band-pass is not possible.
+    # Pipeline auto-falls back to high-pass or mean subtraction.
+
+  # Gaze (OpenFace)
+  gaze:
+    confidence_threshold: 0.5
+    smoothing_window: 5
+    columns:
+      - "gaze_0_x"
+      - "gaze_0_y"
+      - "gaze_0_z"
+      - "gaze_1_x"
+      - "gaze_1_y"
+      - "gaze_1_z"
+
+  # IMU (robot odometry)
+  imu:
+    lowpass_hz: 20.0
+    filter_order: 4
+
+  # Normalization
+  normalization:
+    method: "zscore"   # "zscore" or "minmax"
+
+# Trial filtering
+filtering:
+  trial_type: "run"                # "run" or "rehearsal"
+  min_csv_bytes: 100
+  required_modalities:
+    - "joystick"
+    - "joint_states"
+
+# Data splits
+splits:
+  seed: 42
+  train_ratio: 0.70
+  val_ratio: 0.15
+  test_ratio: 0.15
+  output_path: "configs/splits/harmonic_split.json"
+
+# Core modalities for experiment pipelines
+core_modalities:
+  - "joystick"
+  - "joint_states"
+  - "gaze"
+  - "emg"
+  - "base_link"
+  - "mico_end_effector"
+  - "odom"
+  - "imu"

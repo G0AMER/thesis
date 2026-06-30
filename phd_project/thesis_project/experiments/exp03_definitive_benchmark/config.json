@@ -1,0 +1,48 @@
+{
+  "experiment": "definitive_benchmark",
+  "changes": "outlier_fix + tuned_HPs + SI_dropped + AGEM_added",
+  "input_features": [
+    "axes_x",
+    "axes_y",
+    "axes_z",
+    "mico_joint_1_pos",
+    "mico_joint_2_pos",
+    "mico_joint_3_pos",
+    "mico_joint_4_pos",
+    "mico_joint_5_pos",
+    "mico_joint_6_pos",
+    "mico_end_effector_x",
+    "mico_end_effector_y",
+    "mico_end_effector_z"
+  ],
+  "target_features": [
+    "mico_joint_1_vel",
+    "mico_joint_2_vel",
+    "mico_joint_3_vel",
+    "mico_joint_4_vel",
+    "mico_joint_5_vel",
+    "mico_joint_6_vel"
+  ],
+  "hidden": [
+    256,
+    256
+  ],
+  "lr": 0.001,
+  "dropout": 0.1,
+  "epochs": 50,
+  "patience": 10,
+  "batch_size": 256,
+  "ewc_lambda": 10000.0,
+  "ewc_fisher_n": 1000,
+  "oewc_gamma": 0.99,
+  "lwf_alpha": 1.0,
+  "der_buffer": 10000,
+  "der_alpha": 0.5,
+  "der_beta": 0.5,
+  "agem_mem_per_task": 256,
+  "obs_dim": 12,
+  "act_dim": 6,
+  "n_tasks": 10,
+  "seed": 42,
+  "device": "cuda"
+}

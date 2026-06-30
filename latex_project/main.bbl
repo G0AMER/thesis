@@ -1,0 +1,130 @@
+\begin{thebibliography}{21}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Brunke et~al.(2022)Brunke, Greeff, Hall, Yuan, Zhou, Panerati, and Schoellig]{safe_learning_robotics}
+Lukas Brunke, Melissa Greeff, Adam~W Hall, Zhaocong Yuan, Siqi Zhou, Jacopo Panerati, and Angela~P Schoellig.
+\newblock Safe learning in robotics: From learning-based control to safe reinforcement learning.
+\newblock \emph{Annual Review of Control, Robotics, and Autonomous Systems}, 5:\penalty0 269--303, 2022.
+\newblock \doi{10.1146/annurev-control-042920-093225}.
+
+\bibitem[Van~de Ven and Tolias(2019)]{continual_learning_benchmarks}
+Gido~M Van~de Ven and Andreas~S Tolias.
+\newblock Three scenarios for continual learning.
+\newblock \emph{arXiv preprint arXiv:1904.07734}, 2019.
+\newblock URL \url{https://arxiv.org/abs/1807.11154}.
+\newblock Also see arXiv:1807.11154.
+
+\bibitem[Villani et~al.(2018)Villani, Pini, Leali, and Secchi]{hrc_synthesis}
+Valeria Villani, Fabio Pini, Francesco Leali, and Cristian Secchi.
+\newblock Human-robot collaboration in manufacturing: Advanced technologies for combined human-robot teams.
+\newblock \emph{International Journal of Advanced Robotic Systems}, 2018.
+\newblock \doi{10.1177/0278364917690593}.
+
+\bibitem[Bussolan et~al.(2025)Bussolan, Baraldo, Avram, Urcola, Montesano, Gambardella, and Valente]{mdpi_platform_data}
+Andrea Bussolan, Stefano Baraldo, Oliver Avram, Pablo Urcola, Luis Montesano, Luca~Maria Gambardella, and Anna Valente.
+\newblock Multiphysio-hrc: A multimodal physiological signals dataset for industrial human–robot collaboration.
+\newblock \emph{Robotics}, 14\penalty0 (12):\penalty0 184, 2025.
+\newblock \doi{10.3390/robotics14120184}.
+
+\bibitem[Bärmann et~al.(2024)Bärmann, Kartmann, Peller-Konrad, Niehues, Waibel, and Asfour]{frobt_2024}
+Leonard Bärmann, Rainer Kartmann, Fabian Peller-Konrad, Jan Niehues, Alex Waibel, and Tamim Asfour.
+\newblock Incremental learning of humanoid robot behavior from natural interaction and large language models.
+\newblock \emph{Frontiers in Robotics and AI}, 11:\penalty0 1455375, 2024.
+\newblock \doi{10.3389/frobt.2024.1455375}.
+
+\bibitem[Gargouri et~al.(2025)Gargouri, Karray, Zalila, and Ksantini]{my_robot_paper}
+Ameur Gargouri, Mohamed Karray, Bechir Zalila, and Mohamed Ksantini.
+\newblock Design and development of an autonomous mobile robot for unstructured indoor environments.
+\newblock \emph{Machines}, 13\penalty0 (11):\penalty0 1044, 2025.
+\newblock \doi{10.3390/machines13111044}.
+
+\bibitem[Gonzalez-Santocildes et~al.(2024)Gonzalez-Santocildes, Vazquez, and Eguiluz]{access_2024}
+Asier Gonzalez-Santocildes, Juan-Ignacio Vazquez, and Andoni Eguiluz.
+\newblock Adaptive robot behavior based on human comfort using reinforcement learning.
+\newblock \emph{IEEE Access}, 12:\penalty0 122289--122299, 2024.
+\newblock \doi{10.1109/ACCESS.2024.3451663}.
+
+\bibitem[Rusu et~al.(2016)Rusu, Rabinowitz, Desjardins, Soyer, Kirkpatrick, Kavukcuoglu, Pascanu, and Hadsell]{pnn_2016}
+Andrei~A Rusu, Neil~C Rabinowitz, Guillaume Desjardins, Hubert Soyer, James Kirkpatrick, Koray Kavukcuoglu, Razvan Pascanu, and Raia Hadsell.
+\newblock Progressive neural networks.
+\newblock \emph{arXiv preprint arXiv:1606.04671}, 2016.
+\newblock URL \url{https://arxiv.org/abs/1606.04671}.
+
+\bibitem[Yoon et~al.(2018)Yoon, Yang, Lee, and Hwang]{den_2018}
+Jaehong Yoon, Eunho Yang, Jeongtae Lee, and Sung~Ju Hwang.
+\newblock Lifelong learning with dynamically expandable networks.
+\newblock In \emph{International Conference on Learning Representations (ICLR)}, 2018.
+\newblock URL \url{https://arxiv.org/abs/1708.01547}.
+
+\bibitem[Mallya and Lazebnik(2018)]{packnet_cvpr}
+Arun Mallya and Svetlana Lazebnik.
+\newblock Packnet: Adding multiple tasks to a single network by iterative pruning.
+\newblock In \emph{Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)}, 2018.
+\newblock URL \url{https://openaccess.thecvf.com/content_cvpr_2018/papers/Mallya_PackNet_Adding_Multiple_CVPR_2018_paper.pdf}.
+
+\bibitem[Kirkpatrick et~al.(2017)Kirkpatrick, Pascanu, Rabinowitz, Veness, Desjardins, Rusu, Milan, Quan, Ramalho, Grabska-Barwinska, et~al.]{ewc_2017}
+James Kirkpatrick, Razvan Pascanu, Neil Rabinowitz, Joel Veness, Guillaume Desjardins, Andrei~A Rusu, Kieran Milan, John Quan, Tiago Ramalho, Agnieszka Grabska-Barwinska, et~al.
+\newblock Overcoming catastrophic forgetting in neural networks.
+\newblock \emph{Proceedings of the national academy of sciences}, 114\penalty0 (13):\penalty0 3521--3526, 2017.
+
+\bibitem[Zenke et~al.(2017)Zenke, Poole, and Ganguli]{arxiv_1703_04200}
+Friedemann Zenke, Ben Poole, and Surya Ganguli.
+\newblock Continual learning through synaptic intelligence, 2017.
+\newblock URL \url{https://arxiv.org/abs/1703.04200}.
+
+\bibitem[Aljundi et~al.(1711)]{arxiv_1711_09601}
+Rahaf Aljundi et~al.
+\newblock Memory aware synapses: Learning what (not) to forget.
+\newblock \emph{arXiv preprint arXiv:1711.09601}, 1711.
+\newblock URL \url{https://arxiv.org/abs/1711.09601}.
+
+\bibitem[Li et~al.(2016)]{arxiv_1606_09282}
+Zhizhong Li et~al.
+\newblock Learning without forgetting.
+\newblock \emph{arXiv preprint arXiv:1606.09282}, 2016.
+\newblock URL \url{https://arxiv.org/abs/1606.09282}.
+
+\bibitem[Rebuffi et~al.(2017)Rebuffi, Kolesnikov, Sperl, and Lampert]{icarl_2016}
+Sylvestre-Alvise Rebuffi, Alexander Kolesnikov, Georg Sperl, and Christoph~H. Lampert.
+\newblock icarl: Incremental classifier and representation learning, 2017.
+\newblock URL \url{https://arxiv.org/abs/1611.07725}.
+
+\bibitem[Prabhu et~al.(2020)]{gdumb_eccv}
+Ameya Prabhu et~al.
+\newblock Gdumb: A simple approach that questions our progress in continual learning.
+\newblock In \emph{ECCV}, 2020.
+\newblock URL \url{https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123470511.pdf}.
+
+\bibitem[Buzzega et~al.(2020)Buzzega, Boschini, Porrello, Abati, and Calderara]{der_neurips}
+Pietro Buzzega, Matteo Boschini, Angelo Porrello, Davide Abati, and Simone Calderara.
+\newblock Dark experience for general continual learning.
+\newblock In \emph{Advances in Neural Information Processing Systems}, volume~33, pages 15920--15930, 2020.
+
+\bibitem[Chen et~al.(2025)Chen, Wang, Zhou, Zhang, Wu, and Jiang]{prompt_tuning_2025}
+Haoran Chen, Ping Wang, Zihan Zhou, Xu~Zhang, Zuxuan Wu, and Yu-Gang Jiang.
+\newblock Achieving more with less: Additive prompt tuning for rehearsal-free class-incremental learning, 2025.
+\newblock URL \url{https://arxiv.org/abs/2503.07979}.
+
+\bibitem[Batzianoulis et~al.(2021)Batzianoulis, Iwane, Wei, Correia, Chavarriaga, Millán, and Billard]{bio_inspired_robotics}
+Iason Batzianoulis, Fumiaki Iwane, Shupeng Wei, Carolina Gaspar Pinto~Ramos Correia, Ricardo Chavarriaga, José del~R. Millán, and Aude Billard.
+\newblock Customizing skills for assistive robotic manipulators, an inverse reinforcement learning approach with error-related potentials.
+\newblock \emph{Communications Biology}, 4\penalty0 (1):\penalty0 1406, 2021.
+\newblock \doi{10.1038/s42003-021-02891-8}.
+
+\bibitem[Finkel and Krämer(2023)]{social_robot_adaptation}
+Marcel Finkel and Nicole~C. Krämer.
+\newblock The robot that adapts too much? an experimental study on users' perceptions of social robots’ behavioral and persona changes between interactions with different users.
+\newblock \emph{Computers in Human Behavior: Artificial Humans}, 1\penalty0 (2):\penalty0 100018, 2023.
+\newblock \doi{10.1016/j.chbah.2023.100018}.
+
+\bibitem[Digo et~al.(2025)Digo, Polito, Caselli, Gastaldi, and Pastorelli]{mdpi_collab_data}
+Elisa Digo, Michele Polito, Elena Caselli, Laura Gastaldi, and Stefano Pastorelli.
+\newblock A dataset of standard and abrupt industrial gestures recorded through mimus.
+\newblock \emph{Robotics}, 14\penalty0 (12):\penalty0 176, 2025.
+\newblock \doi{10.3390/robotics14120176}.
+
+\end{thebibliography}

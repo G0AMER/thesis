@@ -1,0 +1,29 @@
+{
+  "hidden": [
+    256,
+    256
+  ],
+  "lr": 0.001,
+  "dropout": 0.1,
+  "epochs": 50,
+  "patience": 10,
+  "batch_size": 256,
+  "ewc_lambda": 5000.0,
+  "ewc_fisher_n": 1000,
+  "ewcpp_gamma": 0.95,
+  "si_c": 1.0,
+  "lwf_alpha": 1.0,
+  "der_buffer": 5000,
+  "der_alpha": 0.5,
+  "der_beta": 0.5,
+  "obs_dim": 51,
+  "act_dim": 5,
+  "n_tasks": 9,
+  "state_modalities": [
+    "joint_positions",
+    "robot_position"
+  ],
+  "action_modality": "ada_joy",
+  "seed": 42,
+  "device": "cuda"
+}

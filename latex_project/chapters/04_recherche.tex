@@ -1,0 +1,51 @@
+\section{Recherche approfondie sur l’apprentissage adaptatif en robotique}
+
+\subsection{Apprentissage incrémental et apprentissage par renforcement en robotique}
+
+Une étude bibliographique détaillée a été menée sur les approches d’apprentissage adaptatif applicables aux systèmes robotiques autonomes, incluant :
+\begin{itemize}
+    \item Les architectures dynamiques extensibles et les méthodes de croissance de réseau (Progressive Neural Networks, DEN, PackNet) pour isoler ou étendre les paramètres spécifiques aux nouvelles tâches \cite{pnn_2016, den_2018, packnet_cvpr}.
+    
+    \item Les méthodes de régularisation (EWC, SI, MAS, LwF) qui pénalisent les modifications des paramètres critiques afin de limiter l’oubli catastrophique \cite{ewc_2017, arxiv_1703_04200, arxiv_1711_09601, arxiv_1606_09282}.
+    
+    \item Les mécanismes de mémoire explicite (replay) et distillation de connaissances, incluant des algorithmes comme iCaRL, GDumb, DER / DER++ et les méthodes de replay génératif (Generative Replay) qui conservent les informations essentielles des tâches précédentes \cite{icarl_2016, gdumb_eccv, der_neurips}.
+    
+    \item Les stratégies basées sur les prompts et modules adaptateurs (Prompt Tuning, Adapter Modules) pour apprendre de nouvelles tâches avec un impact minimal sur les paramètres préexistants \cite{prompt_tuning_2025}.
+    
+    \item Les approches d’apprentissage par renforcement adaptées aux environnements dynamiques et séquentiels, intégrant dans certains cas l’Inverse Reinforcement Learning pour déduire des fonctions de récompense à partir de comportements experts.
+\end{itemize}
+
+En complément des travaux spécifiques à l’apprentissage continu, des contributions récentes disponibles sur arXiv (\cite{safe_learning_robotics} ; \cite{bio_inspired_robotics}) analysent l’intégration de mécanismes d’apprentissage par renforcement (Reinforcement Learning) et, dans certains cas, d’apprentissage par renforcement inverse (Inverse Reinforcement Learning) dans des architectures robotiques autonomes.
+
+Ces travaux mettent en évidence :
+\begin{itemize}
+    \item les enjeux de stabilité et de convergence de l’apprentissage,
+    \item les difficultés de généralisation entre simulation et environnement réel,
+    \item la gestion de l’exploration sous contraintes de sûreté,
+    \item les exigences de robustesse lors du déploiement sur plateformes physiques,
+    \item ainsi que les contraintes computationnelles et énergétiques propres aux systèmes embarqués.
+\end{itemize}
+
+L’ensemble de ces éléments souligne la nécessité de concevoir des mécanismes d’apprentissage compatibles avec les exigences opérationnelles de la robotique réelle, en particulier lorsque l’apprentissage doit être intégré dans des environnements interactifs et potentiellement collaboratifs.
+
+\subsection{Adaptation comportementale des robots}
+
+L’article suivant : \cite{social_robot_adaptation} analyse expérimentalement l’impact de l’adaptation comportementale excessive d’un robot social sur la perception utilisateur. Les résultats montrent que l’adaptation doit être contrôlée et contextualisée.
+
+Par ailleurs, des travaux en robotique bio-inspirée et adaptative \cite{bio_inspired_robotics} illustrent comment des mécanismes adaptatifs inspirés du vivant peuvent améliorer la robustesse comportementale.
+
+\subsection{Datasets identifiés}
+
+Dans le cadre de la revue bibliographique, plusieurs datasets pertinents pour l’apprentissage incrémental et la robotique collaborative ont été identifiés :
+\begin{itemize}
+    \item \cite{continual_learning_benchmarks} (benchmarks d’apprentissage continu)
+    \item \cite{mdpi_platform_data} (plateformes robotiques expérimentales et données associées)
+    \item \cite{mdpi_collab_data} (environnements robotiques collaboratifs et jeux de données)
+\end{itemize}
+
+Ces ressources pourront servir de base :
+\begin{itemize}
+    \item pour l’évaluation comparative d’algorithmes,
+    \item pour la validation expérimentale,
+    \item pour la reproductibilité scientifique.
+\end{itemize}

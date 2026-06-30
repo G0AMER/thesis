@@ -1,0 +1,59 @@
+\begin{thebibliography}{10}
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\expandafter\ifx\csname href\endcsname\relax
+  \def\href#1#2{#2} \def\path#1{#1}\fi
+
+\bibitem{javdani2018shared}
+S.~Javdani, S.~S. Srinivasa, J.~A. Bagnell, Shared autonomy via hindsight optimization, in: Robotics: Science and Systems (RSS), 2015, dOI: \url{https://doi.org/10.15607/RSS.2015.XI.032}.
+
+\bibitem{reddy2018shared}
+S.~Reddy, A.~D. Dragan, S.~Levine, Shared autonomy via deep reinforcement learning, in: Robotics: Science and Systems (RSS), 2018, dOI: \url{https://doi.org/10.15607/RSS.2018.XIV.005}.
+
+\bibitem{selvaggio2021autonomy}
+M.~Selvaggio, M.~Cognetti, S.~Nikolaidis, S.~Ivaldi, B.~Siciliano, Autonomy in physical human-robot interaction: A brief survey, IEEE Robotics and Automation Letters 6~(4) (2021) 7989--7996, dOI: \url{https://doi.org/10.1109/LRA.2021.3100603}.
+
+\bibitem{delange2022continual}
+M.~De~Lange, R.~Aljundi, M.~Masana, S.~Parisot, X.~Jia, A.~Leonardis, G.~Slabaugh, T.~Tuytelaars, A continual learning survey: Defying forgetting in classification tasks, IEEE Transactions on Pattern Analysis and Machine Intelligence 44~(12) (2022) 9771--9788, dOI: \url{https://doi.org/10.1109/TPAMI.2021.3057446}.
+
+\bibitem{kirkpatrick2017overcoming}
+J.~Kirkpatrick, R.~Pascanu, N.~Rabinowitz, J.~Veness, G.~Desjardins, A.~A. Rusu, K.~Milan, J.~Quan, T.~Ramalho, A.~Grabska-Barwinska, D.~Hassabis, C.~Clopath, D.~Kumaran, R.~Hadsell, Overcoming catastrophic forgetting in neural networks, Proceedings of the National Academy of Sciences 114~(13) (2017) 3521--3526, dOI: \url{https://doi.org/10.1073/pnas.1611835114}.
+
+\bibitem{buzzega2020dark}
+P.~Buzzega, M.~Boschini, A.~Porrello, D.~Abati, S.~Calderara, Dark experience for general continual learning: A strong, simple baseline, in: Advances in Neural Information Processing Systems (NeurIPS), 2020, dOI: \url{https://doi.org/10.48550/arXiv.2004.07211}.
+
+\bibitem{wang2022l2p}
+Z.~Wang, Z.~Zhang, C.-Y. Lee, H.~Zhang, R.~Sun, X.~Ren, G.~Su, V.~Perot, J.~Dy, T.~Pfister, Learning to prompt for continual learning, in: Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2022, dOI: \url{https://doi.org/10.1109/CVPR52688.2022.00024}.
+
+\bibitem{newman2022harmonic}
+B.~A. Newman, R.~M. Aronson, S.~S. Srinivasa, K.~Kitani, H.~Admoni, {HARMONIC}: A multimodal dataset of assistive human-robot collaboration, arXiv preprint arXiv:1807.11154DOI: \url{https://doi.org/10.48550/arXiv.1807.11154} (2022).
+
+\bibitem{perez2018film}
+E.~Perez, F.~Strub, H.~de~Vries, V.~Dumoulin, A.~Courville, {FiLM}: Visual reasoning with a general conditioning layer, in: Proceedings of the AAAI Conference on Artificial Intelligence, 2018, dOI: \url{https://doi.org/10.1609/aaai.v32i1.11671}.
+
+\bibitem{losey2018assistive}
+D.~P. Losey, C.~G. McDonald, E.~Battaglia, M.~K. O'Malley, A review of intent detection, arbitration, and communication aspects of shared control for physical human-robot interaction, in: Applied Mechanics Reviews, 2018, dOI: \url{ https://doi.org/10.1115/1.4039145}.
+
+\bibitem{thumm2024hrgym}
+J.~Thumm, F.~Trost, M.~Althoff, Human-robot gym: Benchmarking reinforcement learning in human-robot collaboration, in: 2024 IEEE International Conference on Robotics and Automation (ICRA), 2024, dOI: \url{https://doi.org/10.1109/ICRA57147.2024.10610705}.
+
+\bibitem{serra2025incremental}
+M.~Serra-Perello, A.~Ortiz, Incremental learning methodologies for addressing catastrophic forgetting: Analysis and experimental evaluation, Journal of Artificial Intelligence Research 83, dOI: \url{https://doi.org/10.1613/jair.1.18405} (2025).
+
+\bibitem{springer2026review}
+J.~Bako, J.~Kalita, Addressing catastrophic forgetting in class-incremental learning—a survey, Springer (journal)DOI: \url{https://doi.org/10.1007/s10462-026-11575-w} (2026).
+
+\bibitem{nguyenlam2026unlockingcompositionalgeneralizationcontinual}
+P.-Q. Nguyen-Lam, P.-H. Pham, D.~S.~D. Minh, C.-N. Tran, H.~T. Kiet, L.~Tran-Thanh, Unlocking compositional generalization in continual few-shot learning, arXiv preprint arXiv:2605.11710DOI: \url{https://doi.org/10.48550/arXiv.2605.11710} (2026).
+
+\bibitem{schwarz2018progress}
+J.~Schwarz, W.~Czarnecki, J.~Luketina, A.~Grabska-Barwinska, Y.~W. Teh, R.~Pascanu, R.~Hadsell, Progress \& compress: A scalable framework for continual learning, in: Proceedings of the International Conference on Machine Learning (ICML), 2018, dOI: \url{https://doi.org/10.48550/arXiv.1805.06370}.
+
+\bibitem{chaudhry2018efficient}
+A.~Chaudhry, M.~Ranzato, M.~Rohrbach, M.~Elhoseiny, Efficient lifelong learning with {A-GEM}, in: Proceedings of the International Conference on Learning Representations (ICLR), 2019, dOI: \url{https://doi.org/10.48550/arXiv.1812.00420}.
+
+\bibitem{lopez2017gradient}
+D.~Lopez-Paz, M.~Ranzato, Gradient episodic memory for continual learning, in: Advances in Neural Information Processing Systems (NeurIPS), 2017, dOI: \url{https://doi.org/10.48550/arXiv.1706.08840}.
+
+\end{thebibliography}

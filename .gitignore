@@ -1,0 +1,29 @@
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
+
+#data
+dataset-ninja/
+data/
+research_outputs/
+shoplifting
+thesis_project.zip
+# OS
+.DS_Store
+Thumbs.db
+find /home/g0amer/Desktop/thesis -type f -name ".env*" 2>/dev/null

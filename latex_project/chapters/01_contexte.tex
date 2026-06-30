@@ -1,0 +1,20 @@
+\section{Contexte général et problématique}
+
+Les systèmes robotiques autonomes ont connu des avancées significatives ces dernières années, notamment en matière de contrôle adaptatif, de planification autonome et d’apprentissage automatique. Toutefois, une limite persistante concerne leur capacité à s’adapter de manière incrémentale dans des environnements dynamiques et dans des contextes d’interaction collaborative avec l’humain.
+
+Les travaux récents en apprentissage sûr pour la robotique mettent en évidence la nécessité d’intégrer des méthodes issues du contrôle optimal et du reinforcement learning tout en garantissant des contraintes de sûreté, particulièrement en environnement partagé homme–robot. À ce titre, la revue \textit{Safe Learning in Robotics: From Learning-Based Control to Safe Reinforcement Learning} \cite{safe_learning_robotics} souligne les défis liés à la stabilité, à la robustesse et aux garanties formelles lors de l’intégration de mécanismes d’apprentissage dans des systèmes physiques.
+
+Par ailleurs, l’apprentissage incrémental (continual learning) est identifié comme un axe stratégique pour dépasser les limites des modèles classiques, notamment le phénomène d’oubli catastrophique lors de l’acquisition séquentielle de nouvelles données (cf. \cite{continual_learning_benchmarks}). Ces approches sont essentielles dans des contextes où le robot doit évoluer continuellement sans réentraînement complet.
+
+En robotique collaborative (Human–Robot Collaboration — HRC), les travaux de synthèse montrent que les robots doivent être capables d’interpréter les intentions humaines, d’adapter leur comportement et de partager un objectif commun, ce qui nécessite des modèles adaptatifs intégrant apprentissage et perception multimodale (voir par exemple \cite{hrc_synthesis} et \cite{mdpi_platform_data}).
+
+Des travaux récents en robotique sociale et adaptative mettent également en évidence l’importance de l’apprentissage continu dans les interactions prolongées \cite{frobt_2024}.
+
+\subsection{Problématique générale identifiée}
+
+Comment améliorer l’adaptabilité des robots autonomes et collaboratifs en intégrant des mécanismes d’apprentissage incrémental compatibles avec :
+\begin{itemize}
+    \item les contraintes temps réel embarquées,
+    \item les exigences de sûreté et de sécurité,
+    \item et les spécificités des interactions humain–robot en environnement partagé ?
+\end{itemize}

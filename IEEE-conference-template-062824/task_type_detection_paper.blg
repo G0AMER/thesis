@@ -1,0 +1,50 @@
+This is BibTeX, Version 0.99d (TeX Live 2025)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: task_type_detection_paper.aux
+The style file: splncs04.bst
+Database file #1: task_type_detection_references.bib
+Warning--empty journal in brodersen2010biostatistics
+Warning--missing publisher in fan2024continualhrc
+Warning--empty journal in jeni2023imbalanced
+You've used 9 entries,
+            2850 wiz_defined-function locations,
+            658 strings with 6814 characters,
+and the built_in function-call counts, 6218 in all, are:
+= -- 516
+> -- 218
+< -- 13
++ -- 91
+- -- 80
+* -- 426
+:= -- 786
+add.period$ -- 16
+call.type$ -- 9
+change.case$ -- 71
+chr.to.int$ -- 0
+cite$ -- 12
+duplicate$ -- 527
+empty$ -- 508
+format.name$ -- 89
+if$ -- 1343
+int.to.chr$ -- 0
+int.to.str$ -- 9
+missing$ -- 107
+newline$ -- 33
+num.names$ -- 18
+pop$ -- 192
+preamble$ -- 1
+purify$ -- 58
+quote$ -- 0
+skip$ -- 181
+stack$ -- 0
+substring$ -- 370
+swap$ -- 327
+text.length$ -- 13
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 36
+warning$ -- 3
+while$ -- 49
+width$ -- 10
+write$ -- 106
+(There were 3 warnings)
