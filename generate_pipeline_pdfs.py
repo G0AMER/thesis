@@ -54,11 +54,10 @@ def draw_arrow(ax, x1, y1, x2, y2, color=C['gray']):
 # FIGURE 1: End-to-End Pipeline Overview
 # ═══════════════════════════════════════════════════════════
 def fig1_pipeline_overview():
-    fig, ax = plt.subplots(figsize=(12, 2.5))
-    ax.set_xlim(-0.5, 8.5)
-    ax.set_ylim(-1, 1.5)
+    fig, ax = plt.subplots(figsize=(8, 5))
+    ax.set_xlim(0, 8)
+    ax.set_ylim(0, 4.5)
     ax.axis('off')
-    ax.set_title('End-to-End Pipeline Architecture', fontsize=14, fontweight='bold', pad=15)
 
     stages = [
         ("Raw IMU\nSensors\n(60 Subjects)", C['primary']),
@@ -71,16 +70,37 @@ def fig1_pipeline_overview():
         ("Final Prediction\nSAFE / DANGER", C['success']),
     ]
 
+    coords = [
+        (1.5, 3.5), (4.0, 3.5), (6.5, 3.5),
+        (6.5, 2.0), (4.0, 2.0), (1.5, 2.0),
+        (1.5, 0.5), (4.0, 0.5)
+    ]
+
+    # Draw boxes
     for i, (label, color) in enumerate(stages):
-        draw_box(ax, i + 0.25, 0.3, 0.9, 1.0, label, color=color, fontsize=8)
-        if i < len(stages) - 1:
-            draw_arrow(ax, i + 0.75, 0.3, i + 0.8, 0.3, color=C['gray'])
+        x, y = coords[i]
+        draw_box(ax, x, y, 2.0, 1.0, label, color=color, fontsize=9)
+
+    # Draw arrows
+    for i in range(len(coords) - 1):
+        x1, y1 = coords[i]
+        x2, y2 = coords[i+1]
+        
+        # Horizontal arrows
+        if y1 == y2:
+            if x1 < x2: # Right
+                draw_arrow(ax, x1 + 1.05, y1, x2 - 1.05, y2, color=C['gray'])
+            else: # Left
+                draw_arrow(ax, x1 - 1.05, y1, x2 + 1.05, y2, color=C['gray'])
+        # Vertical arrows
+        elif x1 == x2:
+            draw_arrow(ax, x1, y1 - 0.55, x2, y2 + 0.55, color=C['gray'])
 
     # Phase labels
-    for i, phase in enumerate(["Phase 1:\nData", "Phase 2:\nTraining", "Phase 3:\nEvaluation", "Phase 4:\nDeployment"]):
-        x_positions = [[0.25, 1.25, 2.25], [3.25, 4.25], [5.25], [6.25, 7.25]]
-        cx = np.mean(x_positions[i])
-        ax.text(cx, -0.55, phase, ha='center', va='center', fontsize=7, color=C['gray'], style='italic')
+    ax.text(1.5, 4.2, "Phase 1: Data", ha='center', va='center', fontsize=9, color=C['gray'], style='italic')
+    ax.text(4.0, 2.7, "Phase 2: Training", ha='center', va='center', fontsize=9, color=C['gray'], style='italic')
+    ax.text(1.5, 2.7, "Phase 3: Evaluation", ha='center', va='center', fontsize=9, color=C['gray'], style='italic')
+    ax.text(2.75, 1.2, "Phase 4: Deployment", ha='center', va='center', fontsize=9, color=C['gray'], style='italic')
 
     fig.savefig(f'{OUT_DIR}/fig1_pipeline_overview.pdf')
     plt.close()
@@ -320,7 +340,7 @@ def fig5_evaluation_postprocessing():
     ax.set_xlim(-0.5, 12.5)
     ax.set_ylim(-1, 5)
     ax.axis('off')
-    ax.set_title('Evaluation & Post-Processing Pipeline', fontsize=14, fontweight='bold', pad=15)
+    #ax.set_title('Evaluation & Post-Processing Pipeline', fontsize=14, fontweight='bold', pad=15)
 
     # TTA Section
     ax.text(1.5, 4.3, "Test-Time Augmentation (TTA)", ha='center', fontsize=10, fontweight='bold', color=C['primary'])

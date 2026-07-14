@@ -26,11 +26,11 @@ Instead of relying on expensive Six-Dimensional Force Sensors [6] or external vi
 ### Contribution 3: Test-Time Augmentation (TTA) for Safety-Critical Calibration
 Despite advancements in multivariate fusion [1], Test-Time Augmentation remains virtually non-existent in robotic collision detection literature. By applying scale jitter and Gaussian noise at inference time and aggregating the softmax outputs, the proposed system generates **highly calibrated, robust probability scores**. This mathematical robustness is critical for preventing the system from being fooled by the noisy factory environments that plague standard deterministic observers [7].
 
-### Contribution 4: Solving the False-Alarm Productivity Trade-off 
+### Contribution 4: Solving the False-Alarm Productivity Trade-off
 A persistent critique of highly sensitive deep learning safety systems is that they cause too many false emergency stops, ruining factory productivity. While recent methods focus on faster detection [7], they often sacrifice precision. This pipeline directly addresses the False-Alarm tradeoff by introducing a **Temporal Debouncing Post-Processor (3-tap Median Filter + Tuned 0.77 Threshold)**. This contribution proves that raw deep learning probabilities can be temporally smoothed at the micro-level to reduce False Positives by 67%, achieving **>95% Danger Precision** while safely maintaining a ~98.4% Danger Recall. 
 
 ### Contribution 5: Rigorous Real-World Evaluation over Digital Twins
-While simulating collisions via Digital Twins is a rising trend for safe testing [5], simulations often fail to capture the chaotic friction and unpredictable biological movements of real human operators. This methodology utilizes a rigorous **5-Fold StratifiedKFold** cross-validation strategy on a massive 69,000+ window real-world dataset. This proves the model's generalized robustness across variable physical subjects rather than relying on simulated synthetic data, aligning tightly with real-world ISO/TS 15066 industrial deployment standards.
+While simulating collisions via Digital Twins is a rising trend for safe testing [5], simulations often fail to capture the chaotic friction and unpredictable biological movements of real human operators. This methodology utilizes a rigorous **5-Fold StratifiedKFold** cross-validation strategy on a massive 69,000+ window real-world dataset. This proves the model's generalized robustness across variable physical subjects rather than relying on simulated synthetic data.md, aligning tightly with real-world ISO/TS 15066 industrial deployment standards.
 
 ---
 

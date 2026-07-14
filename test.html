@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Soutenance de thèse — Collaboration Humain-Robot | A. Gargouri</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+
+<style>
+:root{
+  --bg-0:#0b1020;
+  --bg-1:#111634;
+  --accent:#6c63ff;
+  --accent-2:#22d3ee;
+  --accent-3:#2b9348;
+  --danger:#e94560;
+  --gold:#ffd166;
+  --text:#eaeefb;
+  --text-dim:#a3accb;
+  --card:rgba(255,255,255,0.035);
+  --card-border:rgba(255,255,255,0.10);
+  --glow:0 0 36px rgba(108,99,255,0.30);
+  --font:"Inter","Segoe UI",-apple-system,BlinkMacSystemFont,sans-serif;
+  --serif:"Georgia","Times New Roman",serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%}
+body{font-family:var(--font);background:var(--bg-0);color:var(--text);overflow:hidden}
+
+/* Background */
+.bg-fx{position:fixed;inset:0;z-index:0;overflow:hidden}
+.bg-fx::before,.bg-fx::after{content:"";position:absolute;border-radius:50%;filter:blur(130px);opacity:.42}
+.bg-fx::before{width:58vw;height:58vw;left:-12vw;top:-16vw;background:radial-gradient(circle,var(--accent),transparent 70%);animation:drift1 24s ease-in-out infinite}
+.bg-fx::after{width:52vw;height:52vw;right:-14vw;bottom:-18vw;background:radial-gradient(circle,var(--accent-2),transparent 70%);animation:drift2 28s ease-in-out infinite}
+@keyframes drift1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(7vw,5vh) scale(1.12)}}
+@keyframes drift2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-6vw,-4vh) scale(1.18)}}
+.grid-fx{position:fixed;inset:0;z-index:0;
+  background-image:linear-gradient(rgba(108,99,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(108,99,255,.05) 1px,transparent 1px);
+  background-size:52px 52px;mask-image:radial-gradient(circle at 50% 40%,black,transparent 88%)}
+
+/* Deck */
+.deck{position:relative;z-index:2;height:100vh;width:100vw}
+.slide{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;
+  padding:6vh 7vw 9vh;opacity:0;visibility:hidden;transform:translateY(34px) scale(.99);
+  transition:opacity .55s ease,transform .55s cubic-bezier(.2,.8,.2,1),visibility .55s;overflow-y:auto}
+.slide.active{opacity:1;visibility:visible;transform:none}
+.slide::-webkit-scrollbar{width:9px}
+.slide::-webkit-scrollbar-thumb{background:rgba(108,99,255,.4);border-radius:9px}
+
+.slide.active .reveal{animation:rise .65s both}
+.slide.active .reveal:nth-child(1){animation-delay:.05s}
+.slide.active .reveal:nth-child(2){animation-delay:.13s}
+.slide.active .reveal:nth-child(3){animation-delay:.21s}
+.slide.active .reveal:nth-child(4){animation-delay:.29s}
+.slide.active .reveal:nth-child(5){animation-delay:.37s}
+.slide.active .reveal:nth-child(6){animation-delay:.45s}
+.slide.active .reveal:nth-child(7){animation-delay:.53s}
+.slide.active .reveal:nth-child(8){animation-delay:.61s}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+
+/* Typography */
+h1.title{font-size:clamp(2rem,4.6vw,3.7rem);font-weight:800;line-height:1.06;
+  background:linear-gradient(120deg,#fff,var(--accent-2),var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:-.02em}
+h2.subtitle{font-size:clamp(1.05rem,2vw,1.7rem);font-weight:500;color:var(--text-dim);margin-top:.7rem;max-width:60ch}
+h2.slide-title{font-size:clamp(1.4rem,3vw,2.35rem);font-weight:700;margin-bottom:.35rem;letter-spacing:-.01em}
+h3.slide-sub{font-size:clamp(.98rem,1.5vw,1.2rem);color:var(--accent-2);font-weight:600;margin-bottom:1rem}
+p{font-size:clamp(.92rem,1.25vw,1.08rem);line-height:1.6;color:var(--text);max-width:74ch}
+p.dim{color:var(--text-dim)}
+.eyebrow{display:inline-block;font-size:.75rem;letter-spacing:.25em;text-transform:uppercase;color:var(--accent-2);
+  border:1px solid var(--card-border);padding:.32rem .9rem;border-radius:999px;background:var(--card);margin-bottom:1.3rem}
+.accent-bar{width:60px;height:5px;border-radius:5px;background:linear-gradient(90deg,var(--accent),var(--accent-2));margin:1rem 0}
+
+ul.feat{list-style:none;display:flex;flex-direction:column;gap:.6rem;margin-top:.4rem}
+ul.feat li{position:relative;padding:.72rem 1rem .72rem 2.4rem;background:var(--card);border:1px solid var(--card-border);
+  border-radius:11px;font-size:clamp(.86rem,1.2vw,1.02rem);line-height:1.45;transition:transform .25s,border-color .25s,background .25s}
+ul.feat li:hover{transform:translateX(5px);border-color:var(--accent);background:rgba(108,99,255,.08)}
+ul.feat li::before{content:"";position:absolute;left:.95rem;top:50%;transform:translateY(-50%);width:8px;height:8px;border-radius:50%;background:var(--accent-2);box-shadow:0 0 11px var(--accent-2)}
+
+.cards{display:grid;gap:.9rem;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));margin-top:.9rem}
+.card{background:var(--card);border:1px solid var(--card-border);border-radius:15px;padding:1.25rem;position:relative;overflow:hidden;transition:transform .3s,border-color .3s,box-shadow .3s}
+.card:hover{transform:translateY(-5px);border-color:var(--accent);box-shadow:var(--glow)}
+.card::after{content:"";position:absolute;top:0;left:0;width:100%;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent-2))}
+.card .k{font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--accent-2);font-weight:700}
+.card .t{font-size:1.08rem;font-weight:700;margin:.35rem 0}
+.card .d{font-size:.86rem;color:var(--text-dim);line-height:1.45}
+
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;margin-top:1.2rem}
+.stat{background:var(--card);border:1px solid var(--card-border);border-radius:15px;padding:1.3rem;text-align:center}
+.stat .num{font-size:clamp(1.6rem,3.6vw,2.5rem);font-weight:800;background:linear-gradient(120deg,var(--accent-2),var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat .lbl{color:var(--text-dim);font-size:.85rem;margin-top:.25rem}
+
+.tbl-wrap{overflow:auto;border-radius:13px;border:1px solid var(--card-border);margin-top:.9rem;background:var(--card)}
+table{border-collapse:collapse;width:100%;font-size:clamp(.78rem,1.1vw,.98rem)}
+th,td{padding:.65rem .95rem;text-align:left;border-bottom:1px solid var(--card-border)}
+th{background:rgba(108,99,255,.16);color:#fff;font-weight:700;position:sticky;top:0}
+tbody tr{transition:background .2s}
+tbody tr:hover{background:rgba(108,99,255,.07)}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+tr.best td{background:rgba(43,147,72,.18)}
+tr.best td:first-child::before{content:"★ ";color:var(--gold)}
+
+.callout{border-left:4px solid var(--accent);background:rgba(108,99,255,.1);padding:.9rem 1.2rem;border-radius:0 11px 11px 0;margin-top:1rem}
+.callout.green{border-color:var(--accent-3);background:rgba(43,147,72,.12)}
+.callout.red{border-color:var(--danger);background:rgba(233,69,96,.12)}
+.callout.gold{border-color:var(--gold);background:rgba(255,209,102,.10)}
+.callout strong{color:#fff}
+.callout p{font-size:clamp(.88rem,1.2vw,1.04rem)}
+
+.diagram{margin-top:.9rem;background:var(--card);border:1px solid var(--card-border);border-radius:15px;padding:1.2rem;display:flex;justify-content:center;overflow:auto}
+.mermaid{width:100%}
+
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:1.8rem;align-items:start}
+.two-col.wide-left{grid-template-columns:1.15fr .85fr}
+@media(max-width:960px){.two-col,.two-col.wide-left{grid-template-columns:1fr}}
+
+/* Figures */
+figure{margin-top:.9rem;background:var(--card);border:1px solid var(--card-border);border-radius:15px;padding:.9rem;text-align:center}
+figure img{max-width:100%;max-height:52vh;border-radius:9px;display:block;margin:0 auto;background:#fff}
+figure figcaption{margin-top:.6rem;font-size:.82rem;color:var(--text-dim);font-style:italic}
+.fig-row{display:grid;gap:.9rem;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin-top:.9rem}
+.fig-row figure{margin-top:0}
+.fig-row figure img{max-height:34vh}
+
+/* Nav */
+.nav{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:20;display:flex;align-items:center;gap:12px;
+  background:rgba(11,16,32,.72);backdrop-filter:blur(14px);border:1px solid var(--card-border);padding:7px 13px;border-radius:999px;box-shadow:0 10px 40px rgba(0,0,0,.45)}
+.nav button{background:none;border:none;color:var(--text);cursor:pointer;width:36px;height:36px;border-radius:50%;font-size:1.05rem;display:grid;place-items:center;transition:background .2s,transform .2s}
+.nav button:hover{background:rgba(108,99,255,.3);transform:scale(1.1)}
+.nav .counter{font-size:.85rem;color:var(--text-dim);min-width:58px;text-align:center;font-variant-numeric:tabular-nums}
+
+.progress{position:fixed;top:0;left:0;height:4px;z-index:30;background:linear-gradient(90deg,var(--accent),var(--accent-2));box-shadow:0 0 12px var(--accent);transition:width .5s ease}
+
+.dots{position:fixed;right:18px;top:50%;transform:translateY(-50%);z-index:20;display:flex;flex-direction:column;gap:9px}
+.dots button{width:9px;height:9px;border-radius:50%;border:none;cursor:pointer;background:rgba(255,255,255,.22);transition:all .25s;padding:0}
+.dots button.on{background:var(--accent-2);box-shadow:0 0 10px var(--accent-2);transform:scale(1.45)}
+
+.slide-tag{position:absolute;top:3vh;right:7vw;font-size:.72rem;letter-spacing:.2em;color:var(--text-dim);text-transform:uppercase}
+.slide-foot{position:absolute;bottom:3vh;left:7vw;font-size:.72rem;color:var(--text-dim);letter-spacing:.05em}
+
+.meta{display:flex;gap:2.2rem;flex-wrap:wrap;margin-top:1.8rem}
+.meta div .m-l{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-2)}
+.meta div .m-v{font-size:1.08rem;font-weight:600;margin-top:.15rem}
+
+.hint{position:fixed;bottom:22px;right:22px;z-index:20;font-size:.75rem;color:var(--text-dim)}
+kbd{background:var(--card);border:1px solid var(--card-border);border-radius:6px;padding:1px 6px;font-family:inherit}
+.jury-note{font-size:.8rem;color:var(--text-dim);margin-top:.5rem}
+</style>
+</head>
+<body>
+
+<div class="bg-fx"></div>
+<div class="grid-fx"></div>
+<div class="progress" id="progress"></div>
+
+<div class="deck" id="deck">
+
+  <!-- 1 TITLE -->
+  <section class="slide">
+    <span class="eyebrow reveal">Soutenance de thèse de doctorat</span>
+    <h1 class="title reveal">Collaboration Humain-Robot</h1>
+    <h2 class="subtitle reveal">Apprentissage incrémental, adaptation comportementale et sécurité pour les cobots</h2>
+    <div class="accent-bar reveal"></div>
+    <div class="meta reveal">
+      <div><div class="m-l">Doctorant</div><div class="m-v">Ameur Gargouri</div></div>
+      <div><div class="m-l">Discipline</div><div class="m-v">Robotique / Apprentissage automatique</div></div>
+      <div><div class="m-l">Date de soutenance</div><div class="m-v">03 juillet 2026</div></div>
+    </div>
+    <p class="jury-note reveal">Présentation devant jury — durée indicative 40 min + questions</p>
+  </section>
+
+  <!-- 2 RESUME -->
+  <section class="slide">
+    <span class="slide-tag">Résumé exécutif</span>
+    <h2 class="slide-title reveal">Résumé exécutif</h2>
+    <div class="accent-bar reveal"></div>
+    <p class="reveal">Cette thèse vise à doter un cobot de capacités d'<strong>adaptation progressive</strong> face à la variabilité des opérateurs humains, tout en garantissant une exécution <strong>sûre et interprétable</strong>.</p>
+    <div class="callout reveal">
+      <p>Thèse défendue : <strong>apprendre</strong> à partir de la collaboration réelle, <strong>conserver</strong> les connaissances acquises, <strong>adapter</strong> le comportement du robot à chaque opérateur, et maintenir la <strong>sécurité</strong> comme contrainte permanente et non négociable.</p>
+    </div>
+    <div class="slide-foot">1 · Introduction</div>
+  </section>
+
+  <!-- 3 PROBLEMATIQUE -->
+  <section class="slide">
+    <span class="slide-tag">Problématique</span>
+    <h2 class="slide-title reveal">Problématique scientifique</h2>
+    <h3 class="slide-sub reveal">Question de recherche</h3>
+    <div class="callout reveal">
+      <p>Comment un cobot peut-il apprendre de manière <strong>incrémentale</strong> les préférences, les stratégies et le style opératoire d'un humain, puis transformer cet apprentissage en un <strong>comportement personnalisé</strong> sans reprogrammation explicite ?</p>
+    </div>
+    <h3 class="slide-sub reveal" style="margin-top:1.3rem">Le défi n'est pas seulement la précision prédictive</h3>
+    <p class="reveal">Il réside dans l'équilibre simultané entre quatre exigences contradictoires :</p>
+    <ul class="feat reveal">
+      <li><strong>Plasticité</strong> — adaptation rapide à de nouveaux opérateurs</li>
+      <li><strong>Stabilité</strong> — rétention des connaissances antérieures (oubli catastrophique)</li>
+      <li><strong>Robustesse</strong> — aux signaux multimodaux bruités</li>
+      <li><strong>Sécurité</strong> — de l'interaction homme-robot en permanence</li>
+    </ul>
+    <div class="slide-foot">1 · Introduction</div>
+  </section>
+
+  <!-- 4 AXES -->
+  <section class="slide">
+    <span class="slide-tag">Axes de recherche</span>
+    <h2 class="slide-title reveal">Quatre objectifs structurants</h2>
+    <div class="accent-bar reveal"></div>
+    <div class="cards">
+      <div class="card reveal"><div class="k">Axe A1</div><div class="t">Schémas opératoires humains</div><div class="d">Apprendre les habitudes, séquences et timing → représenter le style d'un opérateur.</div></div>
+      <div class="card reveal"><div class="k">Axe A2</div><div class="t">Apprentissage incrémental & IRL</div><div class="d">Inférer les préférences en ligne à partir des démonstrations et corrections → réduire l'oubli catastrophique.</div></div>
+      <div class="card reveal"><div class="k">Axe A3</div><div class="t">Génération personnalisée</div><div class="d">Produire trajectoires et rythmes adaptés à l'opérateur → passer de la perception à l'action.</div></div>
+      <div class="card reveal"><div class="k">Axe A4</div><div class="t">Alignement & fluidité</div><div class="d">Mesurer objectivement l'adéquation homme-robot → évaluer la qualité de la collaboration.</div></div>
+    </div>
+    <div class="slide-foot">1 · Introduction</div>
+  </section>
+
+  <!-- 5 CONTRIBUTIONS -->
+  <section class="slide">
+    <span class="slide-tag">Contributions</span>
+    <h2 class="slide-title reveal">Contributions majeures de la thèse</h2>
+    <div class="accent-bar reveal"></div>
+    <ul class="feat reveal">
+      <li>Une <strong>architecture de thèse complète</strong>, de l'acquisition des signaux à l'évaluation</li>
+      <li>Une chaîne de <strong>prétraitement reproductible</strong> pour HARMONIC, DASIG et MultiPhysio-HRC</li>
+      <li>Un système de <strong>reconnaissance du type de tâche</strong> sur MultiPhysio-HRC</li>
+      <li><strong>FLAIR</strong> — nouvel algorithme incrémental hybride pour l'autonomie partagée</li>
+      <li>Un système de <strong>détection de sécurité</strong> sur DASIG (modèles profonds 1D)</li>
+      <li>Une base pour la <strong>fusion multimodale</strong> et l'adaptation comportementale à long terme</li>
+    </ul>
+    <div class="callout green reveal">
+      <p><strong>Message central :</strong> la thèse n'est pas une expérience isolée, mais une <strong>chaîne cohérente de résultats</strong> démontrant qu'une adaptation incrémentale, sûre et personnalisée est réalisable dans des scénarios HRC réalistes.</p>
+    </div>
+    <div class="slide-foot">1 · Introduction</div>
+  </section>
+
+  <!-- 6 ARCHITECTURE -->
+  <section class="slide">
+    <span class="slide-tag">Architecture</span>
+    <h2 class="slide-title reveal">Architecture générale de la thèse</h2>
+    <div class="diagram reveal">
+      <pre class="mermaid">
+flowchart TD
+  L0[Couche 0 · Acquisition des capteurs] --> L1[Couche 1 · Perception humaine & estimation d'état]
+  L1 --> L2[Couche 2 · Modélisation du style opérateur]
+  L2 --> L3[Couche 3 · Apprentissage incrémental & IRL]
+  L3 --> L4[Couche 4 · Génération comportementale]
+  L4 --> L5[Couche 5 · Planification & exécution]
+  L5 --> L6[Couche 6 · Sécurité & conformité]
+  L6 --> L7[Couche 7 · Métriques & évaluation]
+  classDef hi fill:#533483,stroke:#fff,color:#fff;
+  classDef sf fill:#2b9348,stroke:#fff,color:#fff;
+  class L3 hi; class L6 sf;
+      </pre>
+    </div>
+    <div class="callout reveal"><p><strong>Principe directeur :</strong> chaque couche est testable indépendamment, mais la valeur scientifique provient de leur <strong>articulation</strong> — perception, style, adaptation, exécution et sécurité traités comme un système unique.</p></div>
+    <div class="slide-foot">2 · Cadre méthodologique</div>
+  </section>
+
+  <!-- 7 DONNEES -->
+  <section class="slide">
+    <span class="slide-tag">Données</span>
+    <h2 class="slide-title reveal">Données & prétraitement</h2>
+    <h3 class="slide-sub reveal">Pipelines reproductibles — base expérimentale propre, stable et comparable</h3>
+    <div class="tbl-wrap reveal">
+      <table>
+        <thead><tr><th>Jeu de données</th><th>Rôle</th><th>Modalités principales</th></tr></thead>
+        <tbody>
+          <tr><td><strong>HARMONIC</strong></td><td>Apprentissage incrémental & autonomie partagée</td><td>Joystick, état robot, regard, EMG, IMU, vidéo</td></tr>
+          <tr><td><strong>DASIG</strong></td><td>Détection d'état de sécurité</td><td>Signaux MIMU & cinématiques</td></tr>
+          <tr><td><strong>MultiPhysio-HRC</strong></td><td>Stress, charge & type de tâche</td><td>EEG, ECG, EDA, EMG, respiration, audio, vidéo</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="stats reveal">
+      <div class="stat"><div class="num">447/447</div><div class="lbl">HARMONIC · 100 %</div></div>
+      <div class="stat"><div class="num">179/180</div><div class="lbl">DASIG · 99,4 %</div></div>
+      <div class="stat"><div class="num">5 640</div><div class="lbl">MultiPhysio · 100 %</div></div>
+    </div>
+    <p class="dim reveal" style="margin-top:.9rem">La seule erreur sur DASIG provenait d'un CSV brut mal formé — non du code de prétraitement.</p>
+    <div class="slide-foot">2 · Cadre méthodologique</div>
+  </section>
+
+  <!-- 8 PIPELINE HARMONIC -->
+  <section class="slide">
+    <span class="slide-tag">Pipeline</span>
+    <h2 class="slide-title reveal">Flux de prétraitement HARMONIC</h2>
+    <div class="diagram reveal">
+      <pre class="mermaid">
+flowchart LR
+  A[Découverte des essais] --> B[Alignement des modalités]
+  B --> C[Filtrage & normalisation]
+  C --> D[Découpage train / val / test]
+  D --> E[Export parquet]
+  E --> F[Contrôles qualité & inspection]
+  classDef hi fill:#0f3460,stroke:#fff,color:#fff;
+  classDef sf fill:#2b9348,stroke:#fff,color:#fff;
+  class C hi; class F sf;
+      </pre>
+    </div>
+    <div class="callout reveal"><p><strong>Intérêt scientifique :</strong> transformer des données multimodales hétérogènes en une base propre, stable et reproductible — indispensable pour comparer des stratégies d'apprentissage incrémental à <strong>conditions équitables</strong>.</p></div>
+    <div class="slide-foot">2 · Cadre méthodologique</div>
+  </section>
+
+  <!-- 9 PERCEPTION - pipeline figure -->
+  <section class="slide">
+    <span class="slide-tag">Couche 1 · Perception</span>
+    <h2 class="slide-title reveal">Reconnaissance du type de tâche — MultiPhysio-HRC</h2>
+    <h3 class="slide-sub reveal">Système compact fondé sur des caractéristiques physiologiques fusionnées</h3>
+    <p class="reveal">Logique reproductible : prétraitement → fusion tabulaire → apprentissage sensible au déséquilibre → évaluation sur split stratifié 80/20. Classification à cinq classes.</p>
+    <figure class="reveal">
+      <img src="IEEE-conference-template-062824/task_pipeline.png" alt="Pipeline de détection du type de tâche">
+      <figcaption>Fig. 1 — Pipeline de détection du type de tâche (MultiPhysio-HRC).</figcaption>
+    </figure>
+    <div class="slide-foot">3 · Perception humaine</div>
+  </section>
+
+  <!-- 10 PERCEPTION - results + confusion -->
+  <section class="slide">
+    <span class="slide-tag">Couche 1 · Résultats</span>
+    <h2 class="slide-title reveal">Type de tâche — résultats & analyse</h2>
+    <div class="two-col wide-left">
+      <div class="reveal">
+        <div class="tbl-wrap">
+          <table>
+            <thead><tr><th>Modèle</th><th class="num">Exact.</th><th class="num">Bal. Acc</th><th class="num">Macro-F1</th></tr></thead>
+            <tbody>
+              <tr class="best"><td>XGBoost</td><td class="num">0.9371</td><td class="num">0.8943</td><td class="num">0.9142</td></tr>
+              <tr><td>Random Forest</td><td class="num">0.9211</td><td class="num">0.8552</td><td class="num">0.8836</td></tr>
+              <tr><td>MLP</td><td class="num">0.9140</td><td class="num">0.8727</td><td class="num">0.8727</td></tr>
+              <tr><td>Two-Tower Fusion</td><td class="num">0.8874</td><td class="num">0.8908</td><td class="num">0.8635</td></tr>
+              <tr><td>Régression logistique</td><td class="num">0.7739</td><td class="num">0.7164</td><td class="num">0.6730</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="callout green"><p><strong>XGBoost</strong> : meilleur compromis performance globale / robustesse par classe. Classe la plus difficile : <strong>faible charge</strong> ; meilleures performances : tâche industrielle & autre.</p></div>
+      </div>
+      <figure class="reveal">
+        <img src="research_outputs/fusion_training/v2_classic_split_benchmark/confusion_matrix_tuned_xgboost.png" alt="Matrice de confusion XGBoost">
+        <figcaption>Fig. 2 — Matrice de confusion, XGBoost optimisé.</figcaption>
+      </figure>
+    </div>
+    <div class="slide-foot">3 · Perception humaine</div>
+  </section>
+
+  <!-- 11 STYLE -->
+  <section class="slide">
+    <span class="slide-tag">Couche 2 · Style opérateur</span>
+    <h2 class="slide-title reveal">Modélisation du style opérateur</h2>
+    <div class="diagram reveal">
+      <pre class="mermaid">
+flowchart LR
+  A[Séquences opérateur] --> B[Encodeur temporel]
+  B --> C[Embedding de style]
+  C --> D[Clustering de stratégies]
+  D --> E[Profil opérateur persistant]
+  classDef enc fill:#0f3460,stroke:#fff,color:#fff;
+  classDef emb fill:#533483,stroke:#fff,color:#fff;
+  classDef prof fill:#2b9348,stroke:#fff,color:#fff;
+  class B enc; class C emb; class E prof;
+      </pre>
+    </div>
+    <div class="callout reveal"><p>L'objectif n'est pas seulement de prédire un état, mais de construire une <strong>mémoire structurée</strong> du comportement humain — séquences, stratégies, préférences, signatures individuelles — servant de point d'entrée à l'apprentissage incrémental et à la génération personnalisée.</p></div>
+    <div class="slide-foot">4 · Modélisation comportementale</div>
+  </section>
+
+  <!-- 12 FLAIR intro + architecture figure -->
+  <section class="slide">
+    <span class="slide-tag">Couche 3 · FLAIR</span>
+    <h2 class="slide-title reveal">FLAIR — algorithme incrémental proposé</h2>
+    <div class="two-col wide-left">
+      <div class="reveal">
+        <p>Apport algorithmique central de la thèse pour l'autonomie partagée. FLAIR combine :</p>
+        <ul class="feat" style="margin-top:.7rem">
+          <li>Modulation <strong>FiLM</strong> spécifique à la tâche</li>
+          <li>Mémoire <strong>rejouée</strong> sensible à l'identité de tâche</li>
+          <li>Régularisation d'importance basée sur <strong>Fisher</strong></li>
+          <li><strong>RetroBoost</strong> + initialisation à chaud des couches FiLM</li>
+          <li>Mélange <strong>adaptatif</strong> tête partagée / têtes spécifiques</li>
+        </ul>
+      </div>
+      <figure class="reveal">
+        <img src="IEEE-conference-template-062824/flair_architecture.png" alt="Architecture FLAIR">
+        <figcaption>Fig. 3 — Architecture de FLAIR.</figcaption>
+      </figure>
+    </div>
+    <div class="callout gold reveal"><p><strong>Idée clé :</strong> au lieu de choisir entre régularisation, replay ou séparation architecturale, FLAIR les <strong>combine</strong> dans un cadre incrémental unique — améliorant simultanément stabilité et plasticité.</p></div>
+    <div class="slide-foot">5 · Apprentissage incrémental — FLAIR</div>
+  </section>
+
+  <!-- 13 FLAIR benchmark table -->
+  <section class="slide">
+    <span class="slide-tag">FLAIR · Benchmark</span>
+    <h2 class="slide-title reveal">Benchmark séquentiel HARMONIC</h2>
+    <p class="reveal">L'ACC correspond au coefficient de détermination <span id="r2math"></span> ; F = oubli, BWT = transfert arrière, FWT = transfert avant.</p>
+    <div class="tbl-wrap reveal">
+      <table>
+        <thead><tr><th>Méthode</th><th class="num">ACC</th><th class="num">F</th><th class="num">BWT</th><th class="num">FWT</th><th class="num">Mém. (Mo)</th><th class="num">Temps (s)</th></tr></thead>
+        <tbody>
+          <tr class="best"><td>FLAIR (proposé)</td><td class="num">0.6895</td><td class="num">0.0168</td><td class="num">-0.0168</td><td class="num">0.1175</td><td class="num">1.28</td><td class="num">554.5</td></tr>
+          <tr><td>Joint Training</td><td class="num">0.6442</td><td class="num">0.0365</td><td class="num">-0.0044</td><td class="num">0.0130</td><td class="num">1664.2</td><td class="num">7895.0</td></tr>
+          <tr><td>DER++</td><td class="num">0.6120</td><td class="num">0.1480</td><td class="num">-0.1480</td><td class="num">0.1720</td><td class="num">0.9</td><td class="num">154.0</td></tr>
+          <tr><td>Online EWC</td><td class="num">0.4150</td><td class="num">0.2110</td><td class="num">-0.2110</td><td class="num">0.0830</td><td class="num">0.5</td><td class="num">124.0</td></tr>
+          <tr><td>EWC</td><td class="num">0.3680</td><td class="num">0.2750</td><td class="num">-0.2750</td><td class="num">0.0040</td><td class="num">5.39</td><td class="num">264.0</td></tr>
+          <tr><td>A-GEM</td><td class="num">0.4200</td><td class="num">0.3760</td><td class="num">-0.3760</td><td class="num">-0.0490</td><td class="num">0.2</td><td class="num">167.0</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout green reveal"><p><strong>Conclusion :</strong> FLAIR améliore la précision finale, limite fortement l'oubli, et conserve une empreinte mémoire <strong>~1300× plus faible</strong> que le réentraînement joint, pour un temps 14× moindre.</p></div>
+    <div class="slide-foot">5 · Apprentissage incrémental — FLAIR</div>
+  </section>
+
+  <!-- 14 FLAIR evidence figures -->
+  <section class="slide">
+    <span class="slide-tag">FLAIR · Éléments de preuve</span>
+    <h2 class="slide-title reveal">FLAIR — éléments de preuve</h2>
+    <div class="fig-row reveal">
+      <figure><img src="IEEE-conference-template-062824/all_metrics_comparison.png" alt="Comparaison des métriques FLAIR"><figcaption>Fig. 4 — Comparaison globale des métriques.</figcaption></figure>
+      <figure><img src="IEEE-conference-template-062824/r2_evolution.png" alt="Dynamique de rétention"><figcaption>Fig. 5 — Dynamique de rétention (R²).</figcaption></figure>
+    </div>
+    <ul class="feat reveal" style="margin-top:.8rem">
+      <li>FLAIR domine parmi les méthodes hybrides</li>
+      <li>Les mécanismes architecturaux ont un effet réel et <strong>cumulatif</strong></li>
+      <li>Le gap avec l'upper bound hors-ligne se réduit fortement</li>
+      <li>La rétention sur les utilisateurs déjà vus reste stable</li>
+    </ul>
+    <div class="slide-foot">5 · Apprentissage incrémental — FLAIR</div>
+  </section>
+
+  <!-- 15 FLAIR ablation figure -->
+  <section class="slide">
+    <span class="slide-tag">FLAIR · Ablation</span>
+    <h2 class="slide-title reveal">Étude d'ablation</h2>
+    <div class="two-col wide-left">
+      <div class="reveal">
+        <p>FLAIR fonctionne parce que plusieurs mécanismes se <strong>renforcent mutuellement</strong> : FiLM, replay, régularisation d'importance, RetroBoost, warm-start et pondération adaptative du replay.</p>
+        <ul class="feat" style="margin-top:.7rem">
+          <li>La configuration de base est déjà compétitive</li>
+          <li>RetroBoost et FiLM warm-start réduisent l'oubli</li>
+          <li>La pondération adaptative stabilise l'apprentissage sous dérive de tâches</li>
+          <li>La configuration complète offre le meilleur compromis global</li>
+        </ul>
+      </div>
+      <figure class="reveal">
+        <img src="IEEE-conference-template-062824/v3_overfitting_analysis.png" alt="Analyse robustesse / surapprentissage">
+        <figcaption>Fig. 6 — Analyse robustesse / surapprentissage.</figcaption>
+      </figure>
+    </div>
+    <div class="slide-foot">5 · Apprentissage incrémental — FLAIR</div>
+  </section>
+
+  <!-- 16 SAFETY pipeline -->
+  <section class="slide">
+    <span class="slide-tag">Couche 6 · Sécurité</span>
+    <h2 class="slide-title reveal">Détection des gestes abrupts — DASIG</h2>
+    <p class="reveal">Le système de sécurité détecte les gestes abrupts ou dangereux pour permettre au cobot de <strong>ralentir ou s'arrêter</strong> avant une situation à risque.</p>
+    <div class="diagram reveal">
+      <pre class="mermaid">
+flowchart LR
+  A[Signaux IMU & cinématiques bruts] --> B[Chargement & annotation]
+  B --> C[Fenêtrage & normalisation]
+  C --> D[Entraînement GPU · dérivées + augmentation]
+  D --> E[Validation & TTA]
+  E --> F[Post-traitement · lissage + seuil]
+  F --> G[SAFE / DANGER]
+  classDef tr fill:#e94560,stroke:#fff,color:#fff;
+  classDef pp fill:#533483,stroke:#fff,color:#fff;
+  classDef out fill:#2b9348,stroke:#fff,color:#fff;
+  class D tr; class F pp; class G out;
+      </pre>
+    </div>
+    <div class="callout red reveal"><p><strong>Pourquoi c'est critique :</strong> la sécurité n'est pas un module secondaire — elle <strong>borne l'espace des comportements admissibles</strong> du robot et reste active en permanence.</p></div>
+    <div class="slide-foot">6 · Sécurité & conformité</div>
+  </section>
+
+  <!-- 17 SAFETY results table -->
+  <section class="slide">
+    <span class="slide-tag">Sécurité · Résultats</span>
+    <h2 class="slide-title reveal">Résultats de sécurité (DASIG)</h2>
+    <div class="tbl-wrap reveal">
+      <table>
+        <thead><tr><th>Modèle</th><th class="num">Exactitude</th><th class="num">Macro-F1</th><th class="num">Rappel danger</th><th class="num">Précision danger</th></tr></thead>
+        <tbody>
+          <tr class="best"><td>ConvNeXt 1D</td><td class="num">99.43 %</td><td class="num">98.68 %</td><td class="num">97.13 %</td><td class="num">98.25 %</td></tr>
+          <tr><td>TCN</td><td class="num">99.41 %</td><td class="num">98.62 %</td><td class="num">97.14 %</td><td class="num">98.04 %</td></tr>
+          <tr><td>MLP-Mixer 1D</td><td class="num">99.28 %</td><td class="num">98.32 %</td><td class="num">95.88 %</td><td class="num">98.27 %</td></tr>
+          <tr><td>InceptionTime</td><td class="num">98.30 %</td><td class="num">96.22 %</td><td class="num">97.53 %</td><td class="num">89.62 %</td></tr>
+          <tr><td>Transformer 1D</td><td class="num">96.47 %</td><td class="num">92.50 %</td><td class="num">95.85 %</td><td class="num">79.71 %</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout green reveal"><p><strong>ConvNeXt 1D</strong> constitue le meilleur compromis final : excellente capacité de détection de l'état dangereux et très bonne précision sur la classe danger.</p></div>
+    <div class="slide-foot">6 · Sécurité & conformité</div>
+  </section>
+
+  <!-- 18 SAFETY confusion matrices -->
+  <section class="slide">
+    <span class="slide-tag">Sécurité · Matrices de confusion</span>
+    <h2 class="slide-title reveal">Matrices de confusion — sécurité</h2>
+    <div class="fig-row reveal">
+      <figure><img src="ConvNeXt_1D_cm.png" alt="Matrice de confusion ConvNeXt 1D"><figcaption>Fig. 7 — ConvNeXt 1D.</figcaption></figure>
+      <figure><img src="TCN_cm.png" alt="Matrice de confusion TCN"><figcaption>Fig. 8 — TCN.</figcaption></figure>
+      <figure><img src="MLP-Mixer_1D_cm.png" alt="Matrice de confusion MLP-Mixer 1D"><figcaption>Fig. 9 — MLP-Mixer 1D.</figcaption></figure>
+    </div>
+    <ul class="feat reveal" style="margin-top:.7rem">
+      <li>Faux positifs faibles pour les meilleurs modèles ; classe danger détectée de manière robuste</li>
+      <li>ConvNeXt 1D et TCN : meilleures solutions profondes ; les modèles classiques restent utiles pour l'interprétation mais nettement inférieurs</li>
+    </ul>
+    <div class="slide-foot">6 · Sécurité & conformité</div>
+  </section>
+
+  <!-- 19 SYNTHESE -->
+  <section class="slide">
+    <span class="slide-tag">Synthèse</span>
+    <h2 class="slide-title reveal">Synthèse intégrée</h2>
+    <div class="diagram reveal">
+      <pre class="mermaid">
+flowchart LR
+  S[Capteurs] --> P[Perception & prétraitement]
+  P --> T[Reconnaissance du type de tâche]
+  T --> F[Modélisation du style & FLAIR]
+  F --> B[Génération comportementale]
+  B --> M[Planification & exécution]
+  M --> C[Sécurité & conformité]
+  C --> E[Évaluation]
+  classDef t fill:#2f4b7c,stroke:#fff,color:#fff;
+  classDef f fill:#533483,stroke:#fff,color:#fff;
+  classDef c fill:#2b9348,stroke:#fff,color:#fff;
+  class T t; class F f; class C c;
+      </pre>
+    </div>
+    <div class="callout reveal"><p>Les contributions ne sont pas isolées : elles forment une <strong>chaîne complète</strong> — perception de l'état humain → représentation du style → adaptation incrémentale (FLAIR) → génération et contrôle → sécurité garantie → évaluation quantitative.</p></div>
+    <div class="slide-foot">7 · Synthèse</div>
+  </section>
+
+  <!-- 20 CONTRIBUTIONS VALIDEES -->
+  <section class="slide">
+    <span class="slide-tag">Bilan</span>
+    <h2 class="slide-title reveal">Contributions validées</h2>
+    <div class="accent-bar reveal"></div>
+    <ul class="feat reveal">
+      <li>Le prétraitement est <strong>reproductible</strong> sur les trois jeux de données</li>
+      <li>MultiPhysio-HRC permet une <strong>détection fiable</strong> du type de tâche</li>
+      <li>FLAIR apporte une <strong>amélioration concrète</strong> sur l'autonomie partagée séquentielle</li>
+      <li>La sécurité peut être apprise avec une <strong>performance très élevée</strong> sur DASIG</li>
+      <li>L'architecture globale est <strong>cohérente</strong> du signal brut à l'évaluation</li>
+    </ul>
+    <div class="slide-foot">7 · Synthèse</div>
+  </section>
+
+  <!-- 21 LIMITES -->
+  <section class="slide">
+    <span class="slide-tag">Discussion</span>
+    <h2 class="slide-title reveal">Limites & perspectives</h2>
+    <div class="two-col">
+      <div class="reveal">
+        <h3 class="slide-sub">Limites</h3>
+        <ul class="feat">
+          <li>Certaines couches restent principalement <strong>architecturales</strong> et demandent une validation longitudinale plus large</li>
+          <li>Résultats solides sur les jeux étudiés, mais <strong>généralisation</strong> à d'autres contextes HRC à confirmer</li>
+          <li>FLAIR requiert une évaluation étendue sur d'autres scénarios incrémentaux et conditions plus bruitées</li>
+        </ul>
+      </div>
+      <div class="reveal">
+        <h3 class="slide-sub">Perspectives</h3>
+        <ul class="feat">
+          <li>Étendre l'apprentissage incrémental à des scénarios plus ouverts</li>
+          <li>Intégrer une inférence plus fine du style opérateur</li>
+          <li>Relier plus directement la perception à la génération comportementale</li>
+          <li>Valider le système en <strong>environnement réel</strong> avec plusieurs opérateurs</li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-foot">8 · Discussion</div>
+  </section>
+
+  <!-- 22 CONCLUSION -->
+  <section class="slide">
+    <span class="slide-tag">Conclusion</span>
+    <span class="eyebrow reveal">Conclusion</span>
+    <h1 class="title reveal" style="font-size:clamp(1.7rem,3.8vw,3rem)">Le cobot comme système évolutif</h1>
+    <div class="accent-bar reveal"></div>
+    <p class="reveal">Un cobot peut être conçu comme un système évolutif : il <strong>perçoit</strong> l'humain, construit une <strong>représentation du style</strong> opérateur, <strong>apprend</strong> de manière incrémentale, <strong>adapte</strong> son comportement, et applique une <strong>contrainte de sécurité</strong> permanente.</p>
+    <div class="callout green reveal">
+      <p>La combinaison d'un <strong>apprentissage incrémental hybride</strong>, d'une <strong>détection robuste de l'état humain</strong> et d'une <strong>sécurité explicite</strong> constitue une voie crédible vers une collaboration humain-robot personnalisée, robuste et déployable.</p>
+    </div>
+    <p class="dim reveal" style="margin-top:1.6rem;font-size:1.3rem">Merci de votre attention — je suis à la disposition du jury pour les questions.</p>
+    <div class="slide-foot">Fin de la présentation</div>
+  </section>
+
+  <!-- 23 ANNEXES -->
+  <section class="slide">
+    <span class="slide-tag">Annexes</span>
+    <h2 class="slide-title reveal">Annexes — sources & figures</h2>
+    <div class="two-col">
+      <div class="reveal">
+        <h3 class="slide-sub">Sources principales</h3>
+        <ul class="feat">
+          <li>Rapport de prétraitement — <em>02_preprocessing_pipeline_report.md</em></li>
+          <li>Rapport d'apprentissage incrémental — <em>03_incremental_learning_benchmark_report.md</em></li>
+          <li>Rapport autonomie partagée — <em>03_shared_autonomy_benchmark_report.md</em></li>
+          <li>Architecture de la thèse — <em>ARCHITECTURE.md</em></li>
+          <li>Flux MultiPhysio-HRC — <em>README_RESEARCH.md</em></li>
+          <li>Résumé sécurité DASIG — <em>Final_Models_Summary.md</em></li>
+        </ul>
+      </div>
+      <div class="reveal">
+        <h3 class="slide-sub">Figures principales</h3>
+        <ul class="feat">
+          <li><code>task_pipeline.png</code></li>
+          <li><code>flair_architecture.png</code></li>
+          <li><code>all_metrics_comparison.png</code></li>
+          <li><code>v3_learning_curves.png</code></li>
+          <li><code>outputs/cobot_safety/</code></li>
+          <li><code>research_outputs/fusion_training/v2_classic_split_benchmark/</code></li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-foot">Annexes</div>
+  </section>
+
+</div>
+
+<div class="dots" id="dots"></div>
+
+<div class="nav">
+  <button id="prev" aria-label="Précédent">‹</button>
+  <span class="counter" id="counter">1 / 23</span>
+  <button id="next" aria-label="Suivant">›</button>
+</div>
+
+<div class="hint"><kbd>←</kbd> <kbd>→</kbd> naviguer · <kbd>F</kbd> plein écran · <kbd>O</kbd> vue d'ensemble</div>
+
+<script>
+  mermaid.initialize({
+    startOnLoad:true, theme:'base',
+    themeVariables:{
+      primaryColor:'#16213e', primaryTextColor:'#eaeefb', primaryBorderColor:'#6c63ff',
+      lineColor:'#22d3ee', fontFamily:'Inter, sans-serif', fontSize:'14px', clusterBkg:'#111634'
+    }
+  });
+
+  const slides=[...document.querySelectorAll('.slide')];
+  const total=slides.length;
+  let idx=0;
+  const counter=document.getElementById('counter');
+  const progress=document.getElementById('progress');
+  const dotsWrap=document.getElementById('dots');
+
+  slides.forEach((_,i)=>{const b=document.createElement('button');b.title='Diapositive '+(i+1);b.addEventListener('click',()=>go(i));dotsWrap.appendChild(b);});
+  const dots=[...dotsWrap.children];
+
+  function go(n){
+    idx=Math.max(0,Math.min(total-1,n));
+    slides.forEach((s,i)=>s.classList.toggle('active',i===idx));
+    dots.forEach((d,i)=>d.classList.toggle('on',i===idx));
+    counter.textContent=`${idx+1} / ${total}`;
+    progress.style.width=`${((idx+1)/total)*100}%`;
+    location.hash=idx+1;
+  }
+  document.getElementById('next').onclick=()=>go(idx+1);
+  document.getElementById('prev').onclick=()=>go(idx-1);
+  document.addEventListener('keydown',e=>{
+    if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown')go(idx+1);
+    if(e.key==='ArrowLeft'||e.key==='PageUp')go(idx-1);
+    if(e.key==='Home')go(0);
+    if(e.key==='End')go(total-1);
+    if(e.key.toLowerCase()==='f'){if(!document.fullscreenElement)document.documentElement.requestFullscreen();else document.exitFullscreen();}
+  });
+  let sx=0;
+  document.addEventListener('touchstart',e=>sx=e.touches[0].clientX);
+  document.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-sx;if(dx<-50)go(idx+1);if(dx>50)go(idx-1);});
+
+  window.addEventListener('DOMContentLoaded',()=>{
+    if(window.katex){katex.render('R^2',document.getElementById('r2math'),{throwOnError:false});}
+    const h=parseInt(location.hash.replace('#',''));
+    go(!isNaN(h)&&h>=1&&h<=total?h-1:0);
+  });
+</script>
+</body>
+</html>

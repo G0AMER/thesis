@@ -1,0 +1,2521 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Soutenance de Thèse — Collaboration Humain-Robot</title>
+	<meta name="description"
+		content="Soutenance de thèse de doctorat : Apprentissage incrémental, adaptation comportementale et sécurité pour les cobots">
+
+	<!-- Google Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+		rel="stylesheet">
+
+	<!-- KaTeX -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+	<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+	<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+
+	<style>
+		/* ===== CSS CUSTOM PROPERTIES ===== */
+		:root {
+			/* Thesis-friendly light palette */
+			--bg-primary: #ffffff;
+			/* page background */
+			--bg-secondary: #f6f7fb;
+			/* subtle section background */
+			--bg-card: rgba(255, 255, 255, 0.95);
+			--glass-border: rgba(16, 24, 32, 0.06);
+			--glass-bg: rgba(250, 250, 252, 0.75);
+			--text-primary: #0b1220;
+			/* near-black for high contrast */
+			--text-secondary: #334155;
+			/* slate for body copy */
+			--text-muted: #55626a;
+			/* muted captions */
+
+			/* Formal academic accents */
+			--accent-blue: #0b3d91;
+			/* deep navy */
+			--accent-rose: #8b1e3f;
+			/* burgundy */
+			--accent-emerald: #2f855a;
+			/* muted green */
+			--accent-amber: #b97300;
+			/* warm gold */
+			--accent-violet: #6b2f7a;
+			/* subdued purple */
+			--accent-cyan: #0b7285;
+			/* muted teal */
+
+			--gradient-hero: linear-gradient(135deg, #0b3d91 0%, #8b1e3f 100%);
+			--gradient-section: linear-gradient(135deg, #f1f5ff 0%, #fff5f7 100%);
+			--shadow-glow: 0 0 40px rgba(11, 61, 145, 0.06);
+			--radius-lg: 20px;
+			--radius-md: 12px;
+			--radius-sm: 8px;
+			--transition-smooth: all 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+		}
+
+		/* ===== RESET & BASE ===== */
+		*,
+		*::before,
+		*::after {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		html {
+			font-size: 16px;
+			scroll-behavior: smooth;
+		}
+
+		body {
+			font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+			background: var(--bg-primary);
+			color: var(--text-primary);
+			overflow: hidden;
+			height: 100vh;
+			width: 100vw;
+			cursor: default;
+		}
+
+		/* ===== ANIMATED BACKGROUND ===== */
+		.bg-animation {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 0;
+			overflow: hidden;
+			pointer-events: none;
+		}
+
+		.bg-orb {
+			position: absolute;
+			border-radius: 50%;
+			filter: blur(100px);
+			opacity: 0.12;
+			animation: float 20s ease-in-out infinite;
+		}
+
+		.bg-orb:nth-child(1) {
+			width: 600px;
+			height: 600px;
+			background: var(--accent-blue);
+			top: -10%;
+			left: -5%;
+			animation-delay: 0s;
+		}
+
+		.bg-orb:nth-child(2) {
+			width: 500px;
+			height: 500px;
+			background: var(--accent-violet);
+			top: 50%;
+			right: -10%;
+			animation-delay: -7s;
+		}
+
+		.bg-orb:nth-child(3) {
+			width: 400px;
+			height: 400px;
+			background: var(--accent-cyan);
+			bottom: -10%;
+			left: 30%;
+			animation-delay: -14s;
+		}
+
+		@keyframes float {
+
+			0%,
+			100% {
+				transform: translate(0, 0) scale(1);
+			}
+
+			33% {
+				transform: translate(40px, -30px) scale(1.05);
+			}
+
+			66% {
+				transform: translate(-20px, 20px) scale(0.95);
+			}
+		}
+
+		/* ===== GRID OVERLAY ===== */
+		.grid-overlay {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 0;
+			pointer-events: none;
+			background-image:
+				linear-gradient(rgba(99, 102, 241, 0.03) 1px, transparent 1px),
+				linear-gradient(90deg, rgba(99, 102, 241, 0.03) 1px, transparent 1px);
+			background-size: 60px 60px;
+		}
+
+		/* ===== PRESENTATION CONTAINER ===== */
+		.presentation {
+			position: relative;
+			z-index: 1;
+			width: 100vw;
+			height: 100vh;
+		}
+
+		/* ===== SLIDE ===== */
+		.slide {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 50px 80px 70px;
+			opacity: 0;
+			visibility: hidden;
+			transform: translateX(60px);
+			transition: opacity 0.65s cubic-bezier(0.4, 0, 0.2, 1),
+				transform 0.65s cubic-bezier(0.4, 0, 0.2, 1),
+				visibility 0s 0.65s;
+		}
+
+		.slide.active {
+			opacity: 1;
+			visibility: visible;
+			transform: translateX(0);
+			transition: opacity 0.65s cubic-bezier(0.4, 0, 0.2, 1),
+				transform 0.65s cubic-bezier(0.4, 0, 0.2, 1),
+				visibility 0s 0s;
+		}
+
+		.slide.prev {
+			transform: translateX(-60px);
+		}
+
+		.slide-inner {
+			width: 100%;
+			max-width: 1400px;
+			max-height: 100%;
+			overflow-y: auto;
+			scrollbar-width: thin;
+			scrollbar-color: rgba(99, 102, 241, 0.3) transparent;
+		}
+
+		.slide-inner::-webkit-scrollbar {
+			width: 4px;
+		}
+
+		.slide-inner::-webkit-scrollbar-track {
+			background: transparent;
+		}
+
+		.slide-inner::-webkit-scrollbar-thumb {
+			background: rgba(99, 102, 241, 0.3);
+			border-radius: 4px;
+		}
+
+		/* ===== STAGGERED ANIMATIONS ===== */
+		.slide.active .animate-in {
+			animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+			opacity: 0;
+		}
+
+		.slide.active .animate-in:nth-child(1) {
+			animation-delay: 0.1s;
+		}
+
+		.slide.active .animate-in:nth-child(2) {
+			animation-delay: 0.2s;
+		}
+
+		.slide.active .animate-in:nth-child(3) {
+			animation-delay: 0.3s;
+		}
+
+		.slide.active .animate-in:nth-child(4) {
+			animation-delay: 0.4s;
+		}
+
+		.slide.active .animate-in:nth-child(5) {
+			animation-delay: 0.5s;
+		}
+
+		.slide.active .animate-in:nth-child(6) {
+			animation-delay: 0.6s;
+		}
+
+		.slide.active .animate-in:nth-child(7) {
+			animation-delay: 0.7s;
+		}
+
+		.slide.active .animate-in:nth-child(8) {
+			animation-delay: 0.8s;
+		}
+
+		@keyframes slideUp {
+			from {
+				opacity: 0;
+				transform: translateY(30px);
+			}
+
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+
+		@keyframes pulseGlow {
+
+			0%,
+			100% {
+				box-shadow: 0 0 20px rgba(99, 102, 241, 0.1);
+			}
+
+			50% {
+				box-shadow: 0 0 40px rgba(99, 102, 241, 0.25);
+			}
+		}
+
+		/* ===== TYPOGRAPHY ===== */
+		.slide-title {
+			font-size: 2.8rem;
+			font-weight: 800;
+			line-height: 1.15;
+			margin-bottom: 0.5em;
+			background: var(--gradient-hero);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			background-clip: text;
+			letter-spacing: -0.03em;
+		}
+
+		.slide-title.small {
+			font-size: 2.2rem;
+		}
+
+		.slide-subtitle {
+			font-size: 1.25rem;
+			font-weight: 400;
+			color: var(--text-secondary);
+			line-height: 1.5;
+			margin-bottom: 1.2em;
+		}
+
+		.section-label {
+			display: inline-flex;
+			align-items: center;
+			gap: 8px;
+			font-size: 0.75rem;
+			font-weight: 700;
+			letter-spacing: 0.15em;
+			text-transform: uppercase;
+			color: var(--accent-cyan);
+			margin-bottom: 0.8rem;
+			padding: 6px 14px;
+			background: rgba(34, 211, 238, 0.08);
+			border: 1px solid rgba(34, 211, 238, 0.15);
+			border-radius: 100px;
+			width: fit-content;
+		}
+
+		.section-label::before {
+			content: '';
+			width: 6px;
+			height: 6px;
+			background: var(--accent-cyan);
+			border-radius: 50%;
+			animation: pulseGlowDot 2s ease-in-out infinite;
+		}
+
+		@keyframes pulseGlowDot {
+
+			0%,
+			100% {
+				opacity: 1;
+				box-shadow: 0 0 4px var(--accent-cyan);
+			}
+
+			50% {
+				opacity: 0.5;
+				box-shadow: 0 0 10px var(--accent-cyan);
+			}
+		}
+
+		h2 {
+			font-size: 1.35rem;
+			font-weight: 700;
+			color: var(--text-primary);
+			margin: 1.2em 0 0.5em;
+			display: flex;
+			align-items: center;
+			gap: 10px;
+		}
+
+		h2::before {
+			content: '';
+			width: 4px;
+			height: 1.2em;
+			background: var(--gradient-hero);
+			border-radius: 2px;
+			flex-shrink: 0;
+		}
+
+		h3 {
+			font-size: 1.05rem;
+			font-weight: 600;
+			color: var(--accent-violet);
+			margin: 1em 0 0.4em;
+		}
+
+		p {
+			font-size: 1.05rem;
+			line-height: 1.75;
+			color: var(--text-secondary);
+			margin-bottom: 0.8em;
+		}
+
+		/* ===== HERO SLIDE ===== */
+		.hero-slide .slide-inner {
+			text-align: center;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.hero-badge {
+			display: inline-flex;
+			align-items: center;
+			gap: 8px;
+			padding: 8px 20px;
+			background: rgba(99, 102, 241, 0.1);
+			border: 1px solid rgba(99, 102, 241, 0.2);
+			border-radius: 100px;
+			font-size: 0.85rem;
+			font-weight: 600;
+			color: var(--accent-violet);
+			margin-bottom: 2rem;
+			letter-spacing: 0.05em;
+		}
+
+		.hero-title {
+			font-size: 4.5rem;
+			font-weight: 900;
+			line-height: 1.1;
+			background: var(--gradient-hero);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			background-clip: text;
+			margin-bottom: 0.4em;
+			letter-spacing: -0.04em;
+		}
+
+		.hero-subtitle {
+			font-size: 1.4rem;
+			font-weight: 300;
+			color: var(--text-secondary);
+			max-width: 750px;
+			line-height: 1.6;
+			margin-bottom: 2.5rem;
+		}
+
+		.hero-meta {
+			display: flex;
+			gap: 50px;
+			justify-content: center;
+			flex-wrap: wrap;
+		}
+
+		.hero-meta-item {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 6px;
+		}
+
+		.hero-meta-label {
+			font-size: 0.72rem;
+			font-weight: 700;
+			text-transform: uppercase;
+			letter-spacing: 0.12em;
+			color: var(--text-muted);
+		}
+
+		.hero-meta-value {
+			font-size: 1.1rem;
+			font-weight: 500;
+			color: var(--text-primary);
+		}
+
+		/* ===== GLASS CARDS ===== */
+		.glass-card {
+			background: var(--glass-bg);
+			border: 1px solid var(--glass-border);
+			border-radius: var(--radius-lg);
+			padding: 28px 32px;
+			backdrop-filter: blur(20px);
+			-webkit-backdrop-filter: blur(20px);
+			transition: var(--transition-smooth);
+		}
+
+		.glass-card:hover {
+			border-color: rgba(99, 102, 241, 0.2);
+			box-shadow: var(--shadow-glow);
+		}
+
+		/* ===== LISTS ===== */
+		ul,
+		ol {
+			list-style: none;
+			margin: 0.5em 0;
+		}
+
+		ul li,
+		ol li {
+			position: relative;
+			padding-left: 24px;
+			margin-bottom: 0.55em;
+			font-size: 1rem;
+			color: var(--text-secondary);
+			line-height: 1.65;
+		}
+
+		ul li::before {
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 0.55em;
+			width: 8px;
+			height: 8px;
+			border-radius: 50%;
+			background: var(--gradient-hero);
+		}
+
+		/* ===== TABLES ===== */
+		.table-wrapper {
+			overflow-x: auto;
+			border-radius: var(--radius-md);
+			border: 1px solid var(--glass-border);
+			margin: 0.8em 0;
+		}
+
+		table {
+			width: 100%;
+			border-collapse: collapse;
+			font-size: 0.92rem;
+		}
+
+		thead th {
+			background: rgba(99, 102, 241, 0.1);
+			color: var(--accent-violet);
+			font-weight: 700;
+			text-transform: uppercase;
+			letter-spacing: 0.06em;
+			font-size: 0.75rem;
+			padding: 14px 18px;
+			text-align: left;
+			border-bottom: 1px solid rgba(99, 102, 241, 0.15);
+			white-space: nowrap;
+		}
+
+		tbody td {
+			padding: 12px 18px;
+			border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+			color: var(--text-secondary);
+		}
+
+		tbody tr:last-child td {
+			border-bottom: none;
+		}
+
+		tbody tr:hover {
+			background: rgba(99, 102, 241, 0.04);
+		}
+
+		tbody tr.highlight td {
+			color: var(--text-primary);
+			background: rgba(99, 102, 241, 0.08);
+			font-weight: 600;
+		}
+
+		td.num {
+			text-align: right;
+			font-family: 'JetBrains Mono', monospace;
+			font-size: 0.88rem;
+		}
+
+		/* ===== METRIC CARDS ===== */
+		.metrics-grid {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 20px;
+			margin: 1em 0;
+		}
+
+		.metric-card {
+			background: var(--glass-bg);
+			border: 1px solid var(--glass-border);
+			border-radius: var(--radius-md);
+			padding: 24px;
+			text-align: center;
+			transition: var(--transition-smooth);
+		}
+
+		.metric-card:hover {
+			transform: translateY(-3px);
+			border-color: rgba(99, 102, 241, 0.25);
+			box-shadow: 0 12px 40px rgba(99, 102, 241, 0.12);
+		}
+
+		.metric-value {
+			font-size: 2.4rem;
+			font-weight: 800;
+			background: var(--gradient-hero);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			background-clip: text;
+			margin-bottom: 6px;
+		}
+
+		.metric-label {
+			font-size: 0.78rem;
+			font-weight: 600;
+			text-transform: uppercase;
+			letter-spacing: 0.1em;
+			color: var(--text-muted);
+		}
+
+		/* ===== AXIS CARDS ===== */
+		.axis-grid {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 18px;
+			margin: 0.8em 0;
+		}
+
+		.axis-card {
+			background: var(--glass-bg);
+			border: 1px solid var(--glass-border);
+			border-radius: var(--radius-md);
+			padding: 24px 26px;
+			transition: var(--transition-smooth);
+		}
+
+		.axis-card:hover {
+			border-color: rgba(99, 102, 241, 0.2);
+			transform: translateY(-2px);
+		}
+
+		.axis-card .axis-number {
+			font-size: 0.72rem;
+			font-weight: 800;
+			color: var(--accent-blue);
+			letter-spacing: 0.08em;
+			margin-bottom: 6px;
+		}
+
+		.axis-card .axis-name {
+			font-size: 1.05rem;
+			font-weight: 700;
+			color: var(--text-primary);
+			margin-bottom: 6px;
+		}
+
+		.axis-card .axis-desc {
+			font-size: 0.88rem;
+			color: var(--text-muted);
+			line-height: 1.5;
+		}
+
+		/* ======================================== */
+		/* ===== CUSTOM WORKFLOW PIPELINES ======== */
+		/* ======================================== */
+
+		/* --- Horizontal Pipeline (step nodes with animated connectors) --- */
+		.pipeline {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 0;
+			margin: 1.5em 0;
+			padding: 32px 16px;
+			overflow-x: auto;
+		}
+
+		.pipe-node {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 10px;
+			min-width: 120px;
+			position: relative;
+			flex-shrink: 0;
+		}
+
+		.pipe-icon {
+			width: 64px;
+			height: 64px;
+			border-radius: 16px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 1.6rem;
+			border: 2px solid;
+			position: relative;
+			transition: var(--transition-smooth);
+			box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+		}
+
+		.pipe-icon::after {
+			content: '';
+			position: absolute;
+			inset: -4px;
+			border-radius: 20px;
+			background: inherit;
+			opacity: 0.15;
+			filter: blur(12px);
+			z-index: -1;
+		}
+
+		.pipe-node:hover .pipe-icon {
+			transform: translateY(-4px) scale(1.08);
+		}
+
+		.pipe-label {
+			font-size: 0.78rem;
+			font-weight: 600;
+			color: var(--text-secondary);
+			text-align: center;
+			max-width: 130px;
+			line-height: 1.35;
+		}
+
+		.pipe-connector {
+			width: 48px;
+			height: 2px;
+			position: relative;
+			flex-shrink: 0;
+			margin-bottom: 28px;
+		}
+
+		.pipe-connector::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: linear-gradient(90deg, var(--accent-blue), var(--accent-violet));
+			border-radius: 1px;
+		}
+
+		.pipe-connector::after {
+			content: '';
+			position: absolute;
+			right: -3px;
+			top: -3px;
+			width: 8px;
+			height: 8px;
+			border-top: 2px solid var(--accent-violet);
+			border-right: 2px solid var(--accent-violet);
+			transform: rotate(45deg);
+		}
+
+		/* Animated flow dots on connectors */
+		.slide.active .pipe-connector::before {
+			background-size: 200% 100%;
+			background-image: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan), var(--accent-violet), var(--accent-blue));
+			animation: flowLine 2s linear infinite;
+		}
+
+		@keyframes flowLine {
+			0% {
+				background-position: 200% 0;
+			}
+
+			100% {
+				background-position: -200% 0;
+			}
+		}
+
+		/* Color variants for pipe icons */
+		.pipe-icon.blue {
+			background: rgba(99, 102, 241, 0.12);
+			border-color: rgba(99, 102, 241, 0.4);
+			color: var(--accent-blue);
+		}
+
+		.pipe-icon.cyan {
+			background: rgba(34, 211, 238, 0.12);
+			border-color: rgba(34, 211, 238, 0.4);
+			color: var(--accent-cyan);
+		}
+
+		.pipe-icon.violet {
+			background: rgba(167, 139, 250, 0.12);
+			border-color: rgba(167, 139, 250, 0.4);
+			color: var(--accent-violet);
+		}
+
+		.pipe-icon.emerald {
+			background: rgba(52, 211, 153, 0.12);
+			border-color: rgba(52, 211, 153, 0.4);
+			color: var(--accent-emerald);
+		}
+
+		.pipe-icon.rose {
+			background: rgba(251, 113, 133, 0.12);
+			border-color: rgba(251, 113, 133, 0.4);
+			color: var(--accent-rose);
+		}
+
+		.pipe-icon.amber {
+			background: rgba(251, 191, 36, 0.12);
+			border-color: rgba(251, 191, 36, 0.4);
+			color: var(--accent-amber);
+		}
+
+		/* --- Vertical Layer Tower (for architecture) --- */
+		.layer-tower {
+			display: flex;
+			flex-direction: column;
+			gap: 0;
+			max-width: 700px;
+			margin: 0 auto;
+		}
+
+		.layer-row {
+			display: flex;
+			align-items: center;
+			gap: 0;
+		}
+
+		.layer-node {
+			flex: 1;
+			display: flex;
+			align-items: center;
+			gap: 14px;
+			padding: 14px 22px;
+			border-radius: 12px;
+			border: 1px solid var(--glass-border);
+			background: var(--glass-bg);
+			transition: var(--transition-smooth);
+			cursor: default;
+		}
+
+		.layer-node:hover {
+			transform: translateX(6px);
+		}
+
+		.layer-node .layer-emoji {
+			font-size: 1.3rem;
+			width: 42px;
+			height: 42px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border-radius: 10px;
+			flex-shrink: 0;
+		}
+
+		.layer-node .layer-text {
+			font-size: 0.9rem;
+			font-weight: 600;
+			color: var(--text-primary);
+		}
+
+		.layer-node .layer-sub {
+			font-size: 0.75rem;
+			color: var(--text-muted);
+			margin-top: 2px;
+		}
+
+		.layer-node.accent-blue {
+			border-color: rgba(99, 102, 241, 0.25);
+			background: rgba(99, 102, 241, 0.06);
+		}
+
+		.layer-node.accent-blue .layer-emoji {
+			background: rgba(99, 102, 241, 0.15);
+		}
+
+		.layer-node.accent-blue:hover {
+			border-color: rgba(99, 102, 241, 0.45);
+			box-shadow: 0 0 20px rgba(99, 102, 241, 0.1);
+		}
+
+		.layer-node.accent-violet {
+			border-color: rgba(167, 139, 250, 0.25);
+			background: rgba(167, 139, 250, 0.06);
+		}
+
+		.layer-node.accent-violet .layer-emoji {
+			background: rgba(167, 139, 250, 0.15);
+		}
+
+		.layer-node.accent-violet:hover {
+			border-color: rgba(167, 139, 250, 0.45);
+			box-shadow: 0 0 20px rgba(167, 139, 250, 0.1);
+		}
+
+		.layer-node.accent-emerald {
+			border-color: rgba(52, 211, 153, 0.25);
+			background: rgba(52, 211, 153, 0.06);
+		}
+
+		.layer-node.accent-emerald .layer-emoji {
+			background: rgba(52, 211, 153, 0.15);
+		}
+
+		.layer-node.accent-emerald:hover {
+			border-color: rgba(52, 211, 153, 0.45);
+			box-shadow: 0 0 20px rgba(52, 211, 153, 0.1);
+		}
+
+		.layer-node.accent-cyan {
+			border-color: rgba(34, 211, 238, 0.25);
+			background: rgba(34, 211, 238, 0.06);
+		}
+
+		.layer-node.accent-cyan .layer-emoji {
+			background: rgba(34, 211, 238, 0.15);
+		}
+
+		/* Vertical connector between layers */
+		.layer-connector {
+			width: 2px;
+			height: 14px;
+			margin: 0 auto;
+			position: relative;
+			overflow: visible;
+		}
+
+		.layer-connector::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 2px;
+			height: 100%;
+			background: linear-gradient(180deg, rgba(99, 102, 241, 0.4), rgba(167, 139, 250, 0.4));
+		}
+
+		.slide.active .layer-connector::before {
+			animation: flowDown 1.5s linear infinite;
+			background-size: 100% 200%;
+			background-image: linear-gradient(180deg, rgba(99, 102, 241, 0.6), rgba(34, 211, 238, 0.6), rgba(167, 139, 250, 0.6), rgba(99, 102, 241, 0.6));
+		}
+
+		@keyframes flowDown {
+			0% {
+				background-position: 0 -200%;
+			}
+
+			100% {
+				background-position: 0 200%;
+			}
+		}
+
+		/* --- Synthesis Flow (horizontal chain for overview) --- */
+		.synth-flow {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 6px;
+			margin: 1.2em 0;
+			padding: 20px 10px;
+			flex-wrap: wrap;
+		}
+
+		.synth-node {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 6px;
+			padding: 12px 14px;
+			border-radius: 14px;
+			border: 1px solid var(--glass-border);
+			background: var(--glass-bg);
+			min-width: 90px;
+			transition: var(--transition-smooth);
+		}
+
+		.synth-node:hover {
+			transform: translateY(-3px);
+		}
+
+		.synth-node .synth-emoji {
+			font-size: 1.4rem;
+		}
+
+		.synth-node .synth-text {
+			font-size: 0.72rem;
+			font-weight: 600;
+			color: var(--text-secondary);
+			text-align: center;
+			line-height: 1.3;
+		}
+
+		.synth-arrow {
+			color: var(--accent-violet);
+			font-size: 1rem;
+			opacity: 0.5;
+			flex-shrink: 0;
+		}
+
+		.synth-node.highlight-node {
+			border-color: rgba(99, 102, 241, 0.35);
+			background: rgba(99, 102, 241, 0.08);
+		}
+
+		.synth-node.highlight-violet {
+			border-color: rgba(167, 139, 250, 0.35);
+			background: rgba(167, 139, 250, 0.08);
+		}
+
+		.synth-node.highlight-green {
+			border-color: rgba(52, 211, 153, 0.35);
+			background: rgba(52, 211, 153, 0.08);
+		}
+
+		/* ===== IMAGES — FULLSCREEN OPTIMIZED ===== */
+		.img-container {
+			margin: 0.8em 0;
+			border-radius: var(--radius-lg);
+			overflow: hidden;
+			border: 1px solid rgba(255, 255, 255, 0.06);
+			background: rgba(0, 0, 0, 0.25);
+			box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.03);
+		}
+
+		.img-container img {
+			width: 100%;
+			height: auto;
+			display: block;
+			max-height: 55vh;
+			object-fit: contain;
+		}
+
+		.img-container.large img {
+			max-height: 65vh;
+		}
+
+		.img-container.full img {
+			max-height: 72vh;
+		}
+
+		.img-container.fill img {
+			object-fit: cover;
+		}
+
+		.img-caption {
+			padding: 10px 18px;
+			font-size: 0.78rem;
+			color: var(--text-muted);
+			text-align: center;
+			font-style: italic;
+			border-top: 1px solid rgba(255, 255, 255, 0.04);
+			background: rgba(0, 0, 0, 0.15);
+		}
+
+		.img-row {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 20px;
+			margin: 0.8em 0;
+		}
+
+		.img-row.three-col {
+			grid-template-columns: 1fr 1fr 1fr;
+		}
+
+		/* ===== CALLOUT / QUOTE ===== */
+		.callout {
+			padding: 20px 24px;
+			border-radius: var(--radius-md);
+			border-left: 4px solid var(--accent-blue);
+			background: rgba(99, 102, 241, 0.06);
+			margin: 0.8em 0;
+			font-size: 1rem;
+			line-height: 1.7;
+			color: var(--text-secondary);
+		}
+
+		.callout.key {
+			border-left-color: var(--accent-emerald);
+			background: rgba(52, 211, 153, 0.06);
+		}
+
+		.callout.critical {
+			border-left-color: var(--accent-rose);
+			background: rgba(251, 113, 133, 0.06);
+		}
+
+		.callout strong {
+			color: var(--text-primary);
+		}
+
+		/* ===== TWO COLUMNS ===== */
+		.two-col {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 36px;
+			align-items: start;
+		}
+
+		.two-col.wide-left {
+			grid-template-columns: 1.2fr 0.8fr;
+		}
+
+		.two-col.wide-right {
+			grid-template-columns: 0.8fr 1.2fr;
+		}
+
+		/* ===== PROGRESS BAR ===== */
+		.progress-bar {
+			position: fixed;
+			top: 0;
+			left: 0;
+			height: 3px;
+			background: var(--gradient-hero);
+			z-index: 100;
+			transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+			box-shadow: 0 0 12px rgba(99, 102, 241, 0.5);
+		}
+
+		/* ===== SLIDE COUNTER ===== */
+		.slide-counter {
+			position: fixed;
+			bottom: 28px;
+			right: 36px;
+			font-size: 0.85rem;
+			font-weight: 600;
+			color: var(--text-muted);
+			z-index: 100;
+			font-family: 'JetBrains Mono', monospace;
+			display: flex;
+			align-items: center;
+			gap: 6px;
+		}
+
+		.slide-counter .current {
+			color: var(--accent-violet);
+			font-size: 1.05rem;
+		}
+
+		/* ===== NAV CONTROLS ===== */
+		.nav-controls {
+			position: fixed;
+			bottom: 24px;
+			left: 50%;
+			transform: translateX(-50%);
+			display: flex;
+			gap: 12px;
+			z-index: 100;
+		}
+
+		.nav-btn {
+			width: 46px;
+			height: 46px;
+			border-radius: 50%;
+			border: 1px solid var(--glass-border);
+			background: var(--glass-bg);
+			backdrop-filter: blur(12px);
+			color: var(--text-secondary);
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			transition: var(--transition-smooth);
+			font-size: 1.1rem;
+		}
+
+		.nav-btn:hover {
+			border-color: var(--accent-blue);
+			color: var(--text-primary);
+			background: rgba(99, 102, 241, 0.1);
+			transform: scale(1.08);
+		}
+
+		.nav-btn:active {
+			transform: scale(0.95);
+		}
+
+		/* ===== MINIMAP ===== */
+		.minimap {
+			position: fixed;
+			left: 24px;
+			top: 50%;
+			transform: translateY(-50%);
+			display: flex;
+			flex-direction: column;
+			gap: 6px;
+			z-index: 100;
+		}
+
+		.minimap-dot {
+			width: 8px;
+			height: 8px;
+			border-radius: 50%;
+			background: rgba(255, 255, 255, 0.1);
+			border: 1px solid rgba(255, 255, 255, 0.08);
+			cursor: pointer;
+			transition: var(--transition-smooth);
+		}
+
+		.minimap-dot.active {
+			background: var(--accent-blue);
+			border-color: var(--accent-blue);
+			box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+			transform: scale(1.3);
+		}
+
+		.minimap-dot:hover:not(.active) {
+			background: rgba(255, 255, 255, 0.25);
+			transform: scale(1.2);
+		}
+
+		/* ===== MISC ===== */
+		.conclusion-slide .slide-inner {
+			text-align: center;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.divider {
+			width: 60px;
+			height: 3px;
+			background: var(--gradient-hero);
+			border-radius: 2px;
+			margin: 1.2em 0;
+		}
+
+		.divider.center {
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		.tag-row {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 8px;
+			margin: 0.8em 0;
+		}
+
+		.tag {
+			display: inline-flex;
+			align-items: center;
+			padding: 5px 14px;
+			border-radius: 100px;
+			font-size: 0.82rem;
+			font-weight: 600;
+			border: 1px solid;
+		}
+
+		.tag.blue {
+			color: var(--accent-blue);
+			border-color: rgba(99, 102, 241, 0.2);
+			background: rgba(99, 102, 241, 0.06);
+		}
+
+		.tag.emerald {
+			color: var(--accent-emerald);
+			border-color: rgba(52, 211, 153, 0.2);
+			background: rgba(52, 211, 153, 0.06);
+		}
+
+		.tag.rose {
+			color: var(--accent-rose);
+			border-color: rgba(251, 113, 133, 0.2);
+			background: rgba(251, 113, 133, 0.06);
+		}
+
+		.tag.amber {
+			color: var(--accent-amber);
+			border-color: rgba(251, 191, 36, 0.2);
+			background: rgba(251, 191, 36, 0.06);
+		}
+
+		.tag.violet {
+			color: var(--accent-violet);
+			border-color: rgba(167, 139, 250, 0.2);
+			background: rgba(167, 139, 250, 0.06);
+		}
+
+		@media (max-width: 900px) {
+			.slide {
+				padding: 40px 30px;
+			}
+
+			.hero-title {
+				font-size: 2.8rem;
+			}
+
+			.slide-title {
+				font-size: 2rem;
+			}
+
+			.two-col,
+			.axis-grid {
+				grid-template-columns: 1fr;
+			}
+
+			.minimap {
+				display: none;
+			}
+
+			.pipeline {
+				flex-wrap: wrap;
+			}
+
+			.img-row {
+				grid-template-columns: 1fr;
+			}
+
+			.img-row.three-col {
+				grid-template-columns: 1fr;
+			}
+		}
+	</style>
+</head>
+
+<body>
+
+	<!-- Animated Background -->
+	<div class="bg-animation">
+		<div class="bg-orb"></div>
+		<div class="bg-orb"></div>
+		<div class="bg-orb"></div>
+	</div>
+	<div class="grid-overlay"></div>
+
+	<!-- Progress Bar -->
+	<div class="progress-bar" id="progressBar"></div>
+
+	<!-- Minimap -->
+	<div class="minimap" id="minimap"></div>
+
+	<!-- Navigation -->
+	<div class="nav-controls">
+		<button class="nav-btn" onclick="prevSlide()" aria-label="Diapositive précédente" id="nav-prev">&#8592;</button>
+		<button class="nav-btn" onclick="nextSlide()" aria-label="Diapositive suivante" id="nav-next">&#8594;</button>
+	</div>
+
+	<!-- Slide Counter -->
+	<div class="slide-counter">
+		<span class="current" id="currentSlide">1</span>
+		<span>/</span>
+		<span id="totalSlides">22</span>
+	</div>
+
+	<!-- ============================================================= -->
+	<!-- PRESENTATION SLIDES -->
+	<!-- ============================================================= -->
+	<div class="presentation" id="presentation">
+
+		<!-- ========== SLIDE 1: TITLE ========== -->
+		<div class="slide hero-slide active" data-slide="0">
+			<div class="slide-inner">
+				<div class="animate-in hero-badge">🎓 Soutenance de Thèse de Doctorat</div>
+				<h1 class="animate-in hero-title">Collaboration<br>Humain-Robot</h1>
+				<p class="animate-in hero-subtitle">
+					Apprentissage incrémental, adaptation comportementale<br>et sécurité pour les cobots
+				</p>
+				<div class="animate-in divider center"></div>
+				<div class="animate-in hero-meta">
+					<div class="hero-meta-item">
+						<span class="hero-meta-label">Auteur</span>
+						<span class="hero-meta-value">Ameur Gargouri</span>
+					</div>
+					<div class="hero-meta-item">
+						<span class="hero-meta-label">Projet</span>
+						<span class="hero-meta-value">Thèse de doctorat</span>
+					</div>
+					<div class="hero-meta-item">
+						<span class="hero-meta-label">Date</span>
+						<span class="hero-meta-value">3 Juillet 2026</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- ========== SLIDE 2: RÉSUMÉ EXÉCUTIF ========== -->
+		<div class="slide" data-slide="1">
+			<div class="slide-inner">
+				<div class="animate-in section-label">Introduction</div>
+				<h1 class="animate-in slide-title">Résumé exécutif</h1>
+				<div class="animate-in glass-card" style="margin-bottom: 1.2em;">
+					<p style="font-size: 1.15rem; line-height: 1.85; margin-bottom: 0;">
+						Cette thèse vise à doter un cobot de capacités d'<strong
+							style="color: var(--accent-cyan);">adaptation progressive</strong> face à la variabilité des
+						opérateurs humains, tout en garantissant une exécution <strong
+							style="color: var(--accent-emerald);">sûre</strong> et <strong
+							style="color: var(--accent-violet);">interprétable</strong>.
+					</p>
+				</div>
+				<div class="animate-in callout key">
+					<strong>Idée centrale :</strong> Apprendre à partir de la collaboration réelle, conserver les
+					connaissances acquises, adapter le comportement du robot à chaque opérateur, et maintenir la
+					sécurité comme contrainte permanente.
+				</div>
+				<div class="animate-in tag-row" style="margin-top: 1.2em;">
+					<span class="tag blue">Apprentissage incrémental</span>
+					<span class="tag emerald">Sécurité</span>
+					<span class="tag violet">Adaptation personnalisée</span>
+					<span class="tag amber">Cobotique</span>
+				</div>
+			</div>
+		</div>
+
+		<!-- ========== SLIDE 3: PROBLÉMATIQUE ========== -->
+		<div class="slide" data-slide="2">
+			<div class="slide-inner">
+				<div class="animate-in section-label">Problématique</div>
+				<h1 class="animate-in slide-title">Problématique scientifique</h1>
+				<div class="animate-in two-col">
+					<div>
+						<h2>Question de recherche</h2>
+						<p>Comment un cobot peut-il <strong style="color: var(--text-primary);">apprendre de manière
+								incrémentale</strong> les préférences, les stratégies et le style opératoire d'un
+							humain, puis transformer cet apprentissage en un <strong
+								style="color: var(--text-primary);">comportement personnalisé</strong> sans
+							reprogrammation explicite ?</p>
+					</div>
+					<div>
+						<h2>Défi principal</h2>
+						<p>La difficulté réside dans l'équilibre entre :</p>
+						<ul>
+							<li>l'<strong style="color: var(--accent-cyan);">adaptation rapide</strong> à de nouveaux
+								opérateurs</li>
+							<li>la <strong style="color: var(--accent-violet);">rétention</strong> des connaissances
+								antérieures</li>
+							<li>la <strong style="color: var(--accent-amber);">robustesse</strong> aux signaux
+								multimodaux bruités</li>
+							<li>la <strong style="color: var(--accent-emerald);">sécurité</strong> de l'interaction
+								homme-robot</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- ========== SLIDE 4: AXES DE RECHERCHE ========== -->
+		<div class="slide" data-slide="3">
+			<div class="slide-inner">
+				<div class="animate-in section-label">Structure</div>
+				<h1 class="animate-in slide-title">Axes de recherche</h1>
+				<p class="animate-in slide-subtitle">Quatre objectifs structurants guident l'ensemble de la thèse</p>
+				<div class="animate-in axis-grid">
+					<div class="axis-card" style="border-left: 3px solid var(--accent-blue);">
+						<div class="axis-number">AXE 1</div>
+						<div class="axis-name">Modélisation des schémas opératoires humains</div>
+						<div class="axis-desc">Apprendre les habitudes, les séquences et le timing pour représenter le
+							style d'un opérateur</div>
+					</div>
+					<div class="axis-card" style="border-left: 3px solid var(--accent-violet);">
+						<div class="axis-number">AXE 2</div>
+						<div class="axis-name">Apprentissage incrémental et IRL</div>
+						<div class="axis-desc">Inférer les préférences en ligne à partir des démonstrations et
+							corrections pour réduire l'oubli catastrophique</div>
+					</div>
+					<div class="axis-card" style="border-left: 3px solid var(--accent-cyan);">
+						<div class="axis-number">AXE 3</div>
+						<div class="axis-name">Génération comportementale personnalisée</div>
+						<div class="axis-desc">Produire des trajectoires et rythmes adaptés à l'opérateur — passer de la
+							perception à l'action</div>
+					</div>
+					<div class="axis-card" style="border-left: 3px solid var(--accent-emerald);">
+						<div class="axis-number">AXE 4</div>
+						<div class="axis-name">Alignement et fluidité</div>
+						<div class="axis-desc">Mesurer objectivement l'adéquation homme-robot et évaluer la qualité de
+							la collaboration</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- ========== SLIDE 5: CONTRIBUTIONS ========== -->
+		<div class="slide" data-slide="4">
+			<div class="slide-inner">
+				<div class="animate-in section-label">Contributions</div>
+				<h1 class="animate-in slide-title">Contributions majeures</h1>
+				<div class="animate-in two-col">
+					<div>
+						<h2>Ce qui a été réalisé</h2>
+						<ul>
+							<li>Une architecture de thèse complète, de l'acquisition des signaux à l'évaluation</li>
+							<li>Une chaîne de prétraitement reproductible pour <strong
+									style="color: var(--text-primary);">HARMONIC, DASIG et MultiPhysio-HRC</strong></li>
+							<li>Un système de reconnaissance du type de tâche sur MultiPhysio-HRC</li>
+							<li><strong style="color: var(--accent-cyan);">FLAIR</strong>, un nouvel algorithme
+								incrémental hybride pour l'autonomie partagée</li>
+							<li>Un système de détection de sécurité sur DASIG, avec modèles profonds 1D de haut niveau
+							</li>
+							<li>Une base de travail pour la fusion multimodale et l'adaptation comportementale</li>
+						</ul>
+					</div>
+					<div>
+						<div class="callout key" style="margin-top: 2em;">
+							<h3 style="color: var(--accent-emerald); margin-top: 0;">💡 Message central</h3>
+							<p style="margin-bottom: 0;">La thèse ne consiste pas en une seule expérience, mais en une
+								<strong>chaîne cohérente de résultats</strong> qui démontrent qu'une adaptation
+								incrémentale, sûre et personnalisée est réalisable dans des scénarios HRC réalistes.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- ========== SLIDE 6: ARCHITECTURE GÉNÉRALE ========== -->
+		<div class="slide" data-slide="5">
+			<div class="slide-inner">
+				<div class="animate-in section-label">Architecture</div>
+				<h1 class="animate-in slide-title">Architecture générale de la thèse</h1>
+
+				<div class="animate-in two-col" style="grid-template-columns: 1fr 0.8fr; gap: 40px;">
+					<!-- Layer Tower -->
+					<div class="layer-tower">
+						<div class="layer-row">
+							<div class="layer-node accent-blue">
+								<div class="layer-emoji">🔌</div>
+								<div>
+									<div class="layer-text">Couche 0 — Acquisition des capteurs</div>
+									<div class="layer-sub">Signaux bruts multimodaux</div>
+								</div>
+							</div>
+						</div>
+						<div class="layer-connector"></div>
+						<div class="layer-row">
+							<div class="layer-node accent-cyan">
+								<div class="layer-emoji">👁</div>
+								<div>
+									<div class="layer-text">Couche 1 — Perception humaine</div>
+									<div class="layer-sub">Estimation d'état</div>
+								</div>
+							</div>
+						</div>
+						<div class="layer-connector"></div>
+						<div class="layer-row">
+							<div class="layer-node accent-blue">
+								<div class="layer-emoji">🧠</div>
+								<div>
+									<div class="layer-text">Couche 2 — Modélisation du style</div>
+									<div class="layer-sub">Embedding opérateur</div>
+								</div>
+							</div>
+						</div>
+						<div class="layer-connector"></div>
+						<div class="layer-row">
+							<div class="layer-node accent-violet">
+								<div class="layer-emoji">📈</div>
+								<div>
+									<div class="layer-text">Couche 3 — Apprentissage incrémental</div>
+									<div class="layer-sub">FLAIR + IRL</div>
+								</div>
+							</div>
+						</div>
+						<div class="layer-connector"></div>
+						<div class="layer-row">
+							<div class="layer-node accent-blue">
+								<div class="layer-emoji">⚙️</div>
+								<div>
+									<div class="layer-text">Couche 4 — Génération comportementale</div>
+									<div class="layer-sub">Trajectoires personnalisées</div>
+								</div>
+							</div>
+						</div>
+						<div class="layer-connector"></div>
+						<div class="layer-row">
+							<div class="layer-node accent-blue">
+								<div class="layer-emoji">🎯</div>
+								<div>
+									<div class="layer-text">Couche 5 — Planification et exécution</div>
+									<div class="layer-sub">Contrôle adaptatif</div>
+								</div>
+							</div>
+						</div>
+						<div class="layer-connector"></div>
+						<div class="layer-row">
+							<div class="layer-node accent-emerald">
+								<div class="layer-emoji">🛡</div>
+								<div>
+									<div class="layer-text">Couche 6 — Sécurité et conformité</div>
+									<div class="layer-sub">Contrainte permanente</div>
+								</div>
+							</div>
+						</div>
+						<div class="layer-connector"></div>
+						<div class="layer-row">
+							<div class="layer-node accent-blue">
+								<div class="layer-emoji">📊</div>
+								<div>
+									<div class="layer-text">Couche 7 — Métriques et évaluation</div>
+									<div class="layer-sub">Qualité de collaboration</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Principle -->
+					<div>
+						<div class="callout" style="margin-top: 1em;">
+							<strong>Principe directeur :</strong> Chaque couche est testable indépendamment, mais la
+							valeur scientifique provient de leur articulation — perception, style, adaptation, exécution
+							et sécurité sont traités comme un système unique.
+						</div>
+						<div style="margin-top: 1.5em;">
+							<h2>Couches clés</h2>
+							<ul>
+								<li><strong style="color: var(--accent-violet);">Couche 3</strong> — Contribution
+									algorithmique principale (FLAIR)</li>
+								<li><strong style="color: var(--accent-emerald);">Couche 6</strong> — Sécurité comme
+									contrainte non-négociable</li>
+								<li><strong style="color: var(--accent-cyan);">Couche 1</strong> — Perception et
+									reconnaissance des tâches</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- ========== SLIDE 7: DONNÉES ET PRÉTRAITEMENT ========== -->
+		<div class="slide" data-slide="6">
+			<div class="slide-inner">
+				<div class="animate-in section-label">Données</div>
+				<h1 class="animate-in slide-title">Données et prétraitement</h1>
+				<p class="animate-in slide-subtitle">Des pipelines reproductibles pour assurer une base expérimentale
+					propre, stable et comparable</p>
+
+				<div class="animate-in table-wrapper">
+					<table>
+						<thead>
+							<tr>
+								<th>Jeu de données</th>
+								<th>Rôle</th>
+								<th>Modalités principales</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><strong style="color: var(--accent-cyan);">HARMONIC</strong></td>
+								<td>Apprentissage incrémental et autonomie partagée</td>
+								<td>Joystick, état robot, regard, EMG, IMU, vidéo</td>
+							</tr>
+							<tr>
+								<td><strong style="color: var(--accent-rose);">DASIG</strong></td>
+								<td>Détection d'état de sécurité</td>
+								<td>Signaux MIMU et cinématiques</td>
+							</tr>
+							<tr>
+								<td><strong style="color: var(--accent-violet);">MultiPhysio-HRC</strong></td>
+								<td>Estimation du stress, de la charge et du type de tâche</td>
+								<td>EEG, ECG, EDA, EMG, respiration, audio, vidéo</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div class="animate-in metrics-grid">
+					<div class="metric-card">
+						<div class="metric-value">447/447</div>
+						<div class="metric-label">HARMONIC — 100%</div>
+					</div>
+					<div class="metric-card">
+						<div class="metric-value">179/180</div>
+						<div class="metric-label">DASIG — 99.4%</div>
+					</div>
+					<div class="metric-card">
+						<div class="metric-value">5 640</div>
+						<div class="metric-label">MultiPhysio — 100%</div>
+					</div>
+				</div>
+				<p class="animate-in" style="font-size: 0.85rem; color: var(--text-muted); text-align: center;">La seule
+					erreur sur DASIG provenait d'un CSV brut mal formé, et non du code de prétraitement.</p>
+			</div>
+		</div>
+
+		<!-- ========== SLIDE 8: FLUX HARMONIC ========== -->
+		<div class="slide" data-slide="7">
+			<div class="slide-inner">
+				<div class="animate-in section-label">Pipeline</div>
+				<h1 class="animate-in slide-title">Flux de prétraitement HARMONIC</h1>
+
+				<!-- Custom animated pipeline -->
+				<div class="animate-in pipeline">
+					<div class="pipe-node">
+						<div class="pipe-icon blue">📂</div>
+						<div class="pipe-label">Découverte<br>des essais</div>
+					</div>
+					<div class="pipe-connector"></div>
+					<div class="pipe-node">
+						<div class="pipe-icon cyan">🔗</div>
+						<div class="pipe-label">Alignement<br>des modalités</div>
+					</div>
+					<div class="pipe-connector"></div>
+					<div class="pipe-node">
+						<div class="pipe-icon violet">⚙️</div>
+						<div class="pipe-label">Filtrage &<br>normalisation</div>
+					</div>
+					<div class="pipe-connector"></div>
+					<div class="pipe-node">
+						<div class="pipe-icon amber">✂️</div>
+						<div class="pipe-label">Découpage<br>train / val / test</div>
+					</div>
+					<div class="pipe-connector"></div>
+					<div class="pipe-node">
+						<div class="pipe-icon blue">💾</div>
+						<div class="pipe-label">Export en<br>parquet</div>
+					</div>
+					<div class="pipe-connector"></div>
+					<div class="pipe-node">
+						<div class="pipe-icon emerald">✅</div>
+						<div class="pipe-label">Contrôles<br>qualité</div>
+					</div>
+				</div>
+
+				<div class="animate-in callout">
+					<strong>Intérêt scientifique :</strong> Ce pipeline transforme des données multimodales hétérogènes
+					en une base propre, stable et reproductible, indispensable pour comparer des stratégies
+					d'apprentissage incrémental dans des conditions équitables.
+				</div>
+			</div>
+		</div>
+
+		<!-- ========== SLIDE 9: PERCEPTION HUMAINE ========== -->
+		<div class="slide" data-slide="8">
+			<div class="slide-inner">
+				<div class="animate-in section-label">Couche 1</div>
+				<h1 class="animate-in slide-title">Perception humaine</h1>
+				<p class="animate-in slide-subtitle">Reconnaissance du type de tâche sur MultiPhysio-HRC</p>
+
+				<div class="animate-in two-col">
+					<div>
+						<p>Système compact de détection du type de tâche pour la collaboration homme-robot, fondé sur
+							des caractéristiques physiologiques fusionnées et évalué sur une classification à 5 classes.
+						</p>
+						<div class="tag-row">
+							<span class="tag blue">Charge cognitive</span>
+							<span class="tag rose">Stress élevé</span>
+							<span class="tag amber">Tâche industrielle</span>
+							<span class="tag emerald">Faible charge</span>
+							<span class="tag violet">Autre</span>
+						</div>
+						<p style="margin-top: 0.8em; font-size: 0.92rem;">Pipeline : prétraitement → fusion tabulaire →
+							apprentissage sensible au déséquilibre → évaluation sur split stratifié 80/20.</p>
+					</div>
+					<div>
+						<div class="img-container large">
+							<img src="IEEE-conference-template-062824/task_pipeline.png"
+								alt="Pipeline de détection du type de tâche">
+							<div class="img-caption">Pipeline de détection du type de tâche</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- ========== SLIDE 10: RÉSULTATS PERCEPTION ========== -->
+		<div class="slide" data-slide="9">
+			<div class="slide-inner">
+				<div class="animate-in section-label">Couche 1 — Résultats</div>
+				<h1 class="animate-in slide-title small">Résultats de la détection de tâche</h1>
+
+				<div class="animate-in two-col">
+					<div>
+						<div class="table-wrapper">
+							<table>
+								<thead>
+									<tr>
+										<th>Modèle</th>
+										<th>Exactitude</th>
+										<th>Acc. équil.</th>
+										<th>Macro-F1</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr class="highlight">
+										<td><strong>XGBoost</strong></td>
+										<td class="num">0.9371</td>
+										<td class="num">0.8943</td>
+										<td class="num">0.9142</td>
+									</tr>
+									<tr>
+										<td>Random Forest</td>
+										<td class="num">0.9211</td>
+										<td class="num">0.8552</td>
+										<td class="num">0.8836</td>
+									</tr>
+									<tr>
+										<td>MLP</td>
+										<td class="num">0.9140</td>
+										<td class="num">0.8727</td>
+										<td class="num">0.8727</td>
+									</tr>
+									<tr>
+										<td>Two-Tower Fusion</td>
+										<td class="num">0.8874</td>
+										<td class="num">0.8908</td>
+										<td class="num">0.8635</td>
+									</tr>
+									<tr>
+										<td>Régression logistique</td>
+										<td class="num">0.7739</td>
+										<td class="num">0.7164</td>
+										<td class="num">0.6730</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="callout" style="margin-top: 0.8em;">
+							<strong>XGBoost</strong> fournit le meilleur compromis entre performance globale et
+							robustesse par classe.
+						</div>
+					</div>
+					<div>
+						<div class="img-container large">
+							<img src="research_outputs/fusion_training/v2_classic_split_benchmark/confusion_matrix_tuned_xgboost.png"
+								alt="Matrice de confusion XGBoost">
+							<div class="img-caption">Matrice de confusion — XGBoost (tuné)</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- ========== SLIDE 11: STYLE OPÉRATEUR ========== -->
+		<div class="slide" data-slide="10">
+			<div class="slide-inner">
+				<div class="animate-in section-label">Couche 2</div>
+				<h1 class="animate-in slide-title">Modélisation du style opérateur</h1>
+				<p class="animate-in slide-subtitle">Résumer le comportement d'un opérateur en une représentation
+					compacte de style</p>
+
+				<!-- Custom pipeline for style modeling -->
+				<div class="animate-in pipeline">
+					<div class="pipe-node">
+						<div class="pipe-icon blue">📊</div>
+						<div class="pipe-label">Séquences<br>opérateur</div>
+					</div>
+					<div class="pipe-connector"></div>
+					<div class="pipe-node">
+						<div class="pipe-icon cyan">🔄</div>
+						<div class="pipe-label">Encodeur<br>temporel</div>
+					</div>
+					<div class="pipe-connector"></div>
+					<div class="pipe-node">
+						<div class="pipe-icon violet">🎨</div>
+						<div class="pipe-label">Embedding<br>de style</div>
+					</div>
+					<div class="pipe-connector"></div>
+					<div class="pipe-node">
+						<div class="pipe-icon amber">🔍</div>
+						<div class="pipe-label">Clustering<br>de stratégies</div>
+					</div>
+					<div class="pipe-connector"></div>
+					<div class="pipe-node">
+						<div class="pipe-icon emerald">📋</div>
+						<div class="pipe-label">Profil opérateur<br>persistant</div>
+					</div>
+				</div>
+
+				<div class="animate-in two-col" style="margin-top: 0.5em;">
+					<div class="callout">
+						<strong>L'idée :</strong> Construire une mémoire structurée du comportement humain — séquences,
+						stratégies, préférences et signatures individuelles.
+					</div>
+					<div class="callout key">
+						<strong>Rôle dans l'architecture :</strong> Cette représentation sert de point d'entrée à
+						l'apprentissage incrémental et à la génération personnalisée.
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- ========== SLIDE 12: FLAIR ========== -->
+		<div class="slide" data-slide="11">
+			<div class="slide-inner">
+				<div class="animate-in section-label">Couche 3 — Contribution principale</div>
+				<h1 class="animate-in slide-title">FLAIR</h1>
+				<p class="animate-in slide-subtitle">Algorithme incrémental hybride pour l'autonomie partagée</p>
+
+				<div class="animate-in two-col">
+					<div>
+						<p>FLAIR est l'apport algorithmique central de la thèse. Il combine :</p>
+						<ul>
+							<li>La <strong style="color: var(--accent-cyan);">modulation FiLM</strong> spécifique à la
+								tâche</li>
+							<li>La mémoire rejouée sensible à l'identité de tâche</li>
+							<li>La <strong style="color: var(--accent-violet);">régularisation d'importance</strong>
+								basée sur Fisher</li>
+							<li><strong style="color: var(--accent-amber);">RetroBoost</strong></li>
+							<li>L'initialisation à chaud des couches FiLM</li>
+							<li>Un mélange adaptatif tête partagée / têtes spécifiques</li>
+						</ul>
+						<div class="callout key" style="margin-top: 0.8em;">
+							<strong>Idée clé :</strong> Au lieu de choisir entre régularisation, replay ou séparation
+							architecturale, FLAIR les combine dans un seul cadre incrémental.
+						</div>
+					</div>
+					<div>
+						<div class="img-container large">
+							<img src="IEEE-conference-template-062824/flair_architecture.png" alt="Architecture FLAIR">
+							<div class="img-caption">Architecture FLAIR</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- ========== SLIDE 13: FLAIR RÉSULTATS ========== -->
+		<div class="slide" data-slide="12">
+			<div class="slide-inner">
+				<div class="animate-in section-label">Couche 3 — Résultats</div>
+				<h1 class="animate-in slide-title small">FLAIR — Autonomie partagée</h1>
+				<p class="animate-in" style="font-size: 0.92rem; color: var(--text-muted); margin-bottom: 0.8em;">
+					Benchmark séquentiel HARMONIC — ACC = coefficient de détermination R²</p>
+
+				<div class="animate-in table-wrapper">
+					<table>
+						<thead>
+							<tr>
+								<th>Méthode</th>
+								<th>ACC</th>
+								<th>F</th>
+								<th>BWT</th>
+								<th>FWT</th>
+								<th>Mém. (Mo)</th>
+								<th>Temps (s)</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="highlight">
+								<td><strong>FLAIR (proposé)</strong></td>
+								<td class="num">0.6895</td>
+								<td class="num">0.0168</td>
+								<td class="num">−0.0168</td>
+								<td class="num">0.1175</td>
+								<td class="num">1.28</td>
+								<td class="num">554.5</td>
+							</tr>
+							<tr>
+								<td>Joint Training</td>
+								<td class="num">0.6442</td>
+								<td class="num">0.0365</td>
+								<td class="num">−0.0044</td>
+								<td class="num">0.0130</td>
+								<td class="num">1664.2</td>
+								<td class="num">7895.0</td>
+							</tr>
+							<tr>
+								<td>DER++</td>
+								<td class="num">0.6120</td>
+								<td class="num">0.1480</td>
+								<td class="num">−0.1480</td>
+								<td class="num">0.1720</td>
+								<td class="num">0.9</td>
+								<td class="num">154.0</td>
+							</tr>
+							<tr>
+								<td>Online EWC</td>
+								<td class="num">0.4150</td>
+								<td class="num">0.2110</td>
+								<td class="num">−0.2110</td>
+								<td class="num">0.0830</td>
+								<td class="num">0.5</td>
+								<td class="num">124.0</td>
+							</tr>
+							<tr>
+								<td>EWC</td>
+								<td class="num">0.3680</td>
+								<td class="num">0.2750</td>
+								<td class="num">−0.2750</td>
+								<td class="num">0.0040</td>
+								<td class="num">5.39</td>
+								<td class="num">264.0</td>
+							</tr>
+							<tr>
+								<td>A-GEM</td>
+								<td class="num">0.4200</td>
+								<td class="num">0.3760</td>
+								<td class="num">−0.3760</td>
+								<td class="num">−0.0490</td>
+								<td class="num">0.2</td>
+								<td class="num">167.0</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="animate-in callout key" style="margin-top: 0.6em;">
+					<strong>Conclusion :</strong> FLAIR améliore la précision finale, limite fortement l'oubli (BWT le
+					plus faible), et conserve une empreinte mémoire très faible par rapport au réentraînement joint.
+				</div>
+			</div>
+		</div>
+
+		<!-- ========== SLIDE 14: FLAIR PREUVES ========== -->
+		<div class="slide" data-slide="13">
+			<div class="slide-inner">
+				<div class="animate-in section-label">Couche 3 — Éléments de preuve</div>
+				<h1 class="animate-in slide-title small">FLAIR — Visualisations</h1>
+
+				<div class="animate-in img-row">
+					<div class="img-container large">
+						<img src="IEEE-conference-template-062824/all_metrics_comparison.png"
+							alt="Comparaison des métriques FLAIR">
+						<div class="img-caption">Comparaison des métriques — toutes les méthodes</div>
+					</div>
+					<div class="img-container large">
+						<img src="IEEE-conference-template-062824/r2_evolution.png" alt="Dynamique de rétention">
+						<div class="img-caption">Dynamique de rétention R² au fil des tâches</div>
+					</div>
+				</div>
+
+				<div class="animate-in" style="margin-top: 0.4em;">
+					<ul style="display: grid; grid-template-columns: 1fr 1fr; gap: 0 30px;">
+						<li>FLAIR domine parmi les méthodes hybrides</li>
+						<li>Le gap avec l'upper bound hors-ligne se réduit fortement</li>
+						<li>Les mécanismes architecturaux ont un effet réel et cumulatif</li>
+						<li>La rétention sur les utilisateurs déjà vus reste stable</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<!-- ========== SLIDE 15: FLAIR ABLATION ========== -->
+		<div class="slide" data-slide="14">
+			<div class="slide-inner">
+				<div class="animate-in section-label">Couche 3 — Ablation</div>
+				<h1 class="animate-in slide-title small">FLAIR — Étude d'ablation</h1>
+
+				<div class="animate-in two-col">
+					<div>
+						<p>L'étude d'ablation montre que FLAIR fonctionne parce que <strong
+								style="color: var(--text-primary);">plusieurs mécanismes se renforcent
+								mutuellement</strong> :</p>
+						<ul>
+							<li><strong style="color: var(--accent-cyan);">FiLM</strong> — modulation spécifique</li>
+							<li><strong style="color: var(--accent-violet);">Replay</strong> — mémoire rejouée</li>
+							<li><strong style="color: var(--accent-amber);">Fisher</strong> — régularisation
+								d'importance</li>
+							<li><strong style="color: var(--accent-emerald);">RetroBoost</strong> — renforcement
+								rétroactif</li>
+							<li><strong style="color: var(--accent-rose);">Warm-start</strong> — initialisation à chaud
+							</li>
+							<li><strong style="color: var(--accent-blue);">Pondération adaptative</strong> —
+								stabilisation</li>
+						</ul>
+						<div class="callout" style="margin-top: 0.8em;">
+							La configuration de base est déjà compétitive. RetroBoost et FiLM warm-start réduisent
+							l'oubli. La pondération adaptative stabilise l'apprentissage sous dérive de tâches.
+						</div>
+					</div>
+					<div>
+						<div class="img-container large">
+							<img src="IEEE-conference-template-062824/all_metrics_comparison.png"
+								alt="Analyse robustesse / surapprentissage">
+							<div class="img-caption">Analyse de robustesse et surapprentissage</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- ========== SLIDE 16: SÉCURITÉ ========== -->
+		<div class="slide" data-slide="15">
+			<div class="slide-inner">
+				<div class="animate-in section-label">Couche 6</div>
+				<h1 class="animate-in slide-title">Sécurité et conformité</h1>
+				<p class="animate-in slide-subtitle">Détection des gestes abrupts sur DASIG</p>
+
+				<!-- Custom pipeline for safety detection -->
+				<div class="animate-in pipeline">
+					<div class="pipe-node">
+						<div class="pipe-icon blue">📡</div>
+						<div class="pipe-label">Signaux IMU<br>bruts</div>
+					</div>
+					<div class="pipe-connector"></div>
+					<div class="pipe-node">
+						<div class="pipe-icon cyan">📝</div>
+						<div class="pipe-label">Chargement &<br>annotation</div>
+					</div>
+					<div class="pipe-connector"></div>
+					<div class="pipe-node">
+						<div class="pipe-icon violet">📐</div>
+						<div class="pipe-label">Fenêtrage &<br>normalisation</div>
+					</div>
+					<div class="pipe-connector"></div>
+					<div class="pipe-node">
+						<div class="pipe-icon rose">🧠</div>
+						<div class="pipe-label">Entraînement<br>GPU</div>
+					</div>
+					<div class="pipe-connector"></div>
+					<div class="pipe-node">
+						<div class="pipe-icon amber">🔄</div>
+						<div class="pipe-label">Validation<br>+ TTA</div>
+					</div>
+					<div class="pipe-connector"></div>
+					<div class="pipe-node">
+						<div class="pipe-icon violet">⚙️</div>
+						<div class="pipe-label">Post-traitement<br>lissage + seuil</div>
+					</div>
+					<div class="pipe-connector"></div>
+					<div class="pipe-node">
+						<div class="pipe-icon emerald">🛡</div>
+						<div class="pipe-label">SAFE /<br>DANGER</div>
+					</div>
+				</div>
+
+				<div class="animate-in callout critical">
+					<strong>Pourquoi c'est critique :</strong> La sécurité n'est pas un module secondaire — elle borne
+					l'espace des comportements admissibles du robot et reste active en permanence.
+				</div>
+			</div>
+		</div>
+
+		<!-- ========== SLIDE 17: RÉSULTATS SÉCURITÉ ========== -->
+		<div class="slide" data-slide="16">
+			<div class="slide-inner">
+				<div class="animate-in section-label">Couche 6 — Résultats</div>
+				<h1 class="animate-in slide-title small">Résultats sécurité</h1>
+
+				<div class="animate-in two-col">
+					<div>
+						<div class="table-wrapper">
+							<table>
+								<thead>
+									<tr>
+										<th>Modèle</th>
+										<th>Exactitude</th>
+										<th>Macro-F1</th>
+										<th>Rappel danger</th>
+										<th>Préc. danger</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr class="highlight">
+										<td><strong>ConvNeXt 1D</strong></td>
+										<td class="num">99.43%</td>
+										<td class="num">98.68%</td>
+										<td class="num">97.13%</td>
+										<td class="num">98.25%</td>
+									</tr>
+									<tr>
+										<td>TCN</td>
+										<td class="num">99.41%</td>
+										<td class="num">98.62%</td>
+										<td class="num">97.14%</td>
+										<td class="num">98.04%</td>
+									</tr>
+									<tr>
+										<td>MLP-Mixer 1D</td>
+										<td class="num">99.28%</td>
+										<td class="num">98.32%</td>
+										<td class="num">95.88%</td>
+										<td class="num">98.27%</td>
+									</tr>
+									<tr>
+										<td>InceptionTime</td>
+										<td class="num">98.30%</td>
+										<td class="num">96.22%</td>
+										<td class="num">97.53%</td>
+										<td class="num">89.62%</td>
+									</tr>
+									<tr>
+										<td>Transformer 1D</td>
+										<td class="num">96.47%</td>
+										<td class="num">92.50%</td>
+										<td class="num">95.85%</td>
+										<td class="num">79.71%</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="callout key" style="margin-top: 0.6em;">
+							<strong>ConvNeXt 1D</strong> constitue le meilleur compromis final, avec une excellente
+							capacité de détection de l'état dangereux.
+						</div>
+					</div>
+					<div>
+						<div class="img-container large">
+							<img src="ConvNeXt_1D_cm.png" alt="Matrice de confusion ConvNeXt 1D">
+							<div class="img-caption">Matrice de confusion — ConvNeXt 1D</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- ========== SLIDE 18: MATRICES CONFUSION ========== -->
+		<div class="slide" data-slide="17">
+			<div class="slide-inner">
+				<div class="animate-in section-label">Couche 6 — Comparaison</div>
+				<h1 class="animate-in slide-title small">Matrices de confusion sécurité</h1>
+
+				<div class="animate-in img-row three-col">
+					<div class="img-container large">
+						<img src="ConvNeXt_1D_cm.png" alt="ConvNeXt 1D">
+						<div class="img-caption">ConvNeXt 1D</div>
+					</div>
+					<div class="img-container large">
+						<img src="TCN_cm.png" alt="TCN">
+						<div class="img-caption">TCN</div>
+					</div>
+					<div class="img-container large">
+						<img src="MLP-Mixer_1D_cm.png" alt="MLP-Mixer 1D">
+						<div class="img-caption">MLP-Mixer 1D</div>
+					</div>
+				</div>
+
+				<div class="animate-in" style="margin-top: 0.4em;">
+					<ul style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0 24px;">
+						<li>Les faux positifs restent faibles</li>
+						<li>Classe danger détectée de manière robuste</li>
+						<li>ConvNeXt 1D et TCN : meilleures solutions</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<!-- ========== SLIDE 19: SYNTHÈSE ========== -->
+		<div class="slide" data-slide="18">
+			<div class="slide-inner">
+				<div class="animate-in section-label">Synthèse</div>
+				<h1 class="animate-in slide-title">Synthèse intégrée</h1>
+
+				<!-- Horizontal chain flow -->
+				<div class="animate-in synth-flow">
+					<div class="synth-node">
+						<div class="synth-emoji">📡</div>
+						<div class="synth-text">Capteurs</div>
+					</div>
+					<div class="synth-arrow">→</div>
+					<div class="synth-node">
+						<div class="synth-emoji">⚙️</div>
+						<div class="synth-text">Perception</div>
+					</div>
+					<div class="synth-arrow">→</div>
+					<div class="synth-node highlight-node">
+						<div class="synth-emoji">🔍</div>
+						<div class="synth-text">Type de<br>tâche</div>
+					</div>
+					<div class="synth-arrow">→</div>
+					<div class="synth-node highlight-violet">
+						<div class="synth-emoji">🧠</div>
+						<div class="synth-text">Style +<br>FLAIR</div>
+					</div>
+					<div class="synth-arrow">→</div>
+					<div class="synth-node">
+						<div class="synth-emoji">🎯</div>
+						<div class="synth-text">Génération</div>
+					</div>
+					<div class="synth-arrow">→</div>
+					<div class="synth-node">
+						<div class="synth-emoji">🚀</div>
+						<div class="synth-text">Planification</div>
+					</div>
+					<div class="synth-arrow">→</div>
+					<div class="synth-node highlight-green">
+						<div class="synth-emoji">🛡</div>
+						<div class="synth-text">Sécurité</div>
+					</div>
+					<div class="synth-arrow">→</div>
+					<div class="synth-node">
+						<div class="synth-emoji">📊</div>
+						<div class="synth-text">Évaluation</div>
+					</div>
+				</div>
+
+				<div class="animate-in two-col" style="margin-top: 0.8em;">
+					<div>
+						<h2>Contributions validées</h2>
+						<ul>
+							<li>Le prétraitement est reproductible sur les trois jeux de données</li>
+							<li>MultiPhysio-HRC permet une détection fiable du type de tâche</li>
+							<li>FLAIR apporte une amélioration concrète sur l'autonomie partagée</li>
+							<li>La sécurité peut être apprise avec une performance très élevée</li>
+							<li>L'architecture globale est cohérente du signal brut à l'évaluation</li>
+						</ul>
+					</div>
+					<div>
+						<h2>Message scientifique</h2>
+						<p>Les contributions forment une <strong style="color: var(--text-primary);">chaîne
+								complète</strong> :</p>
+						<ul>
+							<li>Perception de l'état humain</li>
+							<li>Représentation du style opérateur</li>
+							<li>Adaptation incrémentale via FLAIR</li>
+							<li>Génération et contrôle</li>
+							<li>Sécurité garantie + évaluation quantitative</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- ========== SLIDE 20: LIMITES ET PERSPECTIVES ========== -->
+		<div class="slide" data-slide="19">
+			<div class="slide-inner">
+				<div class="animate-in section-label">Ouverture</div>
+				<h1 class="animate-in slide-title">Limites et perspectives</h1>
+
+				<div class="animate-in two-col">
+					<div>
+						<h2>Limites</h2>
+						<ul>
+							<li>Certaines couches restent principalement architecturales et demandent une validation
+								longitudinale plus large</li>
+							<li>Les résultats sont solides sur les jeux étudiés, mais la généralisation à d'autres
+								contextes HRC doit être confirmée</li>
+							<li>FLAIR requiert une évaluation plus étendue sur d'autres scénarios incrémentaux</li>
+						</ul>
+					</div>
+					<div>
+						<h2>Perspectives</h2>
+						<ul>
+							<li>Étendre l'apprentissage incrémental à des scénarios plus ouverts</li>
+							<li>Intégrer une inférence plus fine du style opérateur</li>
+							<li>Relier plus directement la perception à la génération comportementale</li>
+							<li>Valider le système en environnement réel avec plusieurs opérateurs</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- ========== SLIDE 21: CONCLUSION ========== -->
+		<div class="slide conclusion-slide" data-slide="20">
+			<div class="slide-inner">
+				<div class="animate-in section-label">Conclusion</div>
+				<h1 class="animate-in hero-title" style="font-size: 3.2rem;">Conclusion</h1>
+				<div class="animate-in divider center"></div>
+				<p class="animate-in"
+					style="font-size: 1.2rem; max-width: 800px; margin: 0 auto 1.2em; line-height: 1.85; text-align: center;">
+					Cette thèse montre qu'un cobot peut être conçu comme un <strong
+						style="color: var(--text-primary);">système évolutif</strong> : il perçoit l'humain, construit
+					une représentation du style opérateur, apprend de manière incrémentale, adapte son comportement, et
+					applique une contrainte de sécurité permanente.
+				</p>
+				<div class="animate-in glass-card" style="max-width: 750px; margin: 0 auto; text-align: center;">
+					<p style="font-size: 1.1rem; margin-bottom: 0; line-height: 1.8;">
+						La combinaison d'un <strong style="color: var(--accent-cyan);">apprentissage incrémental
+							hybride</strong>, d'une <strong style="color: var(--accent-violet);">détection robuste de
+							l'état humain</strong> et d'une <strong style="color: var(--accent-emerald);">sécurité
+							explicite</strong> constitue une voie crédible vers une collaboration humain-robot <strong
+							style="color: var(--text-primary);">personnalisée, robuste et déployable</strong>.
+					</p>
+				</div>
+				<div class="animate-in" style="margin-top: 2.5em;">
+					<p style="font-size: 1.4rem; font-weight: 700; color: var(--text-primary);">Merci de votre attention
+					</p>
+					<p style="font-size: 0.95rem; color: var(--text-muted);">Ameur Gargouri — 3 Juillet 2026</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- ========== SLIDE 22: ANNEXES ========== -->
+		<div class="slide" data-slide="21">
+			<div class="slide-inner">
+				<div class="animate-in section-label">Annexes</div>
+				<h1 class="animate-in slide-title">Annexes</h1>
+
+				<div class="animate-in two-col">
+					<div>
+						<h2>Sources principales</h2>
+						<ul>
+							<li>Rapport de prétraitement</li>
+							<li>Rapport d'apprentissage incrémental</li>
+							<li>Rapport autonomie partagée</li>
+							<li>Architecture de la thèse</li>
+							<li>Flux MultiPhysio-HRC</li>
+							<li>Résumé sécurité DASIG</li>
+						</ul>
+					</div>
+					<div>
+						<h2>Figures principales</h2>
+						<ul>
+							<li><code
+									style="color: var(--accent-cyan); font-family: 'JetBrains Mono', monospace; font-size: 0.88rem;">task_pipeline.png</code>
+							</li>
+							<li><code
+									style="color: var(--accent-cyan); font-family: 'JetBrains Mono', monospace; font-size: 0.88rem;">flair_architecture.png</code>
+							</li>
+							<li><code
+									style="color: var(--accent-cyan); font-family: 'JetBrains Mono', monospace; font-size: 0.88rem;">all_metrics_comparison.png</code>
+							</li>
+							<li><code
+									style="color: var(--accent-cyan); font-family: 'JetBrains Mono', monospace; font-size: 0.88rem;">v3_learning_curves.png</code>
+							</li>
+							<li><code
+									style="color: var(--accent-cyan); font-family: 'JetBrains Mono', monospace; font-size: 0.88rem;">outputs/cobot_safety/</code>
+							</li>
+							<li><code
+									style="color: var(--accent-cyan); font-family: 'JetBrains Mono', monospace; font-size: 0.88rem;">v2_classic_split_benchmark/</code>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<!-- END PRESENTATION -->
+
+	<script>
+		// ===== SLIDE ENGINE =====
+		let currentSlideIndex = 0;
+		const slides = document.querySelectorAll('.slide');
+		const totalSlides = slides.length;
+
+		document.getElementById('totalSlides').textContent = totalSlides;
+
+		// Build minimap
+		const minimap = document.getElementById('minimap');
+		for (let i = 0; i < totalSlides; i++) {
+			const dot = document.createElement('div');
+			dot.className = 'minimap-dot' + (i === 0 ? ' active' : '');
+			dot.addEventListener('click', () => goToSlide(i));
+			dot.title = `Slide ${i + 1}`;
+			minimap.appendChild(dot);
+		}
+
+		function updateSlide(direction) {
+			const prevSlide = slides[currentSlideIndex];
+			prevSlide.querySelectorAll('.animate-in').forEach(el => {
+				el.style.opacity = '0';
+				el.style.animation = 'none';
+			});
+			if (direction === 'next') {
+				prevSlide.classList.remove('active');
+				prevSlide.classList.add('prev');
+				setTimeout(() => prevSlide.classList.remove('prev'), 700);
+			} else {
+				prevSlide.classList.remove('active');
+			}
+		}
+
+		function showSlide(index) {
+			const slide = slides[index];
+			slide.classList.add('active');
+			slide.querySelectorAll('.animate-in').forEach(el => {
+				el.style.animation = '';
+			});
+			document.getElementById('currentSlide').textContent = index + 1;
+			const progress = ((index) / (totalSlides - 1)) * 100;
+			document.getElementById('progressBar').style.width = progress + '%';
+			document.querySelectorAll('.minimap-dot').forEach((dot, i) => {
+				dot.classList.toggle('active', i === index);
+			});
+		}
+
+		function nextSlide() {
+			if (currentSlideIndex < totalSlides - 1) {
+				updateSlide('next');
+				currentSlideIndex++;
+				showSlide(currentSlideIndex);
+			}
+		}
+
+		function prevSlide() {
+			if (currentSlideIndex > 0) {
+				updateSlide('prev');
+				currentSlideIndex--;
+				showSlide(currentSlideIndex);
+			}
+		}
+
+		function goToSlide(index) {
+			if (index === currentSlideIndex) return;
+			const direction = index > currentSlideIndex ? 'next' : 'prev';
+			updateSlide(direction);
+			currentSlideIndex = index;
+			showSlide(currentSlideIndex);
+		}
+
+		// Keyboard navigation
+		document.addEventListener('keydown', (e) => {
+			switch (e.key) {
+				case 'ArrowRight':
+				case 'ArrowDown':
+				case ' ':
+				case 'PageDown':
+					e.preventDefault();
+					nextSlide();
+					break;
+				case 'ArrowLeft':
+				case 'ArrowUp':
+				case 'PageUp':
+					e.preventDefault();
+					prevSlide();
+					break;
+				case 'Home':
+					e.preventDefault();
+					goToSlide(0);
+					break;
+				case 'End':
+					e.preventDefault();
+					goToSlide(totalSlides - 1);
+					break;
+				case 'f':
+				case 'F':
+					e.preventDefault();
+					toggleFullscreen();
+					break;
+			}
+		});
+
+		// Touch support
+		let touchStartX = 0;
+		document.addEventListener('touchstart', (e) => {
+			touchStartX = e.changedTouches[0].screenX;
+		}, { passive: true });
+
+		document.addEventListener('touchend', (e) => {
+			const diffX = touchStartX - e.changedTouches[0].screenX;
+			if (Math.abs(diffX) > 50) {
+				if (diffX > 0) nextSlide();
+				else prevSlide();
+			}
+		}, { passive: true });
+
+		// Fullscreen toggle
+		function toggleFullscreen() {
+			if (!document.fullscreenElement) {
+				document.documentElement.requestFullscreen().catch(() => { });
+			} else {
+				document.exitFullscreen().catch(() => { });
+			}
+		}
+
+		// KaTeX auto-render
+		document.addEventListener('DOMContentLoaded', () => {
+			if (typeof renderMathInElement !== 'undefined') {
+				renderMathInElement(document.body, {
+					delimiters: [
+						{ left: '$$', right: '$$', display: true },
+						{ left: '$', right: '$', display: false },
+						{ left: '\\(', right: '\\)', display: false },
+						{ left: '\\[', right: '\\]', display: true }
+					]
+				});
+			}
+		});
+	</script>
+
+</body>
+
+</html>

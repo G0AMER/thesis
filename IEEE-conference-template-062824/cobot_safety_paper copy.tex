@@ -1,0 +1,304 @@
+\documentclass[3p,times,procedia]{elsarticle}
+\flushbottom
+
+\usepackage{ecrc}
+\usepackage[bookmarks=false]{hyperref}
+\hypersetup{hidelinks}
+
+\usepackage{amsmath}
+\usepackage{amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{url}
+\usepackage{acronym}
+\usepackage[section]{placeins}
+
+\volume{00}
+\firstpage{1}
+\journalname{Procedia Computer Science}
+\runauth{A. Gargouri et al.}
+\jid{procs}
+
+\acrodef{hrc}[HRC]{Human-Robot Collaboration}
+\acrodef{tcn}[TCN]{Temporal Convolutional Network}
+\acrodef{tta}[TTA]{Test-Time Augmentation}
+\acrodef{imu}[IMU]{Inertial Measurement Unit}
+\acrodef{gpu}[GPU]{Graphics Processing Unit}
+\acrodef{cv}[CV]{Cross-Validation}
+
+\begin{document}
+\begin{frontmatter}
+
+\dochead{30th International Conference on Knowledge-Based and Intelligent Information \& Engineering Systems (KES 2026)}
+
+\title{Deep Learning for Safety-State Detection in Human-Robot Collaboration: A Comparative Benchmark with Temporal Post-Processing}
+
+\author[a,b]{Ameur Gargouri}
+\author[b]{Mohamed Karray*}
+\author[a]{Mohamed Ksantini}
+
+\address[a]{ATISP Lab, ENET'Com, University of Sfax, Sfax, Tunisia}
+\address[b]{ESME Research Lab, Ivry-sur-Seine, France}
+
+\begin{abstract}
+Deploying collaborative robots in shared workspaces requires continuous monitoring of the interaction state to prevent operator injury while avoiding unnecessary production interruptions. A core challenge in this context is the false-alarm trade-off: highly sensitive detectors trigger frequent emergency stops that erode productivity and operator trust, whereas conservative detectors risk missing genuine hazards. Existing solutions address this problem through expensive force-torque sensors, vision-based pipelines, or shallow classifiers, yet none of these approaches systematically benchmark modern deep architectures or explicitly target false-alarm reduction under a unified evaluation protocol. To address these limitations, we propose, in this paper, a sensorless deep learning pipeline for binary safety-state classification (safe vs.\ danger) from high-frequency wearable \ac{imu} data recorded during physical \ac{hrc}. Evaluated with five-fold stratified cross-validation on 69,094 windows from 60 subjects, ConvNeXt~1D and \ac{tcn} achieve the highest macro-F1 scores (98.68\% and 98.62\%, respectively), with danger precision exceeding 98\% and recall above 97\%. The post-processing stage alone reduces false positives by 87.5\% at a cost of only 1.2 percentage points in recall, establishing a practical operating point for industrial deployment.
+\end{abstract}
+
+\begin{keyword}
+human-robot collaboration \sep safety detection \sep temporal convolutional network \sep deep learning \sep wearable sensors \sep post-processing
+\end{keyword}
+
+\end{frontmatter}
+
+\newpage
+
+%===================================================================
+\section{Introduction}
+\label{sec:introduction}
+%===================================================================
+
+\Ac{hrc} refers to shared-workspace scenarios in which a human operator and a robotic arm coordinate physical actions toward a common objective~\cite{selvaggio2021autonomy}. In such settings, the robot must continuously assess whether the current interaction state is safe or whether an imminent danger requires protective action. Failure to detect a hazardous state can result in injury, whereas excessive false alarms halt production and erode operator trust. This tension between sensitivity and specificity is a central challenge in industrial safety systems governed by ISO/TS~15066~\cite{iso15066}.
+
+Current collision detection methods can be broadly categorized into three families. Hardware-dependent approaches rely on dedicated force-torque sensors or six-dimensional force transducers to measure contact forces directly~\cite{wang2025sixdof}. Observer-based methods employ mathematical state estimators, such as Extended State Observers, to infer external forces from joint-level measurements without additional sensors~\cite{tonti2024eso}. Data-driven approaches train classifiers on sensor recordings, using signal transformations such as wavelet decompositions~\cite{niu2024wavelet} or multivariate fusion~\cite{fang2024multivariate} to improve discriminability. More recently, digital twin environments have been proposed to simulate collision scenarios for safer algorithm development~\cite{an2024digitaltwin}, and deep learning has been integrated with zero-force control strategies~\cite{zhao2025zeroforce}.
+
+Despite these advances, several limitations persist. Force-torque hardware adds cost and mechanical complexity. Observer-based methods require accurate dynamic models that are difficult to maintain in practice. Existing data-driven approaches predominantly employ shallow networks or wavelet-based feature extraction, and rarely benchmark modern deep architectures under a unified evaluation protocol. Furthermore, the false-alarm problem, whereby a sensitive detector triggers unnecessary emergency stops, remains insufficiently addressed in the literature.
+
+This paper addresses these gaps by proposing a sensorless deep learning pipeline that operates on wearable \ac{imu} data collected during physical \ac{hrc}. The main contributions are:
+
+\begin{enumerate}
+    \item \textbf{Benchmarking Cutting-Edge 1D Architectures:} While recent collision detection papers rely on Wavelet Networks~\cite{niu2024wavelet}, basic deep learning~\cite{zhao2025zeroforce}, or mathematical observers~\cite{tonti2024eso}, this work systematically benchmarks next-generation Vision-inspired architectures (\ac{tcn}, ConvNeXt~1D, MLP-Mixer~1D, Transformer~1D, and InceptionTime) on high-frequency IMU safety data.
+    \item \textbf{Dynamic GPU-Accelerated Feature Expansion:} Instead of relying on Six-Dimensional Force Sensors~\cite{wang2025sixdof} or external cameras~\cite{hoang2024grasp}, this pipeline introduces an on-the-fly, \ac{gpu}-accelerated calculation of velocity and acceleration. Expanding the 65-channel IMU input to 195 spatio-temporal features simulates physical force without hardware cost.
+    \item \textbf{Test-Time Augmentation (TTA) for Safety-Critical Calibration:} Despite advancements in multivariate fusion~\cite{fang2024multivariate}, \ac{tta} remains virtually non-existent in robotic collision literature. By applying scale jitter and Gaussian noise at inference time and aggregating softmax outputs, the system generates robust probabilities.
+    \item \textbf{Solving the False-Alarm Productivity Trade-off:} A persistent critique of sensitive deep learning safety systems is the false-alarm rate. This pipeline directly addresses this trade-off by introducing a Temporal Debouncing Post-Processor (3-tap Median Filter + Tuned 0.77 Threshold) to reduce false positives by 67\%, achieving $>95\%$ danger precision safely.
+    \item \textbf{Rigorous Real-World Evaluation over Digital Twins:} While simulating collisions via Digital Twins is a rising trend~\cite{an2024digitaltwin}, simulations often fail to capture chaotic friction. This methodology utilizes a rigorous 5-Fold Stratified Cross-Validation on a massive 69,000+ window real-world dataset.
+\end{enumerate}
+
+The remainder of this paper is organized as follows. Section~2 reviews related work on collision detection and safety monitoring in \ac{hrc}. Section~3 describes the proposed methodology, including data preprocessing, model architectures, training protocol, and post-processing. Section~4 presents the experimental results and discussion. Section~5 concludes with implications and future directions.
+
+%===================================================================
+\section{Related Work}
+\label{sec:related}
+%===================================================================
+
+Safety monitoring in \ac{hrc} has been addressed through three complementary research directions: sensor-based detection, model-based estimation, and data-driven classification. Each direction presents distinct trade-offs between detection reliability, hardware cost, and deployment complexity.
+
+Sensor-based methods instrument the robot or workspace with dedicated transducers. Wang et al.~\cite{wang2025sixdof} demonstrated force compensation and collision detection using a six-dimensional force sensor mounted at the end-effector, achieving accurate contact localization at the cost of additional hardware and calibration. Gao et al.~\cite{gao2024cable} extended sensor-based detection to cable-driven parallel robots, where cable tension measurements serve as collision indicators. While these approaches provide direct force measurements, their dependence on specialized hardware limits scalability and increases maintenance requirements in multi-robot deployments.
+
+Model-based approaches estimate external forces from proprioceptive signals using analytical or observer-based frameworks. Tonti et al.~\cite{tonti2024eso} proposed a fast collision detection system based on an Extended State Observer that reconstructs disturbance forces from joint-level measurements without external sensors. Zhao et al.~\cite{zhao2025zeroforce} combined zero-force control with deep learning to detect collisions while maintaining compliant robot behavior. These methods avoid additional hardware but require accurate dynamic models, and their robustness to unmodeled friction and payload variation remains a concern.
+
+Data-driven approaches learn discriminative representations directly from sensor recordings. Fang et al.~\cite{fang2024multivariate} proposed a multivariate fusion method that combines heterogeneous signals to improve collision detection during dynamic \ac{hrc} operations. Niu et al.~\cite{niu2024wavelet} introduced Continuous Wavelet Networks that extract time-frequency features for efficient and transferable collision detection across different collaborative robots. While these methods advance beyond handcrafted thresholds, they typically rely on wavelet or fusion preprocessing pipelines and do not benchmark modern deep architectures such as \ac{tcn} or ConvNeXt under controlled conditions.
+
+Complementary efforts address safety through workspace modeling. Hoang et al.~\cite{hoang2024grasp} utilized color and depth images to plan collision-free grasps before execution. An et al.~\cite{an2024digitaltwin} developed a digital twin framework for offline collision analysis within \ac{hrc} workspaces, enabling algorithm evaluation in simulation before physical deployment.
+
+In summary, prior work highlights the need for sensorless, data-driven safety monitors that can achieve high precision without expensive hardware or complex dynamic models. A systematic comparison of modern deep architectures on high-frequency kinematic data, combined with temporal post-processing to mitigate false alarms, has not been reported. The present work directly addresses this gap.
+
+%===================================================================
+\section{Methodology}
+\label{sec:methodology}
+%===================================================================
+
+The proposed solution follows the pipeline summarized in Fig.~\ref{fig:overview}. Raw IMU data is preprocessed, expanded via GPU-accelerated derivatives, passed through 1D deep learning classifiers, and finally stabilized using a temporal debouncing post-processor.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=\columnwidth]{fig1_pipeline_overview.pdf}
+\caption{Proposed deep learning pipeline for safety-state detection in human-robot collaboration.}
+\label{fig:overview}
+\end{figure}
+
+\subsection{Problem Formulation}
+
+Safety-state detection is formulated as a binary classification problem on sliding-window segments of multimodal \ac{imu} recordings. Let $\mathbf{X}_i \in \mathbb{R}^{C \times T}$ denote a window of $T$ time steps across $C$ sensor channels, with binary label $y_i \in \{0, 1\}$ indicating safe ($y_i{=}0$) or danger ($y_i{=}1$). A window is labeled as danger if any constituent time step carries a danger annotation, enforcing a conservative labeling policy:
+\begin{equation}
+    y_i = \max_{t \in \{1,\ldots,T\}} y_i^{(t)}
+\end{equation}
+Given a model $f_\theta$, the predicted class probability is $p_\theta(y{=}1 \mid \mathbf{X}_i)$. The predicted label is obtained by thresholding this probability at a tuned operating point $\tau$:
+\begin{equation}
+    \hat{y}_i = \mathbf{1}\left[p_\theta(y{=}1 \mid \mathbf{X}_i) > \tau\right]
+\end{equation}
+
+\subsection{Data and Preprocessing}
+
+The pipeline operates on the DASIG dataset, a multimodal \ac{hrc} corpus containing recordings from 60 subjects performing collaborative tasks with a robotic arm. Each trial captures 65 \ac{imu} channels sampled at 200~Hz, producing high-frequency kinematic measurements of the operator's body segments.
+
+Preprocessing proceeds through four sequential stages. First, raw recordings are segmented into windows of 0.5~s duration (100 time steps) with 50\% overlap, producing 69,094 labeled windows. Second, each window is normalized per trial using z-score standardization:
+\begin{equation}
+    x_{\text{norm}} = \frac{x - \mu_{\text{trial}}}{\sigma_{\text{trial}}}
+\end{equation}
+where $\mu_{\text{trial}}$ and $\sigma_{\text{trial}}$ are computed from the training partition of the corresponding trial. Third, window-level labels are assigned using the conservative maximum policy defined above. The resulting dataset exhibits a class imbalance of 87.6\% safe (60,559 windows) and 12.4\% danger (8,535 windows).
+
+\subsection{Dynamic Feature Expansion}
+
+Rather than relying on raw positional signals alone, the pipeline, shown in Fig.~\ref{fig:datapipeline}, augments each window on the \ac{gpu} with its first- and second-order temporal derivatives, computed via finite differences:
+\begin{equation}
+    \mathbf{V}_i = \frac{d\mathbf{X}_i}{dt}, \quad \mathbf{A}_i = \frac{d^2\mathbf{X}_i}{dt^2}
+\end{equation}
+The expanded representation $[\mathbf{X}_i; \mathbf{V}_i; \mathbf{A}_i] \in \mathbb{R}^{3C \times T}$ yields $3 \times 65 = 195$ channels, encoding position, velocity, and acceleration. This expansion is performed on the \ac{gpu} during training and inference, avoiding offline storage overhead while providing the network with explicit kinematic context that captures the physical dynamics of human motion.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.91\columnwidth]{fig2_data_pipeline.pdf}
+\caption{Data preprocessing and dynamic feature expansion on the GPU.}
+\label{fig:datapipeline}
+\end{figure}
+\FloatBarrier
+
+\subsection{Algorithm Selection}
+
+Early iterations of this pipeline employed classical machine learning models, including Random Forest and XGBoost, trained on hand-crafted statistical features (mean, variance, skewness, kurtosis) extracted from each window. While these models achieved reasonable accuracy on the original 65-channel representation, they exhibited two fundamental limitations when applied to the expanded 195-channel kinematic input.
+
+First, classical models operate on fixed-length feature vectors and therefore require an explicit feature engineering stage that collapses the temporal dimension. This aggregation discards the sequential ordering of time steps within each window, which is precisely where safety-critical transitions manifest: a sudden acceleration spike spanning only a few consecutive frames can distinguish a dangerous impact from normal motion. Second, the combinatorial growth of potential cross-channel interactions across 195 features makes manual feature design intractable, and tree-based models cannot exploit the spatial locality of sensor groups (e.g., adjacent joint channels) without domain-specific feature grouping.
+
+These observations motivated the transition to deep learning architectures that operate directly on the raw $(C \times T)$ tensor without manual feature extraction. Deep models learn hierarchical representations that jointly capture temporal dynamics and cross-channel correlations, eliminating the information loss inherent in statistical summarization.
+
+Within the deep learning paradigm, we deliberately select architectures that span three distinct inductive biases to ensure a comprehensive comparison: (1)~convolutional models (\ac{tcn} and ConvNeXt~1D) that exploit local temporal patterns through sliding kernels and dilated receptive fields; (2)~MLP-based models (MLP-Mixer~1D) that learn global token and channel interactions without explicit convolution or attention; and (3)~attention-based models (Transformer~1D) that capture long-range dependencies through self-attention. InceptionTime is included as a multi-scale convolutional baseline widely used in time-series classification benchmarks. This selection covers the principal architectural families available for sequential data and enables conclusions about which inductive bias best suits high-frequency kinematic safety signals.
+
+\subsection{Model Architectures}
+
+Five architectures are adapted from their original two-dimensional formulations to operate on one-dimensional time-series input of shape $(B, 195, 100)$, where $B$ is the batch size:
+
+\textbf{\ac{tcn}}~\cite{bai2020tcn}: A stack of six dilated causal convolutional blocks with kernel size 3 and exponentially increasing dilation factors ($d = 1, 2, 4, 8, 16, 32$), preceded by a $1{\times}1$ projection from 195 to 256 channels. Residual connections and batch normalization are applied in each block.
+
+\textbf{ConvNeXt~1D}~\cite{liu2022convnext}: Four ConvNeXt blocks using depthwise separable convolutions with kernel size 7 and inverted bottleneck design, adapted from the two-dimensional architecture. A strided stem layer projects the input from 195 to 128 channels.
+
+\textbf{MLP-Mixer~1D}~\cite{tolstikhin2021mlpmixer}: Four mixer blocks alternating token-mixing and channel-mixing MLPs. A patch embedding layer with kernel size 5 and stride 5 projects the input to 128-dimensional tokens.
+
+\textbf{Transformer~1D}~\cite{vaswani2017attention}: A four-layer encoder with four attention heads, feed-forward dimension 256, and learned positional encoding. A linear projection maps the 195 input channels to 128 dimensions.
+
+\textbf{InceptionTime}~\cite{fawaz2020inceptiontime}: Two inception modules with parallel convolutions at kernel sizes 1, 3, and 5 plus max-pooling, followed by adaptive average pooling.
+
+All architectures terminate with adaptive average pooling, layer normalization, and a linear classifier producing two-class logits.
+
+\subsection{Training Protocol}
+
+All models share an identical training protocol to ensure that performance differences reflect architectural properties rather than optimization variations. The training objective is focal loss~\cite{lin2017focal} with focusing parameter $\gamma = 2.0$ and label smoothing $\epsilon = 0.01$:
+\begin{equation}
+    \mathcal{L}_{\text{focal}} = -\frac{1}{N} \sum_{i=1}^{N} w_{y_i} (1 - p_\theta(y_i \mid \mathbf{X}_i))^\gamma \log p_\theta(y_i \mid \mathbf{X}_i)
+\end{equation}
+where $w_c$ denotes the inverse-frequency class weight for class $c$. Optimization uses AdamW~\cite{loshchilov2019adamw} with learning rate $10^{-3}$, weight decay $10^{-4}$, and OneCycleLR scheduling~\cite{smith2019onecycle}. Gradient norms are clipped to 1.0. Batch size is 128, and training runs for 30 epochs. A weighted random sampler balances mini-batch class composition.
+
+Data augmentation combines three strategies: (1) scale jitter that randomly scales each channel by a factor drawn from $\mathcal{U}(0.95, 1.05)$; (2) additive Gaussian noise with $\sigma = 0.01$; and (3) Mixup~\cite{zhang2018mixup} with probability 0.3 and mixing coefficient $\alpha = 0.1$ drawn from a Beta distribution.
+
+\subsection{Evaluation Strategy}
+
+Models are evaluated using five-fold stratified cross-validation, which preserves the class distribution in each fold. Each fold uses approximately 55,275 training windows and 13,819 validation windows. The best model checkpoint is selected by maximum validation macro-F1 across epochs.
+
+At inference, \ac{tta} is applied: each validation window is passed through the model four times (once clean and three times with independent Gaussian noise perturbations), and the resulting softmax probabilities are averaged to produce the final prediction score.
+
+Reported metrics include accuracy, macro-F1, danger recall (sensitivity), and danger precision. Confusion matrices are row-normalized to facilitate comparison across models.
+
+\subsection{Temporal Post-Processing}
+
+Raw model predictions are refined through two sequential post-processing steps designed to suppress transient false alarms without sacrificing detection latency.
+
+First, a median filter of kernel size 3 is applied to the sequence of predicted danger probabilities. This temporal smoothing eliminates isolated high-confidence predictions that arise from sensor noise or brief ambiguous motions.
+
+Second, the decision threshold $\tau$ is optimized by sweeping over $[0.50, 0.95]$ in increments of 0.01 and selecting the value that maximizes danger precision subject to the constraint that danger recall remains above 95\%. The resulting threshold $\tau = 0.77$ yields a substantial reduction in false positives. The impact of this temporal post-processing is illustrated in Fig.~\ref{fig:postprocess}.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=\columnwidth]{fig5_evaluation_postprocessing.pdf}
+\caption{Temporal debouncing and threshold optimization on model probabilities.}
+\label{fig:postprocess}
+\end{figure}
+
+%===================================================================
+\section{Results and Discussion}
+\label{sec:results}
+%===================================================================
+
+\subsection{Model Comparison}
+
+Table~\ref{tab:results} presents the benchmark results for all five architectures after temporal post-processing (median filter and $\tau = 0.77$). Models are ranked by macro-F1 score.
+
+\begin{table}[h!]
+\caption{Benchmark results with temporal post-processing ($\tau = 0.77$, median-filtered)}
+\label{tab:results}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}clcccc@{}}
+\toprule
+\textbf{Rank} & \textbf{Model} & \textbf{Accuracy} & \textbf{Macro-F1} & \textbf{Danger Recall} & \textbf{Danger Precision} \\
+\midrule
+1 & ConvNeXt 1D    & 99.43\% & 98.68\% & 97.13\% & 98.25\% \\
+2 & TCN            & 99.41\% & 98.62\% & 97.14\% & 98.04\% \\
+3 & MLP-Mixer 1D   & 99.28\% & 98.32\% & 95.88\% & 98.27\% \\
+4 & InceptionTime   & 98.30\% & 96.22\% & 97.53\% & 89.62\% \\
+5 & Transformer 1D  & 96.47\% & 92.50\% & 95.85\% & 79.71\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The ranking reveals a consistent pattern: CNN-based architectures (ConvNeXt~1D and \ac{tcn}) achieve the strongest performance, followed by the hybrid MLP-Mixer~1D, while the purely attention-based Transformer~1D ranks last. This ordering is consistent with the known inductive bias of convolutions for capturing local temporal patterns in sequential data, which are dominant in kinematic safety signals.
+
+\subsection{Analysis of Top Models}
+
+ConvNeXt~1D achieves the highest macro-F1 (98.68\%) with 148 false positives and 245 false negatives across 69,094 windows (see Fig.~\ref{fig:cm}). The \ac{tcn} produces a nearly identical macro-F1 (98.62\%) with a slightly higher false-positive count (166). Both models exceed 98\% danger precision, meaning that fewer than 2\% of danger alerts are false alarms.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.8\columnwidth]{ConvNeXt_1D_cm.png}
+\caption{Row-normalized confusion matrix for the best-performing ConvNeXt 1D model.}
+\label{fig:cm}
+\end{figure}
+
+MLP-Mixer~1D maintains comparable precision (98.27\%) but exhibits lower recall (95.88\%), indicating that it misses approximately 4\% of genuine danger events. This behavior is consistent with the patch-based tokenization strategy of the mixer architecture, which may discard fine-grained temporal transitions at patch boundaries.
+
+InceptionTime achieves high recall (97.53\%) but substantially lower precision (89.62\%), generating 964 false positives. The multi-scale parallel convolutions of the inception module capture broad temporal patterns effectively, but produce more boundary ambiguities that inflate the false-alarm rate.
+
+The Transformer~1D model, despite strong recall (95.85\%), suffers from the lowest precision (79.71\%) and produces 2,082 false positives. The quadratic attention mechanism, while powerful for capturing long-range dependencies, appears to lack the local inductive bias necessary for the short, structured temporal patterns that characterize safety-critical transitions in \ac{imu} data.
+
+\subsection{Impact of Temporal Post-Processing}
+
+Table~\ref{tab:postprocess} quantifies the effect of the median filter and threshold tuning on the \ac{tcn} model, comparing raw model output (threshold 0.50) against the post-processed configuration.
+
+\begin{table}[h!]
+\caption{Effect of temporal post-processing on TCN predictions}
+\label{tab:postprocess}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+\textbf{Configuration} & \textbf{FP} & \textbf{FN} & \textbf{Precision} & \textbf{Recall} \\
+\midrule
+Raw output ($\tau = 0.50$)       & 1,324 & 142  & 83.9\% & 98.3\% \\
++ Median filter + $\tau = 0.77$  & 166   & 244  & 98.0\% & 97.1\% \\
+\midrule
+\textbf{Relative change}         & $-$87.5\% & +71.8\% & +14.1 pp & $-$1.2 pp \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Temporal post-processing reduces false positives by 87.5\% (from 1,324 to 166) at the cost of a modest 1.2 percentage point decrease in recall (from 98.3\% to 97.1\%). This trade-off is favorable for industrial deployment, where each false positive triggers an unnecessary emergency stop that disrupts production flow.
+
+\subsection{Discussion}
+
+The experimental results support three observations relevant to safety-state detection in \ac{hrc}.
+
+First, CNN-based architectures with dilated or depthwise convolutions provide a strong inductive bias for kinematic time-series classification. The local receptive fields of convolutional filters align naturally with the temporal structure of motion data, where safety-critical transitions occur over short, contiguous intervals. This finding contrasts with the recent trend toward attention-based models in other domains and suggests that architecture selection should be guided by the temporal characteristics of the target signal.
+
+Second, dynamic feature expansion from 65 to 195 channels provides the network with explicit velocity and acceleration information that would otherwise need to be learned implicitly. This design choice eliminates the need for expensive force-torque sensors while achieving precision levels (above 98\%) that approach the reliability of hardware-based approaches reported in the literature~\cite{wang2025sixdof}.
+
+Third, temporal post-processing addresses the false-alarm problem that is widely acknowledged but rarely solved quantitatively in the \ac{hrc} safety literature. The median filter suppresses isolated false detections caused by sensor noise, while the optimized threshold shifts the operating point toward higher precision without sacrificing operational safety. This two-stage approach is model-agnostic and can be applied to any probabilistic safety classifier.
+
+%===================================================================
+\section{Conclusion}
+\label{sec:conclusion}
+%===================================================================
+
+Reliable safety-state detection in \ac{hrc} requires classifiers that achieve high recall to prevent missed dangers, high precision to avoid unnecessary production interruptions, and robustness across diverse operators. This paper presented a sensorless deep learning pipeline that addresses these requirements through three integrated mechanisms: \ac{gpu}-accelerated kinematic feature expansion, a systematic benchmark of five modern architectures, and a temporal post-processing stage that substantially reduces false alarms.
+
+The results demonstrate that CNN-based architectures, particularly ConvNeXt~1D and \ac{tcn}, achieve the strongest balance between precision and recall when combined with temporal smoothing. The post-processing stage reduces false positives by up to 87.5\% while maintaining danger recall above 97\%, establishing a practical operating point for industrial deployment.
+
+Future work will explore the generalization of this pipeline to unseen subjects through leave-subject-out evaluation, the integration of attention mechanisms within convolutional backbones to capture longer-range dependencies, and real-time deployment on embedded hardware with latency constraints imposed by ISO/TS~15066 response time requirements.
+
+\newpage
+\bibliographystyle{elsarticle-num}
+\bibliography{cobot_safety_references}
+
+\end{document}

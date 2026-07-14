@@ -1,0 +1,54 @@
+This is BibTeX, Version 0.99d (TeX Live 2025)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: cobot_safety_paper.aux
+The style file: elsarticle-num.bst
+Database file #1: cobot_safety_references.bib
+Warning--empty author in iso15066
+Warning--empty pages in tonti2024eso
+Warning--empty pages in liu2022convnext
+Warning--empty pages in lin2017focal
+Warning--empty pages in loshchilov2019adamw
+Warning--empty pages in smith2019onecycle
+Warning--empty pages in zhang2018mixup
+You've used 19 entries,
+            2952 wiz_defined-function locations,
+            773 strings with 9990 characters,
+and the built_in function-call counts, 5512 in all, are:
+= -- 506
+> -- 256
+< -- 0
++ -- 98
+- -- 79
+* -- 316
+:= -- 814
+add.period$ -- 19
+call.type$ -- 19
+change.case$ -- 38
+chr.to.int$ -- 0
+cite$ -- 26
+duplicate$ -- 188
+empty$ -- 620
+format.name$ -- 97
+if$ -- 1452
+int.to.chr$ -- 0
+int.to.str$ -- 19
+missing$ -- 19
+newline$ -- 65
+num.names$ -- 18
+pop$ -- 127
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 395
+stack$ -- 0
+substring$ -- 100
+swap$ -- 13
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 7
+while$ -- 22
+width$ -- 21
+write$ -- 177
+(There were 7 warnings)
