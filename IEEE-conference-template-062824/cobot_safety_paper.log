@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.1.15)  14 JUL 2026 13:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.1.15)  21 JUL 2026 21:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -640,46 +640,46 @@ Package: xstring 2023/08/22 v1.86 String manipulations (CT)
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/placeins/placeins.sty
 Package: placeins 2005/04/18  v 2.2
 )
-LaTeX Font Info:    Trying to load font information for T1+txr on input line 32.
+LaTeX Font Info:    Trying to load font information for T1+txr on input line 40.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/txfonts/t1txr.fd
 File: t1txr.fd 2000/12/15 v3.1
 ) (./cobot_safety_paper.aux)
 \openout1 = `cobot_safety_paper.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 32.
-LaTeX Font Info:    Trying to load font information for OML+txmi on input line 32.
+LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 40.
+LaTeX Font Info:    Trying to load font information for OML+txmi on input line 40.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/txfonts/omltxmi.fd
 File: omltxmi.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 32.
-LaTeX Font Info:    Trying to load font information for OMS+txsy on input line 32.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 40.
+LaTeX Font Info:    Trying to load font information for OMS+txsy on input line 40.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
 File: omstxsy.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OMX/txex/m/n on input line 32.
-LaTeX Font Info:    Trying to load font information for OMX+txex on input line 32.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMX/txex/m/n on input line 40.
+LaTeX Font Info:    Trying to load font information for OMX+txex on input line 40.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/txfonts/omxtxex.fd
 File: omxtxex.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for U/txexa/m/n on input line 32.
-LaTeX Font Info:    Trying to load font information for U+txexa on input line 32.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for U/txexa/m/n on input line 40.
+LaTeX Font Info:    Trying to load font information for U+txexa on input line 40.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/txfonts/utxexa.fd
 File: utxexa.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
  (/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count325
@@ -741,73 +741,73 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Encoding Info:    Redeclaring text command \k (encoding T1) on input line 32.
-Package hyperref Info: Link coloring OFF on input line 32.
+LaTeX Encoding Info:    Redeclaring text command \k (encoding T1) on input line 40.
+Package hyperref Info: Link coloring OFF on input line 40.
 LaTeX Font Info:    Font shape `T1/txr/b/n' in size <9> not available
-(Font)              Font shape `T1/txr/bx/n' tried instead on input line 46.
+(Font)              Font shape `T1/txr/bx/n' tried instead on input line 54.
 Package acronym Info: Label `acro:imu' newly defined as it shall be overridden
-although it is yet undefined on input line 47.
+although it is yet undefined on input line 55.
 Package acronym Info: Label `acro:hrc' newly defined as it shall be overridden
-although it is yet undefined on input line 47.
+although it is yet undefined on input line 55.
 Package acronym Info: Label `acro:tcn' newly defined as it shall be overridden
-although it is yet undefined on input line 47.
-LaTeX Font Info:    Trying to load font information for TS1+txr on input line 48.
+although it is yet undefined on input line 55.
+LaTeX Font Info:    Trying to load font information for TS1+txr on input line 56.
 (/usr/local/texlive/2025/texmf-dist/tex/latex/txfonts/ts1txr.fd
 File: ts1txr.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Calculating math sizes for size <13> on input line 54.
-LaTeX Font Info:    Trying to load font information for OT1+txr on input line 54.
+LaTeX Font Info:    Calculating math sizes for size <13> on input line 62.
+LaTeX Font Info:    Trying to load font information for OT1+txr on input line 62.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/txfonts/ot1txr.fd
 File: ot1txr.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Trying to load font information for U+txmia on input line 54.
+LaTeX Font Info:    Trying to load font information for U+txmia on input line 62.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/txfonts/utxmia.fd
 File: utxmia.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 54.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 62.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 54.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 62.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+txsyc on input line 54.
+LaTeX Font Info:    Trying to load font information for U+txsyc on input line 62.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/txfonts/utxsyc.fd
 File: utxsyc.fd 2000/12/15 v3.1
 )
 <elsevier-logo-3p.pdf, id=5, 54.08205pt x 59.7432pt>
 File: elsevier-logo-3p.pdf Graphic file (type pdf)
 <use elsevier-logo-3p.pdf>
-Package pdftex.def Info: elsevier-logo-3p.pdf  used on input line 56.
+Package pdftex.def Info: elsevier-logo-3p.pdf  used on input line 64.
 (pdftex.def)             Requested size: 54.0819pt x 59.74303pt.
-LaTeX Font Info:    Trying to load font information for T1+txss on input line 56.
+LaTeX Font Info:    Trying to load font information for T1+txss on input line 64.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/txfonts/t1txss.fd
 File: t1txss.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `T1/txss/m/n' will be
-(Font)              scaled to size 8.54997pt on input line 56.
+(Font)              scaled to size 8.54997pt on input line 64.
 <SDlogo-3p.pdf, id=6, 96.36pt x 13.04875pt>
 File: SDlogo-3p.pdf Graphic file (type pdf)
 <use SDlogo-3p.pdf>
-Package pdftex.def Info: SDlogo-3p.pdf  used on input line 56.
+Package pdftex.def Info: SDlogo-3p.pdf  used on input line 64.
 (pdftex.def)             Requested size: 96.35974pt x 13.0487pt.
 <Procs.pdf, id=7, 112.42pt x 62.2325pt>
 File: Procs.pdf Graphic file (type pdf)
 <use Procs.pdf>
-Package pdftex.def Info: Procs.pdf  used on input line 56.
+Package pdftex.def Info: Procs.pdf  used on input line 64.
 (pdftex.def)             Requested size: 112.41972pt x 62.23235pt.
 File: elsevier-logo-3p.pdf Graphic file (type pdf)
 <use elsevier-logo-3p.pdf>
-Package pdftex.def Info: elsevier-logo-3p.pdf  used on input line 56.
+Package pdftex.def Info: elsevier-logo-3p.pdf  used on input line 64.
 (pdftex.def)             Requested size: 54.0819pt x 59.74303pt.
 File: SDlogo-3p.pdf Graphic file (type pdf)
 <use SDlogo-3p.pdf>
-Package pdftex.def Info: SDlogo-3p.pdf  used on input line 56.
+Package pdftex.def Info: SDlogo-3p.pdf  used on input line 64.
 (pdftex.def)             Requested size: 96.35974pt x 13.0487pt.
 File: Procs.pdf Graphic file (type pdf)
 <use Procs.pdf>
-Package pdftex.def Info: Procs.pdf  used on input line 56.
+Package pdftex.def Info: Procs.pdf  used on input line 64.
 (pdftex.def)             Requested size: 112.41972pt x 62.23235pt.
 
 Overfull \vbox (53.2582pt too high) has occurred while \output is active []
@@ -819,83 +819,83 @@ Overfull \vbox (35.4pt too high) has occurred while \output is active []
 
  <./elsevier-logo-3p.pdf> <./SDlogo-3p.pdf> <./Procs.pdf>]
 LaTeX Font Info:    Font shape `T1/txr/b/n' in size <10> not available
-(Font)              Font shape `T1/txr/bx/n' tried instead on input line 59.
+(Font)              Font shape `T1/txr/bx/n' tried instead on input line 67.
 Package acronym Info: Label `acro:gpu' newly defined as it shall be overridden
-although it is yet undefined on input line 73.
+although it is yet undefined on input line 77.
 Package acronym Info: Label `acro:tta' newly defined as it shall be overridden
-although it is yet undefined on input line 74.
+although it is yet undefined on input line 77.
  [2]
-<fig1_pipeline_overview.pdf, id=86, 462.52798pt x 292.69351pt>
+<fig1_pipeline_overview.pdf, id=80, 462.52798pt x 292.69351pt>
 File: fig1_pipeline_overview.pdf Graphic file (type pdf)
 <use fig1_pipeline_overview.pdf>
-Package pdftex.def Info: fig1_pipeline_overview.pdf  used on input line 107.
-(pdftex.def)             Requested size: 280.80286pt x 177.70314pt.
- [3 <./fig1_pipeline_overview.pdf>]
-<fig2_data_pipeline copy.pdf, id=178, 574.54652pt x 357.0356pt>
-File: fig2_data_pipeline copy.pdf Graphic file (type pdf)
-<use fig2_data_pipeline copy.pdf>
-Package pdftex.def Info: fig2_data_pipeline copy.pdf  used on input line 143.
-(pdftex.def)             Requested size: 425.88171pt x 264.65439pt.
+Package pdftex.def Info: fig1_pipeline_overview.pdf  used on input line 115.
+(pdftex.def)             Requested size: 468.0pt x 296.1719pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[4]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+[3]
+<robotics-14-00176-g004.png, id=89, 232.2276pt x 245.2362pt>
+File: robotics-14-00176-g004.png Graphic file (type png)
+<use robotics-14-00176-g004.png>
+Package pdftex.def Info: robotics-14-00176-g004.png  used on input line 141.
+(pdftex.def)             Requested size: 280.80286pt x 296.54213pt.
+ [4 <./fig1_pipeline_overview.pdf>] [5 <./robotics-14-00176-g004.png>]
+<fig2_data_pipeline.pdf, id=192, 630.55576pt x 264.86955pt>
+File: fig2_data_pipeline.pdf Graphic file (type pdf)
+<use fig2_data_pipeline.pdf>
+Package pdftex.def Info: fig2_data_pipeline.pdf  used on input line 166.
+(pdftex.def)             Requested size: 468.0pt x 196.59045pt.
+ [6 <./fig2_data_pipeline.pdf>]
+<fig5_evaluation_postprocessing.pdf, id=334, 686.565pt x 292.69351pt>
+File: fig5_evaluation_postprocessing.pdf Graphic file (type pdf)
+<use fig5_evaluation_postprocessing.pdf>
+Package pdftex.def Info: fig5_evaluation_postprocessing.pdf  used on input line 226.
+(pdftex.def)             Requested size: 538.19714pt x 229.43887pt.
 
- [5 <./fig2_data_pipeline copy.pdf>]
-<fig5_evaluation_postprocessing copy.pdf, id=325, 686.565pt x 292.69351pt>
-File: fig5_evaluation_postprocessing copy.pdf Graphic file (type pdf)
-<use fig5_evaluation_postprocessing copy.pdf>
-Package pdftex.def Info: fig5_evaluation_postprocessing copy.pdf  used on input line 203.
-(pdftex.def)             Requested size: 514.80286pt x 219.46599pt.
-
-Overfull \hbox (46.80286pt too wide) in paragraph at lines 203--204
+Overfull \hbox (70.19714pt too wide) in paragraph at lines 226--227
  [][] 
  []
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[6]
-Underfull \hbox (badness 10000) detected at line 218
+[7]
+Underfull \hbox (badness 10000) detected at line 241
 []
  []
 
 LaTeX Font Info:    Font shape `T1/txr/b/n' in size <8> not available
-(Font)              Font shape `T1/txr/bx/n' tried instead on input line 225.
-<ConvNeXt_1D_cm.png, id=348, 433.62pt x 361.35pt>
+(Font)              Font shape `T1/txr/bx/n' tried instead on input line 248.
+<ConvNeXt_1D_cm.png, id=357, 433.62pt x 361.35pt>
 File: ConvNeXt_1D_cm.png Graphic file (type png)
 <use ConvNeXt_1D_cm.png>
-Package pdftex.def Info: ConvNeXt_1D_cm.png  used on input line 244.
+Package pdftex.def Info: ConvNeXt_1D_cm.png  used on input line 265.
 (pdftex.def)             Requested size: 280.80286pt x 234.01457pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[7 <./fig5_evaluation_postprocessing copy.pdf>]
-Underfull \hbox (badness 10000) detected at line 260
+[8 <./fig5_evaluation_postprocessing.pdf>]
+Underfull \hbox (badness 10000) detected at line 281
 []
  []
 
-[8 <./ConvNeXt_1D_cm.png>] [9] (./cobot_safety_paper.bbl) [10{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}] (./cobot_safety_paper.aux)
+[9 <./ConvNeXt_1D_cm.png>] [10] (./cobot_safety_paper.bbl) [11{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}] (./cobot_safety_paper.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-29>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 13693 strings out of 467538
- 204880 string characters out of 5419552
- 629647 words of memory out of 5000000
- 42274 multiletter control sequences out of 15000+600000
- 712592 words of font info for 186 fonts, out of 8000000 for 9000
+ 13739 strings out of 467538
+ 205480 string characters out of 5419552
+ 629337 words of memory out of 5000000
+ 42312 multiletter control sequences out of 15000+600000
+ 721508 words of font info for 211 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,14n,79p,1589b,519s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/txfonts/rtcxr.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/txfonts/rtxb.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/txfonts/rtxi.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sftt0800.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/txfonts/txex.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/txfonts/txsy.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on cobot_safety_paper.pdf (10 pages, 326037 bytes).
+ 75i,14n,79p,1902b,532s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/txfonts/rtcxr.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/txfonts/rtxbmi.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/txfonts/rtxi.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sftt0800.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/txfonts/txex.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/txfonts/txsy.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on cobot_safety_paper.pdf (11 pages, 1686448 bytes).
 PDF statistics:
- 606 PDF objects out of 1000 (max. 8388607)
- 256 compressed objects within 3 object streams
- 71 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 618 PDF objects out of 1000 (max. 8388607)
+ 260 compressed objects within 3 object streams
+ 69 named destinations out of 1000 (max. 500000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 

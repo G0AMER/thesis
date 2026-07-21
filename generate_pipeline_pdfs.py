@@ -60,12 +60,12 @@ def fig1_pipeline_overview():
     ax.axis('off')
 
     stages = [
-        ("Raw IMU\nSensors\n(60 Subjects)", C['primary']),
+        ("Raw Wearable\nSensors\n(60 Subjects)", C['primary']),
         ("Data Loading\n& Labelling", C['secondary']),
         ("Windowing &\nNormalisation", C['secondary']),
-        ("StratifiedKFold\n5-Fold CV", C['purple']),
-        ("GPU Training\nLoop", C['accent']),
-        ("Validation\n& TTA", C['purple']),
+        ("Stratified\n5-Fold Cross-Val", C['purple']),
+        ("Deep Learning\nTraining Loop", C['accent']),
+        ("Validation\n& Augmentation", C['purple']),
         ("Post-Processing\n(Smoothing\n+ Threshold)", C['orange']),
         ("Final Prediction\nSAFE / DANGER", C['success']),
     ]
@@ -111,58 +111,46 @@ def fig1_pipeline_overview():
 # FIGURE 2: Data Pipeline (Ingestion → Windowing → Features)
 # ═══════════════════════════════════════════════════════════
 def fig2_data_pipeline():
-    fig, ax = plt.subplots(figsize=(10, 6))
-    ax.set_xlim(-1, 11)
-    ax.set_ylim(-1, 7)
+    fig, ax = plt.subplots(figsize=(11, 4.5))
+    ax.set_xlim(0, 11)
+    ax.set_ylim(0, 5)
     ax.axis('off')
-    #ax.set_title('Data Preprocessing Pipeline', fontsize=14, fontweight='bold', pad=15)
 
-    # Row 1: Data Ingestion
-    draw_box(ax, 2, 6, 3.5, 0.8, "DASIG Dataset\n60 subjects × ~3 trials\n65 IMU channels @ 200Hz", C['primary'], fontsize=8)
-    draw_arrow(ax, 2, 5.55, 2, 5.15)
+    # Card 1: Data Ingestion & Preprocessing
+    rect1 = FancyBboxPatch((0.4, 0.6), 4.8, 3.8, boxstyle="round,pad=0.1",
+                           facecolor='#f7fafc', edgecolor=C['primary'], linewidth=1.5)
+    ax.add_patch(rect1)
+    ax.text(2.8, 4.0, "1. Preprocessing & Windowing", ha='center', va='center',
+            fontsize=10, fontweight='bold', color=C['primary'])
 
-    draw_box(ax, 2, 4.7, 3.5, 0.8, "load_all_trials()\nLabel Generation\nSAFE vs DANGER", C['secondary'], fontsize=8)
-    draw_arrow(ax, 2, 4.25, 2, 3.85)
+    # Steps inside Card 1
+    draw_box(ax, 2.8, 3.2, 4.2, 0.6, "DASIG Corpus: 60 Subjects × 3 Trials\n65 Sensor Channels @ 200 Hz", C['primary'], fontsize=8)
+    draw_arrow(ax, 2.8, 2.85, 2.8, 2.6, color=C['gray'])
 
-    # Row 2: Windowing
-    draw_box(ax, 2, 3.4, 3.5, 0.8, "Sliding Window Segmentation\nWindow: 0.5s (100 steps)\nOverlap: 50%", C['purple'], fontsize=8)
-    draw_arrow(ax, 2, 2.95, 2, 2.55)
+    draw_box(ax, 2.8, 2.2, 4.2, 0.6, "Sliding Window: 0.5 s (100 steps, 50% overlap)\nPer-Trial Z-Score: x_norm = (x − μ) / σ", C['secondary'], fontsize=8)
+    draw_arrow(ax, 2.8, 1.85, 2.8, 1.6, color=C['gray'])
 
-    # Row 3: Normalisation
-    draw_box(ax, 2, 2.1, 3.5, 0.8, "Per-Trial Z-Score Normalisation\nx_norm = (x − μ) / σ", C['orange'], fontsize=8)
-    draw_arrow(ax, 2, 1.65, 2, 1.25)
+    draw_box(ax, 2.8, 1.1, 4.2, 0.6, "Window-Level Labeling: y = max(t_labels)\n69,094 Windows (87.6% SAFE / 12.4% DANGER)", C['purple'], fontsize=8)
 
-    # Row 4: Window Label
-    draw_box(ax, 2, 0.8, 3.5, 0.8, "Window-Level Labelling\ny = max(timestep labels)\nAny DANGER → Window = DANGER", C['accent'], fontsize=8)
-    draw_arrow(ax, 2, 0.35, 2, -0.05)
+    # Transition Arrow
+    draw_arrow(ax, 5.3, 2.5, 5.8, 2.5, color=C['primary'])
 
-    # Output
-    draw_box(ax, 2, -0.5, 3.5, 0.8, "69,094 Windows\nX: (69094, 65, 100)\ny: (69094,) binary", C['success'], fontsize=8, bold=True)
+    # Card 2: Dynamic Kinematic Feature Expansion
+    rect2 = FancyBboxPatch((5.9, 0.6), 4.7, 3.8, boxstyle="round,pad=0.1",
+                           facecolor='#ebf8ff', edgecolor=C['purple'], linewidth=1.5)
+    ax.add_patch(rect2)
+    ax.text(8.25, 4.0, "2. Dynamic Kinematic Feature Expansion", ha='center', va='center',
+            fontsize=10, fontweight='bold', color=C['purple'])
 
-    # Side panel: Dynamic Feature Expansion
-    #draw_arrow(ax, 3.8, -0.5, 5.7, -0.5)
-    draw_box(ax, 7.5, 0.8, 3.2, 0.8, "Position (Raw)\n65 channels", C['secondary'], fontsize=8)
-    draw_box(ax, 7.5, -0.1, 3.2, 0.8, "Velocity (1st Derivative)\n65 channels", C['purple'], fontsize=8)
-    draw_box(ax, 7.5, -1.0, 3.2, 0.5, "Acceleration (2nd Derivative)\n65 channels", C['orange'], fontsize=8)
+    # Dynamic derivatives sub-boxes
+    draw_box(ax, 8.25, 3.2, 3.8, 0.5, "Position (Raw): X ∈ ℝ^(65 × 100)", C['secondary'], fontsize=8)
+    draw_box(ax, 8.25, 2.5, 3.8, 0.5, "Velocity (1st Deriv): V = dX/dt ∈ ℝ^(65 × 100)", C['purple'], fontsize=8)
+    draw_box(ax, 8.25, 1.8, 3.8, 0.5, "Acceleration (2nd Deriv): A = d²X/dt² ∈ ℝ^(65 × 100)", C['orange'], fontsize=8)
 
-    ax.text(7.5, 1.5, "Dynamic GPU Feature\nExpansion (On-the-fly)", ha='center', va='center',
-            fontsize=9, fontweight='bold', color=C['primary'])
+    draw_arrow(ax, 8.25, 1.5, 8.25, 1.25, color=C['purple'])
 
-    # Brace-like connector (fan-out from output to feature boxes)
-    for yy in [0.8, -0.1, -1.0]:
-        draw_arrow(ax, 3.8, -0.5, 5.9, yy)
-
-    # Total
-    ax.text(9.5, -1.0, "→ 195 total", ha='left', va='center', fontsize=9, fontweight='bold', color=C['accent'])
-
-    # Class distribution box
-    # ax.text(7.5, 3.4, "Class Distribution", ha='center', fontsize=10, fontweight='bold', color=C['primary'])
-    # ax.text(7.5, 2.8, "SAFE:   60,559  (87.6%)", ha='center', fontsize=9, color=C['success'], fontfamily='monospace')
-    # ax.text(7.5, 2.3, "DANGER: 8,535   (12.4%)", ha='center', fontsize=9, color=C['accent'], fontfamily='monospace')
-
-    # rect = FancyBboxPatch((5.5, 1.9), 4.0, 1.8, boxstyle="round,pad=0.1",
-    #                       facecolor='#f7fafc', edgecolor=C['gray'], linewidth=1, linestyle='--')
-    # ax.add_patch(rect)
+    # Final Tensor Output
+    draw_box(ax, 8.25, 0.9, 4.0, 0.55, "Expanded Kinematic Tensor: [X; V; A]\nDimensions: (B, 195, 100)", C['success'], fontsize=8, bold=True)
 
     fig.savefig(f'{OUT_DIR}/fig2_data_pipeline.pdf')
     plt.close()
@@ -170,56 +158,55 @@ def fig2_data_pipeline():
 
 
 # ═══════════════════════════════════════════════════════════
-# FIGURE 3: Training Loop
+# FIGURE 3: Training Loop Architecture
 # ═══════════════════════════════════════════════════════════
 def fig3_training_loop():
-    fig, ax = plt.subplots(figsize=(10, 7))
-    ax.set_xlim(-1, 11)
-    ax.set_ylim(-1, 8)
+    fig, ax = plt.subplots(figsize=(10, 5))
+    ax.set_xlim(0, 10)
+    ax.set_ylim(0, 5)
     ax.axis('off')
-    ax.set_title('Training Loop Architecture', fontsize=14, fontweight='bold', pad=15)
 
-    # Flow
-    steps = [
-        (2.5, 7, "Mini-Batch (128, 65, 100)\nWeightedRandomSampler", C['primary']),
-        (2.5, 5.8, "Data Augmentation\nScale Jitter (±5%) + Gaussian Noise (σ=0.01)", C['secondary']),
-        (2.5, 4.6, "add_derivatives() [GPU]\n(128, 65, 100) → (128, 195, 100)", C['purple']),
-        (2.5, 3.4, "Mixup Augmentation (30% probability)\nα = 0.1 Beta distribution", C['orange']),
-        (2.5, 2.2, "Neural Network Forward Pass\n(TCN / ConvNeXt / MLP-Mixer / Transformer / InceptionTime)", C['accent']),
-        (2.5, 1.0, "Focal Loss (γ=2.0)\nLabel Smoothing = 0.01, Inverse-Freq Class Weights", C['primary']),
-        (2.5, -0.2, "AdamW (lr=1e-3, wd=1e-4)\nOneCycleLR + Gradient Clipping (1.0)", C['secondary']),
+    # Left Side: Circular Loop Diagram
+    center_x, center_y, radius = 2.7, 2.5, 1.5
+
+    # Draw cyclic ring background
+    circle = plt.Circle((center_x, center_y), radius, color='#ebf8ff', ec=C['primary'], lw=1.5, ls='--')
+    ax.add_patch(circle)
+    ax.text(center_x, center_y, "30 Epochs\nTraining\nLoop", ha='center', va='center',
+            fontsize=9, fontweight='bold', color=C['primary'])
+
+    # 6 Radial Nodes
+    nodes = [
+        ("1. Batch Sampling\n(WeightedSampler)", 90, C['primary']),
+        ("2. Scale Jitter & Noise\n(±5%, σ=0.01)", 30, C['secondary']),
+        ("3. Kinematic Derivs\n(65→195)", 330, C['purple']),
+        ("4. Mixup Aug.\n(p=0.3, α=0.1)", 270, C['orange']),
+        ("5. Forward Pass\n(1D Backbones)", 210, C['accent']),
+        ("6. Focal Loss & AdamW\n(OneCycleLR)", 150, C['success']),
     ]
 
-    for x, y, text, color in steps:
-        draw_box(ax, x, y, 4.5, 0.85, text, color=color, fontsize=8)
+    for label, angle_deg, color in nodes:
+        angle_rad = np.radians(angle_deg)
+        nx = center_x + (radius + 0.1) * np.cos(angle_rad)
+        ny = center_y + (radius + 0.1) * np.sin(angle_rad)
+        draw_box(ax, nx, ny, 1.6, 0.6, label, color=color, fontsize=6.5)
 
-    for i in range(len(steps) - 1):
-        draw_arrow(ax, 2.5, steps[i][1] - 0.45, 2.5, steps[i+1][1] + 0.45)
+    # Right Side: Parameter Panel
+    rect = FancyBboxPatch((5.8, 0.6), 3.8, 3.8, boxstyle="round,pad=0.1",
+                          facecolor='#f7fafc', edgecolor=C['gray'], linewidth=1.2)
+    ax.add_patch(rect)
+    ax.text(7.7, 4.0, "Hyperparameters & Config", ha='center', va='center', fontsize=10, fontweight='bold', color=C['primary'])
 
-    # Loop-back arrow
-    ax.annotate('', xy=(2.5, 7.45), xytext=(-0.3, -0.2),
-                arrowprops=dict(arrowstyle='->', color=C['gray'], lw=1.5,
-                                connectionstyle='arc3,rad=-0.4'))
-    ax.text(-0.6, 3.5, "× 30\nEpochs", ha='center', va='center', fontsize=9,
-            fontweight='bold', color=C['gray'], rotation=90)
-
-    # Hyperparameter table on the right
     params = [
-        ("Epochs", "30"),
-        ("Batch Size", "128"),
+        ("Batch Size (B)", "128"),
         ("Optimizer", "AdamW"),
-        ("LR", "1e-3"),
+        ("Initial Learning Rate", "1e-3"),
         ("Weight Decay", "1e-4"),
         ("Scheduler", "OneCycleLR"),
-        ("Loss", "Focal (γ=2)"),
-        ("Grad Clip", "1.0"),
-        ("Mixup α", "0.1"),
+        ("Loss Function", "Focal (γ=2.0)"),
+        ("Label Smoothing", "0.01"),
+        ("Grad Clipping", "1.0"),
     ]
-
-    ax.text(8, 7, "Hyperparameters", ha='center', fontsize=10, fontweight='bold', color=C['primary'])
-    rect = FancyBboxPatch((6, 2.8), 4, 4.0, boxstyle="round,pad=0.15",
-                          facecolor='#f7fafc', edgecolor=C['gray'], linewidth=1, linestyle='--')
-    ax.add_patch(rect)
 
     for i, (k, v) in enumerate(params):
         y_pos = 6.4 - i * 0.42
@@ -378,11 +365,11 @@ def fig5_evaluation_postprocessing():
     draw_arrow(ax, 8.0, 1.1, 8.45, 1.5)
     draw_arrow(ax, 8.0, 0.7, 8.45, 0.3)
     
-    ax.text(8.3, 1.5, "Yes", fontsize=7, color=C['accent'])
-    ax.text(8.3, 0.3, "No", fontsize=7, color=C['success'])
+    ax.text(8.0, 1.5, "Yes", fontsize=7, color=C['accent'])
+    ax.text(8.0, 0.3, "No", fontsize=7, color=C['success'])
 
     # Impact table at bottom
-    ax.text(6, -0.5, "Impact:  FP 1,324 → 434 (−67%)  |  FN 142 → 133 (−6%)  |  Precision 83.9% → 95.1%  |  Recall 82.8% → 98.4%",
+    ax.text(6, -0.5, "Impact:  False Positives 1,324 → 166 (−87.5%)  |  Danger Precision 83.9% → 98.0%  |  Recall 97.1%",
             ha='center', fontsize=8, color=C['primary'], fontfamily='monospace',
             bbox=dict(boxstyle='round,pad=0.3', facecolor='#f7fafc', edgecolor=C['gray'], linewidth=0.5))
 

@@ -9,6 +9,14 @@
 \newacro{imu}[IMU]{Inertial Measurement Unit}
 \newacro{gpu}[GPU]{Graphics Processing Unit}
 \newacro{cv}[CV]{Cross-Validation}
+\newacro{mlp}[MLP]{Multilayer Perceptron}
+\newacro{ffn}[FFN]{Feed-Forward Network}
+\newacro{bn}[BN]{Batch Normalization}
+\newacro{ln}[LN]{Layer Normalization}
+\newacro{gelu}[GELU]{Gaussian Error Linear Unit}
+\newacro{dwconv}[DWConv]{Depthwise Convolution}
+\newacro{fp}[FP]{False Positives}
+\newacro{fn}[FN]{False Negatives}
 \Newlabel{a}{a}
 \Newlabel{b}{b}
 \AC@undonewlabel{acro:imu}
@@ -28,11 +36,11 @@
 \citation{fang2024multivariate}
 \citation{an2024digitaltwin}
 \citation{zhao2025zeroforce}
+\citation{wang2025sixdof}
+\citation{hoang2024grasp}
 \citation{niu2024wavelet}
 \citation{zhao2025zeroforce}
 \citation{tonti2024eso}
-\citation{wang2025sixdof}
-\citation{hoang2024grasp}
 \citation{fang2024multivariate}
 \citation{an2024digitaltwin}
 \citation{wang2025sixdof}
@@ -42,12 +50,13 @@
 \acronymused{hrc}
 \acronymused{imu}
 \acronymused{hrc}
-\acronymused{tcn}
 \AC@undonewlabel{acro:gpu}
-\newlabel{acro:gpu}{{2}{2}{Introduction}{section*.4}{}}
+\newlabel{acro:gpu}{{1}{2}{Introduction}{section*.4}{}}
 \acronymused{gpu}
+\acronymused{imu}
+\acronymused{tcn}
 \AC@undonewlabel{acro:tta}
-\newlabel{acro:tta}{{3}{2}{Introduction}{section*.5}{}}
+\newlabel{acro:tta}{{1}{2}{Introduction}{section*.5}{}}
 \acronymused{tta}
 \acronymused{hrc}
 \@writefile{toc}{\contentsline {section}{\numberline {2}Related Work}{2}{section.2}\protected@file@percent }
@@ -64,19 +73,21 @@
 \acronymused{hrc}
 \@writefile{toc}{\contentsline {section}{\numberline {3}Methodology}{3}{section.3}\protected@file@percent }
 \newlabel{sec:methodology}{{3}{3}{Methodology}{section.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Proposed deep learning pipeline for safety-state detection in human-robot collaboration.}}{3}{figure.1}\protected@file@percent }
-\newlabel{fig:overview}{{1}{3}{Proposed deep learning pipeline for safety-state detection in human-robot collaboration}{figure.1}{}}
+\citation{dasig2024}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Proposed deep learning pipeline for safety-state detection in human-robot collaboration.}}{4}{figure.1}\protected@file@percent }
+\newlabel{fig:overview}{{1}{4}{Proposed deep learning pipeline for safety-state detection in human-robot collaboration}{figure.1}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Problem Formulation}{4}{subsection.3.1}\protected@file@percent }
 \acronymused{imu}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Data and Preprocessing}{4}{subsection.3.2}\protected@file@percent }
-\acronymused{hrc}
-\acronymused{imu}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Dynamic Feature Expansion}{4}{subsection.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Dataset and Sensor Placement}{4}{subsection.3.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Anatomical placement of the five wireless MIMU sensors during the DASIG data collection experiments.}}{5}{figure.2}\protected@file@percent }
+\newlabel{fig:sensorplacement}{{2}{5}{Anatomical placement of the five wireless MIMU sensors during the DASIG data collection experiments}{figure.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Data Preprocessing}{5}{subsection.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Dynamic Feature Expansion}{6}{subsection.3.4}\protected@file@percent }
 \acronymused{gpu}
 \acronymused{gpu}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Data preprocessing and dynamic feature expansion on the GPU.}}{5}{figure.2}\protected@file@percent }
-\newlabel{fig:datapipeline}{{2}{5}{Data preprocessing and dynamic feature expansion on the GPU}{figure.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Algorithm Selection}{5}{subsection.3.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Data preprocessing and dynamic feature expansion on the GPU.}}{6}{figure.3}\protected@file@percent }
+\newlabel{fig:datapipeline}{{3}{6}{Data preprocessing and dynamic feature expansion on the GPU}{figure.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}Algorithm Selection}{6}{subsection.3.5}\protected@file@percent }
 \acronymused{tcn}
 \citation{bai2020tcn}
 \citation{liu2022convnext}
@@ -87,35 +98,34 @@
 \citation{loshchilov2019adamw}
 \citation{smith2019onecycle}
 \citation{zhang2018mixup}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}Model Architectures}{6}{subsection.3.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.6}Model Architectures}{7}{subsection.3.6}\protected@file@percent }
 \acronymused{tcn}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.6}Training Protocol}{6}{subsection.3.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.7}Evaluation Strategy}{6}{subsection.3.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.7}Training Protocol}{7}{subsection.3.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.8}Evaluation Strategy}{7}{subsection.3.8}\protected@file@percent }
 \acronymused{tta}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.8}Temporal Post-Processing}{6}{subsection.3.8}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Temporal debouncing and threshold optimization on model probabilities.}}{7}{figure.3}\protected@file@percent }
-\newlabel{fig:postprocess}{{3}{7}{Temporal debouncing and threshold optimization on model probabilities}{figure.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Results and Discussion}{7}{section.4}\protected@file@percent }
-\newlabel{sec:results}{{4}{7}{Results and Discussion}{section.4}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Model Comparison}{7}{subsection.4.1}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Benchmark results with temporal post-processing ($\tau = 0.77$, median-filtered)}}{7}{table.1}\protected@file@percent }
-\newlabel{tab:results}{{1}{7}{Benchmark results with temporal post-processing ($\tau = 0.77$, median-filtered)}{table.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.9}Temporal Post-Processing}{7}{subsection.3.9}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Temporal debouncing and threshold optimization on model probabilities.}}{8}{figure.4}\protected@file@percent }
+\newlabel{fig:postprocess}{{4}{8}{Temporal debouncing and threshold optimization on model probabilities}{figure.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Results and Discussion}{8}{section.4}\protected@file@percent }
+\newlabel{sec:results}{{4}{8}{Results and Discussion}{section.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Comparison}{8}{subsection.4.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Benchmark results with temporal post-processing ($\tau = 0.77$, median-filtered)}}{8}{table.1}\protected@file@percent }
+\newlabel{tab:results}{{1}{8}{Benchmark results with temporal post-processing ($\tau = 0.77$, median-filtered)}{table.1}{}}
 \acronymused{tcn}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Analysis of Top Models}{7}{subsection.4.2}\protected@file@percent }
 \acronymused{tcn}
 \citation{wang2025sixdof}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Row-normalized confusion matrix for the best-performing ConvNeXt 1D model.}}{8}{figure.4}\protected@file@percent }
-\newlabel{fig:cm}{{4}{8}{Row-normalized confusion matrix for the best-performing ConvNeXt 1D model}{figure.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Row-normalized confusion matrix for the best-performing ConvNeXt 1D model.}}{9}{figure.5}\protected@file@percent }
+\newlabel{fig:cm}{{5}{9}{Row-normalized confusion matrix for the best-performing ConvNeXt 1D model}{figure.5}{}}
 \acronymused{imu}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Impact of Temporal Post-Processing}{8}{subsection.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Impact of Temporal Post-Processing}{9}{subsection.4.2}\protected@file@percent }
 \acronymused{tcn}
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Effect of temporal post-processing on TCN predictions}}{8}{table.2}\protected@file@percent }
-\newlabel{tab:postprocess}{{2}{8}{Effect of temporal post-processing on TCN predictions}{table.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Discussion}{8}{subsection.4.4}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Effect of temporal post-processing on TCN predictions}}{9}{table.2}\protected@file@percent }
+\newlabel{tab:postprocess}{{2}{9}{Effect of temporal post-processing on TCN predictions}{table.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Discussion}{9}{subsection.4.3}\protected@file@percent }
 \acronymused{hrc}
 \acronymused{hrc}
-\@writefile{toc}{\contentsline {section}{\numberline {5}Conclusion}{9}{section.5}\protected@file@percent }
-\newlabel{sec:conclusion}{{5}{9}{Conclusion}{section.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Conclusion}{10}{section.5}\protected@file@percent }
+\newlabel{sec:conclusion}{{5}{10}{Conclusion}{section.5}{}}
 \acronymused{imu}
 \acronymused{gpu}
 \acronymused{hrc}
@@ -132,15 +142,16 @@
 \bibcite{zhao2025zeroforce}{{8}{}{{}}{{}}}
 \bibcite{hoang2024grasp}{{9}{}{{}}{{}}}
 \bibcite{gao2024cable}{{10}{}{{}}{{}}}
-\bibcite{bai2020tcn}{{11}{}{{}}{{}}}
-\bibcite{liu2022convnext}{{12}{}{{}}{{}}}
-\bibcite{tolstikhin2021mlpmixer}{{13}{}{{}}{{}}}
-\bibcite{vaswani2017attention}{{14}{}{{}}{{}}}
-\bibcite{fawaz2020inceptiontime}{{15}{}{{}}{{}}}
-\bibcite{lin2017focal}{{16}{}{{}}{{}}}
-\bibcite{loshchilov2019adamw}{{17}{}{{}}{{}}}
-\bibcite{smith2019onecycle}{{18}{}{{}}{{}}}
-\bibcite{zhang2018mixup}{{19}{}{{}}{{}}}
+\bibcite{dasig2024}{{11}{}{{}}{{}}}
+\bibcite{bai2020tcn}{{12}{}{{}}{{}}}
+\bibcite{liu2022convnext}{{13}{}{{}}{{}}}
+\bibcite{tolstikhin2021mlpmixer}{{14}{}{{}}{{}}}
+\bibcite{vaswani2017attention}{{15}{}{{}}{{}}}
+\bibcite{fawaz2020inceptiontime}{{16}{}{{}}{{}}}
+\bibcite{lin2017focal}{{17}{}{{}}{{}}}
+\bibcite{loshchilov2019adamw}{{18}{}{{}}{{}}}
+\bibcite{smith2019onecycle}{{19}{}{{}}{{}}}
+\bibcite{zhang2018mixup}{{20}{}{{}}{{}}}
 \providecommand\NAT@force@numbers{}\NAT@force@numbers
-\newlabel{lastpage}{{5}{10}{Conclusion}{section*.6}{}}
-\gdef \@abspage@last{10}
+\newlabel{lastpage}{{5}{11}{Conclusion}{section*.6}{}}
+\gdef \@abspage@last{11}

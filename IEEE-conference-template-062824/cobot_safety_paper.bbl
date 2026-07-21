@@ -6,60 +6,83 @@
   \def\href#1#2{#2} \def\path#1{#1}\fi
 
 \bibitem{selvaggio2021autonomy}
-M.~Selvaggio, M.~Cognetti, S.~Nikolaidis, S.~Ivaldi, B.~Siciliano, Autonomy in physical human-robot interaction: A brief survey, IEEE Robotics and Automation Letters 6~(4) (2021) 7989--7996, dOI: \url{https://doi.org/10.1109/LRA.2021.3100603}.
+M.~Selvaggio, M.~Cognetti, S.~Nikolaidis, S.~Ivaldi, B.~Siciliano, Autonomy in physical human-robot interaction: A brief survey, IEEE Robotics and Automation Letters 6~(4) (2021) 7989--7996.
+\newblock \href {https://doi.org/10.1109/LRA.2021.3100603} {\path{doi:10.1109/LRA.2021.3100603}}.
 
 \bibitem{iso15066}
-Robots and robotic devices -- collaborative robots, ISO/TS 15066:2016\url{https://www.iso.org/standard/62996.html} (2016).
+\href{https://www.iso.org/standard/62996.html}{Robots and robotic devices -- collaborative robots}, ISO/TS 15066:2016 (2016).
+\newline\urlprefix\url{https://www.iso.org/standard/62996.html}
 
 \bibitem{wang2025sixdof}
-Z.~Wang, Y.~Wang, Y.~Feng, et~al., Research on robot force compensation and collision detection based on six-dimensional force sensor, SSRN Electronic JournalDOI: \url{https://doi.org/10.2139/ssrn.5163869} (2025).
+Z.~Wang, Y.~Wang, Y.~Feng, et~al., Research on robot force compensation and collision detection based on six-dimensional force sensor, SSRN Electronic Journal (2025).
+\newblock \href {https://doi.org/10.2139/ssrn.5163869} {\path{doi:10.2139/ssrn.5163869}}.
 
 \bibitem{tonti2024eso}
-G.~Tonti, S.~Shakourzadeh, C.~Guarino Lo~Bianco, A fast collision detection system based on an extended state observer, in: IEEE/ASME International Conference on Mechatronic and Embedded Systems and Applications (MESA), 2024, dOI: \url{https://doi.org/10.1109/MESA61532.2024.10704895}.
+G.~Tonti, S.~Shakourzadeh, C.~Guarino Lo~Bianco, A fast collision detection system based on an extended state observer, in: IEEE/ASME International Conference on Mechatronic and Embedded Systems and Applications (MESA), 2024.
+\newblock \href {https://doi.org/10.1109/MESA61532.2024.10704895} {\path{doi:10.1109/MESA61532.2024.10704895}}.
 
 \bibitem{niu2024wavelet}
-Z.~Niu, T.~Hassan, M.~N. Boushaki, et~al., Continuous wavelet network for efficient and transferable collision detection in collaborative robots, IEEE Transactions on Systems, Man, and Cybernetics: SystemsDOI: \url{https://doi.org/10.1109/TSMC.2024.3518700} (2024).
+Z.~Niu, T.~Hassan, M.~N. Boushaki, et~al., Continuous wavelet network for efficient and transferable collision detection in collaborative robots, IEEE Transactions on Systems, Man, and Cybernetics: Systems (2024).
+\newblock \href {https://doi.org/10.1109/TSMC.2024.3518700} {\path{doi:10.1109/TSMC.2024.3518700}}.
 
 \bibitem{fang2024multivariate}
-S.~Fang, S.~Liu, X.~Wang, et~al., A multivariate fusion collision detection method for dynamic operations of human-robot collaboration systems, Journal of Manufacturing SystemsDOI: \url{https://doi.org/10.1016/j.jmsy.2024.11.007} (2024).
+S.~Fang, S.~Liu, X.~Wang, et~al., A multivariate fusion collision detection method for dynamic operations of human-robot collaboration systems, Journal of Manufacturing Systems (2024).
+\newblock \href {https://doi.org/10.1016/j.jmsy.2024.11.007} {\path{doi:10.1016/j.jmsy.2024.11.007}}.
 
 \bibitem{an2024digitaltwin}
-J.~An, P.~Bang, B.~Jeon, et~al., Development of digital twin for collision detection analysis within human-robot collaborative workspaces, Journal of Computational Design and EngineeringDOI: \url{https://doi.org/10.7315/cde.2024.144} (2024).
+J.~An, P.~Bang, B.~Jeon, et~al., Development of digital twin for collision detection analysis within human-robot collaborative workspaces, Journal of Computational Design and Engineering (2024).
+\newblock \href {https://doi.org/10.7315/cde.2024.144} {\path{doi:10.7315/cde.2024.144}}.
 
 \bibitem{zhao2025zeroforce}
-B.~Zhao, C.~Wu, L.-j. Chang, et~al., Research on zero-force control and collision detection of deep learning methods in collaborative robots, DisplaysDOI: \url{https://doi.org/10.1016/j.displa.2025.102969} (2025).
+B.~Zhao, C.~Wu, L.-j. Chang, et~al., Research on zero-force control and collision detection of deep learning methods in collaborative robots, Displays (2025).
+\newblock \href {https://doi.org/10.1016/j.displa.2025.102969} {\path{doi:10.1016/j.displa.2025.102969}}.
 
 \bibitem{hoang2024grasp}
-D.-C. Hoang, A.-N. Nguyen, C.-M. Nguyen, et~al., Collision-free grasp detection from color and depth images, IEEE Transactions on Artificial IntelligenceDOI: \url{https://doi.org/10.1109/TAI.2024.3420848} (2024).
+D.-C. Hoang, A.-N. Nguyen, C.-M. Nguyen, et~al., Collision-free grasp detection from color and depth images, IEEE Transactions on Artificial Intelligence (2024).
+\newblock \href {https://doi.org/10.1109/TAI.2024.3420848} {\path{doi:10.1109/TAI.2024.3420848}}.
 
 \bibitem{gao2024cable}
-H.~Gao, C.~Chevallereau, S.~Caro, Detection and management of human-cable collision in cable-driven parallel robots, IEEE Robotics and Automation LettersDOI: \url{https://doi.org/10.1109/LRA.2024.3487051} (2024).
+H.~Gao, C.~Chevallereau, S.~Caro, Detection and management of human-cable collision in cable-driven parallel robots, IEEE Robotics and Automation Letters (2024).
+\newblock \href {https://doi.org/10.1109/LRA.2024.3487051} {\path{doi:10.1109/LRA.2024.3487051}}.
+
+\bibitem{dasig2024}
+E.~Digo, M.~Polito, E.~Caselli, L.~Gastaldi, S.~Pastorelli, A dataset of standard and abrupt industrial gestures recorded through mimus, Robotics 14~(12) (2025).
+\newblock \href {https://doi.org/10.3390/robotics14120176} {\path{doi:10.3390/robotics14120176}}.
 
 \bibitem{bai2020tcn}
-S.~Bai, J.~Z. Kolter, V.~Koltun, An empirical evaluation of generic convolutional and recurrent networks for sequence modeling, arXiv preprint arXiv:1803.01271DOI: \url{https://doi.org/10.48550/arXiv.1803.01271} (2018).
+S.~Bai, J.~Z. Kolter, V.~Koltun, An empirical evaluation of generic convolutional and recurrent networks for sequence modeling, arXiv preprint arXiv:1803.01271 (2018).
+\newblock \href {https://doi.org/10.48550/arXiv.1803.01271} {\path{doi:10.48550/arXiv.1803.01271}}.
 
 \bibitem{liu2022convnext}
-Z.~Liu, H.~Mao, C.-Y. Wu, C.~Feichtenhofer, T.~Darrell, S.~Xie, A convnet for the 2020s, in: Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2022, dOI: \url{https://doi.org/10.1109/CVPR52688.2022.01167}.
+Z.~Liu, H.~Mao, C.-Y. Wu, C.~Feichtenhofer, T.~Darrell, S.~Xie, A convnet for the 2020s, in: Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2022.
+\newblock \href {https://doi.org/10.1109/CVPR52688.2022.01167} {\path{doi:10.1109/CVPR52688.2022.01167}}.
 
 \bibitem{tolstikhin2021mlpmixer}
-I.~O. Tolstikhin, N.~Houlsby, A.~Kolesnikov, et~al., {MLP-Mixer}: An all-mlp architecture for vision, Advances in Neural Information Processing Systems (NeurIPS)DOI: \url{https://doi.org/10.48550/arXiv.2105.01601} (2021).
+I.~O. Tolstikhin, N.~Houlsby, A.~Kolesnikov, et~al., {MLP-Mixer}: An all-mlp architecture for vision, Advances in Neural Information Processing Systems (NeurIPS) (2021).
+\newblock \href {https://doi.org/10.48550/arXiv.2105.01601} {\path{doi:10.48550/arXiv.2105.01601}}.
 
 \bibitem{vaswani2017attention}
-A.~Vaswani, N.~Shazeer, N.~Parmar, J.~Uszkoreit, L.~Jones, A.~N. Gomez, L.~Kaiser, I.~Polosukhin, Attention is all you need, Advances in Neural Information Processing Systems (NeurIPS)DOI: \url{https://doi.org/10.48550/arXiv.1706.03762} (2017).
+A.~Vaswani, N.~Shazeer, N.~Parmar, J.~Uszkoreit, L.~Jones, A.~N. Gomez, L.~Kaiser, I.~Polosukhin, Attention is all you need, Advances in Neural Information Processing Systems (NeurIPS) (2017).
+\newblock \href {https://doi.org/10.48550/arXiv.1706.03762} {\path{doi:10.48550/arXiv.1706.03762}}.
 
 \bibitem{fawaz2020inceptiontime}
-H.~Ismail~Fawaz, B.~Lucas, G.~Forestier, C.~Pelletier, D.~F. Schmidt, J.~Weber, G.~I. Webb, L.~Idoumghar, P.-A. Muller, F.~Petitjean, {InceptionTime}: Finding alexnet for time series classification, Data Mining and Knowledge Discovery 34 (2020) 1936--1962, dOI: \url{https://doi.org/10.1007/s10618-020-00710-y}.
+H.~Ismail~Fawaz, B.~Lucas, G.~Forestier, C.~Pelletier, D.~F. Schmidt, J.~Weber, G.~I. Webb, L.~Idoumghar, P.-A. Muller, F.~Petitjean, {InceptionTime}: Finding alexnet for time series classification, Data Mining and Knowledge Discovery 34 (2020) 1936--1962.
+\newblock \href {https://doi.org/10.1007/s10618-020-00710-y} {\path{doi:10.1007/s10618-020-00710-y}}.
 
 \bibitem{lin2017focal}
-T.-Y. Lin, P.~Goyal, R.~Girshick, K.~He, P.~Doll\'{a}r, Focal loss for dense object detection, in: Proceedings of the IEEE International Conference on Computer Vision (ICCV), 2017, dOI: \url{https://doi.org/10.1109/ICCV.2017.324}.
+T.-Y. Lin, P.~Goyal, R.~Girshick, K.~He, P.~Doll\'{a}r, Focal loss for dense object detection, in: Proceedings of the IEEE International Conference on Computer Vision (ICCV), 2017.
+\newblock \href {https://doi.org/10.1109/ICCV.2017.324} {\path{doi:10.1109/ICCV.2017.324}}.
 
 \bibitem{loshchilov2019adamw}
-I.~Loshchilov, F.~Hutter, Decoupled weight decay regularization, in: Proceedings of the International Conference on Learning Representations (ICLR), 2019, dOI: \url{https://doi.org/10.48550/arXiv.1711.05101}.
+I.~Loshchilov, F.~Hutter, Decoupled weight decay regularization, in: Proceedings of the International Conference on Learning Representations (ICLR), 2019.
+\newblock \href {https://doi.org/10.48550/arXiv.1711.05101} {\path{doi:10.48550/arXiv.1711.05101}}.
 
 \bibitem{smith2019onecycle}
-L.~N. Smith, N.~Topin, Super-convergence: Very fast training of neural networks using large learning rates, in: Artificial Intelligence and Machine Learning for Multi-Domain Operations Applications, 2019, dOI: \url{https://doi.org/10.1117/12.2520589}.
+L.~N. Smith, N.~Topin, Super-convergence: Very fast training of neural networks using large learning rates, in: Artificial Intelligence and Machine Learning for Multi-Domain Operations Applications, 2019.
+\newblock \href {https://doi.org/10.1117/12.2520589} {\path{doi:10.1117/12.2520589}}.
 
 \bibitem{zhang2018mixup}
-H.~Zhang, M.~Cisse, Y.~N. Dauphin, D.~Lopez-Paz, mixup: Beyond empirical risk minimization, in: Proceedings of the International Conference on Learning Representations (ICLR), 2018, dOI: \url{https://doi.org/10.48550/arXiv.1710.09412}.
+H.~Zhang, M.~Cisse, Y.~N. Dauphin, D.~Lopez-Paz, mixup: Beyond empirical risk minimization, in: Proceedings of the International Conference on Learning Representations (ICLR), 2018.
+\newblock \href {https://doi.org/10.48550/arXiv.1710.09412} {\path{doi:10.48550/arXiv.1710.09412}}.
 
 \end{thebibliography}
