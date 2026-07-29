@@ -10,45 +10,45 @@ Warning--empty pages in lin2017focal
 Warning--empty pages in loshchilov2019adamw
 Warning--empty pages in smith2019onecycle
 Warning--empty pages in zhang2018mixup
-You've used 20 entries,
+You've used 21 entries,
             2952 wiz_defined-function locations,
-            780 strings with 9712 characters,
-and the built_in function-call counts, 5925 in all, are:
-= -- 513
-> -- 272
+            785 strings with 9851 characters,
+and the built_in function-call counts, 6145 in all, are:
+= -- 535
+> -- 276
 < -- 0
-+ -- 104
-- -- 84
-* -- 426
-:= -- 871
-add.period$ -- 39
-call.type$ -- 20
-change.case$ -- 20
++ -- 106
+- -- 85
+* -- 436
+:= -- 901
+add.period$ -- 40
+call.type$ -- 21
+change.case$ -- 21
 chr.to.int$ -- 0
-cite$ -- 27
-duplicate$ -- 179
-empty$ -- 671
-format.name$ -- 103
-if$ -- 1529
+cite$ -- 28
+duplicate$ -- 187
+empty$ -- 702
+format.name$ -- 104
+if$ -- 1592
 int.to.chr$ -- 0
-int.to.str$ -- 20
+int.to.str$ -- 21
 missing$ -- 20
-newline$ -- 88
-num.names$ -- 19
-pop$ -- 133
+newline$ -- 92
+num.names$ -- 20
+pop$ -- 142
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 413
+skip$ -- 429
 stack$ -- 0
 substring$ -- 62
-swap$ -- 53
+swap$ -- 55
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 7
-while$ -- 23
-width$ -- 22
-write$ -- 206
+while$ -- 24
+width$ -- 23
+write$ -- 215
 (There were 7 warnings)

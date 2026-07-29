@@ -367,7 +367,6 @@ INPUT ./fig1_pipeline_overview.pdf
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/txb.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/txb.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/txb.tfm
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/tcxr.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/txbmi.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/txbmi.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/txbmi.tfm
@@ -389,11 +388,11 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/txbsyc.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/txbexa.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/txbexa.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/txbexa.tfm
-INPUT ./robotics-14-00176-g004.png
-INPUT ./robotics-14-00176-g004.png
-INPUT ./robotics-14-00176-g004.png
-INPUT ./robotics-14-00176-g004.png
-INPUT ./robotics-14-00176-g004.png
+INPUT ./ChatGPT Image Jul 29, 2026, 04_01_33 PM.png
+INPUT ./ChatGPT Image Jul 29, 2026, 04_01_33 PM.png
+INPUT ./ChatGPT Image Jul 29, 2026, 04_01_33 PM.png
+INPUT ./ChatGPT Image Jul 29, 2026, 04_01_33 PM.png
+INPUT ./ChatGPT Image Jul 29, 2026, 04_01_33 PM.png
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/public/txfonts/t1xi.vf
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/rtxptmri.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/rtxi.tfm
@@ -407,8 +406,6 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/public/txfonts/txr.vf
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/public/txfonts/txr.vf
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/rtxptmr.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/rtxr.tfm
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/public/txfonts/tcxr.vf
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/rtcxr.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/t1xr.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/t1xr.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/public/txfonts/txbmi.vf
@@ -420,14 +417,14 @@ INPUT ./fig2_data_pipeline.pdf
 INPUT ./fig2_data_pipeline.pdf
 INPUT ./fig2_data_pipeline.pdf
 INPUT ./fig2_data_pipeline.pdf
-INPUT ./fig5_evaluation_postprocessing.pdf
-INPUT ./fig5_evaluation_postprocessing.pdf
-INPUT ./fig5_evaluation_postprocessing.pdf
-INPUT ./fig5_evaluation_postprocessing.pdf
-INPUT ./fig5_evaluation_postprocessing.pdf
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/public/txfonts/txmi.vf
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/rtxmi.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/rtxptmri.tfm
+INPUT ./fig5_evaluation_postprocessing.pdf
+INPUT ./fig5_evaluation_postprocessing.pdf
+INPUT ./fig5_evaluation_postprocessing.pdf
+INPUT ./fig5_evaluation_postprocessing.pdf
+INPUT ./fig5_evaluation_postprocessing.pdf
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/txb.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/txb.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/t1xb.tfm

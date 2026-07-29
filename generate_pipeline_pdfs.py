@@ -13,6 +13,8 @@ import os
 # ── Global Style ──
 plt.rcParams.update({
     'font.family': 'serif',
+    'font.serif': ['Times New Roman', 'Times', 'Nimbus Roman', 'Liberation Serif'],
+    'mathtext.fontset': 'stix',
     'font.size': 10,
     'axes.titlesize': 12,
     'figure.dpi': 300,
@@ -35,10 +37,10 @@ C = {
     'purple':    '#553c9a',   # Purple accent
 }
 
-def draw_box(ax, x, y, w, h, text, color=C['secondary'], text_color='white', fontsize=9, bold=False):
+def draw_box(ax, x, y, w, h, text, color=C['secondary'], text_color='white', fontsize=9, bold=False, edgecolor='#475569', linewidth=1.2):
     """Draw a rounded rectangle with centered text."""
     box = FancyBboxPatch((x - w/2, y - h/2), w, h,
-                         boxstyle="round,pad=0.05", facecolor=color, edgecolor='white', linewidth=1.5)
+                         boxstyle="round,pad=0.05", facecolor=color, edgecolor=edgecolor, linewidth=linewidth)
     ax.add_patch(box)
     weight = 'bold' if bold else 'normal'
     ax.text(x, y, text, ha='center', va='center', fontsize=fontsize,
@@ -111,46 +113,92 @@ def fig1_pipeline_overview():
 # FIGURE 2: Data Pipeline (Ingestion → Windowing → Features)
 # ═══════════════════════════════════════════════════════════
 def fig2_data_pipeline():
-    fig, ax = plt.subplots(figsize=(11, 4.5))
-    ax.set_xlim(0, 11)
-    ax.set_ylim(0, 5)
+    fig, ax = plt.subplots(figsize=(12, 5.4))
+    ax.set_xlim(0, 12)
+    ax.set_ylim(0, 5.4)
     ax.axis('off')
 
+    # Minimal, academic color scheme
+    color_card_bg = '#f8fafc'
+    color_border = '#334155'
+    color_box_bg = '#ffffff'
+    color_unifying_bg = '#f1f5f9'
+    color_unifying_border = '#64748b'
+    color_final_bg = '#1e293b'
+    color_arrow = '#475569'
+
     # Card 1: Data Ingestion & Preprocessing
-    rect1 = FancyBboxPatch((0.4, 0.6), 4.8, 3.8, boxstyle="round,pad=0.1",
-                           facecolor='#f7fafc', edgecolor=C['primary'], linewidth=1.5)
+    rect1 = FancyBboxPatch((0.4, 0.4), 5.3, 4.6, boxstyle="round,pad=0.08",
+                           facecolor=color_card_bg, edgecolor=color_border, linewidth=1.2)
     ax.add_patch(rect1)
-    ax.text(2.8, 4.0, "1. Preprocessing & Windowing", ha='center', va='center',
-            fontsize=10, fontweight='bold', color=C['primary'])
+    ax.text(3.05, 4.65, "1. Preprocessing & Windowing", ha='center', va='center',
+            fontsize=11, fontweight='bold', color='#0f172a')
 
-    # Steps inside Card 1
-    draw_box(ax, 2.8, 3.2, 4.2, 0.6, "DASIG Corpus: 60 Subjects × 3 Trials\n65 Sensor Channels @ 200 Hz", C['primary'], fontsize=8)
-    draw_arrow(ax, 2.8, 2.85, 2.8, 2.6, color=C['gray'])
+    # Card 1 Boxes & Arrows
+    b1_y, b1_h = 3.8, 0.75
+    draw_box(ax, 3.05, b1_y, 4.7, b1_h,
+             "DASIG: 60 Subjects × 3 Trials\n5 Wireless MIMUs (65 Channels) @ 200 Hz",
+             color=color_box_bg, text_color='#0f172a', fontsize=11)
 
-    draw_box(ax, 2.8, 2.2, 4.2, 0.6, "Sliding Window: 0.5 s (100 steps, 50% overlap)\nPer-Trial Z-Score: x_norm = (x − μ) / σ", C['secondary'], fontsize=8)
-    draw_arrow(ax, 2.8, 1.85, 2.8, 1.6, color=C['gray'])
+    b2_y, b2_h = 2.5, 0.75
+    draw_box(ax, 3.05, b2_y, 4.7, b2_h,
+             "Sliding Window: 0.5 s (100 steps, 50% overlap)\nPer-Trial Z-Score Standardization",
+             color=color_box_bg, text_color='#0f172a', fontsize=11)
 
-    draw_box(ax, 2.8, 1.1, 4.2, 0.6, "Window-Level Labeling: y = max(t_labels)\n69,094 Windows (87.6% SAFE / 12.4% DANGER)", C['purple'], fontsize=8)
+    b3_y, b3_h = 1.2, 0.75
+    draw_box(ax, 3.05, b3_y, 4.7, b3_h,
+             "Window-Level Labeling: y = max(t_labels)\n69,094 Windows (87.6% SAFE / 12.4% DANGER)",
+             color=color_box_bg, text_color='#0f172a', fontsize=11)
 
-    # Transition Arrow
-    draw_arrow(ax, 5.3, 2.5, 5.8, 2.5, color=C['primary'])
+    # Arrows inside Card 1
+    draw_arrow(ax, 3.05, b1_y - b1_h/2, 3.05, b2_y + b2_h/2, color=color_arrow)
+    draw_arrow(ax, 3.05, b2_y - b2_h/2, 3.05, b3_y + b3_h/2, color=color_arrow)
+
+    # Transition Arrow between Card 1 and Card 2
+    draw_arrow(ax, 5.7, 2.5, 6.3, 2.5, color=color_border)
 
     # Card 2: Dynamic Kinematic Feature Expansion
-    rect2 = FancyBboxPatch((5.9, 0.6), 4.7, 3.8, boxstyle="round,pad=0.1",
-                           facecolor='#ebf8ff', edgecolor=C['purple'], linewidth=1.5)
+    rect2 = FancyBboxPatch((6.3, 0.4), 5.3, 4.6, boxstyle="round,pad=0.08",
+                           facecolor=color_card_bg, edgecolor=color_border, linewidth=1.2)
     ax.add_patch(rect2)
-    ax.text(8.25, 4.0, "2. Dynamic Kinematic Feature Expansion", ha='center', va='center',
-            fontsize=10, fontweight='bold', color=C['purple'])
+    ax.text(8.95, 4.65, "2. Dynamic Kinematic Feature Expansion", ha='center', va='center',
+            fontsize=11, fontweight='bold', color='#0f172a')
 
-    # Dynamic derivatives sub-boxes
-    draw_box(ax, 8.25, 3.2, 3.8, 0.5, "Position (Raw): X ∈ ℝ^(65 × 100)", C['secondary'], fontsize=8)
-    draw_box(ax, 8.25, 2.5, 3.8, 0.5, "Velocity (1st Deriv): V = dX/dt ∈ ℝ^(65 × 100)", C['purple'], fontsize=8)
-    draw_box(ax, 8.25, 1.8, 3.8, 0.5, "Acceleration (2nd Deriv): A = d²X/dt² ∈ ℝ^(65 × 100)", C['orange'], fontsize=8)
+    # BIG UNIFYING BOX for Position, Velocity, Acceleration
+    unifying_bottom = 1.85
+    unifying_box_h = 2.4
+    unifying_rect = FancyBboxPatch((6.5, unifying_bottom), 4.9, unifying_box_h,
+                                    boxstyle="round,pad=0.05", facecolor=color_unifying_bg,
+                                    edgecolor=color_unifying_border, linewidth=1.0, linestyle='--')
+    ax.add_patch(unifying_rect)
+    ax.text(8.95, 4.05, "Kinematic Channels (3 × 65 = 195)", ha='center', va='center',
+            fontsize=9.5, fontweight='bold', color='#334155')
 
-    draw_arrow(ax, 8.25, 1.5, 8.25, 1.25, color=C['purple'])
+    # Sub-boxes inside Unifying Box
+    p_y, p_h = 3.55, 0.52
+    v_y, v_h = 2.85, 0.52
+    a_y, a_h = 2.15, 0.52
 
-    # Final Tensor Output
-    draw_box(ax, 8.25, 0.9, 4.0, 0.55, "Expanded Kinematic Tensor: [X; V; A]\nDimensions: (B, 195, 100)", C['success'], fontsize=8, bold=True)
+    draw_box(ax, 8.95, p_y, 4.5, p_h, r"Position (Raw): $X \in \mathbb{R}^{65 \times 100}$",
+             color=color_box_bg, text_color='#0f172a', fontsize=11)
+    draw_box(ax, 8.95, v_y, 4.5, v_h, r"Velocity (1st Deriv): $V = dX/dt \in \mathbb{R}^{65 \times 100}$",
+             color=color_box_bg, text_color='#0f172a', fontsize=11)
+    draw_box(ax, 8.95, a_y, 4.5, a_h, r"Acceleration (2nd Deriv): $A = d^2X/dt^2 \in \mathbb{R}^{65 \times 100}$",
+             color=color_box_bg, text_color='#0f172a', fontsize=11)
+
+    # Arrows inside Unifying Box connecting sub-boxes
+    draw_arrow(ax, 8.95, p_y - p_h/2, 8.95, v_y + v_h/2, color=color_arrow)
+    draw_arrow(ax, 8.95, v_y - v_h/2, 8.95, a_y + a_h/2, color=color_arrow)
+
+    # Final Tensor Output Box
+    final_y, final_h = 1.05, 0.70
+    draw_box(ax, 8.95, final_y, 4.7, final_h,
+             "Expanded Kinematic Tensor: [X; V; A]\nDimensions: (B, 195, 100)",
+             color=color_final_bg, text_color='#ffffff', fontsize=11, bold=True)
+
+    # Arrow from Unifying Box bottom edge directly to Final Tensor top edge
+    final_top = final_y + final_h/2
+    draw_arrow(ax, 8.95, unifying_bottom, 8.95, final_top, color=color_border)
 
     fig.savefig(f'{OUT_DIR}/fig2_data_pipeline.pdf')
     plt.close()
@@ -210,8 +258,8 @@ def fig3_training_loop():
 
     for i, (k, v) in enumerate(params):
         y_pos = 6.4 - i * 0.42
-        ax.text(6.5, y_pos, k, ha='left', fontsize=8, color=C['gray'], fontfamily='monospace')
-        ax.text(9.5, y_pos, v, ha='right', fontsize=8, fontweight='bold', color=C['primary'], fontfamily='monospace')
+        ax.text(6.5, y_pos, k, ha='left', fontsize=8, color=C['gray'])
+        ax.text(9.5, y_pos, v, ha='right', fontsize=8, fontweight='bold', color=C['primary'])
 
     fig.savefig(f'{OUT_DIR}/fig3_training_loop.pdf')
     plt.close()
@@ -320,58 +368,82 @@ def fig4_model_architectures():
 
 
 # ═══════════════════════════════════════════════════════════
-# FIGURE 5: Validation + TTA + Post-Processing
+# FIGURE 5: Temporal Debouncing & Threshold Optimization
 # ═══════════════════════════════════════════════════════════
 def fig5_evaluation_postprocessing():
-    fig, ax = plt.subplots(figsize=(12, 5))
-    ax.set_xlim(-0.5, 12.5)
-    ax.set_ylim(-1, 5)
+    fig, ax = plt.subplots(figsize=(13.5, 5.0))
+    ax.set_xlim(0, 13.5)
+    ax.set_ylim(0, 5.0)
     ax.axis('off')
-    #ax.set_title('Evaluation & Post-Processing Pipeline', fontsize=14, fontweight='bold', pad=15)
 
-    # TTA Section
-    ax.text(1.5, 4.3, "Test-Time Augmentation (TTA)", ha='center', fontsize=10, fontweight='bold', color=C['primary'])
-    
-    draw_box(ax, 1.5, 3.2, 2.5, 0.6, "Best Model Checkpoint\n(max val Macro F1)", C['primary'], fontsize=8)
-    
-    tta_labels = ["Clean Input", "+ Noise #1", "+ Noise #2", "+ Noise #3"]
-    for i, label in enumerate(tta_labels):
-        x = 0.2 + i * 0.9
-        draw_box(ax, x, 2.0, 0.8, 0.55, label, C['secondary'], fontsize=6.5)
-        draw_arrow(ax, 1.5, 2.85, x, 2.3)
-    
-    draw_arrow(ax, 1.5, 1.7, 1.5, 1.3)
-    draw_box(ax, 1.5, 0.9, 2.5, 0.6, "Average Softmax\nProbabilities", C['purple'], fontsize=8)
+    # Color definitions (Minimal, Academic)
+    color_card_bg = '#f8fafc'
+    color_border = '#334155'
+    color_box_bg = '#ffffff'
+    color_danger_bg = '#991b1b'
+    color_safe_bg = '#166534'
 
-    # Arrow to post-processing
-    draw_arrow(ax, 2.8, 0.9, 4.5, 0.9)
+    # ── Stage 1: Raw Probability Generation ──
+    rect1 = FancyBboxPatch((0.4, 0.4), 3.5, 4.2, boxstyle="round,pad=0.08",
+                           facecolor=color_card_bg, edgecolor=color_border, linewidth=1.2)
+    ax.add_patch(rect1)
+    ax.text(2.15, 4.25, "1. Raw Probabilities", ha='center', va='center',
+            fontsize=12.5, fontweight='bold', color='#0f172a')
 
-    # Post-Processing Section
-    ax.text(7.5, 4.3, "Post-Processing (Production)", ha='center', fontsize=10, fontweight='bold', color=C['primary'])
+    draw_box(ax, 2.15, 2.65, 3.0, 1.1,
+             r"Raw Model Output:" + "\n" + r"$p_\theta(y=1 \mid \mathbf{X}_i)$",
+             color=color_box_bg, text_color='#0f172a', fontsize=11, edgecolor='#64748b')
 
-    draw_box(ax, 5.5, 3.2, 2.2, 0.6, "Raw P(DANGER)\nProbability", C['primary'], fontsize=8)
-    draw_arrow(ax, 5.5, 2.85, 5.5, 2.4)
-    
-    draw_box(ax, 5.5, 2.0, 2.2, 0.6, "Median Filter\n(kernel = 3)", C['purple'], fontsize=8)
-    draw_arrow(ax, 5.5, 1.65, 5.5, 1.3)
-    
-    draw_box(ax, 5.5, 0.9, 2.2, 0.6, "Fixed Threshold\np > 0.77", C['orange'], fontsize=8)
-    draw_arrow(ax, 6.65, 0.9, 7.8, 0.9)
+    ax.text(2.15, 1.25, "Contains transient spikes\nfrom sensor noise",
+            ha='center', va='center', fontsize=10.5, style='italic', color='#475569')
 
-    # Decision
-    draw_box(ax, 9.5, 1.5, 2.0, 0.6, "DANGER\nEmergency Stop", C['accent'], fontsize=8, bold=True)
-    draw_box(ax, 9.5, 0.3, 2.0, 0.6, "SAFE\nContinue", C['success'], fontsize=8, bold=True)
-    
-    draw_arrow(ax, 8.0, 1.1, 8.45, 1.5)
-    draw_arrow(ax, 8.0, 0.7, 8.45, 0.3)
-    
-    ax.text(8.0, 1.5, "Yes", fontsize=7, color=C['accent'])
-    ax.text(8.0, 0.3, "No", fontsize=7, color=C['success'])
+    # Arrow Stage 1 → Stage 2
+    draw_arrow(ax, 3.9, 2.65, 4.5, 2.65, color=color_border)
 
-    # Impact table at bottom
-    ax.text(6, -0.5, "Impact:  False Positives 1,324 → 166 (−87.5%)  |  Danger Precision 83.9% → 98.0%  |  Recall 97.1%",
-            ha='center', fontsize=8, color=C['primary'], fontfamily='monospace',
-            bbox=dict(boxstyle='round,pad=0.3', facecolor='#f7fafc', edgecolor=C['gray'], linewidth=0.5))
+    # ── Stage 2: Temporal Debouncing (Median Filter) ──
+    rect2 = FancyBboxPatch((4.5, 0.4), 3.8, 4.2, boxstyle="round,pad=0.08",
+                           facecolor=color_card_bg, edgecolor=color_border, linewidth=1.2)
+    ax.add_patch(rect2)
+    ax.text(6.4, 4.25, "2. Temporal Debouncing", ha='center', va='center',
+            fontsize=12.5, fontweight='bold', color='#0f172a')
+
+    draw_box(ax, 6.4, 2.65, 3.4, 1.1,
+             r"3-Tap Median Filter:" + "\n" + r"$p_{\text{smooth}} = \text{Med}(p_{t-1}, p_t, p_{t+1})$",
+             color=color_box_bg, text_color='#0f172a', fontsize=11, edgecolor='#64748b')
+
+    ax.text(6.4, 1.25, "Eliminates isolated\nfalse-alarm predictions",
+            ha='center', va='center', fontsize=10.5, style='italic', color='#475569')
+
+    # Arrow Stage 2 → Stage 3
+    draw_arrow(ax, 8.3, 2.65, 8.9, 2.65, color=color_border)
+
+    # ── Stage 3: Threshold Optimization & Classification ──
+    rect3 = FancyBboxPatch((8.9, 0.4), 4.2, 4.2, boxstyle="round,pad=0.08",
+                           facecolor=color_card_bg, edgecolor=color_border, linewidth=1.2)
+    ax.add_patch(rect3)
+    ax.text(11.0, 4.25, "3. Threshold Decision", ha='center', va='center',
+            fontsize=12.5, fontweight='bold', color='#0f172a')
+
+    # Threshold rule box
+    draw_box(ax, 9.85, 2.65, 1.7, 1.1,
+             r"Threshold Rule:" + "\n" + r"$\tau = 0.77$",
+             color=color_box_bg, text_color='#0f172a', fontsize=11, edgecolor='#64748b')
+
+    # Decision Branching Arrows
+    draw_arrow(ax, 10.7, 2.9, 11.35, 3.45, color='#991b1b')
+    draw_arrow(ax, 10.7, 2.4, 11.35, 1.85, color='#166534')
+
+    ax.text(10.85, 3.4, r"$p > \tau$", fontsize=10.5, fontweight='bold', color='#991b1b')
+    ax.text(10.85, 1.7, r"$p \leq \tau$", fontsize=10.5, fontweight='bold', color='#166534')
+
+    # Outcome boxes
+    draw_box(ax, 12.2, 3.45, 1.7, 0.85,
+             r"DANGER" + "\n" + r"$(\hat{y} = 1)$",
+             color=color_danger_bg, text_color='#ffffff', fontsize=11, bold=True, edgecolor='#7f1d1d')
+
+    draw_box(ax, 12.2, 1.85, 1.7, 0.85,
+             r"SAFE" + "\n" + r"$(\hat{y} = 0)$",
+             color=color_safe_bg, text_color='#ffffff', fontsize=11, bold=True, edgecolor='#14532d')
 
     fig.savefig(f'{OUT_DIR}/fig5_evaluation_postprocessing.pdf')
     plt.close()

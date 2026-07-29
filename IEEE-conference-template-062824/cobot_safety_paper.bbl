@@ -49,6 +49,10 @@ H.~Gao, C.~Chevallereau, S.~Caro, Detection and management of human-cable collis
 E.~Digo, M.~Polito, E.~Caselli, L.~Gastaldi, S.~Pastorelli, A dataset of standard and abrupt industrial gestures recorded through mimus, Robotics 14~(12) (2025).
 \newblock \href {https://doi.org/10.3390/robotics14120176} {\path{doi:10.3390/robotics14120176}}.
 
+\bibitem{apdm_opal}
+{APDM Wearable Technologies}, \href{https://www.apdm.com}{Opal wireless inertial measurement unit specifications}, APDM Inc., Portland, OR, USA (2021).
+\newline\urlprefix\url{https://www.apdm.com}
+
 \bibitem{bai2020tcn}
 S.~Bai, J.~Z. Kolter, V.~Koltun, An empirical evaluation of generic convolutional and recurrent networks for sequence modeling, arXiv preprint arXiv:1803.01271 (2018).
 \newblock \href {https://doi.org/10.48550/arXiv.1803.01271} {\path{doi:10.48550/arXiv.1803.01271}}.
