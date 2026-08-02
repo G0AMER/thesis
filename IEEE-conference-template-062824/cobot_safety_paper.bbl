@@ -41,6 +41,10 @@ B.~Zhao, C.~Wu, L.-j. Chang, et~al., Research on zero-force control and collisio
 D.-C. Hoang, A.-N. Nguyen, C.-M. Nguyen, et~al., Collision-free grasp detection from color and depth images, IEEE Transactions on Artificial Intelligence (2024).
 \newblock \href {https://doi.org/10.1109/TAI.2024.3420848} {\path{doi:10.1109/TAI.2024.3420848}}.
 
+\bibitem{khan2026safety}
+A.~W. Khan, M.~Akhtar, S.~M. Qureshi, M.~Mustafa, N.~A. Alsaleh, I.~Ahmad, A systematic review of safety-driven approaches in human--robot collaborative systems, Sensors 26~(7) (2026).
+\newblock \href {https://doi.org/10.3390/s26072079} {\path{doi:10.3390/s26072079}}.
+
 \bibitem{gao2024cable}
 H.~Gao, C.~Chevallereau, S.~Caro, Detection and management of human-cable collision in cable-driven parallel robots, IEEE Robotics and Automation Letters (2024).
 \newblock \href {https://doi.org/10.1109/LRA.2024.3487051} {\path{doi:10.1109/LRA.2024.3487051}}.
