@@ -353,12 +353,12 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/public/txfonts/tcxr.vf
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/rtcxr.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/t1xb.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/t1xi.tfm
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/public/txfonts/t1xb.vf
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/rtxptmb.tfm
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/rtxb.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/public/txfonts/t1xr.vf
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/rtxptmr.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/rtxr.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/public/txfonts/t1xb.vf
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/rtxptmb.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/rtxb.tfm
 INPUT ./fig1_pipeline_overview.pdf
 INPUT ./fig1_pipeline_overview.pdf
 INPUT ./fig1_pipeline_overview.pdf
@@ -367,32 +367,6 @@ INPUT ./fig1_pipeline_overview.pdf
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/txb.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/txb.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/txb.tfm
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/txbmi.tfm
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/txbmi.tfm
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/txbmi.tfm
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/txbsy.tfm
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/txbsy.tfm
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/txbsy.tfm
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/txbex.tfm
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/txbex.tfm
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/txbex.tfm
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/txbi.tfm
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/txbi.tfm
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/txbi.tfm
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/txbmia.tfm
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/txbmia.tfm
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/txbmia.tfm
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/txbsyc.tfm
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/txbsyc.tfm
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/txbsyc.tfm
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/txbexa.tfm
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/txbexa.tfm
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/txbexa.tfm
-INPUT ./ChatGPT Image Jul 29, 2026, 04_01_33 PM.png
-INPUT ./ChatGPT Image Jul 29, 2026, 04_01_33 PM.png
-INPUT ./ChatGPT Image Jul 29, 2026, 04_01_33 PM.png
-INPUT ./ChatGPT Image Jul 29, 2026, 04_01_33 PM.png
-INPUT ./ChatGPT Image Jul 29, 2026, 04_01_33 PM.png
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/public/txfonts/t1xi.vf
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/rtxptmri.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/rtxi.tfm
@@ -406,17 +380,43 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/public/txfonts/txr.vf
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/public/txfonts/txr.vf
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/rtxptmr.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/rtxr.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/txbmi.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/txbmi.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/txbmi.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/txbsy.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/txbsy.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/txbsy.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/txbex.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/txbex.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/txbex.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/txbi.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/txbi.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/txbi.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/txbmia.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/txbmia.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/txbmia.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/txbsyc.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/txbsyc.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/txbsyc.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/txbexa.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/txbexa.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/txbexa.tfm
+INPUT ./ChatGPT Image Jul 29, 2026, 04_01_33 PM.png
+INPUT ./ChatGPT Image Jul 29, 2026, 04_01_33 PM.png
+INPUT ./ChatGPT Image Jul 29, 2026, 04_01_33 PM.png
+INPUT ./ChatGPT Image Jul 29, 2026, 04_01_33 PM.png
+INPUT ./ChatGPT Image Jul 29, 2026, 04_01_33 PM.png
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/t1xr.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/t1xr.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/public/txfonts/txbmi.vf
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/rtxbmi.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/rtxptmbi.tfm
+INPUT ./fig2_data_pipeline.pdf
+INPUT ./fig2_data_pipeline.pdf
+INPUT ./fig2_data_pipeline.pdf
+INPUT ./fig2_data_pipeline.pdf
+INPUT ./fig2_data_pipeline.pdf
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/public/txfonts/t1xr.vf
-INPUT ./fig2_data_pipeline.pdf
-INPUT ./fig2_data_pipeline.pdf
-INPUT ./fig2_data_pipeline.pdf
-INPUT ./fig2_data_pipeline.pdf
-INPUT ./fig2_data_pipeline.pdf
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/public/txfonts/txmi.vf
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/rtxmi.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/rtxptmri.tfm

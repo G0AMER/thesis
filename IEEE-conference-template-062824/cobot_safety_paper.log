@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.1.15)  2 AUG 2026 17:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.1.15)  4 AUG 2026 18:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -749,8 +749,6 @@ Package acronym Info: Label `acro:imu' newly defined as it shall be overridden
 although it is yet undefined on input line 55.
 Package acronym Info: Label `acro:hrc' newly defined as it shall be overridden
 although it is yet undefined on input line 55.
-Package acronym Info: Label `acro:tcn' newly defined as it shall be overridden
-although it is yet undefined on input line 58.
 LaTeX Font Info:    Trying to load font information for TS1+txr on input line 59.
 (/usr/local/texlive/2025/texmf-dist/tex/latex/txfonts/ts1txr.fd
 File: ts1txr.fd 2000/12/15 v3.1
@@ -818,6 +816,8 @@ Overfull \vbox (35.4pt too high) has occurred while \output is active []
  [1{/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc}
 
  <./elsevier-logo-3p.pdf> <./SDlogo-3p.pdf> <./Procs.pdf>]
+Package acronym Info: Label `acro:tcn' newly defined as it shall be overridden
+although it is yet undefined on input line 68.
 LaTeX Font Info:    Font shape `T1/txr/b/n' in size <10> not available
 (Font)              Font shape `T1/txr/bx/n' tried instead on input line 71.
 Package acronym Info: Label `acro:gpu' newly defined as it shall be overridden
@@ -825,50 +825,49 @@ although it is yet undefined on input line 81.
 Package acronym Info: Label `acro:tta' newly defined as it shall be overridden
 although it is yet undefined on input line 81.
  [2]
-<fig1_pipeline_overview.pdf, id=82, 462.52798pt x 292.69351pt>
+<fig1_pipeline_overview.pdf, id=81, 462.52798pt x 292.69351pt>
 File: fig1_pipeline_overview.pdf Graphic file (type pdf)
 <use fig1_pipeline_overview.pdf>
 Package pdftex.def Info: fig1_pipeline_overview.pdf  used on input line 120.
 (pdftex.def)             Requested size: 468.0pt x 296.1719pt.
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[3]
-<ChatGPT Image Jul 29, 2026, 04_01_33 PM.png, id=92, 1541.76pt x 1027.84pt>
+ [3] [4 <./fig1_pipeline_overview.pdf>]
+<ChatGPT Image Jul 29, 2026, 04_01_33 PM.png, id=184, 1541.76pt x 1027.84pt>
 File: ChatGPT Image Jul 29, 2026, 04_01_33 PM.png Graphic file (type png)
 <use ChatGPT Image Jul 29, 2026, 04_01_33 PM.png>
 Package pdftex.def Info: ChatGPT Image Jul 29, 2026, 04_01_33 PM.png  used on input line 145.
 (pdftex.def)             Requested size: 468.0pt x 311.99297pt.
- [4 <./fig1_pipeline_overview.pdf>] [5 <./ChatGPT Image Jul 29, 2026, 04_01_33 PM.png (PNG copy)>]
-<fig2_data_pipeline.pdf, id=198, 686.565pt x 314.95267pt>
+
+Underfull \vbox (badness 7486) has occurred while \output is active []
+
+ [5 <./ChatGPT Image Jul 29, 2026, 04_01_33 PM.png (PNG copy)>]
+<fig2_data_pipeline.pdf, id=195, 686.565pt x 314.95267pt>
 File: fig2_data_pipeline.pdf Graphic file (type pdf)
 <use fig2_data_pipeline.pdf>
-Package pdftex.def Info: fig2_data_pipeline.pdf  used on input line 172.
+Package pdftex.def Info: fig2_data_pipeline.pdf  used on input line 171.
 (pdftex.def)             Requested size: 468.0pt x 214.6888pt.
  [6 <./fig2_data_pipeline.pdf>] [7]
-<fig5_evaluation_postprocessing.pdf, id=381, 770.57889pt x 292.69351pt>
+<fig5_evaluation_postprocessing.pdf, id=380, 770.57889pt x 292.69351pt>
 File: fig5_evaluation_postprocessing.pdf Graphic file (type pdf)
 <use fig5_evaluation_postprocessing.pdf>
-Package pdftex.def Info: fig5_evaluation_postprocessing.pdf  used on input line 232.
+Package pdftex.def Info: fig5_evaluation_postprocessing.pdf  used on input line 230.
 (pdftex.def)             Requested size: 468.0pt x 177.76567pt.
 
-Underfull \hbox (badness 10000) detected at line 247
+Underfull \hbox (badness 10000) detected at line 245
 []
  []
 
 LaTeX Font Info:    Font shape `T1/txr/b/n' in size <8> not available
-(Font)              Font shape `T1/txr/bx/n' tried instead on input line 254.
-<ConvNeXt_1D_cm.png, id=384, 433.62pt x 361.35pt>
+(Font)              Font shape `T1/txr/bx/n' tried instead on input line 252.
+<ConvNeXt_1D_cm.png, id=383, 433.62pt x 361.35pt>
 File: ConvNeXt_1D_cm.png Graphic file (type png)
 <use ConvNeXt_1D_cm.png>
-Package pdftex.def Info: ConvNeXt_1D_cm.png  used on input line 271.
+Package pdftex.def Info: ConvNeXt_1D_cm.png  used on input line 269.
 (pdftex.def)             Requested size: 280.80286pt x 234.01457pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
 [8 <./fig5_evaluation_postprocessing.pdf>]
-Underfull \hbox (badness 10000) detected at line 287
+Underfull \hbox (badness 10000) detected at line 285
 []
  []
 
@@ -881,13 +880,13 @@ L3 programming layer <2025-12-29>
 Here is how much of TeX's memory you used:
  13742 strings out of 467538
  205686 string characters out of 5419552
- 631369 words of memory out of 5000000
+ 631370 words of memory out of 5000000
  42316 multiletter control sequences out of 15000+600000
  720847 words of font info for 209 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,14n,79p,1892b,519s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,14n,79p,1903b,530s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/txfonts/rtcxr.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/txfonts/rtxbmi.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/txfonts/rtxi.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sftt0800.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/txfonts/txex.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/txfonts/txsy.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on cobot_safety_paper.pdf (11 pages, 1572528 bytes).
+Output written on cobot_safety_paper.pdf (11 pages, 1572805 bytes).
 PDF statistics:
  644 PDF objects out of 1000 (max. 8388607)
  286 compressed objects within 3 object streams

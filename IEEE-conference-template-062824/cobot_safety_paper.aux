@@ -25,9 +25,6 @@
 \AC@undonewlabel{acro:hrc}
 \newlabel{acro:hrc}{{}{1}{}{section*.2}{}}
 \acronymused{hrc}
-\AC@undonewlabel{acro:tcn}
-\newlabel{acro:tcn}{{}{1}{}{section*.3}{}}
-\acronymused{tcn}
 \citation{selvaggio2021autonomy}
 \citation{iso15066}
 \citation{wang2025sixdof}
@@ -45,7 +42,9 @@
 \citation{an2024digitaltwin}
 \citation{khan2026safety}
 \citation{wang2025sixdof}
-\citation{gao2024cable}
+\AC@undonewlabel{acro:tcn}
+\newlabel{acro:tcn}{{b}{2}{}{section*.3}{}}
+\acronymused{tcn}
 \@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{2}{section.1}\protected@file@percent }
 \newlabel{sec:introduction}{{1}{2}{Introduction}{section.1}{}}
 \acronymused{hrc}
@@ -63,6 +62,7 @@
 \@writefile{toc}{\contentsline {section}{\numberline {2}Related Work}{2}{section.2}\protected@file@percent }
 \newlabel{sec:related}{{2}{2}{Related Work}{section.2}{}}
 \acronymused{hrc}
+\citation{gao2024cable}
 \citation{tonti2024eso}
 \citation{zhao2025zeroforce}
 \citation{fang2024multivariate}
@@ -72,10 +72,10 @@
 \acronymused{hrc}
 \acronymused{tcn}
 \acronymused{hrc}
-\@writefile{toc}{\contentsline {section}{\numberline {3}Methodology}{3}{section.3}\protected@file@percent }
-\newlabel{sec:methodology}{{3}{3}{Methodology}{section.3}{}}
 \citation{dasig2024}
 \citation{apdm_opal}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Methodology}{4}{section.3}\protected@file@percent }
+\newlabel{sec:methodology}{{3}{4}{Methodology}{section.3}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Proposed deep learning pipeline for danger-state detection in human-robot collaboration.}}{4}{figure.1}\protected@file@percent }
 \newlabel{fig:overview}{{1}{4}{Proposed deep learning pipeline for danger-state detection in human-robot collaboration}{figure.1}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Problem Formulation}{4}{subsection.3.1}\protected@file@percent }
@@ -83,13 +83,11 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Data Collection and Dataset}{4}{subsection.3.2}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Anatomical placement of the five wireless MIMU sensors during the DASIG data collection experiments.}}{5}{figure.2}\protected@file@percent }
 \newlabel{fig:sensorplacement}{{2}{5}{Anatomical placement of the five wireless MIMU sensors during the DASIG data collection experiments}{figure.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Data Preprocessing and Dynamic Feature Expansion}{5}{subsection.3.3}\protected@file@percent }
-\acronymused{gpu}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Data Preprocessing and Dynamic Feature Expansion}{6}{subsection.3.3}\protected@file@percent }
 \acronymused{gpu}
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Data preprocessing and dynamic feature expansion on the GPU.}}{6}{figure.3}\protected@file@percent }
 \newlabel{fig:datapipeline}{{3}{6}{Data preprocessing and dynamic feature expansion on the GPU}{figure.3}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Algorithm Selection}{6}{subsection.3.4}\protected@file@percent }
-\acronymused{tcn}
 \citation{bai2020tcn}
 \citation{liu2022convnext}
 \citation{tolstikhin2021mlpmixer}
@@ -103,7 +101,7 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.5}Training Protocol}{7}{subsection.3.5}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.6}Evaluation Strategy}{7}{subsection.3.6}\protected@file@percent }
 \acronymused{tta}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.7}Temporal Post-Processing}{7}{subsection.3.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.7}Temporal Post-Processing}{8}{subsection.3.7}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Temporal debouncing and threshold optimization on model probabilities.}}{8}{figure.4}\protected@file@percent }
 \newlabel{fig:postprocess}{{4}{8}{Temporal debouncing and threshold optimization on model probabilities}{figure.4}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {4}Results and Discussion}{8}{section.4}\protected@file@percent }
@@ -111,9 +109,6 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Comparison}{8}{subsection.4.1}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Benchmark results with temporal post-processing ($\tau = 0.77$, median-filtered)}}{8}{table.1}\protected@file@percent }
 \newlabel{tab:results}{{1}{8}{Benchmark results with temporal post-processing ($\tau = 0.77$, median-filtered)}{table.1}{}}
-\acronymused{tcn}
-\acronymused{tcn}
-\citation{wang2025sixdof}
 \@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Row-normalized confusion matrix for the best-performing ConvNeXt 1D model.}}{9}{figure.5}\protected@file@percent }
 \newlabel{fig:cm}{{5}{9}{Row-normalized confusion matrix for the best-performing ConvNeXt 1D model}{figure.5}{}}
 \acronymused{imu}
@@ -121,12 +116,12 @@
 \acronymused{tcn}
 \@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Effect of temporal post-processing on TCN predictions}}{9}{table.2}\protected@file@percent }
 \newlabel{tab:postprocess}{{2}{9}{Effect of temporal post-processing on TCN predictions}{table.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Discussion}{9}{subsection.4.3}\protected@file@percent }
+\citation{wang2025sixdof}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Discussion}{10}{subsection.4.3}\protected@file@percent }
 \acronymused{hrc}
 \acronymused{hrc}
 \@writefile{toc}{\contentsline {section}{\numberline {5}Conclusion}{10}{section.5}\protected@file@percent }
 \newlabel{sec:conclusion}{{5}{10}{Conclusion}{section.5}{}}
-\acronymused{tcn}
 \bibstyle{elsarticle-num}
 \bibdata{cobot_safety_references}
 \bibcite{selvaggio2021autonomy}{{1}{}{{}}{{}}}
