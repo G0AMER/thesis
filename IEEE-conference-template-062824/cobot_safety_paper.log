@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.1.15)  10 AUG 2026 14:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.1.15)  11 AUG 2026 16:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -816,40 +816,42 @@ Overfull \vbox (35.4pt too high) has occurred while \output is active []
  [1{/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc}
 
  <./elsevier-logo-3p.pdf> <./SDlogo-3p.pdf> <./Procs.pdf>]
-Package acronym Info: Label `acro:tcn' newly defined as it shall be overridden
-although it is yet undefined on input line 68.
 LaTeX Font Info:    Font shape `T1/txr/b/n' in size <10> not available
 (Font)              Font shape `T1/txr/bx/n' tried instead on input line 71.
 Package acronym Info: Label `acro:gpu' newly defined as it shall be overridden
 although it is yet undefined on input line 81.
+Package acronym Info: Label `acro:tcn' newly defined as it shall be overridden
+although it is yet undefined on input line 81.
 Package acronym Info: Label `acro:tta' newly defined as it shall be overridden
 although it is yet undefined on input line 81.
  [2]
-<fig1_pipeline_overview.pdf, id=81, 462.52798pt x 292.69351pt>
+<fig1_pipeline_overview.pdf, id=80, 462.52798pt x 292.69351pt>
 File: fig1_pipeline_overview.pdf Graphic file (type pdf)
 <use fig1_pipeline_overview.pdf>
 Package pdftex.def Info: fig1_pipeline_overview.pdf  used on input line 120.
 (pdftex.def)             Requested size: 468.0pt x 296.1719pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [3] [4 <./fig1_pipeline_overview.pdf>]
-<ChatGPT Image Jul 29, 2026, 04_01_33 PM.png, id=184, 1541.76pt x 1027.84pt>
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[3]
+<ChatGPT Image Jul 29, 2026, 04_01_33 PM.png, id=90, 1541.76pt x 1027.84pt>
 File: ChatGPT Image Jul 29, 2026, 04_01_33 PM.png Graphic file (type png)
 <use ChatGPT Image Jul 29, 2026, 04_01_33 PM.png>
 Package pdftex.def Info: ChatGPT Image Jul 29, 2026, 04_01_33 PM.png  used on input line 145.
 (pdftex.def)             Requested size: 468.0pt x 311.99297pt.
 
-Underfull \vbox (badness 7486) has occurred while \output is active []
 
- [5 <./ChatGPT Image Jul 29, 2026, 04_01_33 PM.png (PNG copy)>]
-<fig2_data_pipeline.pdf, id=195, 686.565pt x 314.95267pt>
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[4 <./fig1_pipeline_overview.pdf>] [5 <./ChatGPT Image Jul 29, 2026, 04_01_33 PM.png (PNG copy)>]
+<fig2_data_pipeline.pdf, id=196, 686.565pt x 314.95267pt>
 File: fig2_data_pipeline.pdf Graphic file (type pdf)
 <use fig2_data_pipeline.pdf>
 Package pdftex.def Info: fig2_data_pipeline.pdf  used on input line 171.
 (pdftex.def)             Requested size: 468.0pt x 214.6888pt.
  [6 <./fig2_data_pipeline.pdf>] [7]
-<fig5_evaluation_postprocessing.pdf, id=380, 770.57889pt x 292.69351pt>
+<fig5_evaluation_postprocessing.pdf, id=379, 770.57889pt x 292.69351pt>
 File: fig5_evaluation_postprocessing.pdf Graphic file (type pdf)
 <use fig5_evaluation_postprocessing.pdf>
 Package pdftex.def Info: fig5_evaluation_postprocessing.pdf  used on input line 230.
@@ -861,14 +863,16 @@ Underfull \hbox (badness 10000) detected at line 245
 
 LaTeX Font Info:    Font shape `T1/txr/b/n' in size <8> not available
 (Font)              Font shape `T1/txr/bx/n' tried instead on input line 252.
-[8 <./fig5_evaluation_postprocessing.pdf>]
-<ConvNeXt_1D_cm.png, id=521, 433.62pt x 361.35pt>
+<ConvNeXt_1D_cm.png, id=382, 433.62pt x 361.35pt>
 File: ConvNeXt_1D_cm.png Graphic file (type png)
 <use ConvNeXt_1D_cm.png>
 Package pdftex.def Info: ConvNeXt_1D_cm.png  used on input line 269.
 (pdftex.def)             Requested size: 280.80286pt x 234.01457pt.
 
-Underfull \hbox (badness 10000) detected at line 285
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[8 <./fig5_evaluation_postprocessing.pdf>]
+Underfull \hbox (badness 10000) detected at line 284
 []
  []
 
@@ -879,18 +883,18 @@ L3 programming layer <2025-12-29>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 13742 strings out of 467538
- 205686 string characters out of 5419552
- 631370 words of memory out of 5000000
- 42316 multiletter control sequences out of 15000+600000
+ 13738 strings out of 467538
+ 205601 string characters out of 5419552
+ 630366 words of memory out of 5000000
+ 42313 multiletter control sequences out of 15000+600000
  720847 words of font info for 209 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,14n,79p,1903b,530s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,14n,79p,1944b,519s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/txfonts/rtcxr.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/txfonts/rtxbmi.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/txfonts/rtxi.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sftt0800.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/txfonts/txex.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/txfonts/txsy.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on cobot_safety_paper.pdf (11 pages, 1572897 bytes).
+Output written on cobot_safety_paper.pdf (11 pages, 1572262 bytes).
 PDF statistics:
- 644 PDF objects out of 1000 (max. 8388607)
- 286 compressed objects within 3 object streams
- 69 named destinations out of 1000 (max. 500000)
+ 640 PDF objects out of 1000 (max. 8388607)
+ 282 compressed objects within 3 object streams
+ 68 named destinations out of 1000 (max. 500000)
  41 words of extra memory for PDF output out of 10000 (max. 10000000)
 
