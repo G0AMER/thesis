@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.1.15)  11 AUG 2026 16:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.1.15)  13 AUG 2026 17:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -863,15 +863,13 @@ Underfull \hbox (badness 10000) detected at line 245
 
 LaTeX Font Info:    Font shape `T1/txr/b/n' in size <8> not available
 (Font)              Font shape `T1/txr/bx/n' tried instead on input line 252.
-<ConvNeXt_1D_cm.png, id=382, 433.62pt x 361.35pt>
+[8 <./fig5_evaluation_postprocessing.pdf>]
+<ConvNeXt_1D_cm.png, id=520, 433.62pt x 361.35pt>
 File: ConvNeXt_1D_cm.png Graphic file (type png)
 <use ConvNeXt_1D_cm.png>
-Package pdftex.def Info: ConvNeXt_1D_cm.png  used on input line 269.
+Package pdftex.def Info: ConvNeXt_1D_cm.png  used on input line 275.
 (pdftex.def)             Requested size: 280.80286pt x 234.01457pt.
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[8 <./fig5_evaluation_postprocessing.pdf>]
 Underfull \hbox (badness 10000) detected at line 284
 []
  []
@@ -891,7 +889,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  75i,14n,79p,1944b,519s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/txfonts/rtcxr.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/txfonts/rtxbmi.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/txfonts/rtxi.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sftt0800.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/txfonts/txex.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/txfonts/txsy.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on cobot_safety_paper.pdf (11 pages, 1572262 bytes).
+Output written on cobot_safety_paper.pdf (11 pages, 1572151 bytes).
 PDF statistics:
  640 PDF objects out of 1000 (max. 8388607)
  282 compressed objects within 3 object streams
