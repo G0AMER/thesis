@@ -1,0 +1,338 @@
+%% BioMed_Central_Bib_Style_v1.01
+
+\begin{thebibliography}{21}
+% BibTex style file: bmc-mathphys.bst (version 2.1), 2014-07-24
+\ifx \bisbn   \undefined \def \bisbn  #1{ISBN #1}\fi
+\ifx \binits  \undefined \def \binits#1{#1}\fi
+\ifx \bauthor  \undefined \def \bauthor#1{#1}\fi
+\ifx \batitle  \undefined \def \batitle#1{#1}\fi
+\ifx \bjtitle  \undefined \def \bjtitle#1{#1}\fi
+\ifx \bvolume  \undefined \def \bvolume#1{\textbf{#1}}\fi
+\ifx \byear  \undefined \def \byear#1{#1}\fi
+\ifx \bissue  \undefined \def \bissue#1{#1}\fi
+\ifx \bfpage  \undefined \def \bfpage#1{#1}\fi
+\ifx \blpage  \undefined \def \blpage #1{#1}\fi
+\ifx \burl  \undefined \def \burl#1{\textsf{#1}}\fi
+\ifx \doiurl  \undefined \def \doiurl#1{\url{https://doi.org/#1}}\fi
+\ifx \betal  \undefined \def \betal{\textit{et al.}}\fi
+\ifx \binstitute  \undefined \def \binstitute#1{#1}\fi
+\ifx \binstitutionaled  \undefined \def \binstitutionaled#1{#1}\fi
+\ifx \bctitle  \undefined \def \bctitle#1{#1}\fi
+\ifx \beditor  \undefined \def \beditor#1{#1}\fi
+\ifx \bpublisher  \undefined \def \bpublisher#1{#1}\fi
+\ifx \bbtitle  \undefined \def \bbtitle#1{#1}\fi
+\ifx \bedition  \undefined \def \bedition#1{#1}\fi
+\ifx \bseriesno  \undefined \def \bseriesno#1{#1}\fi
+\ifx \blocation  \undefined \def \blocation#1{#1}\fi
+\ifx \bsertitle  \undefined \def \bsertitle#1{#1}\fi
+\ifx \bsnm \undefined \def \bsnm#1{#1}\fi
+\ifx \bsuffix \undefined \def \bsuffix#1{#1}\fi
+\ifx \bparticle \undefined \def \bparticle#1{#1}\fi
+\ifx \barticle \undefined \def \barticle#1{#1}\fi
+\bibcommenthead
+\ifx \bconfdate \undefined \def \bconfdate #1{#1}\fi
+\ifx \botherref \undefined \def \botherref #1{#1}\fi
+\ifx \url \undefined \def \url#1{\textsf{#1}}\fi
+\ifx \bchapter \undefined \def \bchapter#1{#1}\fi
+\ifx \bbook \undefined \def \bbook#1{#1}\fi
+\ifx \bcomment \undefined \def \bcomment#1{#1}\fi
+\ifx \oauthor \undefined \def \oauthor#1{#1}\fi
+\ifx \citeauthoryear \undefined \def \citeauthoryear#1{#1}\fi
+\ifx \endbibitem  \undefined \def \endbibitem {}\fi
+\ifx \bconflocation  \undefined \def \bconflocation#1{#1}\fi
+\ifx \arxivurl  \undefined \def \arxivurl#1{\textsf{#1}}\fi
+\csname PreBibitemsHook\endcsname
+
+%%% 1
+\bibitem[\protect\citeauthoryear{Selvaggio et~al.}{2021}]{selvaggio2021autonomy}
+\begin{barticle}
+\bauthor{\bsnm{Selvaggio}, \binits{M.}},
+\bauthor{\bsnm{Cognetti}, \binits{M.}},
+\bauthor{\bsnm{Nikolaidis}, \binits{S.}},
+\bauthor{\bsnm{Ivaldi}, \binits{S.}},
+\bauthor{\bsnm{Siciliano}, \binits{B.}}:
+\batitle{Autonomy in physical human-robot interaction: A brief survey}.
+\bjtitle{IEEE Robotics and Automation Letters}
+\bvolume{6}(\bissue{4}),
+\bfpage{7989}--\blpage{7996}
+(\byear{2021})
+\doiurl{10.1109/LRA.2021.3100603}
+\end{barticle}
+\endbibitem
+
+%%% 2
+\bibitem[\protect\citeauthoryear{}{2016}]{iso15066}
+\begin{botherref}
+Robots and robotic devices -- collaborative robots.
+ISO/TS 15066:2016
+(2016)
+\end{botherref}
+\endbibitem
+
+%%% 3
+\bibitem[\protect\citeauthoryear{Wang et~al.}{2025}]{wang2025sixdof}
+\begin{barticle}
+\bauthor{\bsnm{Wang}, \binits{Z.}},
+\bauthor{\bsnm{Wang}, \binits{Y.}},
+\bauthor{\bsnm{Feng}, \binits{Y.}}, \betal:
+\batitle{Research on robot force compensation and collision detection based on six-dimensional force sensor}.
+\bjtitle{SSRN Electronic Journal}
+(\byear{2025})
+\doiurl{10.2139/ssrn.5163869}
+\end{barticle}
+\endbibitem
+
+%%% 4
+\bibitem[\protect\citeauthoryear{Tonti et~al.}{2024}]{tonti2024eso}
+\begin{bchapter}
+\bauthor{\bsnm{Tonti}, \binits{G.}},
+\bauthor{\bsnm{Shakourzadeh}, \binits{S.}},
+\bauthor{\bsnm{Guarino Lo~Bianco}, \binits{C.}}:
+\bctitle{A fast collision detection system based on an extended state observer}.
+In: \bbtitle{IEEE/ASME International Conference on Mechatronic and Embedded Systems and Applications (MESA)}
+(\byear{2024}).
+\doiurl{10.1109/MESA61532.2024.10704895}
+\end{bchapter}
+\endbibitem
+
+%%% 5
+\bibitem[\protect\citeauthoryear{Niu et~al.}{2024}]{niu2024wavelet}
+\begin{barticle}
+\bauthor{\bsnm{Niu}, \binits{Z.}},
+\bauthor{\bsnm{Hassan}, \binits{T.}},
+\bauthor{\bsnm{Boushaki}, \binits{M.N.}}, \betal:
+\batitle{Continuous wavelet network for efficient and transferable collision detection in collaborative robots}.
+\bjtitle{IEEE Transactions on Systems, Man, and Cybernetics: Systems}
+(\byear{2024})
+\doiurl{10.1109/TSMC.2024.3518700}
+\end{barticle}
+\endbibitem
+
+%%% 6
+\bibitem[\protect\citeauthoryear{Fang et~al.}{2024}]{fang2024multivariate}
+\begin{barticle}
+\bauthor{\bsnm{Fang}, \binits{S.}},
+\bauthor{\bsnm{Liu}, \binits{S.}},
+\bauthor{\bsnm{Wang}, \binits{X.}}, \betal:
+\batitle{A multivariate fusion collision detection method for dynamic operations of human-robot collaboration systems}.
+\bjtitle{Journal of Manufacturing Systems}
+(\byear{2024})
+\doiurl{10.1016/j.jmsy.2024.11.007}
+\end{barticle}
+\endbibitem
+
+%%% 7
+\bibitem[\protect\citeauthoryear{An et~al.}{2024}]{an2024digitaltwin}
+\begin{barticle}
+\bauthor{\bsnm{An}, \binits{J.}},
+\bauthor{\bsnm{Bang}, \binits{P.}},
+\bauthor{\bsnm{Jeon}, \binits{B.}}, \betal:
+\batitle{Development of digital twin for collision detection analysis within human-robot collaborative workspaces}.
+\bjtitle{Journal of Computational Design and Engineering}
+(\byear{2024})
+\doiurl{10.7315/cde.2024.144}
+\end{barticle}
+\endbibitem
+
+%%% 8
+\bibitem[\protect\citeauthoryear{Zhao et~al.}{2025}]{zhao2025zeroforce}
+\begin{barticle}
+\bauthor{\bsnm{Zhao}, \binits{B.}},
+\bauthor{\bsnm{Wu}, \binits{C.}},
+\bauthor{\bsnm{Chang}, \binits{L.-j.}}, \betal:
+\batitle{Research on zero-force control and collision detection of deep learning methods in collaborative robots}.
+\bjtitle{Displays}
+(\byear{2025})
+\doiurl{10.1016/j.displa.2025.102969}
+\end{barticle}
+\endbibitem
+
+%%% 9
+\bibitem[\protect\citeauthoryear{Hoang et~al.}{2024}]{hoang2024grasp}
+\begin{barticle}
+\bauthor{\bsnm{Hoang}, \binits{D.-C.}},
+\bauthor{\bsnm{Nguyen}, \binits{A.-N.}},
+\bauthor{\bsnm{Nguyen}, \binits{C.-M.}}, \betal:
+\batitle{Collision-free grasp detection from color and depth images}.
+\bjtitle{IEEE Transactions on Artificial Intelligence}
+(\byear{2024})
+\doiurl{10.1109/TAI.2024.3420848}
+\end{barticle}
+\endbibitem
+
+%%% 10
+\bibitem[\protect\citeauthoryear{Gao et~al.}{2024}]{gao2024cable}
+\begin{barticle}
+\bauthor{\bsnm{Gao}, \binits{H.}},
+\bauthor{\bsnm{Chevallereau}, \binits{C.}},
+\bauthor{\bsnm{Caro}, \binits{S.}}:
+\batitle{Detection and management of human-cable collision in cable-driven parallel robots}.
+\bjtitle{IEEE Robotics and Automation Letters}
+(\byear{2024})
+\doiurl{10.1109/LRA.2024.3487051}
+\end{barticle}
+\endbibitem
+
+%%% 11
+\bibitem[\protect\citeauthoryear{Digo et~al.}{2025}]{dasig2024}
+\begin{botherref}
+\oauthor{\bsnm{Digo}, \binits{E.}},
+\oauthor{\bsnm{Polito}, \binits{M.}},
+\oauthor{\bsnm{Caselli}, \binits{E.}},
+\oauthor{\bsnm{Gastaldi}, \binits{L.}},
+\oauthor{\bsnm{Pastorelli}, \binits{S.}}:
+A dataset of standard and abrupt industrial gestures recorded through mimus.
+Robotics
+\textbf{14}(12)
+(2025)
+\doiurl{10.3390/robotics14120176}
+\end{botherref}
+\endbibitem
+
+%%% 12
+\bibitem[\protect\citeauthoryear{{APDM Wearable Technologies}}{2021}]{apdm_opal}
+\begin{botherref}
+\oauthor{\bsnm{{APDM Wearable Technologies}}}:
+Opal Wireless Inertial Measurement Unit Specifications.
+APDM Inc., Portland, OR, USA
+(2021).
+\url{https://www.apdm.com}
+\end{botherref}
+\endbibitem
+
+%%% 13
+\bibitem[\protect\citeauthoryear{Bai et~al.}{2018}]{bai2020tcn}
+\begin{barticle}
+\bauthor{\bsnm{Bai}, \binits{S.}},
+\bauthor{\bsnm{Kolter}, \binits{J.Z.}},
+\bauthor{\bsnm{Koltun}, \binits{V.}}:
+\batitle{An empirical evaluation of generic convolutional and recurrent networks for sequence modeling}.
+\bjtitle{arXiv preprint arXiv:1803.01271}
+(\byear{2018})
+\doiurl{10.48550/arXiv.1803.01271}
+\end{barticle}
+\endbibitem
+
+%%% 14
+\bibitem[\protect\citeauthoryear{Liu et~al.}{2022}]{liu2022convnext}
+\begin{bchapter}
+\bauthor{\bsnm{Liu}, \binits{Z.}},
+\bauthor{\bsnm{Mao}, \binits{H.}},
+\bauthor{\bsnm{Wu}, \binits{C.-Y.}},
+\bauthor{\bsnm{Feichtenhofer}, \binits{C.}},
+\bauthor{\bsnm{Darrell}, \binits{T.}},
+\bauthor{\bsnm{Xie}, \binits{S.}}:
+\bctitle{A convnet for the 2020s}.
+In: \bbtitle{Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)}
+(\byear{2022}).
+\doiurl{10.1109/CVPR52688.2022.01167}
+\end{bchapter}
+\endbibitem
+
+%%% 15
+\bibitem[\protect\citeauthoryear{Tolstikhin et~al.}{2021}]{tolstikhin2021mlpmixer}
+\begin{barticle}
+\bauthor{\bsnm{Tolstikhin}, \binits{I.O.}},
+\bauthor{\bsnm{Houlsby}, \binits{N.}},
+\bauthor{\bsnm{Kolesnikov}, \binits{A.}}, \betal:
+\batitle{{MLP-Mixer}: An all-mlp architecture for vision}.
+\bjtitle{Advances in Neural Information Processing Systems (NeurIPS)}
+(\byear{2021})
+\doiurl{10.48550/arXiv.2105.01601}
+\end{barticle}
+\endbibitem
+
+%%% 16
+\bibitem[\protect\citeauthoryear{Vaswani et~al.}{2017}]{vaswani2017attention}
+\begin{barticle}
+\bauthor{\bsnm{Vaswani}, \binits{A.}},
+\bauthor{\bsnm{Shazeer}, \binits{N.}},
+\bauthor{\bsnm{Parmar}, \binits{N.}},
+\bauthor{\bsnm{Uszkoreit}, \binits{J.}},
+\bauthor{\bsnm{Jones}, \binits{L.}},
+\bauthor{\bsnm{Gomez}, \binits{A.N.}},
+\bauthor{\bsnm{Kaiser}, \binits{L.}},
+\bauthor{\bsnm{Polosukhin}, \binits{I.}}:
+\batitle{Attention is all you need}.
+\bjtitle{Advances in Neural Information Processing Systems (NeurIPS)}
+(\byear{2017})
+\doiurl{10.48550/arXiv.1706.03762}
+\end{barticle}
+\endbibitem
+
+%%% 17
+\bibitem[\protect\citeauthoryear{Ismail~Fawaz et~al.}{2020}]{fawaz2020inceptiontime}
+\begin{barticle}
+\bauthor{\bsnm{Ismail~Fawaz}, \binits{H.}},
+\bauthor{\bsnm{Lucas}, \binits{B.}},
+\bauthor{\bsnm{Forestier}, \binits{G.}},
+\bauthor{\bsnm{Pelletier}, \binits{C.}},
+\bauthor{\bsnm{Schmidt}, \binits{D.F.}},
+\bauthor{\bsnm{Weber}, \binits{J.}},
+\bauthor{\bsnm{Webb}, \binits{G.I.}},
+\bauthor{\bsnm{Idoumghar}, \binits{L.}},
+\bauthor{\bsnm{Muller}, \binits{P.-A.}},
+\bauthor{\bsnm{Petitjean}, \binits{F.}}:
+\batitle{{InceptionTime}: Finding alexnet for time series classification}.
+\bjtitle{Data Mining and Knowledge Discovery}
+\bvolume{34},
+\bfpage{1936}--\blpage{1962}
+(\byear{2020})
+\doiurl{10.1007/s10618-020-00710-y}
+\end{barticle}
+\endbibitem
+
+%%% 18
+\bibitem[\protect\citeauthoryear{Lin et~al.}{2017}]{lin2017focal}
+\begin{bchapter}
+\bauthor{\bsnm{Lin}, \binits{T.-Y.}},
+\bauthor{\bsnm{Goyal}, \binits{P.}},
+\bauthor{\bsnm{Girshick}, \binits{R.}},
+\bauthor{\bsnm{He}, \binits{K.}},
+\bauthor{\bsnm{Doll\'{a}r}, \binits{P.}}:
+\bctitle{Focal loss for dense object detection}.
+In: \bbtitle{Proceedings of the IEEE International Conference on Computer Vision (ICCV)}
+(\byear{2017}).
+\doiurl{10.1109/ICCV.2017.324}
+\end{bchapter}
+\endbibitem
+
+%%% 19
+\bibitem[\protect\citeauthoryear{Loshchilov and Hutter}{2019}]{loshchilov2019adamw}
+\begin{bchapter}
+\bauthor{\bsnm{Loshchilov}, \binits{I.}},
+\bauthor{\bsnm{Hutter}, \binits{F.}}:
+\bctitle{Decoupled weight decay regularization}.
+In: \bbtitle{Proceedings of the International Conference on Learning Representations (ICLR)}
+(\byear{2019}).
+\doiurl{10.48550/arXiv.1711.05101}
+\end{bchapter}
+\endbibitem
+
+%%% 20
+\bibitem[\protect\citeauthoryear{Smith and Topin}{2019}]{smith2019onecycle}
+\begin{bchapter}
+\bauthor{\bsnm{Smith}, \binits{L.N.}},
+\bauthor{\bsnm{Topin}, \binits{N.}}:
+\bctitle{Super-convergence: Very fast training of neural networks using large learning rates}.
+In: \bbtitle{Artificial Intelligence and Machine Learning for Multi-Domain Operations Applications}
+(\byear{2019}).
+\doiurl{10.1117/12.2520589}
+\end{bchapter}
+\endbibitem
+
+%%% 21
+\bibitem[\protect\citeauthoryear{Zhang et~al.}{2018}]{zhang2018mixup}
+\begin{bchapter}
+\bauthor{\bsnm{Zhang}, \binits{H.}},
+\bauthor{\bsnm{Cisse}, \binits{M.}},
+\bauthor{\bsnm{Dauphin}, \binits{Y.N.}},
+\bauthor{\bsnm{Lopez-Paz}, \binits{D.}}:
+\bctitle{mixup: Beyond empirical risk minimization}.
+In: \bbtitle{Proceedings of the International Conference on Learning Representations (ICLR)}
+(\byear{2018}).
+\doiurl{10.48550/arXiv.1710.09412}
+\end{bchapter}
+\endbibitem
+
+\end{thebibliography}

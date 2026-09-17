@@ -1,0 +1,103 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[top=0.75in,bottom=0.7in,left=0.8in,right=0.8in]{geometry}
+\usepackage{mathptmx} % Times font
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{enumitem}
+
+\definecolor{primaryblue}{RGB}{0, 51, 102}
+\definecolor{darkgray}{RGB}{60, 60, 60}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=primaryblue,
+    urlcolor=primaryblue,
+    citecolor=primaryblue
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+
+\begin{document}
+
+% Header
+\begin{minipage}[t]{0.65\textwidth}
+    {\large \textbf{Ameur Gargouri}} \\
+    Ph.D. Student \\
+    ATISP Lab, ENET'Com, University of Sfax \& ESME Research Lab \\
+    Email: \texttt{ameur.gargouri.doc@enetcom.usf.tn}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.30\textwidth}
+    \raggedleft
+    \today
+\end{minipage}
+
+\vspace{1.0em}
+\hrule height 0.8pt
+\vspace{0.9em}
+
+% Recipient
+\textbf{To:} \\
+The Editor-in-Chief and Editorial Board \\
+\textit{Journal of Intelligent \& Robotic Systems} \\
+Springer Nature
+
+\vspace{0.6em}
+
+\textbf{Subject:} Submission of Original Research Article: \textit{``Danger-State Detection in Human-Robot Collaboration Using Deep Learning''}
+
+\vspace{0.5em}
+
+Dear Editor-in-Chief and Editorial Board Members,
+
+We are pleased to submit our original research manuscript entitled \textbf{``Danger-State Detection in Human-Robot Collaboration Using Deep Learning''} by Ameur Gargouri, Mohamed Karray, and Mohamed Ksantini for consideration for publication as a regular research paper in the \textit{Journal of Intelligent \& Robotic Systems}.
+
+\subsection*{Context and Importance of the Submitted Work}
+In Industry 5.0 and modern manufacturing ecosystems, physical Human-Robot Collaboration (pHRC) requires humans and collaborative robots (cobots) to operate seamlessly within shared physical envelopes. While safety standards such as ISO/TS 15066 mandate strict contact and separation limits, existing safety systems suffer critically from a \textbf{false-alarm dilemma}: non-hazardous irregular motions frequently trigger unnecessary emergency halts, degrading productivity and eroding operator trust. Conversely, failing to recognize an impending collision or crushing state poses severe physical hazards to human operators.
+
+Conventional safety approaches rely on expensive multi-axis force/torque transducers, vision pipelines vulnerable to line-of-sight occlusions, or disturbance observers that require mathematically precise dynamic models. Data-driven methods using wearable inertial measurement units (IMUs) offer a cost-effective, occlusion-free alternative; however, the literature lacks both a systematic comparison of modern deep learning architectures and targeted mechanisms to eliminate false alarms.
+
+\subsection*{Key Contributions of the Manuscript}
+This manuscript addresses these fundamental challenges through an end-to-end deep learning framework specifically engineered for high-precision, low-false-alarm danger-state detection:
+\begin{enumerate}[leftmargin=*,itemsep=1.5pt,topsep=1.5pt,partopsep=0pt]
+    \item \textbf{GPU-Accelerated Kinematic Expansion:} We introduce an on-the-fly kinematic derivative pipeline that computes velocities and accelerations directly on the GPU from raw 65-channel IMU position streams. This expands inputs into 195 rich spatio-temporal features without requiring physical force sensors or offline storage overhead.
+    \item \textbf{Systematic Benchmark of Modern 1D Architectures:} We carry out a comprehensive comparative analysis of five one-dimensional architectures—ConvNeXt~1D, Temporal Convolutional Networks (TCN), MLP-Mixer~1D, Transformer~1D, and InceptionTime—together with Test-Time Augmentation (TTA) under identical evaluation protocols. ConvNeXt~1D and TCN achieve macro-F1 scores of 98.68\% and 98.62\%, respectively, with danger precision exceeding 98\% and recall above 97\%.
+    \item \textbf{Dedicated False-Alarm Reduction Post-Processing:} We devise a temporal debouncing stage combining a 3-tap median filter with decision threshold optimization. This mechanism resolves the sensitivity--specificity trade-off, decreasing false positives by \textbf{87.5\%} while maintaining danger recall above 95.8\%.
+    \item \textbf{Robust Multi-Subject Validation:} The proposed approach is evaluated through 5-fold stratified cross-validation on more than 69,000 temporal windows gathered from 60 human subjects on the DASIG benchmark, providing statistically robust evidence for real-world viability.
+\end{enumerate}
+
+\subsection*{Relevance to the \textit{Journal of Intelligent \& Robotic Systems}}
+The \textit{Journal of Intelligent \& Robotic Systems} is globally recognized for publishing foundational and applied advances in intelligent robotics, autonomous systems, and human-robot interaction. Our manuscript directly addresses core topics within the journal's scope:
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+    \item \textbf{Intelligent Robotics \& Cobots:} Proposing scalable algorithmic solutions for certified safe physical collaboration in shared workspaces.
+    \item \textbf{Sensor Fusion \& Wearable Perception:} Leveraging wearable sensor arrays to overcome the limitations of external visual cameras and joint torque transducers.
+    \item \textbf{Applied Deep Learning for Safety-Critical Systems:} Bridging deep neural networks with deterministic post-processing to satisfy ISO/TS 15066 safety criteria in real-time.
+\end{itemize}
+
+\subsection*{Author Declarations}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+    \item This manuscript represents original work, has not been published previously, and is not currently under consideration for publication elsewhere.
+    \item All authors have reviewed the manuscript and concurred with its submission to the \textit{Journal of Intelligent \& Robotic Systems}.
+    \item The authors report no conflicts of interest or competing financial interests regarding this work.
+\end{itemize}
+
+Thank you for your time and consideration of our manuscript. We look forward to hearing from you.
+
+\vspace{1.5em}
+
+Sincerely,
+
+\vspace{1em}
+\textbf{Ameur Gargouri} \\
+ATISP Lab, ENET'Com, University of Sfax \& ESME Research Lab \\
+Email: \texttt{ameur.gargouri.doc@enetcom.usf.tn}
+
+\vspace{0.8em}
+\textit{On behalf of:} \\
+\textbf{Mohamed Karray} (ESME Research Lab) \\
+\textbf{Mohamed Ksantini} (ATISP Lab, ENET'Com, University of Sfax)
+
+\end{document}

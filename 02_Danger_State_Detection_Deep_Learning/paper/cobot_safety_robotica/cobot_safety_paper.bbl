@@ -1,0 +1,139 @@
+\begin{thebibliography}{}
+
+\bibitem{an2024digitaltwin}
+J. An, P. Bang, B. Jeon, {\it et~al.}
+\newblock Development of digital twin for collision detection analysis within
+  human-robot collaborative workspaces.
+\newblock {\em Journal of Computational Design and Engineering}, {\bf 11},
+  1--15 (2024).
+
+\bibitem{apdm_opal}
+{APDM Wearable Technologies} 2021.
+\newblock Opal wireless inertial measurement unit specifications.
+\newblock APDM Inc., Portland, OR, USA.
+
+\bibitem{bai2020tcn}
+S. Bai, J.~Z. Kolter, and V. Koltun.
+\newblock An empirical evaluation of generic convolutional and recurrent
+  networks for sequence modeling.
+\newblock {\em arXiv preprint arXiv:1803.01271}, {\bf 1803}, 01271 (2018).
+
+\bibitem{dasig2024}
+E. Digo, M. Polito, E. Caselli, L. Gastaldi, and S. Pastorelli.
+\newblock A dataset of standard and abrupt industrial gestures recorded through
+  mimus.
+\newblock {\em Robotics}, {\bf 14}(12), 176 (2025).
+
+\bibitem{fang2024multivariate}
+S. Fang, S. Liu, X. Wang, {\it et~al.}
+\newblock A multivariate fusion collision detection method for dynamic
+  operations of human-robot collaboration systems.
+\newblock {\em Journal of Manufacturing Systems}, {\bf 78}, 1--12 (2024).
+
+\bibitem{gao2024cable}
+H. Gao, C. Chevallereau, and S. Caro.
+\newblock Detection and management of human-cable collision in cable-driven
+  parallel robots.
+\newblock {\em IEEE Robotics and Automation Letters}, {\bf 9}, 1--8 (2024).
+
+\bibitem{hoang2024grasp}
+D.-C. Hoang, A.-N. Nguyen, C.-M. Nguyen, {\it et~al.}
+\newblock Collision-free grasp detection from color and depth images.
+\newblock {\em IEEE Transactions on Artificial Intelligence}, {\bf 5}, 1--14
+  (2024).
+
+\bibitem{iso15066}
+{International Organization for Standardization} 2016.
+\newblock Robots and robotic devices --- collaborative robots.
+\newblock ISO/TS 15066:2016.
+
+\bibitem{fawaz2020inceptiontime}
+H. Ismail~Fawaz, B. Lucas, G. Forestier, C. Pelletier, D.~F. Schmidt, J. Weber,
+  G.~I. Webb, L. Idoumghar, P.-A. Muller, and F. Petitjean.
+\newblock {InceptionTime}: Finding alexnet for time series classification.
+\newblock {\em Data Mining and Knowledge Discovery}, {\bf 34}, 1936--1962
+  (2020).
+
+\bibitem{khan2026safety}
+A.~W. Khan, M. Akhtar, S.~M. Qureshi, M. Mustafa, N.~A. Alsaleh, and I. Ahmad.
+\newblock A systematic review of safety-driven approaches in human--robot
+  collaborative systems.
+\newblock {\em Sensors}, {\bf 26}(7), 2079 (2026).
+
+\bibitem{lin2017focal}
+T.-Y. Lin, P. Goyal, R. Girshick, K. He, and P. Doll\'{a}r.
+\newblock Focal loss for dense object detection.
+\newblock In {\em Proceedings of the IEEE International Conference on Computer
+  Vision (ICCV)} 2017.
+
+\bibitem{liu2022convnext}
+Z. Liu, H. Mao, C.-Y. Wu, C. Feichtenhofer, T. Darrell, and S. Xie.
+\newblock A convnet for the 2020s.
+\newblock In {\em Proceedings of the IEEE/CVF Conference on Computer Vision and
+  Pattern Recognition (CVPR)} 2022.
+
+\bibitem{loshchilov2019adamw}
+I. Loshchilov and F. Hutter.
+\newblock Decoupled weight decay regularization.
+\newblock In {\em Proceedings of the International Conference on Learning
+  Representations (ICLR)} 2019.
+
+\bibitem{niu2024wavelet}
+Z. Niu, T. Hassan, M.~N. Boushaki, {\it et~al.}
+\newblock Continuous wavelet network for efficient and transferable collision
+  detection in collaborative robots.
+\newblock {\em IEEE Transactions on Systems, Man, and Cybernetics: Systems},
+  {\bf 54}, 1--13 (2024).
+
+\bibitem{selvaggio2021autonomy}
+M. Selvaggio, M. Cognetti, S. Nikolaidis, S. Ivaldi, and B. Siciliano.
+\newblock Autonomy in physical human-robot interaction: A brief survey.
+\newblock {\em IEEE Robotics and Automation Letters}, {\bf 6}(4), 7989--7996
+  (2021).
+
+\bibitem{smith2019onecycle}
+L.~N. Smith and N. Topin.
+\newblock Super-convergence: Very fast training of neural networks using large
+  learning rates.
+\newblock In {\em Artificial Intelligence and Machine Learning for Multi-Domain
+  Operations Applications} 2019.
+
+\bibitem{tolstikhin2021mlpmixer}
+I.~O. Tolstikhin, N. Houlsby, A. Kolesnikov, {\it et~al.}
+\newblock {MLP-Mixer}: An all-mlp architecture for vision.
+\newblock {\em Advances in Neural Information Processing Systems (NeurIPS)},
+  {\bf 34}, 24261--24272 (2021).
+
+\bibitem{tonti2024eso}
+G. Tonti, S. Shakourzadeh, and C. Guarino Lo~Bianco.
+\newblock A fast collision detection system based on an extended state
+  observer.
+\newblock In {\em IEEE/ASME International Conference on Mechatronic and
+  Embedded Systems and Applications (MESA)} 2024.
+
+\bibitem{vaswani2017attention}
+A. Vaswani, N. Shazeer, N. Parmar, J. Uszkoreit, L. Jones, A.~N. Gomez, L.
+  Kaiser, and I. Polosukhin.
+\newblock Attention is all you need.
+\newblock {\em Advances in Neural Information Processing Systems (NeurIPS)},
+  {\bf 30}, 5998--6008 (2017).
+
+\bibitem{wang2025sixdof}
+Z. Wang, Y. Wang, Y. Feng, {\it et~al.}
+\newblock Research on robot force compensation and collision detection based on
+  six-dimensional force sensor.
+\newblock {\em SSRN Electronic Journal}, {\bf 1}, 1--12 (2025).
+
+\bibitem{zhang2018mixup}
+H. Zhang, M. Cisse, Y.~N. Dauphin, and D. Lopez-Paz.
+\newblock mixup: Beyond empirical risk minimization.
+\newblock In {\em Proceedings of the International Conference on Learning
+  Representations (ICLR)} 2018.
+
+\bibitem{zhao2025zeroforce}
+B. Zhao, C. Wu, L.-j. Chang, {\it et~al.}
+\newblock Research on zero-force control and collision detection of deep
+  learning methods in collaborative robots.
+\newblock {\em Displays}, {\bf 88}, 102969 (2025).
+
+\end{thebibliography}

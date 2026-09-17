@@ -1,0 +1,88 @@
+\begin{thebibliography}{10}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+\providecommand{\doi}[1]{https://doi.org/#1}
+
+\bibitem{aygun2022assistive}
+Aygun, A., Nguyen, T., Haga, Z., Aeron, S., Scheutz, M.: Investigating methods
+  for cognitive workload estimation for assistive robots. Sensors
+  \textbf{22}(18), ~6834 (2022). \doi{10.3390/s22186834}
+
+\bibitem{baltrusaitis2019multimodal}
+Baltru\v{s}aitis, T., Ahuja, C., Morency, L.P.: Multimodal machine learning: A
+  survey and taxonomy. IEEE Transactions on Pattern Analysis and Machine
+  Intelligence  \textbf{41}(2),  423--443 (2019).
+  \doi{10.1109/TPAMI.2018.2798607}
+
+\bibitem{borghi2025operatorstress}
+Borghi, S., Ruo, A., Sabattini, L., Peruzzini, M., Villani, V.: Assessing
+  operator stress in collaborative robotics: A multimodal approach. Applied
+  Ergonomics  \textbf{122},  104418 (2025). \doi{10.1016/j.apergo.2024.104418}
+
+\bibitem{brodersen2010balanced}
+Brodersen, K.H., Ong, C.S., Stephan, K.E., Buhmann, J.M.: The balanced accuracy
+  and its posterior distribution. In: 2010 20th International Conference on
+  Pattern Recognition (ICPR). pp. 3121--3124 (2010).
+  \doi{10.1109/ICPR.2010.764}
+
+\bibitem{bussolan2025multiphysiohrc}
+Bussolan, A., Baraldo, S., Avram, O., Urcola, P., Montesano, L., Gambardella,
+  L.M., Valente, A.: Multiphysio-{HRC}: A multimodal physiological signals
+  dataset for industrial human-robot collaboration. Robotics  \textbf{14}(12),
+  ~184 (2025). \doi{10.3390/robotics14120184}
+
+\bibitem{bussolan2024stressdetector}
+Bussolan, A., Baraldo, S., Gambardella, L.M., Valente, A.: Multimodal fusion
+  stress detector for enhanced human-robot collaboration in industrial assembly
+  tasks. In: 2024 33rd IEEE International Conference on Robot and Human
+  Interactive Communication (RO-MAN). pp.~1--8 (2024).
+  \doi{10.1109/RO-MAN60168.2024.10731373}
+
+\bibitem{chen2016xgboost}
+Chen, T., Guestrin, C.: {XGBoost}: A scalable tree boosting system. In:
+  Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge
+  Discovery and Data Mining. pp. 785--794 (2016). \doi{10.1145/2939672.2939785}
+
+\bibitem{guo2017calibration}
+Guo, C., Pleiss, G., Sun, Y., Weinberger, K.Q.: On calibration of modern neural
+  networks. In: Proceedings of the 34th International Conference on Machine
+  Learning (ICML). pp. 1321--1330 (2017)
+
+\bibitem{iarlori2024cognitiveworkload}
+Iarlori, S., Perpetuini, D., Tritto, M., Cardone, D., Tiberio, A.,
+  Chinthakindi, M., Filippini, C., Cavanini, L., Freddi, A., Ferracuti, F.,
+  Merla, A., Monteri\`u, A.: An overview of approaches and methods for the
+  cognitive workload estimation in human--machine interaction scenarios through
+  wearables sensors. BioMedInformatics  \textbf{4}(2),  1114--1134 (2024).
+  \doi{10.3390/biomedinformatics4020064}
+
+\bibitem{jeni2013imbalanced}
+Jeni, L.A., Cohn, J.F., De~La~Torre, F.: Facing imbalanced
+  data--recommendations for the use of performance metrics. In: 2013 Humaine
+  Association Conference on Affective Computing and Intelligent Interaction.
+  pp. 245--251 (2013). \doi{10.1109/ACII.2013.47}
+
+\bibitem{jin2025cognitivestate}
+Jin, K., Rubio-Solis, A., Naik, R., Leff, D., Kinross, J., Mylonas, G.:
+  Human-centric cognitive state recognition using physiological signals: A
+  systematic review of machine learning strategies across application domains.
+  Sensors  \textbf{25}(13), ~4207 (2025). \doi{10.3390/s25134207}
+
+\bibitem{pedregosa2011scikit}
+Pedregosa, F., Varoquaux, G., Gramfort, A., Michel, V., Thirion, B., Grisel,
+  O., Blondel, M., Prettenhofer, P., Weiss, R., Dubourg, V., et~al.:
+  Scikit-learn: Machine learning in {Python}. Journal of Machine Learning
+  Research  \textbf{12},  2825--2830 (2011)
+
+\bibitem{selvaggio2021autonomy}
+Selvaggio, M., Cognetti, M., Nikolaidis, S., Ivaldi, S., Siciliano, B.:
+  Autonomy in physical human-robot interaction: A brief survey. IEEE Robotics
+  and Automation Letters  \textbf{6}(4),  7989--7996 (2021).
+  \doi{10.1109/LRA.2021.3100603}
+
+\bibitem{sokolova2009systematic}
+Sokolova, M., Lapalme, G.: A systematic analysis of performance measures for
+  classification tasks. Information Processing \& Management  \textbf{45}(4),
+  427--437 (2009). \doi{10.1016/j.ipm.2009.03.002}
+
+\end{thebibliography}

@@ -1,0 +1,72 @@
+\begin{thebibliography}{21}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{{#1}}
+\providecommand{\urlprefix}{URL }
+\providecommand{\doi}[1]{\url{https://doi.org/#1}}
+\providecommand{\eprint}[2][]{\url{#2}}
+ \bibcommenthead
+
+\bibitem[{iso(2016)}]{iso15066}
+ (2016) Robots and robotic devices -- collaborative robots. ISO/TS 15066:2016 \urlprefix\url{https://www.iso.org/standard/62996.html}
+
+\bibitem[{An et~al.(2024)An, Bang, Jeon et~al.}]{an2024digitaltwin}
+An J, Bang P, Jeon B, et~al (2024) Development of digital twin for collision detection analysis within human-robot collaborative workspaces. Journal of Computational Design and Engineering \doi{10.7315/cde.2024.144}
+
+\bibitem[{{APDM Wearable Technologies}(2021)}]{apdm_opal}
+{APDM Wearable Technologies} (2021) Opal wireless inertial measurement unit specifications. APDM Inc., Portland, OR, USA, \urlprefix\url{https://www.apdm.com}
+
+\bibitem[{Bai et~al.(2018)Bai, Kolter, and Koltun}]{bai2020tcn}
+Bai S, Kolter JZ, Koltun V (2018) An empirical evaluation of generic convolutional and recurrent networks for sequence modeling. arXiv preprint arXiv:180301271 \doi{10.48550/arXiv.1803.01271}
+
+\bibitem[{Digo et~al.(2025)Digo, Polito, Caselli, Gastaldi, and Pastorelli}]{dasig2024}
+Digo E, Polito M, Caselli E, et~al (2025) A dataset of standard and abrupt industrial gestures recorded through mimus. Robotics 14(12). \doi{10.3390/robotics14120176}
+
+\bibitem[{Fang et~al.(2024)Fang, Liu, Wang et~al.}]{fang2024multivariate}
+Fang S, Liu S, Wang X, et~al (2024) A multivariate fusion collision detection method for dynamic operations of human-robot collaboration systems. Journal of Manufacturing Systems \doi{10.1016/j.jmsy.2024.11.007}
+
+\bibitem[{Gao et~al.(2024)Gao, Chevallereau, and Caro}]{gao2024cable}
+Gao H, Chevallereau C, Caro S (2024) Detection and management of human-cable collision in cable-driven parallel robots. IEEE Robotics and Automation Letters \doi{10.1109/LRA.2024.3487051}
+
+\bibitem[{Hoang et~al.(2024)Hoang, Nguyen, Nguyen et~al.}]{hoang2024grasp}
+Hoang DC, Nguyen AN, Nguyen CM, et~al (2024) Collision-free grasp detection from color and depth images. IEEE Transactions on Artificial Intelligence \doi{10.1109/TAI.2024.3420848}
+
+\bibitem[{Ismail~Fawaz et~al.(2020)Ismail~Fawaz, Lucas, Forestier, Pelletier, Schmidt, Weber, Webb, Idoumghar, Muller, and Petitjean}]{fawaz2020inceptiontime}
+Ismail~Fawaz H, Lucas B, Forestier G, et~al (2020) {InceptionTime}: Finding alexnet for time series classification. Data Mining and Knowledge Discovery 34:1936--1962. \doi{10.1007/s10618-020-00710-y}
+
+\bibitem[{Lin et~al.(2017)Lin, Goyal, Girshick, He, and Doll\'{a}r}]{lin2017focal}
+Lin TY, Goyal P, Girshick R, et~al (2017) Focal loss for dense object detection. In: Proceedings of the IEEE International Conference on Computer Vision (ICCV), \doi{10.1109/ICCV.2017.324}
+
+\bibitem[{Liu et~al.(2022)Liu, Mao, Wu, Feichtenhofer, Darrell, and Xie}]{liu2022convnext}
+Liu Z, Mao H, Wu CY, et~al (2022) A convnet for the 2020s. In: Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), \doi{10.1109/CVPR52688.2022.01167}
+
+\bibitem[{Loshchilov and Hutter(2019)}]{loshchilov2019adamw}
+Loshchilov I, Hutter F (2019) Decoupled weight decay regularization. In: Proceedings of the International Conference on Learning Representations (ICLR), \doi{10.48550/arXiv.1711.05101}
+
+\bibitem[{Niu et~al.(2024)Niu, Hassan, Boushaki et~al.}]{niu2024wavelet}
+Niu Z, Hassan T, Boushaki MN, et~al (2024) Continuous wavelet network for efficient and transferable collision detection in collaborative robots. IEEE Transactions on Systems, Man, and Cybernetics: Systems \doi{10.1109/TSMC.2024.3518700}
+
+\bibitem[{Selvaggio et~al.(2021)Selvaggio, Cognetti, Nikolaidis, Ivaldi, and Siciliano}]{selvaggio2021autonomy}
+Selvaggio M, Cognetti M, Nikolaidis S, et~al (2021) Autonomy in physical human-robot interaction: A brief survey. IEEE Robotics and Automation Letters 6(4):7989--7996. \doi{10.1109/LRA.2021.3100603}
+
+\bibitem[{Smith and Topin(2019)}]{smith2019onecycle}
+Smith LN, Topin N (2019) Super-convergence: Very fast training of neural networks using large learning rates. In: Artificial Intelligence and Machine Learning for Multi-Domain Operations Applications, \doi{10.1117/12.2520589}
+
+\bibitem[{Tolstikhin et~al.(2021)Tolstikhin, Houlsby, Kolesnikov et~al.}]{tolstikhin2021mlpmixer}
+Tolstikhin IO, Houlsby N, Kolesnikov A, et~al (2021) {MLP-Mixer}: An all-mlp architecture for vision. Advances in Neural Information Processing Systems (NeurIPS) \doi{10.48550/arXiv.2105.01601}
+
+\bibitem[{Tonti et~al.(2024)Tonti, Shakourzadeh, and Guarino Lo~Bianco}]{tonti2024eso}
+Tonti G, Shakourzadeh S, Guarino Lo~Bianco C (2024) A fast collision detection system based on an extended state observer. In: IEEE/ASME International Conference on Mechatronic and Embedded Systems and Applications (MESA), \doi{10.1109/MESA61532.2024.10704895}
+
+\bibitem[{Vaswani et~al.(2017)Vaswani, Shazeer, Parmar, Uszkoreit, Jones, Gomez, Kaiser, and Polosukhin}]{vaswani2017attention}
+Vaswani A, Shazeer N, Parmar N, et~al (2017) Attention is all you need. Advances in Neural Information Processing Systems (NeurIPS) \doi{10.48550/arXiv.1706.03762}
+
+\bibitem[{Wang et~al.(2025)Wang, Wang, Feng et~al.}]{wang2025sixdof}
+Wang Z, Wang Y, Feng Y, et~al (2025) Research on robot force compensation and collision detection based on six-dimensional force sensor. SSRN Electronic Journal \doi{10.2139/ssrn.5163869}
+
+\bibitem[{Zhang et~al.(2018)Zhang, Cisse, Dauphin, and Lopez-Paz}]{zhang2018mixup}
+Zhang H, Cisse M, Dauphin YN, et~al (2018) mixup: Beyond empirical risk minimization. In: Proceedings of the International Conference on Learning Representations (ICLR), \doi{10.48550/arXiv.1710.09412}
+
+\bibitem[{Zhao et~al.(2025)Zhao, Wu, Chang et~al.}]{zhao2025zeroforce}
+Zhao B, Wu C, Chang Lj, et~al (2025) Research on zero-force control and collision detection of deep learning methods in collaborative robots. Displays \doi{10.1016/j.displa.2025.102969}
+
+\end{thebibliography}

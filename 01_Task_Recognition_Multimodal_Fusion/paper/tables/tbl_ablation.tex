@@ -1,0 +1,21 @@
+\begin{table}[t]
+\centering
+\small
+\caption{Benefit of feature fusion under the identical 52-subject LOSO protocol.
+Fused 128-dimensional input is compared with the better single modality, EEG-only or
+physio-only, per model. \emph{p}-values are paired Wilcoxon signed-rank tests over
+the 52 folds. Two-Tower is the neural model with explicit per-modality towers,
+compared with fused XGBoost.}
+\label{tab:ablation}
+\begin{tabular}{lccccc}
+\toprule
+Model & Best single & Single & Fused & $\Delta$ & Wilcoxon $p$ \\
+\midrule
+XGBoost & physio & 0.390 & 0.462 & +0.072 & 0.000 \\
+HistGB & physio & 0.401 & 0.451 & +0.050 & 0.002 \\
+RF & physio & 0.383 & 0.430 & +0.047 & 0.015 \\
+MLP & physio & 0.337 & 0.374 & +0.037 & 0.105 \\
+Two-Tower $vs$ fused XGB & fused XGB & 0.462 & 0.406 & -0.056 & 0.001 \\
+\bottomrule
+\end{tabular}
+\end{table}

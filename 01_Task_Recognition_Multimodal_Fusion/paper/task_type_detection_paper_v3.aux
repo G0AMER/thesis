@@ -1,0 +1,232 @@
+\relax 
+\AC@reset@newl@bel
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\newacro{HRC}[HRC]{Human--Robot Collaboration}
+\newacro{EEG}[EEG]{Electroencephalography}
+\newacro{EMG}[EMG]{Electromyography}
+\newacro{EDA}[EDA]{Electrodermal Activity}
+\newacro{ECG}[ECG]{Electrocardiography}
+\newacro{AI}[AI]{Artificial Intelligence}
+\newacro{XGBoost}[XGBoost]{eXtreme Gradient Boosting}
+\newacro{MLP}[MLP]{Multilayer Perceptron}
+\newacro{LOSO}[LOSO]{Leave-One-Subject-Out}
+\newacro{OOF}[OOF]{out-of-fold}
+\newacro{SVM}[SVM]{Support Vector Machine}
+\newacro{ECE}[ECE]{Expected Calibration Error}
+\newacro{F1}[F1]{F1-score}
+\@writefile{toc}{\contentsline {title}{Recognizing Operator Task States from Multimodal Physiological Signals in Industrial Human--Robot Collaboration:\ a Subject-Disjoint Evaluation}{1}{chapter.1}\protected@file@percent }
+\@writefile{toc}{\authcount {3}}
+\@writefile{toc}{\contentsline {author}{Ameur Gargouri\orcidlinkX  {}{0009-0001-8293-037X}{} \and Mohamed Karray\orcidlinkX  {}{0000-0001-7293-8696}{} \and Mohamed Ksantini\orcidlinkX  {}{0000-0002-9928-8643}{}}{1}{chapter.1}\protected@file@percent }
+\AC@undonewlabel{acro:HRC}
+\newlabel{acro:HRC}{{1}{1}{}{section*.2}{}}
+\acronymused{HRC}
+\AC@undonewlabel{acro:EEG}
+\newlabel{acro:EEG}{{1}{1}{}{section*.3}{}}
+\acronymused{EEG}
+\AC@undonewlabel{acro:LOSO}
+\newlabel{acro:LOSO}{{1}{1}{}{section*.4}{}}
+\acronymused{LOSO}
+\acronymused{EEG}
+\citation{selvaggio2021autonomy}
+\citation{bussolan2024stressdetector,borghi2025operatorstress}
+\AC@undonewlabel{acro:XGBoost}
+\newlabel{acro:XGBoost}{{1}{2}{}{section*.5}{}}
+\acronymused{XGBoost}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{2}{section.1}\protected@file@percent }
+\newlabel{sec:intro}{{1}{2}{Introduction}{section.1}{}}
+\acronymused{HRC}
+\acronymused{EEG}
+\AC@undonewlabel{acro:ECG}
+\newlabel{acro:ECG}{{1}{2}{Introduction}{section*.6}{}}
+\acronymused{ECG}
+\AC@undonewlabel{acro:EDA}
+\newlabel{acro:EDA}{{1}{2}{Introduction}{section*.7}{}}
+\acronymused{EDA}
+\AC@undonewlabel{acro:EMG}
+\newlabel{acro:EMG}{{1}{2}{Introduction}{section*.8}{}}
+\acronymused{EMG}
+\citation{baltrusaitis2019multimodal}
+\citation{bussolan2025multiphysiohrc,bussolan2024stressdetector}
+\@writefile{toc}{\contentsline {paragraph}{Contributions.}{3}{section*.9}\protected@file@percent }
+\acronymused{HRC}
+\acronymused{EEG}
+\acronymused{LOSO}
+\acronymused{EEG}
+\acronymused{LOSO}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Related Work}{3}{section.2}\protected@file@percent }
+\newlabel{sec:related}{{2}{3}{Related Work}{section.2}{}}
+\@writefile{toc}{\contentsline {paragraph}{Multimodal fusion.}{3}{section*.10}\protected@file@percent }
+\acronymused{HRC}
+\acronymused{HRC}
+\@writefile{toc}{\contentsline {paragraph}{Physiological operator-state recognition in \ac {HRC}.}{3}{section*.11}\protected@file@percent }
+\acronymused{HRC}
+\citation{borghi2025operatorstress}
+\citation{aygun2022assistive}
+\citation{iarlori2024cognitiveworkload}
+\citation{jin2025cognitivestate}
+\citation{selvaggio2021autonomy}
+\citation{baltrusaitis2019multimodal}
+\citation{bussolan2025multiphysiohrc,bussolan2024stressdetector,borghi2025operatorstress,aygun2022assistive}
+\citation{jin2025cognitivestate,iarlori2024cognitiveworkload}
+\citation{bussolan2025multiphysiohrc}
+\acronymused{LOSO}
+\acronymused{HRC}
+\@writefile{toc}{\contentsline {paragraph}{Autonomy in physical \ac {HRC}.}{4}{section*.12}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Gap and position.}{4}{section*.13}\protected@file@percent }
+\acronymused{HRC}
+\acronymused{HRC}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Dataset and Task Formulation}{4}{section.3}\protected@file@percent }
+\newlabel{sec:dataset}{{3}{4}{Dataset and Task Formulation}{section.3}{}}
+\acronymused{HRC}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}MultiPhysio-\ac {HRC}}{4}{subsection.3.1}\protected@file@percent }
+\acronymused{HRC}
+\acronymused{EEG}
+\acronymused{ECG}
+\acronymused{EDA}
+\acronymused{EMG}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Feature-export audit. The 257 exported columns reduce to 128 physiological features after removing 16 recording-metadata columns and 96 byte-identical duplicated \ac {EEG} descriptors. The label columns are retained as keys; no model input is taken from them.}}{5}{table.1}\protected@file@percent }
+\acronymused{EEG}
+\newlabel{tab:audit}{{1}{5}{Feature-export audit. The 257 exported columns reduce to 128 physiological features after removing 16 recording-metadata columns and 96 byte-identical duplicated \ac {EEG} descriptors. The label columns are retained as keys; no model input is taken from them}{table.1}{}}
+\acronymused{EEG}
+\acronymused{ECG}
+\acronymused{EDA}
+\acronymused{EMG}
+\acronymused{EEG}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Auditing the feature export}{5}{subsection.3.2}\protected@file@percent }
+\acronymused{EEG}
+\acronymused{EEG}
+\acronymused{EEG}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Task-condition labels}{5}{subsection.3.3}\protected@file@percent }
+\acronymused{HRC}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Deterministic mapping from the 21 protocol conditions to the five task-condition classes, with window counts. Every row of the cleaned data is labelled by this rule; no crowdsourcing or manual labelling is involved.}}{6}{table.2}\protected@file@percent }
+\newlabel{tab:schema}{{2}{6}{Deterministic mapping from the 21 protocol conditions to the five task-condition classes, with window counts. Every row of the cleaned data is labelled by this rule; no crowdsourcing or manual labelling is involved}{table.2}{}}
+\acronymused{HRC}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Methodology}{6}{section.4}\protected@file@percent }
+\newlabel{sec:method}{{4}{6}{Methodology}{section.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Pipeline overview}{6}{subsection.4.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Processing and evaluation pipeline. One clean preprocessing path feeds a fused 128-dimensional tabular representation; the same path exposes modality feature groups for the fusion ablation. All detectors are evaluated under the identical subject-disjoint \ac {LOSO} protocol with preprocessing refit inside each fold.}}{7}{figure.1}\protected@file@percent }
+\acronymused{LOSO}
+\newlabel{fig:pipeline}{{1}{7}{Processing and evaluation pipeline. One clean preprocessing path feeds a fused 128-dimensional tabular representation; the same path exposes modality feature groups for the fusion ablation. All detectors are evaluated under the identical subject-disjoint \ac {LOSO} protocol with preprocessing refit inside each fold}{figure.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Problem formulation}{7}{subsection.4.2}\protected@file@percent }
+\newlabel{eq:loss}{{1}{7}{Problem formulation}{equation.1}{}}
+\newlabel{eq:argmax}{{2}{7}{Problem formulation}{equation.2}{}}
+\citation{chen2016xgboost}
+\citation{pedregosa2011scikit}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Preprocessing and feature representation}{8}{subsection.4.3}\protected@file@percent }
+\acronymused{EEG}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Detectors}{8}{subsection.4.4}\protected@file@percent }
+\acronymused{XGBoost}
+\AC@undonewlabel{acro:SVM}
+\newlabel{acro:SVM}{{4.4}{8}{Detectors}{section*.14}{}}
+\acronymused{SVM}
+\AC@undonewlabel{acro:MLP}
+\newlabel{acro:MLP}{{4.4}{8}{Detectors}{section*.15}{}}
+\acronymused{MLP}
+\acronymused{XGBoost}
+\acronymused{EEG}
+\acronymused{XGBoost}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5}Evaluation protocol}{8}{subsection.4.5}\protected@file@percent }
+\newlabel{sec:protocol}{{4.5}{8}{Evaluation protocol}{subsection.4.5}{}}
+\acronymused{LOSO}
+\citation{brodersen2010balanced}
+\citation{sokolova2009systematic}
+\citation{jeni2013imbalanced}
+\citation{guo2017calibration}
+\AC@undonewlabel{acro:OOF}
+\newlabel{acro:OOF}{{4.5}{9}{Evaluation protocol}{section*.16}{}}
+\acronymused{OOF}
+\@writefile{toc}{\contentsline {paragraph}{Metrics over a fixed label space.}{9}{section*.17}\protected@file@percent }
+\newlabel{eq:ba}{{3}{9}{Metrics over a fixed label space}{equation.3}{}}
+\newlabel{eq:macro}{{4}{9}{Metrics over a fixed label space}{equation.4}{}}
+\acronymused{OOF}
+\@writefile{toc}{\contentsline {paragraph}{Comparisons and upper bound.}{9}{section*.18}\protected@file@percent }
+\acronymused{LOSO}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Subject-disjoint leave-one-subject-out (52 operators) results on the clean 128-feature set. Macro-F1 and balanced accuracy are averaged over the 52 held-out subjects and shown as mean~$\pm $~std; ECE is computed on pooled out-of-fold probabilities; latency is the per-window CPU inference time of a model fitted on a training mini-sample. Best value per column in bold.}}{10}{table.3}\protected@file@percent }
+\newlabel{tab:benchmark}{{3}{10}{Subject-disjoint leave-one-subject-out (52 operators) results on the clean 128-feature set. Macro-F1 and balanced accuracy are averaged over the 52 held-out subjects and shown as mean~$\pm $~std; ECE is computed on pooled out-of-fold probabilities; latency is the per-window CPU inference time of a model fitted on a training mini-sample. Best value per column in bold}{table.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Results}{10}{section.5}\protected@file@percent }
+\newlabel{sec:results}{{5}{10}{Results}{section.5}{}}
+\acronymused{LOSO}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Main benchmark under \ac {LOSO}}{10}{subsection.5.1}\protected@file@percent }
+\acronymused{LOSO}
+\acronymused{XGBoost}
+\AC@undonewlabel{acro:ECE}
+\newlabel{acro:ECE}{{5.1}{10}{Main benchmark under \ac {LOSO}}{section*.19}{}}
+\acronymused{ECE}
+\acronymused{OOF}
+\AC@undonewlabel{acro:F1}
+\newlabel{acro:F1}{{5.1}{10}{Main benchmark under \ac {LOSO}}{section*.20}{}}
+\acronymused{F1}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Pooled out-of-fold per-class metrics of the best LOSO model (GB) over all 5,640 test windows; each subject contributes only out-of-fold predictions. Window counts are the true-label column totals of the pooled confusion matrix.}}{11}{table.4}\protected@file@percent }
+\newlabel{tab:perclass}{{4}{11}{Pooled out-of-fold per-class metrics of the best LOSO model (GB) over all 5,640 test windows; each subject contributes only out-of-fold predictions. Window counts are the true-label column totals of the pooled confusion matrix}{table.4}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Generalization gap on the identical clean features. Within-subject is a stratified random 80/20 split (same operators appear in train and test --- an optimistic ceiling); LOSO holds whole operators out. The gap quantifies how much performance is lost when no data from the target operator is available at training time.}}{11}{table.5}\protected@file@percent }
+\newlabel{tab:gap}{{5}{11}{Generalization gap on the identical clean features. Within-subject is a stratified random 80/20 split (same operators appear in train and test --- an optimistic ceiling); LOSO holds whole operators out. The gap quantifies how much performance is lost when no data from the target operator is available at training time}{table.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}The generalization gap}{11}{subsection.5.2}\protected@file@percent }
+\acronymused{LOSO}
+\acronymused{LOSO}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Pooled \ac {OOF} confusion matrix of the best \ac {LOSO} model, row-normalized, with raw window counts. Values are computed by summing the 52 per-operator fold matrices before normalizing.}}{12}{figure.2}\protected@file@percent }
+\acronymused{OOF}
+\acronymused{LOSO}
+\newlabel{fig:confusion}{{2}{12}{Pooled \ac {OOF} confusion matrix of the best \ac {LOSO} model, row-normalized, with raw window counts. Values are computed by summing the 52 per-operator fold matrices before normalizing}{figure.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Does fusion help?}{12}{subsection.5.3}\protected@file@percent }
+\acronymused{EEG}
+\acronymused{EEG}
+\acronymused{XGBoost}
+\acronymused{EEG}
+\acronymused{XGBoost}
+\acronymused{MLP}
+\acronymused{XGBoost}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Statistical significance}{12}{subsection.5.4}\protected@file@percent }
+\acronymused{XGBoost}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Distribution of per-operator macro-F1 for every detector under \ac {LOSO}. Each box summarizes the 52 held-out operators. Large spread means the detector's usefulness depends strongly on which operator it meets.}}{13}{figure.3}\protected@file@percent }
+\acronymused{LOSO}
+\newlabel{fig:subject}{{3}{13}{Distribution of per-operator macro-F1 for every detector under \ac {LOSO}. Each box summarizes the 52 held-out operators. Large spread means the detector's usefulness depends strongly on which operator it meets}{figure.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5}Real-time feasibility}{13}{subsection.5.5}\protected@file@percent }
+\acronymused{XGBoost}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Discussion}{13}{section.6}\protected@file@percent }
+\newlabel{sec:discussion}{{6}{13}{Discussion}{section.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}What the honest numbers mean}{13}{subsection.6.1}\protected@file@percent }
+\citation{aygun2022assistive,borghi2025operatorstress}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Within-subject ceiling versus across-operator \ac {LOSO} macro-F1 on identical features. The gap quantifies how much performance is lost when the target operator was absent from training.}}{14}{figure.4}\protected@file@percent }
+\acronymused{LOSO}
+\newlabel{fig:gap}{{4}{14}{Within-subject ceiling versus across-operator \ac {LOSO} macro-F1 on identical features. The gap quantifies how much performance is lost when the target operator was absent from training}{figure.4}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Benefit of feature fusion under the identical 52-subject LOSO protocol. Fused (128-d) is compared with the better single modality (EEG-only or physio-only) per model; \emph  {p}-values are paired Wilcoxon signed-rank tests over the 52 folds. Two-Tower is the neural model with explicit per-modality towers, compared with fused XGBoost.}}{14}{table.6}\protected@file@percent }
+\newlabel{tab:ablation}{{6}{14}{Benefit of feature fusion under the identical 52-subject LOSO protocol. Fused (128-d) is compared with the better single modality (EEG-only or physio-only) per model; \emph {p}-values are paired Wilcoxon signed-rank tests over the 52 folds. Two-Tower is the neural model with explicit per-modality towers, compared with fused XGBoost}{table.6}{}}
+\acronymused{LOSO}
+\acronymused{LOSO}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Why recognition is hard here}{14}{subsection.6.2}\protected@file@percent }
+\citation{bussolan2025multiphysiohrc,bussolan2024stressdetector}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Modality ablation under \ac {LOSO}: fused (128-d), \ac {EEG}-only (96-d), and peripheral-only (32-d) inputs for the leading detectors. Error bars are the standard deviation over the 52 folds.}}{15}{figure.5}\protected@file@percent }
+\acronymused{LOSO}
+\acronymused{EEG}
+\newlabel{fig:ablation}{{5}{15}{Modality ablation under \ac {LOSO}: fused (128-d), \ac {EEG}-only (96-d), and peripheral-only (32-d) inputs for the leading detectors. Error bars are the standard deviation over the 52 folds}{figure.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}Comparison with the source protocol}{15}{subsection.6.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.4}Threats to validity}{15}{subsection.6.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Mean macro-F1 difference of each detector relative to the best, with the paired Wilcoxon significance over the 52 folds.}}{16}{figure.6}\protected@file@percent }
+\newlabel{fig:significance}{{6}{16}{Mean macro-F1 difference of each detector relative to the best, with the paired Wilcoxon significance over the 52 folds}{figure.6}{}}
+\acronymused{LOSO}
+\acronymused{HRC}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.5}Deployment considerations}{16}{subsection.6.5}\protected@file@percent }
+\acronymused{EEG}
+\bibstyle{splncs04}
+\bibdata{task_type_detection_references}
+\bibcite{aygun2022assistive}{1}
+\bibcite{baltrusaitis2019multimodal}{2}
+\bibcite{borghi2025operatorstress}{3}
+\bibcite{brodersen2010balanced}{4}
+\bibcite{bussolan2025multiphysiohrc}{5}
+\bibcite{bussolan2024stressdetector}{6}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Conclusion and Future Work}{17}{section.7}\protected@file@percent }
+\newlabel{sec:conclusion}{{7}{17}{Conclusion and Future Work}{section.7}{}}
+\acronymused{HRC}
+\acronymused{EEG}
+\bibcite{chen2016xgboost}{7}
+\bibcite{guo2017calibration}{8}
+\bibcite{iarlori2024cognitiveworkload}{9}
+\bibcite{jeni2013imbalanced}{10}
+\bibcite{jin2025cognitivestate}{11}
+\bibcite{pedregosa2011scikit}{12}
+\bibcite{selvaggio2021autonomy}{13}
+\bibcite{sokolova2009systematic}{14}
+\gdef \@abspage@last{18}

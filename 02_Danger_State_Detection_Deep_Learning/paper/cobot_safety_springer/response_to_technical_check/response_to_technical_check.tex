@@ -1,0 +1,106 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[top=0.7in,bottom=0.7in,left=0.8in,right=0.8in]{geometry}
+\usepackage{mathptmx} % Times font
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+\definecolor{primaryblue}{RGB}{0, 51, 102}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=primaryblue,
+    urlcolor=primaryblue,
+    citecolor=primaryblue
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3.5pt}
+\setlength{\fboxsep}{3pt}
+\setlength{\emergencystretch}{1.5em}
+
+\newcommand{\point}[1]{%
+  \par\vspace{0.5em}%
+  \noindent\textbf{#1}\par\vspace{1pt}%
+}
+
+% Frame a page screenshot at exactly the text width, so that the frame rule and
+% the frame separation are accounted for and no overfull box is produced.
+\newcommand{\shot}[2]{%
+  \begin{center}%
+  \fbox{\includegraphics[width=\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax]{#1}}\\[2pt]
+  {\small #2}%
+  \end{center}%
+}
+
+\begin{document}
+
+% Header
+\begin{minipage}[t]{0.68\textwidth}
+    {\large \textbf{Ameur Gargouri}} \\
+    Ph.D. Student \\
+    ATISP Lab, ENET'Com, University of Sfax \& ESME Research Lab \\
+    Email: \texttt{ameur.gargouri.doc@enetcom.usf.tn}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.28\textwidth}
+    \raggedleft
+    \today
+\end{minipage}
+
+\vspace{0.8em}
+\hrule height 0.8pt
+\vspace{0.8em}
+
+% Recipient
+\textbf{To:} \\
+The Editor-in-Chief and Editorial Board \\
+\textit{Journal of Intelligent \& Robotic Systems} \\
+Springer Nature
+
+\vspace{0.6em}
+
+\textbf{Subject:} Response to the Technical Check of Manuscript ID JINT: \textit{``Danger-State Detection in Human-Robot Collaboration Using Deep Learning''}
+
+\vspace{0.5em}
+
+Dear Editor-in-Chief and Editorial Board Members,
+
+Thank you for the technical check of our submission and for giving us the opportunity to resolve the two points that were raised before the manuscript can progress further. We have examined each point carefully and we provide our response below. All of the requested information was already present in the submitted material, and we clarify below exactly where it can be found so that the manuscript can move forward to peer review.
+
+\point{Point 1: Main manuscript file is missing, and an Abstract should be provided in the manuscript file.}
+
+The main manuscript file, which is named \texttt{cobot\_safety\_paper\_springer.tex}, is provided with this submission. It is the complete main manuscript source file and it contains the different parts of the paper, namely the title, the full author list and affiliations, the abstract, the keywords, the complete body of the paper with all sections, the figures and tables with their captions, the declarations, and the bibliography. The abstract is present inside this same main manuscript file, immediately after the author affiliations and before the keywords and the beginning of the Introduction, and it is typeset on the first page of the compiled manuscript. The compiled manuscript is also provided as \texttt{cobot\_safety\_paper\_springer.pdf}. A screenshot of the first page of the compiled main manuscript is reproduced below, where the location of the Abstract is outlined in red.
+
+\begin{center}
+\shot{screenshot_abstract_page1.png}{First page of the main manuscript file \texttt{cobot\_safety\_paper\_springer.tex}, with the Abstract outlined in red.}
+\end{center}
+
+\point{Point 2: Some author names provided in the submission system were not provided in the manuscript file, namely Ameur Gargouri and Mohamed Ksantini.}
+
+All author names have been provided on top of the first page of the manuscript. The author line of the compiled manuscript reads Ameur Gargouri, Mohamed Karray, and Mohamed Ksantini, followed by the numbered affiliations that link each author to the corresponding institution, and the corresponding author is marked and accompanied by the contact electronic mail address. The same three authors are declared in the main manuscript source file through the author commands of the Springer Nature class, so the author information is carried both by the source file and by the compiled document. A screenshot of the first page of the compiled main manuscript is reproduced below, where the author names line is outlined in red.
+
+\begin{center}
+\shot{screenshot_authors_page1.png}{First page of the main manuscript file \texttt{cobot\_safety\_paper\_springer.tex}, with the author names line outlined in red.}
+\end{center}
+
+We would be grateful if you could confirm that these two points are now resolved, and we remain at your disposal should any further information or file be required for the technical check. Thank you very much for your time and for the management of our submission.
+
+\vspace{2em}
+
+Sincerely,
+
+\vspace{1.5em}
+\textbf{Ameur Gargouri} \\
+Ph.D. Student \\
+ATISP Lab, ENET'Com, University of Sfax \& ESME Research Lab \\
+Email: \texttt{ameur.gargouri.doc@enetcom.usf.tn}
+
+\vspace{1.2em}
+\textit{On behalf of the co-authors:} \\
+\textbf{Mohamed Karray}, ESME Research Lab, Ivry-sur-Seine, France \\
+\textbf{Mohamed Ksantini}, ATISP Lab, ENET'Com, University of Sfax, Tunisia
+
+\end{document}

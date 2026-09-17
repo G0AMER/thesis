@@ -1,0 +1,110 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[top=0.75in,bottom=0.75in,left=0.8in,right=0.8in]{geometry}
+\usepackage{mathptmx} % Times font
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{enumitem}
+
+\definecolor{primaryblue}{RGB}{0, 51, 102}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=primaryblue,
+    urlcolor=primaryblue,
+    citecolor=primaryblue
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3.5pt}
+
+\begin{document}
+
+% Header
+\begin{minipage}[t]{0.68\textwidth}
+    {\large \textbf{Ameur Gargouri}} \\
+    Ph.D. Student / Researcher \\
+    ATISP Lab, ENET'Com, University of Sfax \& ESME Research Lab \\
+    Email: \texttt{ameur.gargouri.doc@enetcom.usf.tn}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.28\textwidth}
+    \raggedleft
+    \today
+\end{minipage}
+
+\vspace{0.8em}
+\hrule height 0.8pt
+\vspace{0.8em}
+
+% Recipient
+\textbf{To:} \\
+The Editor-in-Chief and Editorial Board \\
+\textit{Robotica} \\
+Cambridge University Press
+
+\vspace{0.6em}
+
+\textbf{Subject:} Submission of Original Research Article: \textit{``Danger-State Detection in Human-Robot Collaboration Using Deep Learning''}
+
+\vspace{0.5em}
+
+Dear Editor-in-Chief and Editorial Board Members,
+
+We are pleased to submit our original research manuscript entitled \textbf{``Danger-State Detection in Human-Robot Collaboration Using Deep Learning''} by Ameur Gargouri, Mohamed Karray, and Mohamed Ksantini for consideration for publication as a regular research article in \textit{Robotica}.
+
+\vspace{0.3em}
+{\large\textbf{Context and Motivation}}\par\vspace{2pt}
+As industrial automation transitions toward Industry 5.0, physical Human-Robot Collaboration (pHRC) has become essential for flexible and intelligent manufacturing. Safe co-existence and direct physical interaction between human workers and collaborative robots (cobots) demand continuous, real-time assessment of workspace hazards in compliance with standards such as ISO/TS 15066. However, current safety mechanisms face a severe \textbf{false-alarm trade-off}: overly sensitive detectors frequently command unwarranted emergency stops that disrupt production cadence and compromise worker trust, whereas insufficiently sensitive systems risk severe operator injury from high-impact collisions, clamping, or crushing events.
+
+Conventional collision avoidance systems typically rely on costly multi-axis force/torque transducers, external multi-camera vision rigs that are prone to line-of-sight occlusions and lighting variations, or disturbance observers that require mathematically exacting nominal dynamic models. Utilizing wearable inertial measurement units (IMUs) provides an attractive, cost-effective, and occlusion-free alternative. Nevertheless, current literature lacks a systematic empirical comparison of modern deep learning sequence architectures on wearable sensor streams, as well as deterministic mechanisms designed specifically to curtail false alarms.
+
+\vspace{0.3em}
+{\large\textbf{Key Contributions of the Manuscript}}\par\vspace{2pt}
+This work bridges this gap by proposing a complete, end-to-end deep learning framework tailored for robust, high-accuracy, and low-false-alarm danger-state detection:
+\begin{enumerate}[leftmargin=*,itemsep=1.5pt,topsep=1.5pt,partopsep=0pt]
+    \item \textbf{GPU-Accelerated Kinematic Expansion:} We develop an on-the-fly kinematic derivative pipeline running entirely on GPU, deriving joint velocities and accelerations from raw 65-channel IMU position streams to generate 195 feature channels without additional hardware sensors or offline storage overhead.
+    \item \textbf{Systematic Benchmark of Modern 1D Architectures:} We perform a rigorous comparative evaluation of five distinct 1D architectures—ConvNeXt~1D, Temporal Convolutional Networks (TCN), MLP-Mixer~1D, Transformer~1D, and InceptionTime—with and without Test-Time Augmentation (TTA). ConvNeXt~1D and TCN achieve state-of-the-art macro-F1 scores of 98.68\% and 98.62\%, respectively, with danger precision exceeding 98\% and recall surpassing 97\%.
+    \item \textbf{Dedicated False-Alarm Reduction Post-Processing:} We design a tailored temporal debouncing stage integrating a 3-tap median filter with decision threshold optimization. This mechanism reduces false alarms by \textbf{87.5\%} while maintaining danger detection recall above 97.1\%, establishing a viable operating point for industrial deployment.
+    \item \textbf{Rigorous Benchmark Validation:} The framework is validated via 5-fold stratified cross-validation over more than 69,000 temporal windows gathered from 60 human subjects on the DASIG benchmark, verifying statistical robustness across diverse operating profiles.
+\end{enumerate}
+
+\newpage
+
+{\large\textbf{Relevance to the Scope of \textit{Robotica}}}\par\vspace{4pt}
+\textit{Robotica} is a premier international forum dedicated to the multidisciplinary science and practice of robotics, sensor systems, and artificial intelligence in automation. Our manuscript aligns closely with the core interests of \textit{Robotica}'s readership:
+\begin{itemize}[leftmargin=*,itemsep=3pt,topsep=2pt]
+    \item \textbf{Human-Robot Interaction \& Safe Cobots:} Formulates an actionable solution for certified human safety and collision mitigation in shared industrial workspaces.
+    \item \textbf{Applied AI \& Machine Learning in Robotics:} Demonstrates how modern 1D deep learning backbones combined with domain-specific signal engineering solve time-critical robotics perception tasks.
+    \item \textbf{Sensor Perception \& Wearable Systems:} Explores wearable inertial telemetry as an economical, occlusion-free alternative to traditional external vision and force sensors in dynamic industrial environments.
+\end{itemize}
+
+\vspace{0.8em}
+{\large\textbf{Author Declarations}}\par\vspace{4pt}
+\begin{itemize}[leftmargin=*,itemsep=3pt,topsep=2pt]
+    \item This manuscript is an original contribution, has not been published previously, and is not currently under consideration for publication elsewhere.
+    \item All authors have read and approved the final manuscript and agree with its submission to \textit{Robotica}.
+    \item The authors declare no conflicts of interest or competing financial interests.
+    \item The data analyzed during this study are available from the corresponding author upon reasonable request.
+\end{itemize}
+
+\vspace{0.8em}
+Thank you very much for your time, consideration, and management of the peer-review process. We look forward to the reviewers' constructive feedback.
+
+\vspace{2em}
+
+Sincerely,
+
+\vspace{1.5em}
+\textbf{Ameur Gargouri} \\
+Ph.D. Student / Researcher \\
+ATISP Lab, ENET'Com, University of Sfax \& ESME Research Lab \\
+Email: \texttt{ameur.gargouri.doc@enetcom.usf.tn}
+
+\vspace{1.2em}
+\textit{On behalf of all authors:} \\
+\textbf{Dr.\ Mohamed Karray} (ESME Research Lab, Corresponding Author) \\
+\textbf{Prof.\ Mohamed Ksantini} (ATISP Lab, ENET'Com, University of Sfax)
+
+\end{document}

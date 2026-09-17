@@ -1,0 +1,46 @@
+This is BibTeX, Version 0.99d (TeX Live 2025)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: cobot_safety_paper.aux
+The style file: roblike.bst
+Database file #1: cobot_safety_references.bib
+You've used 22 entries,
+            1984 wiz_defined-function locations,
+            600 strings with 8346 characters,
+and the built_in function-call counts, 9548 in all, are:
+= -- 879
+> -- 524
+< -- 4
++ -- 196
+- -- 184
+* -- 1061
+:= -- 1674
+add.period$ -- 66
+call.type$ -- 22
+change.case$ -- 195
+chr.to.int$ -- 22
+cite$ -- 22
+duplicate$ -- 310
+empty$ -- 609
+format.name$ -- 210
+if$ -- 1788
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 20
+newline$ -- 113
+num.names$ -- 66
+pop$ -- 189
+preamble$ -- 1
+purify$ -- 195
+quote$ -- 0
+skip$ -- 202
+stack$ -- 0
+substring$ -- 553
+swap$ -- 20
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 132
+warning$ -- 0
+while$ -- 68
+width$ -- 0
+write$ -- 222
