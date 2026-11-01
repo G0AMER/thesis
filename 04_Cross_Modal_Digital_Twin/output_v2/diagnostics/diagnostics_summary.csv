@@ -1,0 +1,16 @@
+model,correction,acc,macro_f1,macro_f1_std,bal_acc,prior_L1_err
+source_only,plain,50.8,41.37,3.55,44.7,
+source_only,em_prior,48.71,39.01,3.3,39.09,0.47
+source_only,true_prior (upper bound),53.09,41.47,3.73,41.47,
+source_only + test-time left freeze,plain,39.02,31.01,2.13,30.78,
+source_only + test-time left freeze,em_prior,34.56,26.14,2.4,25.3,0.76
+source_only + test-time left freeze,true_prior (upper bound),41.81,30.75,2.42,29.14,
+temporal,plain,50.2,36.88,2.06,42.03,
+temporal,em_prior,49.59,33.09,1.69,34.36,0.57
+temporal,true_prior (upper bound),52.68,36.52,1.79,36.88,
+noleft,plain,40.07,30.46,1.43,31.34,
+noleft,em_prior,37.41,27.36,1.2,27.61,0.62
+noleft,true_prior (upper bound),42.4,30.72,1.35,29.84,
+temporal + noleft,plain,38.24,28.13,2.73,29.54,
+temporal + noleft,em_prior,35.89,24.83,2.82,25.43,0.61
+temporal + noleft,true_prior (upper bound),41.98,28.24,2.55,27.89,

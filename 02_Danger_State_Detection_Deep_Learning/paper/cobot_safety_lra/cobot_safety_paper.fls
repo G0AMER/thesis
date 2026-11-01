@@ -1,8 +1,8 @@
-PWD /home/g0amer/Desktop/thesis/IEEE-conference-template-062824/cobot_safety_lra
+PWD /home/g0amer/Desktop/thesis/02_Danger_State_Detection_Deep_Learning/paper/cobot_safety_lra
 INPUT /usr/local/texlive/2025/texmf.cnf
 INPUT /usr/local/texlive/2025/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /home/g0amer/Desktop/thesis/IEEE-conference-template-062824/cobot_safety_lra/cobot_safety_paper.tex
+INPUT /home/g0amer/Desktop/thesis/02_Danger_State_Detection_Deep_Learning/paper/cobot_safety_lra/cobot_safety_paper.tex
 OUTPUT cobot_safety_paper.log
 INPUT ./IEEEtran.cls
 INPUT IEEEtran.cls
@@ -137,7 +137,6 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/adobe/times/ptmb7t.vf
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
 INPUT ./fig1_pipeline_overview.pdf
 INPUT ./fig1_pipeline_overview.pdf
 INPUT ./fig1_pipeline_overview.pdf
@@ -160,17 +159,18 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmbx7.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmbx5.tfm
-INPUT ./ChatGPT Image Jul 29, 2026, 04_01_33 PM.png
-INPUT ./ChatGPT Image Jul 29, 2026, 04_01_33 PM.png
-INPUT ./ChatGPT Image Jul 29, 2026, 04_01_33 PM.png
-INPUT ./ChatGPT Image Jul 29, 2026, 04_01_33 PM.png
-INPUT ./ChatGPT Image Jul 29, 2026, 04_01_33 PM.png
+INPUT ./fig_mimu_placement.png
+INPUT ./fig_mimu_placement.png
+INPUT ./fig_mimu_placement.png
+INPUT ./fig_mimu_placement.png
+INPUT ./fig_mimu_placement.png
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmmib10.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmmib7.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmmib5.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmbsy10.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy7.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/adobe/times/ptmri7t.vf
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmri8r.tfm
 INPUT ./fig2_data_pipeline.pdf

@@ -1,0 +1,293 @@
+Loaded 4696 DT clips (12 subjects) and 4803 InHARD clips (16 subjects) in 16s
+
+================ seed 0 ================
+  [fewshot_k1_joint f0 s0] step 200/2190 | ce=0.0759 | unsup=0.0000 | mask_rate=0.0000 | 49s
+  [fewshot_k1_joint f0 s0] step 400/2190 | ce=0.0193 | unsup=0.0000 | mask_rate=0.0000 | 85s
+  [fewshot_k1_joint f0 s0] step 600/2190 | ce=0.0157 | unsup=0.0000 | mask_rate=0.0000 | 122s
+  [fewshot_k1_joint f0 s0] step 800/2190 | ce=0.0131 | unsup=0.0000 | mask_rate=0.0000 | 159s
+  [fewshot_k1_joint f0 s0] step 1000/2190 | ce=0.0121 | unsup=0.0000 | mask_rate=0.0000 | 195s
+  [fewshot_k1_joint f0 s0] step 1200/2190 | ce=0.0103 | unsup=0.0000 | mask_rate=0.0000 | 232s
+  [fewshot_k1_joint f0 s0] step 1400/2190 | ce=0.0093 | unsup=0.0000 | mask_rate=0.0000 | 269s
+  [fewshot_k1_joint f0 s0] step 1600/2190 | ce=0.0087 | unsup=0.0000 | mask_rate=0.0000 | 306s
+  [fewshot_k1_joint f0 s0] step 1800/2190 | ce=0.0083 | unsup=0.0000 | mask_rate=0.0000 | 343s
+  [fewshot_k1_joint f0 s0] step 2000/2190 | ce=0.0083 | unsup=0.0000 | mask_rate=0.0000 | 380s
+  [fewshot_k1_joint f0 s0] step 2190/2190 | ce=0.0084 | unsup=0.0000 | mask_rate=0.0000 | 415s
+  -> fewshot_k1_joint fold=0 seed=0: acc=0.5973 macroF1=0.5219 (n=1321)
+  [fewshot_k1_joint_fixmatch f0 s0] step 200/2190 | ce=0.1660 | unsup=0.3361 | mask_rate=0.4905 | 82s
+  [fewshot_k1_joint_fixmatch f0 s0] step 400/2190 | ce=0.0955 | unsup=0.1989 | mask_rate=0.5349 | 156s
+  [fewshot_k1_joint_fixmatch f0 s0] step 600/2190 | ce=0.0836 | unsup=0.1926 | mask_rate=0.5656 | 230s
+  [fewshot_k1_joint_fixmatch f0 s0] step 800/2190 | ce=0.0687 | unsup=0.1735 | mask_rate=0.5673 | 304s
+  [fewshot_k1_joint_fixmatch f0 s0] step 1000/2190 | ce=0.0557 | unsup=0.1772 | mask_rate=0.5934 | 378s
+  [fewshot_k1_joint_fixmatch f0 s0] step 1200/2190 | ce=0.0482 | unsup=0.1653 | mask_rate=0.6136 | 451s
+  [fewshot_k1_joint_fixmatch f0 s0] step 1400/2190 | ce=0.0397 | unsup=0.1613 | mask_rate=0.6153 | 525s
+  [fewshot_k1_joint_fixmatch f0 s0] step 1600/2190 | ce=0.0317 | unsup=0.1500 | mask_rate=0.6259 | 599s
+  [fewshot_k1_joint_fixmatch f0 s0] step 1800/2190 | ce=0.0293 | unsup=0.1579 | mask_rate=0.6397 | 673s
+  [fewshot_k1_joint_fixmatch f0 s0] step 2000/2190 | ce=0.0272 | unsup=0.1615 | mask_rate=0.6403 | 747s
+  [fewshot_k1_joint_fixmatch f0 s0] step 2190/2190 | ce=0.0240 | unsup=0.1470 | mask_rate=0.6417 | 817s
+  -> fewshot_k1_joint_fixmatch fold=0 seed=0: acc=0.5980 macroF1=0.5023 (n=1321)
+  [fewshot_k5_joint f0 s0] step 200/2190 | ce=0.1492 | unsup=0.0000 | mask_rate=0.0000 | 53s
+  [fewshot_k5_joint f0 s0] step 400/2190 | ce=0.0234 | unsup=0.0000 | mask_rate=0.0000 | 98s
+  [fewshot_k5_joint f0 s0] step 600/2190 | ce=0.0183 | unsup=0.0000 | mask_rate=0.0000 | 143s
+  [fewshot_k5_joint f0 s0] step 800/2190 | ce=0.0144 | unsup=0.0000 | mask_rate=0.0000 | 188s
+  [fewshot_k5_joint f0 s0] step 1000/2190 | ce=0.0115 | unsup=0.0000 | mask_rate=0.0000 | 233s
+  [fewshot_k5_joint f0 s0] step 1200/2190 | ce=0.0101 | unsup=0.0000 | mask_rate=0.0000 | 278s
+  [fewshot_k5_joint f0 s0] step 1400/2190 | ce=0.0098 | unsup=0.0000 | mask_rate=0.0000 | 323s
+  [fewshot_k5_joint f0 s0] step 1600/2190 | ce=0.0086 | unsup=0.0000 | mask_rate=0.0000 | 368s
+  [fewshot_k5_joint f0 s0] step 1800/2190 | ce=0.0082 | unsup=0.0000 | mask_rate=0.0000 | 413s
+  [fewshot_k5_joint f0 s0] step 2000/2190 | ce=0.0082 | unsup=0.0000 | mask_rate=0.0000 | 458s
+  [fewshot_k5_joint f0 s0] step 2190/2190 | ce=0.0072 | unsup=0.0000 | mask_rate=0.0000 | 501s
+  -> fewshot_k5_joint fold=0 seed=0: acc=0.6374 macroF1=0.5560 (n=1321)
+  [fewshot_k5_joint_fixmatch f0 s0] step 200/2190 | ce=0.2346 | unsup=0.3262 | mask_rate=0.4809 | 91s
+  [fewshot_k5_joint_fixmatch f0 s0] step 400/2190 | ce=0.0961 | unsup=0.1985 | mask_rate=0.5202 | 173s
+  [fewshot_k5_joint_fixmatch f0 s0] step 600/2190 | ce=0.0843 | unsup=0.1864 | mask_rate=0.5578 | 255s
+  [fewshot_k5_joint_fixmatch f0 s0] step 800/2190 | ce=0.0719 | unsup=0.1835 | mask_rate=0.5688 | 337s
+  [fewshot_k5_joint_fixmatch f0 s0] step 1000/2190 | ce=0.0568 | unsup=0.1761 | mask_rate=0.5900 | 420s
+  [fewshot_k5_joint_fixmatch f0 s0] step 1200/2190 | ce=0.0470 | unsup=0.1667 | mask_rate=0.6102 | 502s
+  [fewshot_k5_joint_fixmatch f0 s0] step 1400/2190 | ce=0.0429 | unsup=0.1749 | mask_rate=0.6162 | 584s
+  [fewshot_k5_joint_fixmatch f0 s0] step 1600/2190 | ce=0.0328 | unsup=0.1588 | mask_rate=0.6255 | 666s
+  [fewshot_k5_joint_fixmatch f0 s0] step 1800/2190 | ce=0.0286 | unsup=0.1576 | mask_rate=0.6344 | 749s
+  [fewshot_k5_joint_fixmatch f0 s0] step 2000/2190 | ce=0.0247 | unsup=0.1520 | mask_rate=0.6360 | 831s
+  [fewshot_k5_joint_fixmatch f0 s0] step 2190/2190 | ce=0.0239 | unsup=0.1495 | mask_rate=0.6345 | 909s
+  -> fewshot_k5_joint_fixmatch fold=0 seed=0: acc=0.6351 macroF1=0.5491 (n=1321)
+  [fewshot_k10_joint f0 s0] step 200/2190 | ce=0.1699 | unsup=0.0000 | mask_rate=0.0000 | 45s
+  [fewshot_k10_joint f0 s0] step 400/2190 | ce=0.0324 | unsup=0.0000 | mask_rate=0.0000 | 90s
+  [fewshot_k10_joint f0 s0] step 600/2190 | ce=0.0252 | unsup=0.0000 | mask_rate=0.0000 | 135s
+  [fewshot_k10_joint f0 s0] step 800/2190 | ce=0.0183 | unsup=0.0000 | mask_rate=0.0000 | 179s
+  [fewshot_k10_joint f0 s0] step 1000/2190 | ce=0.0152 | unsup=0.0000 | mask_rate=0.0000 | 224s
+  [fewshot_k10_joint f0 s0] step 1200/2190 | ce=0.0128 | unsup=0.0000 | mask_rate=0.0000 | 269s
+  [fewshot_k10_joint f0 s0] step 1400/2190 | ce=0.0119 | unsup=0.0000 | mask_rate=0.0000 | 314s
+  [fewshot_k10_joint f0 s0] step 1600/2190 | ce=0.0110 | unsup=0.0000 | mask_rate=0.0000 | 359s
+  [fewshot_k10_joint f0 s0] step 1800/2190 | ce=0.0099 | unsup=0.0000 | mask_rate=0.0000 | 403s
+  [fewshot_k10_joint f0 s0] step 2000/2190 | ce=0.0094 | unsup=0.0000 | mask_rate=0.0000 | 448s
+  [fewshot_k10_joint f0 s0] step 2190/2190 | ce=0.0096 | unsup=0.0000 | mask_rate=0.0000 | 491s
+  -> fewshot_k10_joint fold=0 seed=0: acc=0.6616 macroF1=0.6053 (n=1321)
+  [fewshot_k10_joint_fixmatch f0 s0] step 200/2190 | ce=0.2461 | unsup=0.3356 | mask_rate=0.4968 | 82s
+  [fewshot_k10_joint_fixmatch f0 s0] step 400/2190 | ce=0.1038 | unsup=0.2128 | mask_rate=0.5399 | 164s
+  [fewshot_k10_joint_fixmatch f0 s0] step 600/2190 | ce=0.0875 | unsup=0.1944 | mask_rate=0.5717 | 246s
+  [fewshot_k10_joint_fixmatch f0 s0] step 800/2190 | ce=0.0740 | unsup=0.1960 | mask_rate=0.5866 | 328s
+  [fewshot_k10_joint_fixmatch f0 s0] step 1000/2190 | ce=0.0614 | unsup=0.1767 | mask_rate=0.5967 | 410s
+  [fewshot_k10_joint_fixmatch f0 s0] step 1200/2190 | ce=0.0500 | unsup=0.1821 | mask_rate=0.6185 | 492s
+  [fewshot_k10_joint_fixmatch f0 s0] step 1400/2190 | ce=0.0395 | unsup=0.1705 | mask_rate=0.6339 | 574s
+  [fewshot_k10_joint_fixmatch f0 s0] step 1600/2190 | ce=0.0347 | unsup=0.1657 | mask_rate=0.6460 | 656s
+  [fewshot_k10_joint_fixmatch f0 s0] step 1800/2190 | ce=0.0274 | unsup=0.1625 | mask_rate=0.6605 | 738s
+  [fewshot_k10_joint_fixmatch f0 s0] step 2000/2190 | ce=0.0243 | unsup=0.1618 | mask_rate=0.6666 | 820s
+  [fewshot_k10_joint_fixmatch f0 s0] step 2190/2190 | ce=0.0231 | unsup=0.1503 | mask_rate=0.6703 | 898s
+  -> fewshot_k10_joint_fixmatch fold=0 seed=0: acc=0.6783 macroF1=0.6000 (n=1321)
+  [fewshot_k1_joint f1 s0] step 200/2190 | ce=0.0787 | unsup=0.0000 | mask_rate=0.0000 | 37s
+  [fewshot_k1_joint f1 s0] step 400/2190 | ce=0.0207 | unsup=0.0000 | mask_rate=0.0000 | 74s
+  [fewshot_k1_joint f1 s0] step 600/2190 | ce=0.0151 | unsup=0.0000 | mask_rate=0.0000 | 111s
+  [fewshot_k1_joint f1 s0] step 800/2190 | ce=0.0139 | unsup=0.0000 | mask_rate=0.0000 | 149s
+  [fewshot_k1_joint f1 s0] step 1000/2190 | ce=0.0129 | unsup=0.0000 | mask_rate=0.0000 | 186s
+  [fewshot_k1_joint f1 s0] step 1200/2190 | ce=0.0102 | unsup=0.0000 | mask_rate=0.0000 | 223s
+  [fewshot_k1_joint f1 s0] step 1400/2190 | ce=0.0099 | unsup=0.0000 | mask_rate=0.0000 | 260s
+  [fewshot_k1_joint f1 s0] step 1600/2190 | ce=0.0092 | unsup=0.0000 | mask_rate=0.0000 | 297s
+  [fewshot_k1_joint f1 s0] step 1800/2190 | ce=0.0089 | unsup=0.0000 | mask_rate=0.0000 | 334s
+  [fewshot_k1_joint f1 s0] step 2000/2190 | ce=0.0087 | unsup=0.0000 | mask_rate=0.0000 | 371s
+  [fewshot_k1_joint f1 s0] step 2190/2190 | ce=0.0088 | unsup=0.0000 | mask_rate=0.0000 | 406s
+  -> fewshot_k1_joint fold=1 seed=0: acc=0.5120 macroF1=0.3954 (n=1000)
+  [fewshot_k1_joint_fixmatch f1 s0] step 200/2190 | ce=0.1696 | unsup=0.3336 | mask_rate=0.5039 | 75s
+  [fewshot_k1_joint_fixmatch f1 s0] step 400/2190 | ce=0.0915 | unsup=0.2010 | mask_rate=0.5323 | 148s
+  [fewshot_k1_joint_fixmatch f1 s0] step 600/2190 | ce=0.0808 | unsup=0.1823 | mask_rate=0.5584 | 223s
+  [fewshot_k1_joint_fixmatch f1 s0] step 800/2190 | ce=0.0726 | unsup=0.1799 | mask_rate=0.5766 | 297s
+  [fewshot_k1_joint_fixmatch f1 s0] step 1000/2190 | ce=0.0572 | unsup=0.1722 | mask_rate=0.5764 | 371s
+  [fewshot_k1_joint_fixmatch f1 s0] step 1200/2190 | ce=0.0485 | unsup=0.1627 | mask_rate=0.5900 | 445s
+  [fewshot_k1_joint_fixmatch f1 s0] step 1400/2190 | ce=0.0419 | unsup=0.1669 | mask_rate=0.6013 | 519s
+  [fewshot_k1_joint_fixmatch f1 s0] step 1600/2190 | ce=0.0333 | unsup=0.1682 | mask_rate=0.6156 | 593s
+  [fewshot_k1_joint_fixmatch f1 s0] step 1800/2190 | ce=0.0299 | unsup=0.1604 | mask_rate=0.6181 | 666s
+  [fewshot_k1_joint_fixmatch f1 s0] step 2000/2190 | ce=0.0260 | unsup=0.1608 | mask_rate=0.6215 | 740s
+  [fewshot_k1_joint_fixmatch f1 s0] step 2190/2190 | ce=0.0236 | unsup=0.1582 | mask_rate=0.6308 | 810s
+  -> fewshot_k1_joint_fixmatch fold=1 seed=0: acc=0.5180 macroF1=0.4104 (n=1000)
+  [fewshot_k5_joint f1 s0] step 200/2190 | ce=0.1450 | unsup=0.0000 | mask_rate=0.0000 | 45s
+  [fewshot_k5_joint f1 s0] step 400/2190 | ce=0.0221 | unsup=0.0000 | mask_rate=0.0000 | 90s
+  [fewshot_k5_joint f1 s0] step 600/2190 | ce=0.0176 | unsup=0.0000 | mask_rate=0.0000 | 135s
+  [fewshot_k5_joint f1 s0] step 800/2190 | ce=0.0137 | unsup=0.0000 | mask_rate=0.0000 | 180s
+  [fewshot_k5_joint f1 s0] step 1000/2190 | ce=0.0107 | unsup=0.0000 | mask_rate=0.0000 | 225s
+  [fewshot_k5_joint f1 s0] step 1200/2190 | ce=0.0101 | unsup=0.0000 | mask_rate=0.0000 | 270s
+  [fewshot_k5_joint f1 s0] step 1400/2190 | ce=0.0094 | unsup=0.0000 | mask_rate=0.0000 | 315s
+  [fewshot_k5_joint f1 s0] step 1600/2190 | ce=0.0080 | unsup=0.0000 | mask_rate=0.0000 | 360s
+  [fewshot_k5_joint f1 s0] step 1800/2190 | ce=0.0080 | unsup=0.0000 | mask_rate=0.0000 | 405s
+  [fewshot_k5_joint f1 s0] step 2000/2190 | ce=0.0086 | unsup=0.0000 | mask_rate=0.0000 | 449s
+  [fewshot_k5_joint f1 s0] step 2190/2190 | ce=0.0074 | unsup=0.0000 | mask_rate=0.0000 | 492s
+  -> fewshot_k5_joint fold=1 seed=0: acc=0.5360 macroF1=0.4323 (n=1000)
+  [fewshot_k5_joint_fixmatch f1 s0] step 200/2190 | ce=0.2317 | unsup=0.3351 | mask_rate=0.4973 | 83s
+  [fewshot_k5_joint_fixmatch f1 s0] step 400/2190 | ce=0.0870 | unsup=0.1961 | mask_rate=0.5451 | 164s
+  [fewshot_k5_joint_fixmatch f1 s0] step 600/2190 | ce=0.0783 | unsup=0.1842 | mask_rate=0.5730 | 246s
+  [fewshot_k5_joint_fixmatch f1 s0] step 800/2190 | ce=0.0656 | unsup=0.1746 | mask_rate=0.5947 | 328s
+  [fewshot_k5_joint_fixmatch f1 s0] step 1000/2190 | ce=0.0546 | unsup=0.1693 | mask_rate=0.6041 | 411s
+  [fewshot_k5_joint_fixmatch f1 s0] step 1200/2190 | ce=0.0481 | unsup=0.1721 | mask_rate=0.6139 | 493s
+  [fewshot_k5_joint_fixmatch f1 s0] step 1400/2190 | ce=0.0387 | unsup=0.1594 | mask_rate=0.6291 | 575s
+  [fewshot_k5_joint_fixmatch f1 s0] step 1600/2190 | ce=0.0335 | unsup=0.1602 | mask_rate=0.6319 | 657s
+  [fewshot_k5_joint_fixmatch f1 s0] step 1800/2190 | ce=0.0272 | unsup=0.1560 | mask_rate=0.6435 | 739s
+  [fewshot_k5_joint_fixmatch f1 s0] step 2000/2190 | ce=0.0251 | unsup=0.1536 | mask_rate=0.6492 | 821s
+  [fewshot_k5_joint_fixmatch f1 s0] step 2190/2190 | ce=0.0239 | unsup=0.1505 | mask_rate=0.6515 | 899s
+  -> fewshot_k5_joint_fixmatch fold=1 seed=0: acc=0.5240 macroF1=0.4301 (n=1000)
+  [fewshot_k10_joint f1 s0] step 200/2190 | ce=0.1774 | unsup=0.0000 | mask_rate=0.0000 | 45s
+  [fewshot_k10_joint f1 s0] step 400/2190 | ce=0.0334 | unsup=0.0000 | mask_rate=0.0000 | 90s
+  [fewshot_k10_joint f1 s0] step 600/2190 | ce=0.0249 | unsup=0.0000 | mask_rate=0.0000 | 135s
+  [fewshot_k10_joint f1 s0] step 800/2190 | ce=0.0182 | unsup=0.0000 | mask_rate=0.0000 | 180s
+  [fewshot_k10_joint f1 s0] step 1000/2190 | ce=0.0161 | unsup=0.0000 | mask_rate=0.0000 | 224s
+  [fewshot_k10_joint f1 s0] step 1200/2190 | ce=0.0128 | unsup=0.0000 | mask_rate=0.0000 | 269s
+  [fewshot_k10_joint f1 s0] step 1400/2190 | ce=0.0117 | unsup=0.0000 | mask_rate=0.0000 | 313s
+  [fewshot_k10_joint f1 s0] step 1600/2190 | ce=0.0113 | unsup=0.0000 | mask_rate=0.0000 | 358s
+  [fewshot_k10_joint f1 s0] step 1800/2190 | ce=0.0101 | unsup=0.0000 | mask_rate=0.0000 | 403s
+  [fewshot_k10_joint f1 s0] step 2000/2190 | ce=0.0096 | unsup=0.0000 | mask_rate=0.0000 | 447s
+  [fewshot_k10_joint f1 s0] step 2190/2190 | ce=0.0101 | unsup=0.0000 | mask_rate=0.0000 | 489s
+  -> fewshot_k10_joint fold=1 seed=0: acc=0.5700 macroF1=0.4922 (n=1000)
+  [fewshot_k10_joint_fixmatch f1 s0] step 200/2190 | ce=0.2516 | unsup=0.3239 | mask_rate=0.5016 | 82s
+  [fewshot_k10_joint_fixmatch f1 s0] step 400/2190 | ce=0.1038 | unsup=0.2059 | mask_rate=0.5365 | 163s
+  [fewshot_k10_joint_fixmatch f1 s0] step 600/2190 | ce=0.0925 | unsup=0.1989 | mask_rate=0.5596 | 245s
+  [fewshot_k10_joint_fixmatch f1 s0] step 800/2190 | ce=0.0770 | unsup=0.1796 | mask_rate=0.5813 | 326s
+  [fewshot_k10_joint_fixmatch f1 s0] step 1000/2190 | ce=0.0637 | unsup=0.1919 | mask_rate=0.5975 | 408s
+  [fewshot_k10_joint_fixmatch f1 s0] step 1200/2190 | ce=0.0509 | unsup=0.1748 | mask_rate=0.6152 | 490s
+  [fewshot_k10_joint_fixmatch f1 s0] step 1400/2190 | ce=0.0435 | unsup=0.1711 | mask_rate=0.6273 | 571s
+  [fewshot_k10_joint_fixmatch f1 s0] step 1600/2190 | ce=0.0316 | unsup=0.1736 | mask_rate=0.6459 | 653s
+  [fewshot_k10_joint_fixmatch f1 s0] step 1800/2190 | ce=0.0297 | unsup=0.1622 | mask_rate=0.6504 | 734s
+  [fewshot_k10_joint_fixmatch f1 s0] step 2000/2190 | ce=0.0264 | unsup=0.1530 | mask_rate=0.6567 | 816s
+  [fewshot_k10_joint_fixmatch f1 s0] step 2190/2190 | ce=0.0249 | unsup=0.1504 | mask_rate=0.6608 | 893s
+  -> fewshot_k10_joint_fixmatch fold=1 seed=0: acc=0.5950 macroF1=0.5075 (n=1000)
+  [fewshot_k1_joint f2 s0] step 200/2190 | ce=0.0473 | unsup=0.0000 | mask_rate=0.0000 | 37s
+  [fewshot_k1_joint f2 s0] step 400/2190 | ce=0.0184 | unsup=0.0000 | mask_rate=0.0000 | 74s
+  [fewshot_k1_joint f2 s0] step 600/2190 | ce=0.0146 | unsup=0.0000 | mask_rate=0.0000 | 111s
+  [fewshot_k1_joint f2 s0] step 800/2190 | ce=0.0129 | unsup=0.0000 | mask_rate=0.0000 | 148s
+  [fewshot_k1_joint f2 s0] step 1000/2190 | ce=0.0120 | unsup=0.0000 | mask_rate=0.0000 | 185s
+  [fewshot_k1_joint f2 s0] step 1200/2190 | ce=0.0104 | unsup=0.0000 | mask_rate=0.0000 | 222s
+  [fewshot_k1_joint f2 s0] step 1400/2190 | ce=0.0094 | unsup=0.0000 | mask_rate=0.0000 | 259s
+  [fewshot_k1_joint f2 s0] step 1600/2190 | ce=0.0088 | unsup=0.0000 | mask_rate=0.0000 | 296s
+  [fewshot_k1_joint f2 s0] step 1800/2190 | ce=0.0088 | unsup=0.0000 | mask_rate=0.0000 | 332s
+  [fewshot_k1_joint f2 s0] step 2000/2190 | ce=0.0088 | unsup=0.0000 | mask_rate=0.0000 | 369s
+  [fewshot_k1_joint f2 s0] step 2190/2190 | ce=0.0085 | unsup=0.0000 | mask_rate=0.0000 | 404s
+  -> fewshot_k1_joint fold=2 seed=0: acc=0.5124 macroF1=0.4138 (n=1087)
+  [fewshot_k1_joint_fixmatch f2 s0] step 200/2190 | ce=0.1309 | unsup=0.3349 | mask_rate=0.5094 | 74s
+  [fewshot_k1_joint_fixmatch f2 s0] step 400/2190 | ce=0.0847 | unsup=0.1925 | mask_rate=0.5313 | 148s
+  [fewshot_k1_joint_fixmatch f2 s0] step 600/2190 | ce=0.0750 | unsup=0.1883 | mask_rate=0.5620 | 222s
+  [fewshot_k1_joint_fixmatch f2 s0] step 800/2190 | ce=0.0670 | unsup=0.1707 | mask_rate=0.5754 | 295s
+  [fewshot_k1_joint_fixmatch f2 s0] step 1000/2190 | ce=0.0536 | unsup=0.1723 | mask_rate=0.5948 | 369s
+  [fewshot_k1_joint_fixmatch f2 s0] step 1200/2190 | ce=0.0500 | unsup=0.1653 | mask_rate=0.6038 | 443s
+  [fewshot_k1_joint_fixmatch f2 s0] step 1400/2190 | ce=0.0384 | unsup=0.1697 | mask_rate=0.6067 | 516s
+  [fewshot_k1_joint_fixmatch f2 s0] step 1600/2190 | ce=0.0335 | unsup=0.1527 | mask_rate=0.6171 | 590s
+  [fewshot_k1_joint_fixmatch f2 s0] step 1800/2190 | ce=0.0297 | unsup=0.1533 | mask_rate=0.6185 | 664s
+  [fewshot_k1_joint_fixmatch f2 s0] step 2000/2190 | ce=0.0248 | unsup=0.1582 | mask_rate=0.6302 | 737s
+  [fewshot_k1_joint_fixmatch f2 s0] step 2190/2190 | ce=0.0226 | unsup=0.1554 | mask_rate=0.6404 | 807s
+  -> fewshot_k1_joint_fixmatch fold=2 seed=0: acc=0.4995 macroF1=0.4262 (n=1087)
+  [fewshot_k5_joint f2 s0] step 200/2190 | ce=0.1284 | unsup=0.0000 | mask_rate=0.0000 | 45s
+  [fewshot_k5_joint f2 s0] step 400/2190 | ce=0.0211 | unsup=0.0000 | mask_rate=0.0000 | 90s
+  [fewshot_k5_joint f2 s0] step 600/2190 | ce=0.0176 | unsup=0.0000 | mask_rate=0.0000 | 135s
+  [fewshot_k5_joint f2 s0] step 800/2190 | ce=0.0134 | unsup=0.0000 | mask_rate=0.0000 | 180s
+  [fewshot_k5_joint f2 s0] step 1000/2190 | ce=0.0110 | unsup=0.0000 | mask_rate=0.0000 | 224s
+  [fewshot_k5_joint f2 s0] step 1200/2190 | ce=0.0098 | unsup=0.0000 | mask_rate=0.0000 | 269s
+  [fewshot_k5_joint f2 s0] step 1400/2190 | ce=0.0096 | unsup=0.0000 | mask_rate=0.0000 | 314s
+  [fewshot_k5_joint f2 s0] step 1600/2190 | ce=0.0084 | unsup=0.0000 | mask_rate=0.0000 | 359s
+  [fewshot_k5_joint f2 s0] step 1800/2190 | ce=0.0079 | unsup=0.0000 | mask_rate=0.0000 | 404s
+  [fewshot_k5_joint f2 s0] step 2000/2190 | ce=0.0085 | unsup=0.0000 | mask_rate=0.0000 | 449s
+  [fewshot_k5_joint f2 s0] step 2190/2190 | ce=0.0080 | unsup=0.0000 | mask_rate=0.0000 | 491s
+  -> fewshot_k5_joint fold=2 seed=0: acc=0.5722 macroF1=0.4998 (n=1087)
+  [fewshot_k5_joint_fixmatch f2 s0] step 200/2190 | ce=0.2062 | unsup=0.3310 | mask_rate=0.5003 | 82s
+  [fewshot_k5_joint_fixmatch f2 s0] step 400/2190 | ce=0.0963 | unsup=0.2088 | mask_rate=0.5425 | 164s
+  [fewshot_k5_joint_fixmatch f2 s0] step 600/2190 | ce=0.0833 | unsup=0.1876 | mask_rate=0.5559 | 246s
+  [fewshot_k5_joint_fixmatch f2 s0] step 800/2190 | ce=0.0676 | unsup=0.1875 | mask_rate=0.5864 | 328s
+  [fewshot_k5_joint_fixmatch f2 s0] step 1000/2190 | ce=0.0572 | unsup=0.1801 | mask_rate=0.6029 | 410s
+  [fewshot_k5_joint_fixmatch f2 s0] step 1200/2190 | ce=0.0512 | unsup=0.1823 | mask_rate=0.6152 | 492s
+  [fewshot_k5_joint_fixmatch f2 s0] step 1400/2190 | ce=0.0415 | unsup=0.1828 | mask_rate=0.6200 | 574s
+  [fewshot_k5_joint_fixmatch f2 s0] step 1600/2190 | ce=0.0325 | unsup=0.1638 | mask_rate=0.6366 | 656s
+  [fewshot_k5_joint_fixmatch f2 s0] step 1800/2190 | ce=0.0291 | unsup=0.1686 | mask_rate=0.6480 | 737s
+  [fewshot_k5_joint_fixmatch f2 s0] step 2000/2190 | ce=0.0266 | unsup=0.1627 | mask_rate=0.6448 | 819s
+  [fewshot_k5_joint_fixmatch f2 s0] step 2190/2190 | ce=0.0262 | unsup=0.1611 | mask_rate=0.6489 | 897s
+  -> fewshot_k5_joint_fixmatch fold=2 seed=0: acc=0.5713 macroF1=0.5069 (n=1087)
+  [fewshot_k10_joint f2 s0] step 200/2190 | ce=0.1621 | unsup=0.0000 | mask_rate=0.0000 | 45s
+  [fewshot_k10_joint f2 s0] step 400/2190 | ce=0.0320 | unsup=0.0000 | mask_rate=0.0000 | 89s
+  [fewshot_k10_joint f2 s0] step 600/2190 | ce=0.0231 | unsup=0.0000 | mask_rate=0.0000 | 134s
+  [fewshot_k10_joint f2 s0] step 800/2190 | ce=0.0169 | unsup=0.0000 | mask_rate=0.0000 | 179s
+  [fewshot_k10_joint f2 s0] step 1000/2190 | ce=0.0153 | unsup=0.0000 | mask_rate=0.0000 | 223s
+  [fewshot_k10_joint f2 s0] step 1200/2190 | ce=0.0123 | unsup=0.0000 | mask_rate=0.0000 | 268s
+  [fewshot_k10_joint f2 s0] step 1400/2190 | ce=0.0117 | unsup=0.0000 | mask_rate=0.0000 | 312s
+  [fewshot_k10_joint f2 s0] step 1600/2190 | ce=0.0110 | unsup=0.0000 | mask_rate=0.0000 | 357s
+  [fewshot_k10_joint f2 s0] step 1800/2190 | ce=0.0097 | unsup=0.0000 | mask_rate=0.0000 | 401s
+  [fewshot_k10_joint f2 s0] step 2000/2190 | ce=0.0097 | unsup=0.0000 | mask_rate=0.0000 | 446s
+  [fewshot_k10_joint f2 s0] step 2190/2190 | ce=0.0100 | unsup=0.0000 | mask_rate=0.0000 | 488s
+  -> fewshot_k10_joint fold=2 seed=0: acc=0.5814 macroF1=0.5121 (n=1087)
+  [fewshot_k10_joint_fixmatch f2 s0] step 200/2190 | ce=0.2389 | unsup=0.3210 | mask_rate=0.4866 | 82s
+  [fewshot_k10_joint_fixmatch f2 s0] step 400/2190 | ce=0.1006 | unsup=0.2015 | mask_rate=0.5482 | 163s
+  [fewshot_k10_joint_fixmatch f2 s0] step 600/2190 | ce=0.0847 | unsup=0.1922 | mask_rate=0.5843 | 245s
+  [fewshot_k10_joint_fixmatch f2 s0] step 800/2190 | ce=0.0693 | unsup=0.1865 | mask_rate=0.6086 | 327s
+  [fewshot_k10_joint_fixmatch f2 s0] step 1000/2190 | ce=0.0605 | unsup=0.1735 | mask_rate=0.6191 | 408s
+  [fewshot_k10_joint_fixmatch f2 s0] step 1200/2190 | ce=0.0483 | unsup=0.1702 | mask_rate=0.6319 | 490s
+  [fewshot_k10_joint_fixmatch f2 s0] step 1400/2190 | ce=0.0403 | unsup=0.1600 | mask_rate=0.6409 | 572s
+  [fewshot_k10_joint_fixmatch f2 s0] step 1600/2190 | ce=0.0312 | unsup=0.1517 | mask_rate=0.6565 | 653s
+  [fewshot_k10_joint_fixmatch f2 s0] step 1800/2190 | ce=0.0272 | unsup=0.1606 | mask_rate=0.6622 | 735s
+  [fewshot_k10_joint_fixmatch f2 s0] step 2000/2190 | ce=0.0259 | unsup=0.1501 | mask_rate=0.6729 | 817s
+  [fewshot_k10_joint_fixmatch f2 s0] step 2190/2190 | ce=0.0232 | unsup=0.1445 | mask_rate=0.6742 | 894s
+  -> fewshot_k10_joint_fixmatch fold=2 seed=0: acc=0.5925 macroF1=0.5310 (n=1087)
+  [fewshot_k1_joint f3 s0] step 200/2190 | ce=0.0523 | unsup=0.0000 | mask_rate=0.0000 | 37s
+  [fewshot_k1_joint f3 s0] step 400/2190 | ce=0.0181 | unsup=0.0000 | mask_rate=0.0000 | 74s
+  [fewshot_k1_joint f3 s0] step 600/2190 | ce=0.0154 | unsup=0.0000 | mask_rate=0.0000 | 111s
+  [fewshot_k1_joint f3 s0] step 800/2190 | ce=0.0131 | unsup=0.0000 | mask_rate=0.0000 | 148s
+  [fewshot_k1_joint f3 s0] step 1000/2190 | ce=0.0122 | unsup=0.0000 | mask_rate=0.0000 | 185s
+  [fewshot_k1_joint f3 s0] step 1200/2190 | ce=0.0103 | unsup=0.0000 | mask_rate=0.0000 | 223s
+  [fewshot_k1_joint f3 s0] step 1400/2190 | ce=0.0095 | unsup=0.0000 | mask_rate=0.0000 | 260s
+  [fewshot_k1_joint f3 s0] step 1600/2190 | ce=0.0089 | unsup=0.0000 | mask_rate=0.0000 | 297s
+  [fewshot_k1_joint f3 s0] step 1800/2190 | ce=0.0090 | unsup=0.0000 | mask_rate=0.0000 | 334s
+  [fewshot_k1_joint f3 s0] step 2000/2190 | ce=0.0086 | unsup=0.0000 | mask_rate=0.0000 | 371s
+  [fewshot_k1_joint f3 s0] step 2190/2190 | ce=0.0087 | unsup=0.0000 | mask_rate=0.0000 | 406s
+  -> fewshot_k1_joint fold=3 seed=0: acc=0.5147 macroF1=0.4164 (n=1395)
+  [fewshot_k1_joint_fixmatch f3 s0] step 200/2190 | ce=0.1492 | unsup=0.3279 | mask_rate=0.5080 | 75s
+  [fewshot_k1_joint_fixmatch f3 s0] step 400/2190 | ce=0.0925 | unsup=0.2061 | mask_rate=0.5384 | 149s
+  [fewshot_k1_joint_fixmatch f3 s0] step 600/2190 | ce=0.0735 | unsup=0.1877 | mask_rate=0.5625 | 224s
+  [fewshot_k1_joint_fixmatch f3 s0] step 800/2190 | ce=0.0710 | unsup=0.1815 | mask_rate=0.5788 | 299s
+  [fewshot_k1_joint_fixmatch f3 s0] step 1000/2190 | ce=0.0576 | unsup=0.1704 | mask_rate=0.5913 | 373s
+  [fewshot_k1_joint_fixmatch f3 s0] step 1200/2190 | ce=0.0488 | unsup=0.1581 | mask_rate=0.5955 | 448s
+  [fewshot_k1_joint_fixmatch f3 s0] step 1400/2190 | ce=0.0400 | unsup=0.1613 | mask_rate=0.6104 | 523s
+  [fewshot_k1_joint_fixmatch f3 s0] step 1600/2190 | ce=0.0332 | unsup=0.1544 | mask_rate=0.6282 | 597s
+  [fewshot_k1_joint_fixmatch f3 s0] step 1800/2190 | ce=0.0272 | unsup=0.1488 | mask_rate=0.6348 | 671s
+  [fewshot_k1_joint_fixmatch f3 s0] step 2000/2190 | ce=0.0237 | unsup=0.1487 | mask_rate=0.6410 | 745s
+  [fewshot_k1_joint_fixmatch f3 s0] step 2190/2190 | ce=0.0236 | unsup=0.1447 | mask_rate=0.6414 | 816s
+  -> fewshot_k1_joint_fixmatch fold=3 seed=0: acc=0.5326 macroF1=0.4288 (n=1395)
+  [fewshot_k5_joint f3 s0] step 200/2190 | ce=0.1543 | unsup=0.0000 | mask_rate=0.0000 | 45s
+  [fewshot_k5_joint f3 s0] step 400/2190 | ce=0.0236 | unsup=0.0000 | mask_rate=0.0000 | 91s
+  [fewshot_k5_joint f3 s0] step 600/2190 | ce=0.0185 | unsup=0.0000 | mask_rate=0.0000 | 145s
+  [fewshot_k5_joint f3 s0] step 800/2190 | ce=0.0152 | unsup=0.0000 | mask_rate=0.0000 | 191s
+  [fewshot_k5_joint f3 s0] step 1000/2190 | ce=0.0118 | unsup=0.0000 | mask_rate=0.0000 | 236s
+  [fewshot_k5_joint f3 s0] step 1200/2190 | ce=0.0108 | unsup=0.0000 | mask_rate=0.0000 | 281s
+  [fewshot_k5_joint f3 s0] step 1400/2190 | ce=0.0102 | unsup=0.0000 | mask_rate=0.0000 | 326s
+  [fewshot_k5_joint f3 s0] step 1600/2190 | ce=0.0089 | unsup=0.0000 | mask_rate=0.0000 | 371s
+  [fewshot_k5_joint f3 s0] step 1800/2190 | ce=0.0084 | unsup=0.0000 | mask_rate=0.0000 | 416s
+  [fewshot_k5_joint f3 s0] step 2000/2190 | ce=0.0086 | unsup=0.0000 | mask_rate=0.0000 | 461s
+  [fewshot_k5_joint f3 s0] step 2190/2190 | ce=0.0079 | unsup=0.0000 | mask_rate=0.0000 | 504s
+  -> fewshot_k5_joint fold=3 seed=0: acc=0.5663 macroF1=0.4895 (n=1395)
+  [fewshot_k5_joint_fixmatch f3 s0] step 200/2190 | ce=0.2288 | unsup=0.3250 | mask_rate=0.4782 | 83s
+  [fewshot_k5_joint_fixmatch f3 s0] step 400/2190 | ce=0.0971 | unsup=0.2113 | mask_rate=0.5419 | 166s
+  [fewshot_k5_joint_fixmatch f3 s0] step 600/2190 | ce=0.0829 | unsup=0.1871 | mask_rate=0.5502 | 248s
+  [fewshot_k5_joint_fixmatch f3 s0] step 800/2190 | ce=0.0671 | unsup=0.1886 | mask_rate=0.5762 | 331s
+  [fewshot_k5_joint_fixmatch f3 s0] step 1000/2190 | ce=0.0593 | unsup=0.1860 | mask_rate=0.5915 | 413s
+  [fewshot_k5_joint_fixmatch f3 s0] step 1200/2190 | ce=0.0513 | unsup=0.1703 | mask_rate=0.6065 | 496s
+  [fewshot_k5_joint_fixmatch f3 s0] step 1400/2190 | ce=0.0398 | unsup=0.1630 | mask_rate=0.6194 | 579s
+  [fewshot_k5_joint_fixmatch f3 s0] step 1600/2190 | ce=0.0328 | unsup=0.1697 | mask_rate=0.6346 | 661s
+  [fewshot_k5_joint_fixmatch f3 s0] step 1800/2190 | ce=0.0293 | unsup=0.1661 | mask_rate=0.6492 | 744s
+  [fewshot_k5_joint_fixmatch f3 s0] step 2000/2190 | ce=0.0266 | unsup=0.1525 | mask_rate=0.6459 | 827s
+  [fewshot_k5_joint_fixmatch f3 s0] step 2190/2190 | ce=0.0228 | unsup=0.1507 | mask_rate=0.6456 | 905s
+  -> fewshot_k5_joint_fixmatch fold=3 seed=0: acc=0.5419 macroF1=0.4724 (n=1395)
+  [fewshot_k10_joint f3 s0] step 200/2190 | ce=0.1837 | unsup=0.0000 | mask_rate=0.0000 | 45s
+  [fewshot_k10_joint f3 s0] step 400/2190 | ce=0.0324 | unsup=0.0000 | mask_rate=0.0000 | 90s
+  [fewshot_k10_joint f3 s0] step 600/2190 | ce=0.0242 | unsup=0.0000 | mask_rate=0.0000 | 136s
+  [fewshot_k10_joint f3 s0] step 800/2190 | ce=0.0174 | unsup=0.0000 | mask_rate=0.0000 | 181s
+  [fewshot_k10_joint f3 s0] step 1000/2190 | ce=0.0151 | unsup=0.0000 | mask_rate=0.0000 | 226s
+  [fewshot_k10_joint f3 s0] step 1200/2190 | ce=0.0123 | unsup=0.0000 | mask_rate=0.0000 | 271s
+  [fewshot_k10_joint f3 s0] step 1400/2190 | ce=0.0117 | unsup=0.0000 | mask_rate=0.0000 | 316s
+  [fewshot_k10_joint f3 s0] step 1600/2190 | ce=0.0111 | unsup=0.0000 | mask_rate=0.0000 | 361s
+  [fewshot_k10_joint f3 s0] step 1800/2190 | ce=0.0095 | unsup=0.0000 | mask_rate=0.0000 | 406s
+  [fewshot_k10_joint f3 s0] step 2000/2190 | ce=0.0093 | unsup=0.0000 | mask_rate=0.0000 | 451s
+  [fewshot_k10_joint f3 s0] step 2190/2190 | ce=0.0102 | unsup=0.0000 | mask_rate=0.0000 | 494s
+  -> fewshot_k10_joint fold=3 seed=0: acc=0.6115 macroF1=0.5152 (n=1395)
+  [fewshot_k10_joint_fixmatch f3 s0] step 200/2190 | ce=0.2641 | unsup=0.3221 | mask_rate=0.4982 | 83s
+  [fewshot_k10_joint_fixmatch f3 s0] step 400/2190 | ce=0.1021 | unsup=0.1942 | mask_rate=0.5527 | 165s
+  [fewshot_k10_joint_fixmatch f3 s0] step 600/2190 | ce=0.0789 | unsup=0.1783 | mask_rate=0.5959 | 248s
+  [fewshot_k10_joint_fixmatch f3 s0] step 800/2190 | ce=0.0732 | unsup=0.1812 | mask_rate=0.5980 | 331s
+  [fewshot_k10_joint_fixmatch f3 s0] step 1000/2190 | ce=0.0581 | unsup=0.1790 | mask_rate=0.6281 | 414s
+  [fewshot_k10_joint_fixmatch f3 s0] step 1200/2190 | ce=0.0506 | unsup=0.1655 | mask_rate=0.6330 | 496s
+  [fewshot_k10_joint_fixmatch f3 s0] step 1400/2190 | ce=0.0413 | unsup=0.1765 | mask_rate=0.6495 | 579s
+  [fewshot_k10_joint_fixmatch f3 s0] step 1600/2190 | ce=0.0320 | unsup=0.1574 | mask_rate=0.6552 | 661s
+  [fewshot_k10_joint_fixmatch f3 s0] step 1800/2190 | ce=0.0273 | unsup=0.1495 | mask_rate=0.6704 | 744s
+  [fewshot_k10_joint_fixmatch f3 s0] step 2000/2190 | ce=0.0240 | unsup=0.1402 | mask_rate=0.6786 | 826s
+  [fewshot_k10_joint_fixmatch f3 s0] step 2190/2190 | ce=0.0231 | unsup=0.1470 | mask_rate=0.6818 | 905s
+  -> fewshot_k10_joint_fixmatch fold=3 seed=0: acc=0.6172 macroF1=0.5324 (n=1395)
+
+All requested runs finished in 267.8 min. Results in /home/g0amer/Desktop/thesis/04_Cross_Modal_Digital_Twin/output_v2/benchmark_ctrgcn

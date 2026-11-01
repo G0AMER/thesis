@@ -34,20 +34,12 @@
 
 \title{Danger-State Detection in Human-Robot Collaboration Using Deep Learning}
 
-\author{Ameur~Gargouri,
-    Mohamed~Karray,
-    and~Mohamed~Ksantini%
-    \thanks{Manuscript received: Month Day, Year; Revised: Month Day, Year; Accepted: Month Day, Year.}%
-    \thanks{This letter was recommended for publication by Editor Name upon evaluation of the Associate Editor and Reviewers' comments.}%
-    \thanks{Ameur Gargouri is with the ATISP Lab, ENET'Com, University of Sfax, Sfax 3018, Tunisia, and also with the ESME Research Lab, 94200 Ivry-sur-Seine, France (e-mail: ameur.gargouri.doc@enetcom.usf.tn).}%
-    \thanks{Mohamed Karray is with the ESME Research Lab, 94200 Ivry-sur-Seine, France (e-mail: mohamed.karray@esme.fr).}%
-    \thanks{Mohamed Ksantini is with the ATISP Lab, ENET'Com, University of Sfax, Sfax 3018, Tunisia (e-mail: mohamed.ksantini@enetcom.usf.tn).}%
-    \thanks{Digital Object Identifier (DOI): 10.1109/LRA.2026.xxxxxxx}%
-}
+% Double-anonymous: author names and affiliations removed for review
+\author{Anonymous Authors}
 
-% Paper headers
-\markboth{IEEE Robotics and Automation Letters. Preprint Version. Accepted Month, Year}%
-{Gargouri \MakeLowercase{\textit{et al.}}: Danger-State Detection in Human-Robot Collaboration Using Deep Learning}
+% Paper headers — anonymized for double-anonymous review
+\markboth{IEEE Robotics and Automation Letters. Submitted for Review}%
+{Anonymous Authors: Danger-State Detection in Human-Robot Collaboration Using Deep Learning}
 
 \maketitle
 
@@ -63,13 +55,13 @@
 \section{Introduction}\label{sec:introduction}
 %===================================================================
 
-\IEEEPARstart{H}{uman-Robot} Collaboration (\ac{hrc}) refers to shared-workspace scenarios in which a human operator and a robotic arm coordinate physical actions toward a common objective~\cite{selvaggio2021autonomy}. In these situations, it becomes imperative for the robot to keep on assessing whether the state of ongoing interaction is safe or whether there is a threat looming that calls for precautionary measures. Failing to detect a threatening situation could result in an injury, while false warnings could halt the process. The trade-off between sensitivity and specificity represents one of the key aspects of industrial safety under ISO/TS 15066~\cite{iso15066}.
+\IEEEPARstart{H}{uman-Robot Collaboration} (\acs{hrc})\acused{hrc} refers to shared-workspace scenarios in which a human operator and a robotic arm coordinate physical actions toward a common objective~\cite{selvaggio2021autonomy}. In these situations, it becomes imperative for the robot to keep on assessing whether the state of ongoing interaction is safe or whether there is a threat looming that calls for precautionary measures. Failing to detect a threatening situation could result in an injury, while false warnings could halt the process. The trade-off between sensitivity and specificity represents one of the key aspects of industrial safety under ISO/TS 15066~\cite{iso15066}.
 
-Existing collision detection techniques can be classified into three types. The hardware-based technique relies on force-torque or six degree of freedom force sensors to directly measure the contact forces~\cite{wang2025sixdof}. The observer-based approach makes use of mathematical state estimators like the Extended State Observer to estimate the forces acting on the robot using joint measurements without any extra sensors~\cite{tonti2024eso}. The data-driven approach trains the classifier on the sensor readings by performing signal transformations like wavelet decomposition~\cite{niu2024wavelet} and multivariate fusion~\cite{fang2024multivariate}. Recent trends include the use of digital twins to create collision situations in simulated environments~\cite{an2024digitaltwin} and the combination of zero-force control and deep learning~\cite{zhao2025zeroforce}.
+Existing collision detection techniques can be classified into three types. The hardware-based technique relies on force-torque or six-degree-of-freedom force sensors to directly measure the contact forces~\cite{wang2025sixdof}. The observer-based approach makes use of mathematical state estimators like the Extended State Observer to estimate the forces acting on the robot using joint measurements without any extra sensors~\cite{tonti2024eso}. The data-driven approach trains the classifier on the sensor readings by performing signal transformations like wavelet decomposition~\cite{niu2024wavelet} and multivariate fusion~\cite{fang2024multivariate}. Recent trends include the use of digital twins to create collision situations in simulated environments~\cite{an2024digitaltwin} and the combination of zero-force control and deep learning~\cite{zhao2025zeroforce}.
 
-In spite of these improvements, some issues still exist. Firstly, the introduction of the force torque sensor adds further cost and mechanical complexity. The observer design depends on an accurate Dynamic model, which is not guaranteed. Current machine learning-based methods mostly utilize shallow neural network or wavelet analysis on features. Additionally, the issue of false alarm due to inaccurate sensor readings has been poorly solved in existing works.
+In spite of these improvements, some issues still exist. Firstly, the introduction of the force torque sensor adds further cost and mechanical complexity. The observer design depends on an accurate dynamic model, which is not guaranteed. Current machine learning-based methods mostly utilize shallow neural networks or wavelet analysis on features. Additionally, the issue of false alarm due to inaccurate sensor readings has been poorly solved in existing works.
 
-This letter addresses these gaps by proposing a deep learning pipeline that operates on wearable \ac{imu} data collected during physical \ac{hrc}. Rather than relying on six-dimensional force sensors~\cite{wang2025sixdof} or external cameras~\cite{hoang2024grasp}, the pipeline introduces a \ac{gpu}-accelerated kinematic feature expansion that computes velocity and acceleration on the fly, augmenting the 65-channel \ac{imu} input to 195 spatio-temporal features and thereby encoding physical dynamics without additional hardware cost. Where recent collision detection studies have relied on wavelet networks~\cite{niu2024wavelet}, basic deep learning~\cite{zhao2025zeroforce}, or mathematical observers~\cite{tonti2024eso}, this work systematically benchmarks five next-generation architectures originally designed for computer vision: \ac{tcn}, ConvNeXt~1D, MLP-Mixer~1D, Transformer~1D and InceptionTime, adapted to one-dimensional time-series safety classification under identical training and evaluation conditions. To further improve prediction reliability, \ac{tta} is applied at inference time, a technique that remains virtually unexplored in the robotic collision literature despite its proven benefits in other domains~\cite{fang2024multivariate}. Finally, temporal debouncing post-processing strategy is adopted, which uses three-tap median filtering with the best threshold to resolve the false alarms versus productivity dilemma. This way, the number of false alarms is decreased by 87.5\%, while the accuracy of threat detection remains above 95\%. The experiments are performed with strict five-fold stratified cross-validation on more than 69,000 windows gathered from 60 individuals, thus giving statistically robust evidence not achievable via digital twins~\cite{an2024digitaltwin} alone.
+This letter addresses these gaps by proposing a deep learning pipeline that operates on wearable \ac{imu} data collected during physical \ac{hrc}. Rather than relying on six-dimensional force sensors~\cite{wang2025sixdof} or external cameras~\cite{hoang2024grasp}, the pipeline introduces a \ac{gpu}-accelerated kinematic feature expansion that computes velocity and acceleration on the fly, augmenting the 65-channel \ac{imu} input to 195 spatio-temporal features and thereby encoding physical dynamics without additional hardware cost. Where recent collision detection studies have relied on wavelet networks~\cite{niu2024wavelet}, basic deep learning~\cite{zhao2025zeroforce}, or mathematical observers~\cite{tonti2024eso}, this work systematically benchmarks five next-generation architectures originally designed for computer vision: \ac{tcn}, ConvNeXt~1D, MLP-Mixer~1D, Transformer~1D and InceptionTime, adapted to one-dimensional time-series safety classification under identical training and evaluation conditions. To further improve prediction reliability, \ac{tta} is applied at inference time, a technique that remains virtually unexplored in the robotic collision literature despite its proven benefits in other domains~\cite{fang2024multivariate}. Finally, a temporal debouncing post-processing strategy is adopted, which uses three-tap median filtering with the best threshold to resolve the false alarms versus productivity dilemma. This way, the number of false alarms is decreased by 87.5\%, while the accuracy of threat detection remains above 95\%. The experiments are performed with strict five-fold stratified cross-validation on more than 69,000 windows gathered from 60 individuals, thus giving statistically robust evidence not achievable via digital twins~\cite{an2024digitaltwin} alone.
 
 The rest of this letter is structured in the following manner. Section~\ref{sec:related} considers prior works related to the problem of collision detection and safety monitoring in HRC. Section~\ref{sec:methodology} covers the methodology of this study, including pre-processing, model architectures, training strategy, and post-processing. Section~\ref{sec:results} presents experimental results and discussion. Section~\ref{sec:conclusion} concludes with implications and future directions.
 
@@ -129,7 +121,7 @@ Motion data were acquired at a sampling rate of 200~Hz using five wireless APDM 
 
 \begin{figure}[!t]
     \centering
-    \includegraphics[width=\columnwidth]{"ChatGPT Image Jul 29, 2026, 04_01_33 PM.png"}
+    \includegraphics[width=\columnwidth]{fig_mimu_placement.png}
     \caption{Anatomical placement of the five wireless MIMU sensors during the DASIG data collection experiments.}
     \label{fig:sensorplacement}
 \end{figure}
@@ -298,8 +290,7 @@ The experimental evaluation with five-fold cross-validation on the DASIG dataset
 
 In the future, the research plans further testing of the pipeline on unseen subjects, lightweight architectures analysis, and embedded implementation of the models to meet the requirements of real-time safety monitoring according to the ISO/TS 15066.
 
-\section*{Acknowledgment}
-This research received no specific grant from any funding agency in the public, commercial, or not-for-profit sectors. The datasets analyzed during the current study are available from the corresponding author on reasonable request.
+% Acknowledgment removed for double-anonymous review (IEEE RAS Rule 2)
 
 \bibliographystyle{IEEEtran}
 \bibliography{cobot_safety_references}

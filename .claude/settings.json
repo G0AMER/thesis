@@ -1,0 +1,52 @@
+{
+  "env": {
+    "ANTHROPIC_BASE_URL": "http://localhost:4141",
+    "ANTHROPIC_AUTH_TOKEN": "dummy",
+    "ANTHROPIC_MODEL": "gpt-4o",
+    "ANTHROPIC_SMALL_FAST_MODEL": "gpt-4o-mini-2024-07-18",
+    "CLAUDE_CODE_ENABLE_GATEWAY_MODEL_DISCOVERY": "1",
+    "ANTHROPIC_DEFAULT_FABLE_MODEL": "gpt-4o",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "gpt-4o",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "gpt-4o",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "gpt-4o-mini-2024-07-18",
+    "CLAUDE_CODE_AUTO_MODE_SERVER": "0",
+    "CLAUDE_CODE_USE_VERTEX": "0",
+    "CLAUDE_CODE_USE_BEDROCK": "0",
+    "DISABLE_NON_ESSENTIAL_MODEL_CALLS": "1",
+    "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
+    "CLAUDE_CODE_ATTRIBUTION_HEADER": "0",
+    "CLAUDE_CODE_ENABLE_PROMPT_SUGGESTION": "false",
+    "CLAUDE_CODE_DISABLE_TERMINAL_TITLE": "true",
+    "CLAUDE_CODE_ENABLE_AWAY_SUMMARY": "0",
+    "CLAUDE_CODE_TOTAL_TOKENS_REMINDER": "off",
+    "CLAUDE_CODE_EFFORT_LEVEL": "max",
+    "MCP_CONNECT_TIMEOUT_MS": "20000"
+  },
+  "alwaysThinkingEnabled": true,
+  "showThinkingSummaries": true,
+
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash|Grep",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/home/g0amer/Desktop/thesis/03_Incremental_Learning_FLAIR/.venv/bin/graphify hook-guard search",
+            "timeout": 10
+          }
+        ]
+      },
+      {
+        "matcher": "Read|Glob",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/home/g0amer/Desktop/thesis/03_Incremental_Learning_FLAIR/.venv/bin/graphify hook-guard read",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}

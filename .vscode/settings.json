@@ -1,3 +1,7 @@
 {
-    "python.analysis.autoImportCompletions": true
+    "python.analysis.autoImportCompletions": true,
+    "latex-workshop.latex.autoBuild.run": "onSave",
+    // "[latex]": {
+    //     "files.autoSave": "off"
+    // }
 }

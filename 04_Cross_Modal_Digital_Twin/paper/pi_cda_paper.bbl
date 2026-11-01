@@ -1,0 +1,102 @@
+\begin{thebibliography}{16}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\href}[2]{#2}
+\providecommand{\path}[1]{#1}
+\providecommand{\DOIprefix}{doi:}
+\providecommand{\ArXivprefix}{arXiv:}
+\providecommand{\URLprefix}{URL: }
+\providecommand{\Pubmedprefix}{pmid:}
+\providecommand{\doi}[1]{\href{http://dx.doi.org/#1}{\path{#1}}}
+\providecommand{\Pubmed}[1]{\href{pmid:#1}{\path{#1}}}
+\providecommand{\bibinfo}[2]{#2}
+\ifx\xfnm\relax \def\xfnm[#1]{\unskip,\space#1}\fi
+%Type = Article
+\bibitem[{Chen et~al.(2025)Chen, She, Wu, Chen and Li}]{chen2025hypergraph}
+\bibinfo{author}{Chen, D.}, \bibinfo{author}{She, K.}, \bibinfo{author}{Wu, P.}, \bibinfo{author}{Chen, M.}, \bibinfo{author}{Li, C.}, \bibinfo{year}{2025}.
+\newblock \bibinfo{title}{Dual-branch differential channel hypergraph convolutional network for human skeleton-based action recognition}.
+\newblock \bibinfo{journal}{PLOS ONE} \bibinfo{volume}{20}, \bibinfo{pages}{e0332066}.
+\newblock \DOIprefix\doi{10.1371/journal.pone.0332066}.
+%Type = Misc
+\bibitem[{Dallel et~al.(2023a)Dallel, Havard, Baudry and Dupuis}]{dallel2023dataset}
+\bibinfo{author}{Dallel, M.}, \bibinfo{author}{Havard, V.}, \bibinfo{author}{Baudry, D.}, \bibinfo{author}{Dupuis, Y.}, \bibinfo{year}{2023}a.
+\newblock \bibinfo{title}{Inhard-dt -- industrial human action recognition dataset -- digital twin}.
+\newblock \URLprefix \url{https://zenodo.org/records/7644247}, \DOIprefix\doi{10.5281/zenodo.7644247}.
+%Type = Misc
+\bibitem[{Dallel et~al.(2020)Dallel, Havard, Baudry and Savatier}]{dallel2020inhard}
+\bibinfo{author}{Dallel, M.}, \bibinfo{author}{Havard, V.}, \bibinfo{author}{Baudry, D.}, \bibinfo{author}{Savatier, X.}, \bibinfo{year}{2020}.
+\newblock \bibinfo{title}{Inhard -- industrial human action recognition dataset in the context of industrial collaborative robotics}.
+\newblock \URLprefix \url{https://zenodo.org/records/4003541}, \DOIprefix\doi{10.5281/zenodo.4003541}.
+%Type = Article
+\bibitem[{Dallel et~al.(2023b)Dallel, Havard, Dupuis and Baudry}]{dallel2023digital}
+\bibinfo{author}{Dallel, M.}, \bibinfo{author}{Havard, V.}, \bibinfo{author}{Dupuis, Y.}, \bibinfo{author}{Baudry, D.}, \bibinfo{year}{2023}b.
+\newblock \bibinfo{title}{Digital twin of an industrial workstation: A novel method of an auto-labeled data generator using virtual reality for human action recognition in the context of human--robot collaboration}.
+\newblock \bibinfo{journal}{Engineering Applications of Artificial Intelligence} \bibinfo{volume}{118}, \bibinfo{pages}{105655}.
+\newblock \DOIprefix\doi{10.1016/j.engappai.2022.105655}.
+%Type = Article
+\bibitem[{He et~al.(2024)He, Shi, Liu and Li}]{he2024physicsinformed}
+\bibinfo{author}{He, C.}, \bibinfo{author}{Shi, H.}, \bibinfo{author}{Liu, X.}, \bibinfo{author}{Li, J.}, \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{Interpretable physics-informed domain adaptation paradigm for cross-machine transfer diagnosis}.
+\newblock \bibinfo{journal}{Knowledge-Based Systems} \DOIprefix\doi{10.1016/j.knosys.2024.111499}.
+%Type = Article
+\bibitem[{Hinojosa~Lee et~al.(2024)Hinojosa~Lee, Braet and Springael}]{lee2024f1metrics}
+\bibinfo{author}{Hinojosa~Lee, M.C.}, \bibinfo{author}{Braet, J.}, \bibinfo{author}{Springael, J.}, \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{Performance metrics for multilabel emotion classification: Comparing micro, macro, and weighted f1-scores}.
+\newblock \bibinfo{journal}{Applied Sciences} \bibinfo{volume}{14}, \bibinfo{pages}{9863}.
+\newblock \DOIprefix\doi{10.3390/app14219863}.
+%Type = Article
+\bibitem[{Li et~al.(2024)Li, Pan, Tan, Toh and Zhou}]{li2024fixmatchanalysis}
+\bibinfo{author}{Li, J.}, \bibinfo{author}{Pan, J.}, \bibinfo{author}{Tan, V.Y.F.}, \bibinfo{author}{Toh, K.C.}, \bibinfo{author}{Zhou, P.}, \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{Towards understanding why fixmatch generalizes better than supervised learning}.
+\newblock \bibinfo{journal}{arXiv preprint arXiv:2410.11206} \DOIprefix\doi{10.48550/arXiv.2410.11206}.
+%Type = Article
+\bibitem[{Liu et~al.(2025)Liu, Liu, Hu, Ren, Yuan, Lin and Wen}]{liu2025skeletonreview}
+\bibinfo{author}{Liu, M.}, \bibinfo{author}{Liu, H.}, \bibinfo{author}{Hu, Q.}, \bibinfo{author}{Ren, B.}, \bibinfo{author}{Yuan, J.}, \bibinfo{author}{Lin, J.}, \bibinfo{author}{Wen, J.}, \bibinfo{year}{2025}.
+\newblock \bibinfo{title}{3d skeleton-based action recognition: A review}.
+\newblock \bibinfo{journal}{arXiv preprint arXiv:2506.00915} \DOIprefix\doi{10.48550/arXiv.2506.00915}.
+%Type = Article
+\bibitem[{Lu et~al.(2024)Lu, Yang, Lu and Liu}]{lu2024crossmodalfewshot}
+\bibinfo{author}{Lu, M.}, \bibinfo{author}{Yang, S.}, \bibinfo{author}{Lu, X.}, \bibinfo{author}{Liu, J.}, \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{Cross-modal contrastive pre-training for few-shot skeleton action recognition}.
+\newblock \bibinfo{journal}{IEEE Transactions on Circuits and Systems for Video Technology} \bibinfo{volume}{34}, \bibinfo{pages}{9798--9807}.
+\newblock \DOIprefix\doi{10.1109/TCSVT.2024.3402952}.
+%Type = Inproceedings
+\bibitem[{Mekruksavanich et~al.(2025)Mekruksavanich, Hnoohom, Phaphan and Jitpattanakul}]{mekruksavanich2025validation}
+\bibinfo{author}{Mekruksavanich, S.}, \bibinfo{author}{Hnoohom, N.}, \bibinfo{author}{Phaphan, W.}, \bibinfo{author}{Jitpattanakul, A.}, \bibinfo{year}{2025}.
+\newblock \bibinfo{title}{A comparative study of validation methods for sensor-based human activity recognition using deep learning models}, in: \bibinfo{booktitle}{2025 Joint International Conference on Digital Arts, Media and Technology with ECTI Northern Section Conference on Electrical, Electronics, Computer and Telecommunications Engineering (ECTI DAMT \& NCON)}, pp. \bibinfo{pages}{686--691}.
+\newblock \DOIprefix\doi{10.1109/ECTIDAMTNCON64748.2025.10962074}.
+%Type = Inproceedings
+\bibitem[{Rothert et~al.(2024)Rothert, Lang, Seidel and Hanses}]{rothert2024simtoreal}
+\bibinfo{author}{Rothert, J.J.}, \bibinfo{author}{Lang, S.}, \bibinfo{author}{Seidel, M.}, \bibinfo{author}{Hanses, M.}, \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{Sim-to-real transfer for a robotics task: Challenges and lessons learned}, in: \bibinfo{booktitle}{2024 IEEE 29th International Conference on Emerging Technologies and Factory Automation (ETFA)}.
+\newblock \DOIprefix\doi{10.1109/ETFA61755.2024.10711073}.
+%Type = Article
+\bibitem[{Salierno et~al.(2024)Salierno, Leonardi and Cabri}]{salierno2024syntheticdt}
+\bibinfo{author}{Salierno, G.}, \bibinfo{author}{Leonardi, L.}, \bibinfo{author}{Cabri, G.}, \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{A big data architecture for digital twin creation of railway signals based on synthetic data}.
+\newblock \bibinfo{journal}{IEEE Open Journal of Intelligent Transportation Systems} \bibinfo{volume}{5}, \bibinfo{pages}{342--359}.
+\newblock \DOIprefix\doi{10.1109/OJITS.2024.3412820}.
+%Type = Article
+\bibitem[{Valentini et~al.(2025)Valentini, Mengoni and Peruzzini}]{valentini2025digital}
+\bibinfo{author}{Valentini, L.}, \bibinfo{author}{Mengoni, M.}, \bibinfo{author}{Peruzzini, M.}, \bibinfo{year}{2025}.
+\newblock \bibinfo{title}{Digital toolkit for human-centered machine design: Development and testing of an innovative system integrating virtual reality and hmi digital prototypes}.
+\newblock \bibinfo{journal}{International Journal of Advanced Manufacturing Technology} \bibinfo{volume}{136}, \bibinfo{pages}{415--432}.
+\newblock \DOIprefix\doi{10.1007/s00170-025-16943-4}.
+%Type = Inproceedings
+\bibitem[{Wang et~al.(2025)Wang, Ma, Kuang and Gui}]{wang2025heterogeneous}
+\bibinfo{author}{Wang, H.}, \bibinfo{author}{Ma, X.}, \bibinfo{author}{Kuang, J.}, \bibinfo{author}{Gui, J.}, \bibinfo{year}{2025}.
+\newblock \bibinfo{title}{Heterogeneous skeleton-based action representation learning}, in: \bibinfo{booktitle}{Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition}, pp. \bibinfo{pages}{19154--19164}.
+\newblock \URLprefix \url{https://openaccess.thecvf.com/content/CVPR2025/html/Wang_Heterogeneous_Skeleton-Based_Action_Representation_Learning_CVPR_2025_paper.html}, \DOIprefix\doi{10.1109/CVPR52734.2025.01784}.
+%Type = Article
+\bibitem[{Yang et~al.(2024)Yang, Liao, Zhao, Yan, Huang, Zhao, Xiong and Liu}]{yang2024domainhar}
+\bibinfo{author}{Yang, J.}, \bibinfo{author}{Liao, T.}, \bibinfo{author}{Zhao, J.}, \bibinfo{author}{Yan, Y.}, \bibinfo{author}{Huang, Y.C.}, \bibinfo{author}{Zhao, Z.}, \bibinfo{author}{Xiong, J.}, \bibinfo{author}{Liu, C.}, \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{Domain adaptation for sensor-based human activity recognition with a graph convolutional network}.
+\newblock \bibinfo{journal}{Mathematics} \bibinfo{volume}{12}, \bibinfo{pages}{556}.
+\newblock \DOIprefix\doi{10.3390/math12040556}.
+%Type = Article
+\bibitem[{Zhang et~al.(2025)Zhang, Cai, Liu and Wang}]{zhang2025skeletonx}
+\bibinfo{author}{Zhang, Z.}, \bibinfo{author}{Cai, W.}, \bibinfo{author}{Liu, Q.}, \bibinfo{author}{Wang, Y.}, \bibinfo{year}{2025}.
+\newblock \bibinfo{title}{Skeletonx: Data-efficient skeleton-based action recognition via cross-sample feature aggregation}.
+\newblock \bibinfo{journal}{IEEE Transactions on Multimedia} \DOIprefix\doi{10.1109/TMM.2025.3618561}.
+
+\end{thebibliography}

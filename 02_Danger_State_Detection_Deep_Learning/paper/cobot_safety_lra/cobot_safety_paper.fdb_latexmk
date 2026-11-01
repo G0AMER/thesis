@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex cobot_safety_paper"] 1788795407.60253 "cobot_safety_paper.aux" "cobot_safety_paper.bbl" "cobot_safety_paper" 1788795464.46377 0
+["bibtex cobot_safety_paper"] 1790256965.08045 "cobot_safety_paper.aux" "cobot_safety_paper.bbl" "cobot_safety_paper" 1790256970.16269 0
   "./cobot_safety_references.bib" 1788789029.41259 8029 24f41a285625a81999dd2fd177f9b23e ""
   "/usr/local/texlive/2025/texmf-dist/bibtex/bst/ieeetran/IEEEtran.bst" 1440712899 57748 7c8250ecf02814ce6ddc0cdbb63df1dd ""
-  "cobot_safety_paper.aux" 1788795464.16765 6623 0829f8220e4278a3c36af23a587eb947 "pdflatex"
+  "cobot_safety_paper.aux" 1790256969.89997 6623 6c552ddfe9226ff232afac7b007483d1 "pdflatex"
   (generated)
   "cobot_safety_paper.bbl"
   "cobot_safety_paper.blg"
   (rewritten before read)
-["pdflatex"] 1788795463.67075 "/home/g0amer/Desktop/thesis/IEEE-conference-template-062824/cobot_safety_lra/cobot_safety_paper.tex" "cobot_safety_paper.pdf" "cobot_safety_paper" 1788795464.46399 0
-  "/home/g0amer/Desktop/thesis/IEEE-conference-template-062824/cobot_safety_lra/cobot_safety_paper.tex" 1788795463.91864 36064 2532585d9530d01504d5ae7a101364c0 ""
+["pdflatex"] 1790256969.45488 "/home/g0amer/Desktop/thesis/02_Danger_State_Detection_Deep_Learning/paper/cobot_safety_lra/cobot_safety_paper.tex" "cobot_safety_paper.pdf" "cobot_safety_paper" 1790256970.16288 0
+  "/home/g0amer/Desktop/thesis/02_Danger_State_Detection_Deep_Learning/paper/cobot_safety_lra/cobot_safety_paper.tex" 1790256947.33077 35098 492ea2e7760f725672048d2081d5297b ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm" 1136768653 2172 fd0c924230362ff848a33632ed45dc23 ""
@@ -108,15 +108,15 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1768497287 5541377 0af08d58b046ada1f2a2c7d4825ab417 ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1768497408 3635704 9bfa1364c9587efc6339ddf028f6673a ""
   "/usr/local/texlive/2025/texmf.cnf" 1768497283.26493 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
-  "ChatGPT Image Jul 29, 2026, 04_01_33 PM.png" 1788788570.63627 1262098 2d5d3e1da0ad76bcda0dd0c0a46b61c5 ""
   "ConvNeXt_1D_cm.png" 1788788570.63427 35990 52cbda1cbe700ce939ea56d4683f8ef7 ""
   "IEEEtran.cls" 1781705520 288451 2ca944e3837f3f55e325ddfd2f1a2479 ""
-  "cobot_safety_paper.aux" 1788795464.16765 6623 0829f8220e4278a3c36af23a587eb947 "pdflatex"
-  "cobot_safety_paper.bbl" 1788795407.70862 6335 98d1de8bad27da21e560bc455ebe99d5 "bibtex cobot_safety_paper"
-  "cobot_safety_paper.tex" 1788795463.91864 36064 2532585d9530d01504d5ae7a101364c0 ""
+  "cobot_safety_paper.aux" 1790256969.89997 6623 6c552ddfe9226ff232afac7b007483d1 "pdflatex"
+  "cobot_safety_paper.bbl" 1790256965.18051 6335 98d1de8bad27da21e560bc455ebe99d5 "bibtex cobot_safety_paper"
+  "cobot_safety_paper.tex" 1790256947.33077 35098 492ea2e7760f725672048d2081d5297b ""
   "fig1_pipeline_overview.pdf" 1788795398.90313 71782 2acd497694fd0de313569c56380030a2 ""
   "fig2_data_pipeline.pdf" 1788795398.98313 104422 da0fc8aee1d31d352b93c3393284027e ""
   "fig5_evaluation_postprocessing.pdf" 1788795399.05114 64871 86ec055122063565d0617f8fa6b718ee ""
+  "fig_mimu_placement.png" 1790256072.95615 1262098 2d5d3e1da0ad76bcda0dd0c0a46b61c5 ""
   (generated)
   "cobot_safety_paper.aux"
   "cobot_safety_paper.log"

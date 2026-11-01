@@ -1,0 +1,25 @@
+{
+  "exp01_zero_shot": {
+    "accuracy": 0.6211538461538462,
+    "macro_f1": 0.6139465550275821
+  },
+  "exp02_oracle": {
+    "accuracy": 0.7115384615384616,
+    "macro_f1": 0.7169458409336952,
+    "domain_gap_delta_f1": 0.10299928590611307
+  },
+  "exp09_backbone_comparison": {
+    "ctrgcn": {
+      "params": 375872,
+      "latency_ms": 3.908114433288574,
+      "zero_shot_acc": 0.6211538461538462,
+      "zero_shot_f1": 0.6139465550275821
+    },
+    "stgcn": {
+      "params": 867725,
+      "latency_ms": 1.199336051940918,
+      "zero_shot_acc": 0.6942307692307692,
+      "zero_shot_f1": 0.6918581830774132
+    }
+  }
+}

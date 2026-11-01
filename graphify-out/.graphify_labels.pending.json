@@ -1,0 +1,19 @@
+{
+  "1": "The work explained in simple terms",
+  "3": "splits.py",
+  "5": "DERPlusPlus",
+  "6": "ablations.py",
+  "9": "experiments.py",
+  "15": "numpy",
+  "21": "numpy",
+  "24": "JointTraining",
+  "25": "load_trial",
+  "27": "DomainDiscriminator",
+  "29": "EWC",
+  "30": "pathlib",
+  "33": "LwF",
+  "36": "argparse",
+  "45": "dasig_pipeline.py",
+  "46": "harmonic_pipeline.py",
+  "255": "test_harmonic_loader.py"
+}

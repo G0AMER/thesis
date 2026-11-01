@@ -1,0 +1,99 @@
+{
+ "train_config": {
+  "model": "ctrgcn",
+  "joint_set": "body19",
+  "features": "joint",
+  "window": 64,
+  "canon_center": "first_frame",
+  "canon_yaw": "first_frame",
+  "canon_scale": "torso",
+  "source_aug": "weak",
+  "freeze_left": false,
+  "epochs": 50,
+  "batch_size": 64,
+  "lr": 0.05,
+  "weight_decay": 0.0004,
+  "momentum": 0.9,
+  "warmup_epochs": 5,
+  "dropout": 0.0,
+  "num_workers": 4,
+  "amp": true,
+  "device": "cuda",
+  "lambda_mmd": 0.5,
+  "lambda_topo": 0.1,
+  "lambda_coral": 1.0,
+  "lambda_dann": 1.0,
+  "fixmatch_threshold": 0.9,
+  "lambda_fixmatch": 1.0,
+  "adapt_epochs": 30,
+  "adapt_lr": 0.01,
+  "fewshot_ks": [
+   20,
+   50
+  ],
+  "fewshot_steps": 300,
+  "fewshot_lr": 0.01,
+  "fewshot_inits": [
+   "picda",
+   "joint_fixmatch"
+  ],
+  "lambda_proto": 1.0,
+  "n_folds": 4,
+  "seeds": [
+   0
+  ],
+  "save_features": true,
+  "log_every": 200,
+  "extra": {}
+ },
+ "splits": {
+  "real_test_folds": [
+   [
+    "P01",
+    "P05",
+    "P09",
+    "P13"
+   ],
+   [
+    "P02",
+    "P06",
+    "P10",
+    "P14"
+   ],
+   [
+    "P03",
+    "P07",
+    "P11",
+    "P15"
+   ],
+   [
+    "P04",
+    "P08",
+    "P12",
+    "P16"
+   ]
+  ],
+  "dt_test_folds": [
+   [
+    "Alexandra",
+    "Fabrice",
+    "Nicolas"
+   ],
+   [
+    "Anne-Laure",
+    "Jordan",
+    "Thibaud"
+   ],
+   [
+    "David",
+    "Marie",
+    "Vincent"
+   ],
+   [
+    "Elodie",
+    "Marwen",
+    "Zaher"
+   ]
+  ]
+ }
+}

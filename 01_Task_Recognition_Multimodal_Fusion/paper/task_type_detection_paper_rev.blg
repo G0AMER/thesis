@@ -1,46 +1,46 @@
 This is BibTeX, Version 0.99d (TeX Live 2025)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: task_type_detection_paper_rev.aux
-The style file: splncs04.bst
+The style file: apalike.bst
 Database file #1: task_type_detection_references.bib
 You've used 19 entries,
-            2850 wiz_defined-function locations,
-            722 strings with 9739 characters,
-and the built_in function-call counts, 13500 in all, are:
-= -- 1130
-> -- 493
-< -- 29
-+ -- 204
+            1935 wiz_defined-function locations,
+            582 strings with 8519 characters,
+and the built_in function-call counts, 9440 in all, are:
+= -- 891
+> -- 512
+< -- 7
++ -- 189
 - -- 182
-* -- 898
-:= -- 1706
-add.period$ -- 42
+* -- 847
+:= -- 1614
+add.period$ -- 58
 call.type$ -- 19
-change.case$ -- 160
-chr.to.int$ -- 0
+change.case$ -- 186
+chr.to.int$ -- 18
 cite$ -- 19
-duplicate$ -- 1146
-empty$ -- 1086
-format.name$ -- 201
-if$ -- 2944
-int.to.chr$ -- 0
-int.to.str$ -- 19
-missing$ -- 235
-newline$ -- 63
-num.names$ -- 38
-pop$ -- 421
+duplicate$ -- 332
+empty$ -- 603
+format.name$ -- 205
+if$ -- 1847
+int.to.chr$ -- 2
+int.to.str$ -- 0
+missing$ -- 19
+newline$ -- 98
+num.names$ -- 57
+pop$ -- 184
 preamble$ -- 1
-purify$ -- 129
+purify$ -- 186
 quote$ -- 0
-skip$ -- 403
+skip$ -- 242
 stack$ -- 0
-substring$ -- 756
-swap$ -- 722
-text.length$ -- 29
+substring$ -- 624
+swap$ -- 62
+text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 76
+type$ -- 114
 warning$ -- 0
-while$ -- 100
-width$ -- 21
-write$ -- 228
+while$ -- 69
+width$ -- 0
+write$ -- 248

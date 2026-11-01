@@ -1,0 +1,703 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Le cobot qui apprend sans oublier</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Mono:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --paper: #e7edf4;
+        --stage: #fff;
+        --wash: #f4f8fc;
+        --rule: #dbe4ee;
+        --ink: #0d1b2a;
+        --muted: #526477;
+        --accent: #14568f;
+        --accent-2: #2a78d6;
+        --green: #0d8c69;
+        --orange: #eb6834;
+        --sans: "IBM Plex Sans", sans-serif;
+        --cond: "IBM Plex Sans Condensed", sans-serif;
+        --mono: "IBM Plex Mono", monospace;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        height: 100%;
+      }
+      body {
+        background: radial-gradient(120% 90% at 50% 0%, var(--paper), #dce5ef);
+        color: var(--ink);
+        font-family: var(--sans);
+        overflow: hidden;
+      }
+      #stage {
+        position: relative;
+        width: 1280px;
+        height: 720px;
+        margin: auto;
+        top: 50%;
+        transform: translateY(-50%) scale(var(--scale, 1));
+        transform-origin: center center;
+        background: var(--stage);
+        box-shadow: 0 12px 40px rgba(13, 27, 42, 0.15);
+        overflow: hidden;
+      }
+      #progress {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: var(--rule);
+        z-index: 4;
+      }
+      #progress i {
+        display: block;
+        height: 100%;
+        width: 20%;
+        background: linear-gradient(90deg, var(--accent), var(--accent-2));
+        transition: width 0.35s ease;
+      }
+      .slide {
+        display: none;
+        position: absolute;
+        inset: 0;
+        padding: 56px 70px 62px;
+        flex-direction: column;
+      }
+      .slide.active {
+        display: flex;
+      }
+      .slide.active > * {
+        animation: rise 0.4s ease both;
+      }
+      @keyframes rise {
+        from {
+          opacity: 0;
+          transform: translateY(12px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      .eyebrow {
+        margin: 0 0 15px;
+        color: var(--accent);
+        font: 700 18px var(--cond);
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+      }
+      .eyebrow::before {
+        content: "";
+        display: inline-block;
+        width: 23px;
+        height: 2px;
+        margin: 0 10px 5px 0;
+        background: var(--accent);
+      }
+      h1 {
+        max-width: 700px;
+        margin: 0;
+        font-size: 72px;
+        line-height: 0.99;
+        letter-spacing: -0.03em;
+      }
+      h2 {
+        max-width: 850px;
+        margin: 0;
+        font-size: 47px;
+        line-height: 1.06;
+        letter-spacing: -0.025em;
+      }
+      h3 {
+        margin: 0 0 8px;
+        font: 700 16px var(--cond);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+      p {
+        margin: 0;
+        line-height: 1.45;
+      }
+      .lede {
+        max-width: 680px;
+        margin-top: 23px;
+        color: var(--muted);
+        font-size: 23px;
+        line-height: 1.4;
+      }
+      .small {
+        color: var(--muted);
+        font-size: 16px;
+      }
+      .body {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        min-height: 0;
+      }
+      .cols {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+        width: 100%;
+      }
+      .cols.wide-left {
+        grid-template-columns: 1.15fr 0.85fr;
+      }
+      .panel {
+        padding: 21px 23px;
+        border: 1px solid var(--rule);
+        border-radius: 10px;
+        background: var(--wash);
+      }
+      .panel.accent {
+        border-color: #c9dcf0;
+        background: #e5eff9;
+      }
+      .title {
+        display: none;
+        grid-template-columns: 1.15fr 0.85fr;
+        height: 100%;
+        padding: 0;
+      }
+      .title.active {
+        display: grid;
+      }
+      .title-main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 50px 40px 60px 70px;
+      }
+      .title-band {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 62px 48px;
+        color: #fff;
+        background: linear-gradient(165deg, var(--accent), #0e3f6c);
+      }
+      .logos {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding-bottom: 13px;
+        border-bottom: 1px solid var(--rule);
+        margin-bottom: 35px;
+      }
+      .logos img {
+        width: auto;
+        height: 48px;
+        object-fit: contain;
+      }
+      .logos img:first-child {
+        height: 52px;
+        max-width: 150px;
+      }
+      .logos img:nth-child(2) {
+        height: 41px;
+        max-width: 145px;
+      }
+      .logos img:nth-child(3) {
+        height: 46px;
+        max-width: 125px;
+      }
+      .title-band .label {
+        color: #a9c9e6;
+        font: 600 17px var(--cond);
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+      }
+      .title-band .promise {
+        font-size: 35px;
+        font-weight: 600;
+        line-height: 1.08;
+      }
+      .byline {
+        margin-top: 30px;
+        color: var(--muted);
+        font-size: 16px;
+      }
+      .problem-list {
+        display: grid;
+        gap: 13px;
+        width: 100%;
+      }
+      .problem {
+        display: grid;
+        grid-template-columns: 45px 1fr;
+        gap: 15px;
+        align-items: center;
+        padding: 17px 20px;
+        border-bottom: 1px solid var(--rule);
+      }
+      .problem b {
+        color: var(--orange);
+        font: 600 28px var(--mono);
+      }
+      .problem strong {
+        display: block;
+        font-size: 20px;
+      }
+      .problem span {
+        color: var(--muted);
+        font-size: 16px;
+      }
+      .flow {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        align-items: stretch;
+        width: 100%;
+      }
+      .flow-item {
+        position: relative;
+        min-height: 170px;
+        padding: 23px 20px;
+        border-top: 4px solid var(--accent-2);
+        background: var(--wash);
+      }
+      .flow-item:nth-child(2) {
+        border-color: var(--green);
+      }
+      .flow-item:nth-child(3) {
+        border-color: var(--orange);
+      }
+      .flow-item:not(:last-child)::after {
+        content: "→";
+        position: absolute;
+        right: -18px;
+        top: 67px;
+        z-index: 2;
+        color: var(--accent);
+        font-size: 27px;
+        font-weight: 600;
+      }
+      .flow-item .num {
+        color: var(--accent);
+        font: 600 14px var(--mono);
+      }
+      .flow-item strong {
+        display: block;
+        margin: 13px 0 8px;
+        font-size: 21px;
+      }
+      .flow-item span {
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.35;
+      }
+      .architecture {
+        width: 100%;
+        max-height: 350px;
+        object-fit: contain;
+      }
+      .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+        width: 100%;
+      }
+      .stat {
+        padding: 23px 20px 20px;
+        border-left: 4px solid var(--accent-2);
+        background: var(--wash);
+      }
+      .stat:nth-child(2) {
+        border-color: var(--green);
+      }
+      .stat:nth-child(3) {
+        border-color: var(--orange);
+      }
+      .stat .value {
+        font-size: 50px;
+        font-weight: 600;
+        line-height: 1;
+        letter-spacing: -0.03em;
+      }
+      .stat .label {
+        margin-top: 9px;
+        font: 700 13px var(--cond);
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      .stat .detail {
+        margin-top: 9px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+      .closing {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 45px;
+        align-items: center;
+        width: 100%;
+      }
+      .closing h2 {
+        font-size: 53px;
+      }
+      .next {
+        display: grid;
+        gap: 12px;
+      }
+      .next .item {
+        padding: 17px 20px;
+        border-left: 3px solid var(--accent);
+        background: var(--wash);
+      }
+      .next strong {
+        display: block;
+        margin-bottom: 4px;
+        font-size: 18px;
+      }
+      .next span {
+        color: var(--muted);
+        font-size: 15px;
+      }
+      footer {
+        position: absolute;
+        left: 70px;
+        right: 70px;
+        bottom: 21px;
+        display: flex;
+        justify-content: space-between;
+        padding-top: 9px;
+        border-top: 1px solid var(--rule);
+        color: var(--muted);
+        font: 12px var(--cond);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+      #controls {
+        position: fixed;
+        right: 16px;
+        bottom: 16px;
+        display: flex;
+        gap: 6px;
+        padding: 6px;
+        border: 1px solid #c2d0e0;
+        border-radius: 9px;
+        background: rgba(255, 255, 255, 0.94);
+        box-shadow: 0 4px 20px rgba(13, 27, 42, 0.14);
+      }
+      button {
+        border: 0;
+        border-radius: 6px;
+        padding: 7px 10px;
+        color: var(--ink);
+        background: transparent;
+        font: 14px var(--sans);
+        cursor: pointer;
+      }
+      button:hover {
+        background: var(--wash);
+      }
+      @media (max-aspect-ratio: 4/3) {
+        #stage {
+          --scale: min(100vw / 1280, 100vh / 720);
+        }
+      }
+      @media print {
+        body {
+          background: white;
+          overflow: visible;
+        }
+        #stage {
+          top: 0;
+          transform: none;
+          box-shadow: none;
+        }
+        .slide {
+          display: flex;
+          page-break-after: always;
+        }
+        #controls {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main
+      id="stage"
+      aria-label="Présentation de candidature au programme d'incubation"
+    >
+      <div id="progress"><i></i></div>
+
+      <section class="slide title active">
+        <div class="title-main">
+          <div class="logos">
+            <img src="assets/University of Sfax.png" alt="Université de Sfax" />
+            <img src="assets/KES.png" alt="KES International" />
+            <img
+              src="assets/LogoESMEResearchLab2.png"
+              alt="ESME Research Lab"
+            />
+          </div>
+          <p class="eyebrow">Projet d'incubation</p>
+          <h1>Le cobot qui apprend sans oublier.</h1>
+          <p class="lede">
+            Une plateforme d'intelligence embarquée pour rendre la collaboration
+            humain-robot plus sûre, plus naturelle et personnalisée.
+          </p>
+          <p class="byline">
+            <strong>Ameur Gargouri</strong> · Doctorant en collaboration
+            humain-robot
+          </p>
+        </div>
+        <div class="title-band">
+          <span class="label">Human-Robot Collaboration</span>
+          <p class="promise">
+            Un robot qui s'adapte à chaque opérateur, sans perdre ce qu'il a
+            déjà appris.
+          </p>
+          <p class="small" style="color: #d5e5f3">
+            De la recherche à un prototype déployable pour l'industrie et les
+            services d'assistance.
+          </p>
+        </div>
+      </section>
+
+      <section class="slide">
+        <p class="eyebrow">Le problème</p>
+        <h2>Les cobots sont puissants. Leur adaptation reste fragile.</h2>
+        <div class="body">
+          <div class="problem-list">
+            <div class="problem">
+              <b>01</b>
+              <div>
+                <strong>Chaque opérateur est différent</strong
+                ><span
+                  >Gestes, rythme, force et préférences changent d'une personne
+                  à l'autre.</span
+                >
+              </div>
+            </div>
+            <div class="problem">
+              <b>02</b>
+              <div>
+                <strong>Les modèles oublient</strong
+                ><span
+                  >Lorsqu'ils apprennent un nouvel utilisateur, ils peuvent
+                  dégrader les performances précédentes.</span
+                >
+              </div>
+            </div>
+            <div class="problem">
+              <b>03</b>
+              <div>
+                <strong>Le réentraînement coûte cher</strong
+                ><span
+                  >Il mobilise des données, du temps et des ressources, tout en
+                  interrompant l'évolution du système.</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer><span>Pourquoi maintenant</span><span>02 / 05</span></footer>
+      </section>
+
+      <section class="slide">
+        <p class="eyebrow">La solution</p>
+        <h2>Une intelligence qui perçoit, comprend et s'adapte en continu.</h2>
+        <div class="body">
+          <div style="width: 100%">
+            <div class="flow">
+              <div class="flow-item">
+                <span class="num">01 · PERCEVOIR</span
+                ><strong>Lire la situation</strong
+                ><span
+                  >Mouvements, capteurs inertiels et signaux
+                  physiologiques.</span
+                >
+              </div>
+              <div class="flow-item">
+                <span class="num">02 · COMPRENDRE</span
+                ><strong>Détecter l'intention et le danger</strong
+                ><span
+                  >Identifier l'état de l'opérateur et les situations à
+                  risque.</span
+                >
+              </div>
+              <div class="flow-item">
+                <span class="num">03 · S'ADAPTER</span
+                ><strong>Personnaliser le comportement</strong
+                ><span
+                  >Apprendre progressivement sans réentraîner tout le
+                  modèle.</span
+                >
+              </div>
+            </div>
+            <div
+              class="panel accent"
+              style="
+                margin-top: 24px;
+                display: flex;
+                align-items: center;
+                gap: 22px;
+              "
+            >
+              <img
+                class="architecture"
+                src="assets/flair_architecture.png"
+                alt="Architecture FLAIR"
+                style="width: 340px; height: 120px"
+              />
+              <p>
+                <strong>FLAIR</strong> combine personnalisation, mémoire
+                sélective et régularisation pour préserver les connaissances
+                utiles.
+              </p>
+            </div>
+          </div>
+        </div>
+        <footer><span>Notre proposition</span><span>03 / 05</span></footer>
+      </section>
+
+      <section class="slide">
+        <p class="eyebrow">La preuve</p>
+        <h2>Un premier résultat solide sur la collaboration humain-robot.</h2>
+        <div class="body">
+          <div style="width: 100%">
+            <div class="stat-grid">
+              <div class="stat">
+                <div class="value">0,690</div>
+                <div class="label">Précision moyenne</div>
+                <div class="detail">
+                  Meilleur résultat sur le benchmark à 10 utilisateurs.
+                </div>
+              </div>
+              <div class="stat">
+                <div class="value">0,017</div>
+                <div class="label">Oubli moyen</div>
+                <div class="detail">
+                  Les performances des utilisateurs précédents sont préservées.
+                </div>
+              </div>
+              <div class="stat">
+                <div class="value">1,3 <small>MB</small></div>
+                <div class="label">Mémoire additionnelle</div>
+                <div class="detail">
+                  1280 fois moins que le stockage complet des données.
+                </div>
+              </div>
+            </div>
+            <img
+              src="assets/all_metrics_comparison.png"
+              alt="Comparaison des performances de FLAIR"
+              style="
+                display: block;
+                width: 78%;
+                height: 215px;
+                object-fit: contain;
+                margin: 28px auto 0;
+              "
+            />
+          </div>
+        </div>
+        <footer>
+          <span>Résultats validés expérimentalement</span><span>04 / 05</span>
+        </footer>
+      </section>
+
+      <section class="slide">
+        <p class="eyebrow">Vers le produit</p>
+        <div class="body">
+          <div class="closing">
+            <div>
+              <h2>Faire du cobot un véritable collègue.</h2>
+              <p class="lede" style="font-size: 20px">
+                Nous voulons transformer ce prototype de recherche en une brique
+                logicielle intégrable aux cobots existants.
+              </p>
+            </div>
+            <div class="next">
+              <div class="item">
+                <strong>Clients ciblés</strong
+                ><span
+                  >Fabricants de robots, intégrateurs et entreprises
+                  industrielles.</span
+                >
+              </div>
+              <div class="item">
+                <strong>Prochaine étape</strong
+                ><span
+                  >Déployer un pilote sur un cas d'usage réel et mesurer
+                  sécurité, fluidité et productivité.</span
+                >
+              </div>
+              <div class="item">
+                <strong>Valeur créée</strong
+                ><span
+                  >Moins d'interruptions, une meilleure acceptation et une
+                  collaboration plus efficace.</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer>
+          <span>Ameur Gargouri · Projet d'incubation</span><span>05 / 05</span>
+        </footer>
+      </section>
+    </main>
+    <nav id="controls" aria-label="Navigation">
+      <button id="prev" title="Diapositive précédente">←</button
+      ><button id="next" title="Diapositive suivante">→</button
+      ><button id="full" title="Plein écran">⛶</button>
+    </nav>
+    <script>
+      (function () {
+        const slides = [...document.querySelectorAll(".slide")];
+        const progress = document.querySelector("#progress i");
+        let index = 0;
+        function show(next) {
+          index = Math.max(0, Math.min(slides.length - 1, next));
+          slides.forEach((slide, i) =>
+            slide.classList.toggle("active", i === index),
+          );
+          progress.style.width = `${((index + 1) / slides.length) * 100}%`;
+        }
+        document.querySelector("#prev").onclick = () => show(index - 1);
+        document.querySelector("#next").onclick = () => show(index + 1);
+        document.querySelector("#full").onclick = () =>
+          document.documentElement.requestFullscreen?.();
+        document.addEventListener("keydown", (event) => {
+          if (["ArrowRight", "PageDown", " "].includes(event.key)) {
+            event.preventDefault();
+            show(index + 1);
+          }
+          if (["ArrowLeft", "PageUp"].includes(event.key)) {
+            event.preventDefault();
+            show(index - 1);
+          }
+          if (event.key.toLowerCase() === "f")
+            document.documentElement.requestFullscreen?.();
+        });
+        function resize() {
+          const scale = Math.min(
+            window.innerWidth / 1280,
+            window.innerHeight / 720,
+          );
+          document.documentElement.style.setProperty("--scale", scale);
+        }
+        window.addEventListener("resize", resize);
+        resize();
+      })();
+    </script>
+  </body>
+</html>

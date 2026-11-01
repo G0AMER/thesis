@@ -1,0 +1,71 @@
+{
+  "exp03_baselines": {
+    "dann": {
+      "accuracy": 0.7288461538461538,
+      "macro_f1": 0.7267765524987245
+    },
+    "coral": {
+      "accuracy": 0.7788461538461539,
+      "macro_f1": 0.779998189067444
+    },
+    "mmd": {
+      "accuracy": 0.7884615384615384,
+      "macro_f1": 0.7892318637950395
+    }
+  },
+  "exp04_picda_unsupervised": {
+    "accuracy": 0.8076923076923077,
+    "macro_f1": 0.8081899658804341,
+    "per_class_f1": {
+      "Picking up a part": 1.0,
+      "Positioning a part": 0.9876543209876543,
+      "Aligning a part": 0.9,
+      "Fastening with screwdriver": 0.8571428571428571,
+      "Hammering": 0.8235294117647058,
+      "Inspecting a part": 0.8,
+      "Turning a part": 0.7560975609756098,
+      "Placing a part aside": 0.7294117647058823,
+      "Putting a part in bin": 0.7272727272727273,
+      "Idle / Waiting": 0.6666666666666666,
+      "Adjusting workstation": 0.6923076923076923,
+      "Cleaning surface": 0.7428571428571429,
+      "Discarding defective part": 0.8235294117647058
+    }
+  },
+  "exp05_few_shot": {
+    "1": {
+      "accuracy": 0.6982248520710059,
+      "macro_f1": 0.6955472369259085
+    },
+    "5": {
+      "accuracy": 0.7626373626373626,
+      "macro_f1": 0.7629712745263404
+    },
+    "10": {
+      "accuracy": 0.7615384615384615,
+      "macro_f1": 0.7596104826923104
+    }
+  },
+  "exp06_ablation": {
+    "full_picda": {
+      "accuracy": 0.8076923076923077,
+      "macro_f1": 0.8081899658804341
+    },
+    "without_feature_mmd": {
+      "accuracy": 0.7961538461538461,
+      "macro_f1": 0.7959430180849678
+    },
+    "without_topology": {
+      "accuracy": 0.7923076923076923,
+      "macro_f1": 0.7913731585007255
+    },
+    "with_velocity_mmd": {
+      "accuracy": 0.7769230769230769,
+      "macro_f1": 0.7767365155745417
+    },
+    "without_apa": {
+      "accuracy": 0.801923076923077,
+      "macro_f1": 0.801221980903091
+    }
+  }
+}
