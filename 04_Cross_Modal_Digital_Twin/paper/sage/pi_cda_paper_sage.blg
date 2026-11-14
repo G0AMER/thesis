@@ -1,0 +1,50 @@
+This is BibTeX, Version 0.99d (TeX Live 2025)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: pi_cda_paper_sage.aux
+The style file: SageV.bst
+Database file #1: references.bib
+Warning--can't use both volume and number fields in yan2018stgcn
+Warning--empty pages in yan2018stgcn
+Warning--missing publisher in sun2016deepcoral
+You've used 31 entries,
+            2484 wiz_defined-function locations,
+            750 strings with 12382 characters,
+and the built_in function-call counts, 34294 in all, are:
+= -- 3900
+> -- 468
+< -- 18
++ -- 234
+- -- 117
+* -- 2109
+:= -- 3178
+add.period$ -- 132
+call.type$ -- 31
+change.case$ -- 57
+chr.to.int$ -- 0
+cite$ -- 34
+duplicate$ -- 4139
+empty$ -- 2882
+format.name$ -- 148
+if$ -- 7537
+int.to.chr$ -- 0
+int.to.str$ -- 31
+missing$ -- 321
+newline$ -- 191
+num.names$ -- 31
+pop$ -- 1959
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 473
+stack$ -- 0
+substring$ -- 4818
+swap$ -- 822
+text.length$ -- 18
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 3
+while$ -- 222
+width$ -- 33
+write$ -- 387
+(There were 3 warnings)

@@ -74,7 +74,7 @@ def methodology() -> None:
          "30 Hz · 64-frame windows · centering · torso scaling · yaw normalization",
          "#F0F4F7", GRAY),
         ("03", "TRANSFER STRATEGIES",
-         "Zero-shot: source-only, MMD, CORAL, DANN, FixMatch, PI-CDA\n"
+         "Zero-shot: source-only, MMD, CORAL, DANN, FixMatch, TC-MMD\n"
          "Few-shot: 1, 5, 10, 20, or 50 labelled target clips per class",
          "#F5EFF8", PURPLE),
         ("04", "EVALUATION",
@@ -118,7 +118,7 @@ def zero_shot(data: dict[str, dict[str, float]]) -> None:
         ("DANN", "dann", ORANGE),
         ("CORAL", "coral", "#E69F00"),
         ("MMD", "mmd", SKY),
-        ("PI-CDA", "picda", PURPLE),
+        ("TC-MMD", "picda", PURPLE),
         ("FixMatch", "fixmatch", "#3A91C4"),
         ("Target oracle", "oracle", GREEN),
         ("Source + target", "source_plus_target", "#006B4F"),
@@ -137,7 +137,7 @@ def zero_shot(data: dict[str, dict[str, float]]) -> None:
                linestyle=(0, (4, 3)), linewidth=1)
     tick_labels = [
         "DT\nin-domain", "Source-\nonly", "DANN", "CORAL", "MMD",
-        "PI-CDA", "FixMatch", "Target\noracle", "Source +\ntarget",
+        "TC-MMD", "FixMatch", "Target\noracle", "Source +\ntarget",
     ]
     ax.set_xticks(xs, tick_labels)
     ax.set_ylim(30, 88)
@@ -159,112 +159,90 @@ def zero_shot(data: dict[str, dict[str, float]]) -> None:
 
 
 def few_shot(data: dict[str, dict[str, float]]) -> None:
+    """Label-efficiency curve: real-only training vs digital-twin-based strategies."""
     budgets = [1, 5, 10, 20, 50]
-    rows = [data[f"fewshot_k{k}_joint_proto_ft"] for k in budgets]
-    x = np.arange(len(budgets))
-    fig, axes = plt.subplots(1, 2, figsize=(7.2, 3.6), sharex=True)
-    metrics = [
-        ("f1_mean", "f1_std", BLUE, "Macro-F1"),
-        ("acc_mean", "acc_std", ORANGE, "Accuracy"),
+    series = [
+        ("Real only, from scratch", "scratch", GRAY, "s"),
+        ("Fine-tuned twin model", "source_only", SKY, "o"),
+        ("Joint + prototype", "joint_proto", PURPLE, "^"),
+        ("Joint + prototype + fine-tuning", "joint_proto_ft", BLUE, "D"),
     ]
-    for ax, (mean, std, color, title) in zip(axes, metrics):
-        ax.errorbar(
-            x, [r[mean] for r in rows], yerr=[r[std] for r in rows],
-            marker="o", markersize=5.2, linewidth=1.8, capsize=3,
-            color=color, markeredgecolor="white", markeredgewidth=.7,
-            zorder=3,
-        )
-        for xi, row in zip(x, rows):
-            ax.annotate(
-                f'{row[mean]:.1f}',
-                (xi, row[mean]),
-                xytext=(0, 8 if title == "Macro-F1" else -13),
-                textcoords="offset points",
-                ha="center", va="bottom" if title == "Macro-F1" else "top",
-                fontsize=7.5, color=TEXT,
-            )
-        ax.set_ylabel(title + " (%)")
-        ax.set_xticks(x, ["1", "5", "10", "20", "50"])
-        ax.set_ylim(35, 85)
-        ax.grid(axis="y", color=GRID, linewidth=.8)
-        ax.set_axisbelow(True)
-        ax.spines[["top", "right"]].set_visible(False)
-        ax.tick_params(length=0, pad=4)
-    axes[0].axhline(data["source_only"]["f1_mean"], color=GRAY,
-                    linestyle=(0, (4, 3)), linewidth=1)
-    axes[0].axhline(data["oracle"]["f1_mean"], color=GREEN,
-                    linestyle=(0, (4, 3)), linewidth=1)
-    axes[0].text(4.15, data["source_only"]["f1_mean"] + 1.4,
-                 "Source-only", fontsize=6.8, color=GRAY,
-                 ha="right", va="bottom")
-    axes[0].text(4.15, data["oracle"]["f1_mean"] + 1.4,
-                 "Target oracle", fontsize=6.8, color=GREEN,
-                 ha="right", va="bottom")
-    axes[0].set_ylabel("Score (%)")
-    axes[1].set_ylabel("Score (%)")
-    fig.supxlabel("Labelled target clips per class", y=.02, fontsize=9)
-    fig.text(.5, .105,
-             "Points show means; error bars show ±1 standard deviation across 12 runs.",
-             ha="center", va="center", fontsize=7.2, color="#606A73")
-    fig.subplots_adjust(left=.10, right=.98, top=.88, bottom=.20, wspace=.20)
+    fig, ax = plt.subplots(figsize=(7.2, 4.0))
+    for label, key, color, marker in series:
+        rows = [data[f"fewshot_k{k}_{key}"] for k in budgets]
+        ax.errorbar(budgets, [r["f1_mean"] for r in rows], yerr=[r["f1_std"] for r in rows],
+                    marker=marker, markersize=5.2, linewidth=1.8, capsize=3, color=color,
+                    markeredgecolor="white", markeredgewidth=.7, label=label, zorder=3)
+    for key, color, text in [("oracle", GREEN, "Target oracle, all labels"),
+                             ("source_only", ORANGE, "Zero-shot source-only")]:
+        ax.axhline(data[key]["f1_mean"], color=color, linestyle=(0, (4, 3)), linewidth=1)
+        ax.text(52, data[key]["f1_mean"] + 1.0, text, fontsize=7.2, color=color, ha="right", va="bottom")
+    ax.set_xscale("log")
+    ax.set_xticks(budgets, [str(k) for k in budgets])
+    ax.minorticks_off()
+    ax.set_xlabel("Labelled target clips per class")
+    ax.set_ylabel("Macro-F1 (%)")
+    ax.set_ylim(0, 85)
+    ax.grid(axis="y", color=GRID, linewidth=.8)
+    ax.set_axisbelow(True)
+    ax.spines[["top", "right"]].set_visible(False)
+    ax.legend(loc="lower right", fontsize=7.8, frameon=False)
+    fig.tight_layout()
     save(fig, "few_shot")
 
 
-def initializations(data: dict[str, dict[str, float]]) -> None:
-    budgets = [1, 5, 10, 20, 50]
-    strategies = [
-        ("Training from scratch", "scratch"),
-        ("Source-only", "source_only"),
-        ("PI-CDA", "picda"),
-        ("Joint source–target", "joint"),
-        ("Joint + FixMatch", "joint_fixmatch"),
-        ("Joint + prototype", "joint_proto"),
-        ("Joint prototype fine-tuning", "joint_proto_ft"),
+def gap() -> None:
+    """Facing direction and annotated clip duration, stacked vertically for page width."""
+    import pandas as pd
+    index = pd.read_csv(ROOT / "data/processed_v2/index.csv")
+    index = index[index.status == "ok"]
+    desc = pd.read_csv(ROOT / "output_v2/gap/descriptors.csv")
+    classes = [
+        "Assemble system", "Consult sheets", "Picking in front", "Picking left",
+        "Put down component", "Put down measuring rod", "Put down screwdriver",
+        "Put down subsystem", "Take component", "Take measuring rod",
+        "Take screwdriver", "Take subsystem", "Turn sheets",
     ]
-    vals = np.array([
-        [data[f"fewshot_k{k}_{key}"]["f1_mean"] for k in budgets]
-        for _, key in strategies
-    ])
-    stds = np.array([
-        [data[f"fewshot_k{k}_{key}"]["f1_std"] for k in budgets]
-        for _, key in strategies
-    ])
-    labels = [label for label, _ in strategies]
-    y = np.arange(len(strategies))
+    domains = [("dt", "InHARD-DT", BLUE), ("real", "InHARD", ORANGE)]
+    fig, axes = plt.subplots(3, 1, figsize=(7.2, 9.0))
 
-    for col, budget in enumerate(budgets):
-        fig, ax = plt.subplots(figsize=(7.2, 3.5))
-        winner = int(vals[:, col].argmax())
-        for row in range(len(strategies)):
-            color = GREEN if row == winner else GRAY
-            ax.errorbar(
-                vals[row, col], y[row], xerr=stds[row, col],
-                fmt="o", markersize=6, capsize=3, elinewidth=1.2,
-                color=color, ecolor=color, markeredgecolor="white",
-                markeredgewidth=.7, zorder=3,
-            )
-            ax.text(vals[row, col] + stds[row, col] + 1.0, y[row],
-                    f'{vals[row, col]:.1f} ± {stds[row, col]:.1f}',
-                    va="center", fontsize=8.2, color=TEXT,
-                    weight="bold" if row == winner else "normal")
-        ax.set_xlim(0, 92)
-        ax.set_xticks([0, 20, 40, 60, 80])
-        ax.set_yticks(y, labels)
-        ax.set_ylim(-.6, len(strategies) - .4)
-        ax.invert_yaxis()
-        ax.grid(axis="x", color=GRID, linewidth=.7)
+    ax = axes[0]
+    for key, label, color in domains:
+        ax.hist(desc.loc[desc.domain == key, "facing_yaw_deg"], bins=72, range=(-180, 180),
+                alpha=.65, color=color, label=label)
+    ax.set_xlabel("First-frame facing direction (deg)")
+    ax.set_ylabel("Clips")
+    ax.set_title("(a) Facing direction of all clips", loc="left")
+    ax.legend(frameon=False)
+
+    ax = axes[1]
+    med = desc.groupby(["class_folder", "domain"]).facing_yaw_deg.median().unstack().reindex(classes)
+    x = np.arange(len(classes))
+    for off, (key, label, color) in zip((-.2, .2), domains):
+        ax.bar(x + off, med[key], width=.4, color=color, label=label)
+    short = ["Assemble", "Consult", "Pick front", "Pick left", "Put comp.", "Put rod",
+             "Put screw.", "Put subsys.", "Take comp.", "Take rod", "Take screw.",
+             "Take subsys.", "Turn sheets"]
+    ax.set_xticks(x, short, rotation=40, ha="right", rotation_mode="anchor", fontsize=8.5)
+    ax.set_ylabel("Median direction (deg)")
+    ax.set_title("(b) Median facing direction per class", loc="left")
+    ax.axhline(0, color=GRAY, linewidth=.6)
+
+    ax = axes[2]
+    dur = (index.end_s - index.start_s).round(2)
+    for key, label, color in domains:
+        ax.hist(dur[index.domain == key], bins=np.arange(0, 8, .05), alpha=.65, color=color, label=label)
+    ax.set_xlabel("Annotated clip duration (s)")
+    ax.set_ylabel("Clips")
+    ax.set_title("(c) Annotated clip duration", loc="left")
+    ax.legend(frameon=False)
+
+    for ax in axes:
+        ax.grid(axis="y", color=GRID, linewidth=.7)
         ax.set_axisbelow(True)
         ax.spines[["top", "right"]].set_visible(False)
-        ax.tick_params(length=0, labelsize=8.5, pad=5)
-        ax.set_xlabel("Macro-F1 (%)", fontsize=9, labelpad=4)
-        fig.text(
-            .28, .015,
-            "Dots show means; whiskers and labels show ±1 standard deviation (12 runs). "
-            "Green marks the highest mean only.",
-            ha="left", va="bottom", fontsize=7.6, color="#606A73",
-        )
-        fig.subplots_adjust(left=.29, right=.98, top=.84, bottom=.22)
-        save(fig, f"initializations_k{budget}")
+    fig.tight_layout(h_pad=1.6)
+    save(fig, "gap")
 
 
 def main() -> None:
@@ -287,8 +265,8 @@ def main() -> None:
     methodology()
     zero_shot(data)
     few_shot(data)
-    initializations(data)
-    print(f"Created 8 PDF and 8 PNG figures in {OUT}")
+    gap()
+    print(f"Created 4 PDF and 4 PNG figures in {OUT}")
 
 
 if __name__ == "__main__":

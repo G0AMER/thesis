@@ -133,3 +133,24 @@ def latex_table(tab: pd.DataFrame, caption: str, label: str, names: Optional[Dic
                      f"{row.acc_mean:.2f} $\\pm$ {row.acc_std:.2f} & {f1} \\\\")
     lines += [r"\bottomrule", r"\end{tabular}", r"\end{table}"]
     return "\n".join(lines)
+
+
+FEWSHOT_INITS = ["scratch", "source_only", "picda", "joint", "joint_fixmatch", "joint_proto", "joint_proto_ft"]
+
+
+def fewshot_grid(results: List[Dict], ks=(1, 5, 10, 20, 50), ref: str = "source_only") -> pd.DataFrame:
+    """Rows = initialisation, columns = k. Cells: mean, std, and subject-level Wilcoxon p vs `ref`."""
+    tab = summary_table(results)
+    rows = []
+    for init in FEWSHOT_INITS:
+        for k in ks:
+            m = f"fewshot_k{k}_{init}"
+            if m not in tab.index:
+                continue
+            p = np.nan
+            if init != ref:
+                sa, sb = per_subject_f1(results, m).mean(1), per_subject_f1(results, f"fewshot_k{k}_{ref}").mean(1)
+                p = wilcoxon_paired(sa, sb)["p"]
+            rows.append({"init": init, "k": k, "f1_mean": tab.loc[m, "f1_mean"], "f1_std": tab.loc[m, "f1_std"],
+                         "p_vs_" + ref: p})
+    return pd.DataFrame(rows)

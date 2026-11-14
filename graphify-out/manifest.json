@@ -1,8 +1,8 @@
 {
   ".claude/settings.json": {
-    "mtime": 1791930132.5775936,
-    "seen": 1792055647.1791666,
-    "ast_hash": "64bf63c0d2bc3906352e28834f718d92",
+    "mtime": 1793561671.9500742,
+    "seen": 1794497463.4441636,
+    "ast_hash": "5a461f057b287bd2546b6fdf8bec6e78",
     "semantic_hash": ""
   },
   ".vscode/settings.json": {
@@ -1529,12 +1529,6 @@
     "ast_hash": "38e900d884590406d112d0b4ce575469",
     "semantic_hash": "38e900d884590406d112d0b4ce575469"
   },
-  "04_Cross_Modal_Digital_Twin/paper/elsarticle.cls": {
-    "mtime": 1790252231.4610496,
-    "seen": 1791766257.9253767,
-    "ast_hash": "6274ec587dd53fa5dc7108c2f8ec0881",
-    "semantic_hash": "6274ec587dd53fa5dc7108c2f8ec0881"
-  },
   "04_Cross_Modal_Digital_Twin/picda/__init__.py": {
     "mtime": 1791726923.9716184,
     "seen": 1791766257.9253776,
@@ -1542,10 +1536,10 @@
     "semantic_hash": "d2efcd77e053d6a46d35ed2e4a858063"
   },
   "04_Cross_Modal_Digital_Twin/picda/analysis.py": {
-    "mtime": 1791727231.4713013,
-    "seen": 1791766257.9253783,
-    "ast_hash": "a99e3182352f442e83474e663d4684e0",
-    "semantic_hash": "a99e3182352f442e83474e663d4684e0"
+    "mtime": 1793617924.7974644,
+    "seen": 1794497463.4450576,
+    "ast_hash": "70bf69494f95f75ca67e0397bb62ea26",
+    "semantic_hash": ""
   },
   "04_Cross_Modal_Digital_Twin/picda/bvh.py": {
     "mtime": 1791726946.5491562,
@@ -2386,24 +2380,6 @@
     "seen": 1791766257.925492,
     "ast_hash": "3921d1b63473788f24bae338379a2e3b",
     "semantic_hash": "3921d1b63473788f24bae338379a2e3b"
-  },
-  "04_Cross_Modal_Digital_Twin/paper/Procs.pdf": {
-    "mtime": 1790252231.4730499,
-    "seen": 1791766257.9254928,
-    "ast_hash": "47c86c7dfd465d43cf1e3ed228791737",
-    "semantic_hash": "47c86c7dfd465d43cf1e3ed228791737"
-  },
-  "04_Cross_Modal_Digital_Twin/paper/SDlogo-3p.pdf": {
-    "mtime": 1790252231.4670496,
-    "seen": 1791766257.9254935,
-    "ast_hash": "fc1e8a13855056a699ede145d31993f2",
-    "semantic_hash": "fc1e8a13855056a699ede145d31993f2"
-  },
-  "04_Cross_Modal_Digital_Twin/paper/elsevier-logo-3p.pdf": {
-    "mtime": 1790252231.4710498,
-    "seen": 1791766257.9254942,
-    "ast_hash": "91f17f8bd6c4ade6422ce8833eadb778",
-    "semantic_hash": "91f17f8bd6c4ade6422ce8833eadb778"
   },
   "CV/main.pdf": {
     "mtime": 1792765286.0992267,
@@ -6329,16 +6305,10 @@
     "ast_hash": "60125dd7577b3cd7f08b127b89dc906a",
     "semantic_hash": ""
   },
-  "04_Cross_Modal_Digital_Twin/paper/pi_cda_paper.pdf": {
-    "mtime": 1792674652.879068,
-    "seen": 1792763453.143585,
-    "ast_hash": "9fd47f51cba13ebc7e828d06467dc562",
-    "semantic_hash": ""
-  },
   "04_Cross_Modal_Digital_Twin/paper/create_result_figures.py": {
-    "mtime": 1792674130.0428581,
-    "seen": 1792674140.6206572,
-    "ast_hash": "b97bf6411d086753982a0be2fc13103a",
+    "mtime": 1793804362.0245988,
+    "seen": 1794497463.4450521,
+    "ast_hash": "660eb51ce957fb81f58c8ea7d70de203",
     "semantic_hash": ""
   },
   "04_Cross_Modal_Digital_Twin/output_v2/benchmark_ctrgcn/figures/few_shot_transfer_professional.pdf": {
@@ -6348,9 +6318,9 @@
     "semantic_hash": ""
   },
   "04_Cross_Modal_Digital_Twin/output_v2/benchmark_ctrgcn/figures/paper_ready/few_shot.pdf": {
-    "mtime": 1792674324.741143,
-    "seen": 1792763453.1435516,
-    "ast_hash": "4cc4e49c0fec8e3cf7514a38efb26d39",
+    "mtime": 1793804390.9516895,
+    "seen": 1794497463.4452312,
+    "ast_hash": "f171938106ea521df765c04e62621425",
     "semantic_hash": ""
   },
   "04_Cross_Modal_Digital_Twin/output_v2/benchmark_ctrgcn/figures/paper_ready/initializations.pdf": {
@@ -6360,15 +6330,15 @@
     "semantic_hash": ""
   },
   "04_Cross_Modal_Digital_Twin/output_v2/benchmark_ctrgcn/figures/paper_ready/methodology.pdf": {
-    "mtime": 1792674324.0521243,
-    "seen": 1792763453.1435704,
-    "ast_hash": "528b0d40fa2104070d3cc7a90fbe568b",
+    "mtime": 1793804390.2926648,
+    "seen": 1794497463.4452403,
+    "ast_hash": "ff4d3b0ed63948cbf92943a8031f0729",
     "semantic_hash": ""
   },
   "04_Cross_Modal_Digital_Twin/output_v2/benchmark_ctrgcn/figures/paper_ready/zero_shot.pdf": {
-    "mtime": 1792674324.4151342,
-    "seen": 1792763453.1435728,
-    "ast_hash": "8f9f3830eb1e62001f20fcef4286f993",
+    "mtime": 1793804390.6416779,
+    "seen": 1794497463.4452415,
+    "ast_hash": "4dda0cc5ae02cad39711849bf2da625a",
     "semantic_hash": ""
   },
   "04_Cross_Modal_Digital_Twin/output_v2/benchmark_ctrgcn/figures/zero_shot_transfer_professional.pdf": {
@@ -6384,9 +6354,9 @@
     "semantic_hash": ""
   },
   "04_Cross_Modal_Digital_Twin/output_v2/benchmark_ctrgcn/figures/paper_ready/few_shot.png": {
-    "mtime": 1792674324.9051473,
-    "seen": 1792763453.1439219,
-    "ast_hash": "a2f8ccbf8f8703e36c462c521d03eaa0",
+    "mtime": 1793804391.1136956,
+    "seen": 1794497463.4454553,
+    "ast_hash": "8703c8e081a90f5edb7c864e89356907",
     "semantic_hash": ""
   },
   "04_Cross_Modal_Digital_Twin/output_v2/benchmark_ctrgcn/figures/paper_ready/initializations.png": {
@@ -6396,15 +6366,15 @@
     "semantic_hash": ""
   },
   "04_Cross_Modal_Digital_Twin/output_v2/benchmark_ctrgcn/figures/paper_ready/methodology.png": {
-    "mtime": 1792674324.2441294,
-    "seen": 1792763453.1439345,
-    "ast_hash": "aab73b60d9599a094c428dc53751d3ae",
+    "mtime": 1793804390.4826717,
+    "seen": 1794497463.4454653,
+    "ast_hash": "18c2a1e9f017250a88ed07eade8457fa",
     "semantic_hash": ""
   },
   "04_Cross_Modal_Digital_Twin/output_v2/benchmark_ctrgcn/figures/paper_ready/zero_shot.png": {
-    "mtime": 1792674324.5791385,
-    "seen": 1792763453.143936,
-    "ast_hash": "94f6753b9e4a105141629ec1e22aa4d0",
+    "mtime": 1793804390.8026838,
+    "seen": 1794497463.4454665,
+    "ast_hash": "8eb836ef9d9c50e93d313dea55594c69",
     "semantic_hash": ""
   },
   "04_Cross_Modal_Digital_Twin/output_v2/benchmark_ctrgcn/figures/zero_shot_transfer_professional.png": {
@@ -6501,6 +6471,222 @@
     "mtime": 1792765271.85502,
     "seen": 1792765273.9533937,
     "ast_hash": "d0a65e4b31fe2c0cab819721539034c6",
+    "semantic_hash": ""
+  },
+  "00_Thesis_Dissertation_and_Reports/assets/audition_LGI2A_2026/Preparation_questions_jury.md": {
+    "mtime": 1793969093.728974,
+    "seen": 1794497463.4450788,
+    "ast_hash": "78650a9cf63df24918b80eb4be21b11d",
+    "semantic_hash": ""
+  },
+  "04_Cross_Modal_Digital_Twin/output_v2/benchmark_ctrgcn/figures/paper_ready/gap.pdf": {
+    "mtime": 1793804392.0367303,
+    "seen": 1794497463.4452322,
+    "ast_hash": "052d76eb0acb4ef2779fd956e2c24329",
+    "semantic_hash": ""
+  },
+  "04_Cross_Modal_Digital_Twin/output_v2/benchmark_ctrgcn/figures/paper_ready/gap.png": {
+    "mtime": 1793804392.5737505,
+    "seen": 1794497463.4454563,
+    "ast_hash": "d808b21b4f27ce5666dc828d8c103959",
+    "semantic_hash": ""
+  },
+  "04_Cross_Modal_Digital_Twin/paper/elsevier/elsarticle.cls": {
+    "mtime": 1794501767.3204963,
+    "seen": 1794501811.9200115,
+    "ast_hash": "6274ec587dd53fa5dc7108c2f8ec0881",
+    "semantic_hash": ""
+  },
+  "04_Cross_Modal_Digital_Twin/paper/sage/sagej.cls": {
+    "mtime": 1794499917.4221387,
+    "seen": 1794501811.9200146,
+    "ast_hash": "1c8798c055ea2733b7ec27acc557f4c0",
+    "semantic_hash": ""
+  },
+  "04_Cross_Modal_Digital_Twin/paper/springer/sn-jnl.cls": {
+    "mtime": 1794501767.333497,
+    "seen": 1794501811.9200163,
+    "ast_hash": "c14ef9d34b3d95356940eaf177aff85f",
+    "semantic_hash": ""
+  },
+  "04_Cross_Modal_Digital_Twin/paper/elsevier/Procs.pdf": {
+    "mtime": 1794501767.3264968,
+    "seen": 1794501811.9202807,
+    "ast_hash": "47c86c7dfd465d43cf1e3ed228791737",
+    "semantic_hash": ""
+  },
+  "04_Cross_Modal_Digital_Twin/paper/elsevier/SDlogo-3p.pdf": {
+    "mtime": 1794501767.3254967,
+    "seen": 1794501811.9202821,
+    "ast_hash": "fc1e8a13855056a699ede145d31993f2",
+    "semantic_hash": ""
+  },
+  "04_Cross_Modal_Digital_Twin/paper/elsevier/elsevier-logo-3p.pdf": {
+    "mtime": 1794501767.3244965,
+    "seen": 1794501811.9202836,
+    "ast_hash": "91f17f8bd6c4ade6422ce8833eadb778",
+    "semantic_hash": ""
+  },
+  "04_Cross_Modal_Digital_Twin/paper/elsevier/figures/paper_ready/few_shot.pdf": {
+    "mtime": 1794501767.3514981,
+    "seen": 1794501811.9202852,
+    "ast_hash": "f171938106ea521df765c04e62621425",
+    "semantic_hash": ""
+  },
+  "04_Cross_Modal_Digital_Twin/paper/elsevier/figures/paper_ready/gap.pdf": {
+    "mtime": 1794501767.3514981,
+    "seen": 1794501811.9202867,
+    "ast_hash": "052d76eb0acb4ef2779fd956e2c24329",
+    "semantic_hash": ""
+  },
+  "04_Cross_Modal_Digital_Twin/paper/elsevier/figures/paper_ready/methodology.pdf": {
+    "mtime": 1794501767.3504982,
+    "seen": 1794501811.920288,
+    "ast_hash": "ff4d3b0ed63948cbf92943a8031f0729",
+    "semantic_hash": ""
+  },
+  "04_Cross_Modal_Digital_Twin/paper/elsevier/figures/paper_ready/zero_shot.pdf": {
+    "mtime": 1794501767.3504982,
+    "seen": 1794501811.9202895,
+    "ast_hash": "4dda0cc5ae02cad39711849bf2da625a",
+    "semantic_hash": ""
+  },
+  "04_Cross_Modal_Digital_Twin/paper/elsevier/pi_cda_paper.pdf": {
+    "mtime": 1794501786.3596141,
+    "seen": 1794501811.9202905,
+    "ast_hash": "01107437e272768f3da4ca5ca3c7a9f6",
+    "semantic_hash": ""
+  },
+  "04_Cross_Modal_Digital_Twin/paper/sage/SAGE_Logo-eps-converted-to.pdf": {
+    "mtime": 1794501782.3003771,
+    "seen": 1794501811.920292,
+    "ast_hash": "aa263bb7ece0992d44042162aef64ba2",
+    "semantic_hash": ""
+  },
+  "04_Cross_Modal_Digital_Twin/paper/sage/pi_cda_paper_sage.pdf": {
+    "mtime": 1794566839.4047532,
+    "seen": 1794566897.4663022,
+    "ast_hash": "e425b3b18ba53b9c78ef7f053887aff4",
+    "semantic_hash": ""
+  },
+  "04_Cross_Modal_Digital_Twin/paper/sage/pi_cda_paper_sage_cover_letter.pdf": {
+    "mtime": 1794501960.429245,
+    "seen": 1794566897.4663053,
+    "ast_hash": "58596896d83ac2a84135aefbcca73f42",
+    "semantic_hash": ""
+  },
+  "04_Cross_Modal_Digital_Twin/paper/sage/pi_cda_paper_sage_title_page.pdf": {
+    "mtime": 1794566837.307683,
+    "seen": 1794566897.4663064,
+    "ast_hash": "c5a0f0ccce7c923db48e7c53a44bebce",
+    "semantic_hash": ""
+  },
+  "04_Cross_Modal_Digital_Twin/paper/sage/sage_figures/few_shot.pdf": {
+    "mtime": 1794499986.7239563,
+    "seen": 1794501811.9202967,
+    "ast_hash": "f171938106ea521df765c04e62621425",
+    "semantic_hash": ""
+  },
+  "04_Cross_Modal_Digital_Twin/paper/sage/sage_figures/gap.pdf": {
+    "mtime": 1794499986.7209563,
+    "seen": 1794501811.920298,
+    "ast_hash": "052d76eb0acb4ef2779fd956e2c24329",
+    "semantic_hash": ""
+  },
+  "04_Cross_Modal_Digital_Twin/paper/sage/sage_figures/methodology.pdf": {
+    "mtime": 1794499986.713956,
+    "seen": 1794501811.920299,
+    "ast_hash": "ff4d3b0ed63948cbf92943a8031f0729",
+    "semantic_hash": ""
+  },
+  "04_Cross_Modal_Digital_Twin/paper/sage/sage_figures/zero_shot.pdf": {
+    "mtime": 1794499986.7169561,
+    "seen": 1794501811.9203002,
+    "ast_hash": "4dda0cc5ae02cad39711849bf2da625a",
+    "semantic_hash": ""
+  },
+  "04_Cross_Modal_Digital_Twin/paper/springer/figures/paper_ready/few_shot.pdf": {
+    "mtime": 1794501767.3554986,
+    "seen": 1794501811.9203012,
+    "ast_hash": "f171938106ea521df765c04e62621425",
+    "semantic_hash": ""
+  },
+  "04_Cross_Modal_Digital_Twin/paper/springer/figures/paper_ready/gap.pdf": {
+    "mtime": 1794501767.3554986,
+    "seen": 1794501811.9203026,
+    "ast_hash": "052d76eb0acb4ef2779fd956e2c24329",
+    "semantic_hash": ""
+  },
+  "04_Cross_Modal_Digital_Twin/paper/springer/figures/paper_ready/methodology.pdf": {
+    "mtime": 1794501767.3544984,
+    "seen": 1794501811.9203038,
+    "ast_hash": "ff4d3b0ed63948cbf92943a8031f0729",
+    "semantic_hash": ""
+  },
+  "04_Cross_Modal_Digital_Twin/paper/springer/figures/paper_ready/zero_shot.pdf": {
+    "mtime": 1794501767.3544984,
+    "seen": 1794501811.9203053,
+    "ast_hash": "4dda0cc5ae02cad39711849bf2da625a",
+    "semantic_hash": ""
+  },
+  "04_Cross_Modal_Digital_Twin/paper/springer/pi_cda_paper_springer.pdf": {
+    "mtime": 1794566891.2974918,
+    "seen": 1794566897.4663212,
+    "ast_hash": "115bde5536db9c08b23a2b1a46d05dc0",
+    "semantic_hash": ""
+  },
+  "04_Cross_Modal_Digital_Twin/paper/elsevier/figures/dataset_collection/inhard_dt_vr_capture.jpg": {
+    "mtime": 1794501767.3394976,
+    "seen": 1794501811.920549,
+    "ast_hash": "723d416cb20f981ec54fd923a941d2a2",
+    "semantic_hash": ""
+  },
+  "04_Cross_Modal_Digital_Twin/paper/elsevier/figures/dataset_collection/inhard_dt_workstation_views.jpg": {
+    "mtime": 1794501767.3394976,
+    "seen": 1794501811.9205506,
+    "ast_hash": "4de1f61aa683e6d8230a287d09a046c7",
+    "semantic_hash": ""
+  },
+  "04_Cross_Modal_Digital_Twin/paper/elsevier/figures/dataset_collection/inhard_physical_capture.png": {
+    "mtime": 1794501767.3414977,
+    "seen": 1794501811.9205518,
+    "ast_hash": "a1f1eacf39d7290ca6744bb39b7a1728",
+    "semantic_hash": ""
+  },
+  "04_Cross_Modal_Digital_Twin/paper/sage/sage_figures/inhard_dt_vr_capture.jpg": {
+    "mtime": 1794499986.7269564,
+    "seen": 1794501811.9205585,
+    "ast_hash": "723d416cb20f981ec54fd923a941d2a2",
+    "semantic_hash": ""
+  },
+  "04_Cross_Modal_Digital_Twin/paper/sage/sage_figures/inhard_dt_workstation_views.jpg": {
+    "mtime": 1794499986.7309566,
+    "seen": 1794501811.9205594,
+    "ast_hash": "4de1f61aa683e6d8230a287d09a046c7",
+    "semantic_hash": ""
+  },
+  "04_Cross_Modal_Digital_Twin/paper/sage/sage_figures/inhard_physical_capture.png": {
+    "mtime": 1794499986.7359567,
+    "seen": 1794501811.9205606,
+    "ast_hash": "a1f1eacf39d7290ca6744bb39b7a1728",
+    "semantic_hash": ""
+  },
+  "04_Cross_Modal_Digital_Twin/paper/springer/figures/dataset_collection/inhard_dt_vr_capture.jpg": {
+    "mtime": 1794501767.3454978,
+    "seen": 1794501811.920562,
+    "ast_hash": "723d416cb20f981ec54fd923a941d2a2",
+    "semantic_hash": ""
+  },
+  "04_Cross_Modal_Digital_Twin/paper/springer/figures/dataset_collection/inhard_dt_workstation_views.jpg": {
+    "mtime": 1794501767.3454978,
+    "seen": 1794501811.920563,
+    "ast_hash": "4de1f61aa683e6d8230a287d09a046c7",
+    "semantic_hash": ""
+  },
+  "04_Cross_Modal_Digital_Twin/paper/springer/figures/dataset_collection/inhard_physical_capture.png": {
+    "mtime": 1794501767.347498,
+    "seen": 1794501811.9205642,
+    "ast_hash": "a1f1eacf39d7290ca6744bb39b7a1728",
     "semantic_hash": ""
   }
 }

@@ -1,0 +1,236 @@
+\begin{thebibliography}{10}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{DOI:\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{DOI:\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+\providecommand{\eprint}[2][]{\url{#2}}
+
+\bibitem{wang2018hrcmotion}
+Wang P, Liu H, Wang L et~al.
+\newblock Deep learning-based human motion recognition for predictive
+  context-aware human-robot collaboration.
+\newblock \emph{CIRP Annals} 2018; 67(1): 17--20.
+\newblock \doi{10.1016/j.cirp.2018.04.066}.
+
+\bibitem{yan2018stgcn}
+Yan S, Xiong Y and Lin D.
+\newblock Spatial temporal graph convolutional networks for skeleton-based
+  action recognition.
+\newblock In \emph{Proceedings of the AAAI Conference on Artificial
+  Intelligence}, volume~32.
+\newblock \doi{10.1609/aaai.v32i1.12328}.
+
+\bibitem{chen2021ctrgcn}
+Chen Y, Zhang Z, Yuan C et~al.
+\newblock Channel-wise topology refinement graph convolution for skeleton-based
+  action recognition.
+\newblock In \emph{Proceedings of the IEEE/CVF International Conference on
+  Computer Vision}. pp. 13339--13348.
+\newblock \doi{10.1109/ICCV48922.2021.01311}.
+
+\bibitem{liu2025skeletonreview}
+Liu M, Liu H, Hu Q et~al.
+\newblock 3d skeleton-based action recognition: A review.
+\newblock \emph{arXiv preprint arXiv:250600915} 2025;
+  \doi{10.48550/arXiv.2506.00915}.
+
+\bibitem{shahroudy2016ntu}
+Shahroudy A, Liu J, Ng TT et~al.
+\newblock {NTU RGB+D}: A large scale dataset for 3d human activity analysis.
+\newblock In \emph{Proceedings of the IEEE Conference on Computer Vision and
+  Pattern Recognition}. pp. 1010--1019.
+\newblock \doi{10.1109/CVPR.2016.115}.
+
+\bibitem{liu2020ntu120}
+Liu J, Shahroudy A, Perez M et~al.
+\newblock {NTU RGB+D} 120: A large-scale benchmark for 3d human activity
+  understanding.
+\newblock \emph{IEEE Transactions on Pattern Analysis and Machine Intelligence}
+  2020; 42(10): 2684--2701.
+\newblock \doi{10.1109/TPAMI.2019.2916873}.
+
+\bibitem{tao2019digitaltwin}
+Tao F, Zhang H, Liu A et~al.
+\newblock Digital twin in industry: State-of-the-art.
+\newblock \emph{IEEE Transactions on Industrial Informatics} 2019; 15(4):
+  2405--2415.
+\newblock \doi{10.1109/TII.2018.2873186}.
+
+\bibitem{dallel2023digital}
+Dallel M, Havard V, Dupuis Y et~al.
+\newblock Digital twin of an industrial workstation: A novel method of an
+  auto-labeled data generator using virtual reality for human action
+  recognition in the context of human--robot collaboration.
+\newblock \emph{Engineering Applications of Artificial Intelligence} 2023; 118:
+  105655.
+\newblock \doi{10.1016/j.engappai.2022.105655}.
+
+\bibitem{dallel2020inhardpaper}
+Dallel M, Havard V, Baudry D et~al.
+\newblock {InHARD} -- industrial human action recognition dataset in the
+  context of industrial collaborative robotics.
+\newblock In \emph{2020 IEEE International Conference on Human-Machine
+  Systems}. pp. 1--6.
+\newblock \doi{10.1109/ICHMS49158.2020.9209531}.
+
+\bibitem{wang2025heterogeneous}
+Wang H, Ma X, Kuang J et~al.
+\newblock Heterogeneous skeleton-based action representation learning.
+\newblock In \emph{Proceedings of the IEEE/CVF Conference on Computer Vision
+  and Pattern Recognition}. pp. 19154--19164.
+\newblock \doi{10.1109/CVPR52734.2025.01784}.
+\newblock
+  \urlprefix\url{https://openaccess.thecvf.com/content/CVPR2025/html/Wang_Heterogeneous_Skeleton-Based_Action_Representation_Learning_CVPR_2025_paper.html}.
+
+\bibitem{chen2025hypergraph}
+Chen D, She K, Wu P et~al.
+\newblock Dual-branch differential channel hypergraph convolutional network for
+  human skeleton-based action recognition.
+\newblock \emph{PLOS ONE} 2025; 20(10): e0332066.
+\newblock \doi{10.1371/journal.pone.0332066}.
+
+\bibitem{valentini2025digital}
+Valentini L, Weistroffer V, Grandi F et~al.
+\newblock Digital toolkit for human-centered machine design: Development and
+  testing of an innovative system integrating virtual reality and hmi digital
+  prototypes.
+\newblock \emph{International Journal of Advanced Manufacturing Technology}
+  2025; 144: 7717--7735.
+\newblock \doi{10.1007/s00170-025-16943-4}.
+
+\bibitem{tobin2017domainrandomization}
+Tobin J, Fong R, Ray A et~al.
+\newblock Domain randomization for transferring deep neural networks from
+  simulation to the real world.
+\newblock In \emph{2017 IEEE/RSJ International Conference on Intelligent Robots
+  and Systems}. pp. 23--30.
+\newblock \doi{10.1109/IROS.2017.8202133}.
+
+\bibitem{rothert2024simtoreal}
+Rothert JJ, Lang S, Seidel M et~al.
+\newblock Sim-to-real transfer for a robotics task: Challenges and lessons
+  learned.
+\newblock In \emph{2024 IEEE 29th International Conference on Emerging
+  Technologies and Factory Automation (ETFA)}. pp. 1--8.
+\newblock \doi{10.1109/ETFA61755.2024.10711073}.
+
+\bibitem{dallel2020inhard}
+Dallel M, Havard V, Baudry D et~al.
+\newblock Inhard -- industrial human action recognition dataset in the context
+  of industrial collaborative robotics, 2020.
+\newblock \doi{10.5281/zenodo.4003541}.
+\newblock \urlprefix\url{https://zenodo.org/records/4003541}.
+
+\bibitem{dallel2023dataset}
+Dallel M, Havard V, Baudry D et~al.
+\newblock Inhard-dt -- industrial human action recognition dataset -- digital
+  twin.
+\newblock Zenodo record 7644247, 2023.
+\newblock \urlprefix\url{https://zenodo.org/records/7644247}.
+
+\bibitem{bendavid2010theory}
+Ben-David S, Blitzer J, Crammer K et~al.
+\newblock A theory of learning from different domains.
+\newblock \emph{Machine Learning} 2010; 79(1--2): 151--175.
+\newblock \doi{10.1007/s10994-009-5152-4}.
+
+\bibitem{long2015dan}
+Long M, Cao Y, Wang J et~al.
+\newblock Learning transferable features with deep adaptation networks.
+\newblock In \emph{Proceedings of the 32nd International Conference on Machine
+  Learning}, \emph{Proceedings of Machine Learning Research}, volume~37. pp.
+  97--105.
+
+\bibitem{sun2016deepcoral}
+Sun B and Saenko K.
+\newblock Deep {CORAL}: Correlation alignment for deep domain adaptation.
+\newblock In \emph{Computer Vision -- ECCV 2016 Workshops}, \emph{Lecture Notes
+  in Computer Science}, volume 9915. 2016.
+\newblock pp. 443--450.
+\newblock \doi{10.1007/978-3-319-49409-8_35}.
+
+\bibitem{ganin2016dann}
+Ganin Y, Ustinova E, Ajakan H et~al.
+\newblock Domain-adversarial training of neural networks.
+\newblock \emph{Journal of Machine Learning Research} 2016; 17(59): 1--35.
+
+\bibitem{zhao2019invariant}
+Zhao H, des Combes RT, Zhang K et~al.
+\newblock On learning invariant representations for domain adaptation.
+\newblock In \emph{Proceedings of the 36th International Conference on Machine
+  Learning}, \emph{Proceedings of Machine Learning Research}, volume~97. pp.
+  7523--7532.
+\newblock \doi{10.48550/arXiv.1901.09453}.
+
+\bibitem{saerens2002priors}
+Saerens M, Latinne P and Decaestecker C.
+\newblock Adjusting the outputs of a classifier to new a priori probabilities:
+  A simple procedure.
+\newblock \emph{Neural Computation} 2002; 14(1): 21--41.
+\newblock \doi{10.1162/089976602753284446}.
+
+\bibitem{tian2024temporaladaptation}
+Tian H and Payeur P.
+\newblock Unsupervised temporal adaptation in skeleton-based human action
+  recognition.
+\newblock \emph{Algorithms} 2024; 17(12): 581.
+\newblock \doi{10.3390/a17120581}.
+
+\bibitem{yang2024domainhar}
+Yang J, Liao T, Zhao J et~al.
+\newblock Domain adaptation for sensor-based human activity recognition with a
+  graph convolutional network.
+\newblock \emph{Mathematics} 2024; 12(4): 556.
+\newblock \doi{10.3390/math12040556}.
+
+\bibitem{he2024physicsinformed}
+He C, Shi H, Liu X et~al.
+\newblock Interpretable physics-informed domain adaptation paradigm for
+  cross-machine transfer diagnosis.
+\newblock \emph{Knowledge-Based Systems} 2024; 288: 111499.
+\newblock \doi{10.1016/j.knosys.2024.111499}.
+
+\bibitem{sohn2020fixmatch}
+Sohn K, Berthelot D, Carlini N et~al.
+\newblock {FixMatch}: Simplifying semi-supervised learning with consistency and
+  confidence.
+\newblock In \emph{Advances in Neural Information Processing Systems},
+  volume~33. pp. 596--608.
+
+\bibitem{saito2019mme}
+Saito K, Kim D, Sclaroff S et~al.
+\newblock Semi-supervised domain adaptation via minimax entropy.
+\newblock In \emph{Proceedings of the IEEE/CVF International Conference on
+  Computer Vision}. pp. 8049--8057.
+\newblock \doi{10.1109/ICCV.2019.00814}.
+
+\bibitem{snell2017prototypical}
+Snell J, Swersky K and Zemel R.
+\newblock Prototypical networks for few-shot learning.
+\newblock In \emph{Advances in Neural Information Processing Systems},
+  volume~30. pp. 4077--4087.
+
+\bibitem{zhang2025skeletonx}
+Zhang Z, Cai W, Liu Q et~al.
+\newblock Skeletonx: Data-efficient skeleton-based action recognition via
+  cross-sample feature aggregation.
+\newblock \emph{IEEE Transactions on Multimedia} 2025;
+  \doi{10.1109/TMM.2025.3618561}.
+
+\bibitem{lu2024crossmodalfewshot}
+Lu M, Yang S, Lu X et~al.
+\newblock Cross-modal contrastive pre-training for few-shot skeleton action
+  recognition.
+\newblock \emph{IEEE Transactions on Circuits and Systems for Video Technology}
+  2024; 34(10): 9798--9807.
+\newblock \doi{10.1109/TCSVT.2024.3402952}.
+
+\bibitem{balasubramanian2015smoothness}
+Balasubramanian S, Melendez-Calderon A, Roby-Brami A et~al.
+\newblock On the analysis of movement smoothness.
+\newblock \emph{Journal of NeuroEngineering and Rehabilitation} 2015; 12: 112.
+\newblock \doi{10.1186/s12984-015-0090-9}.
+
+\end{thebibliography}
