@@ -2,7 +2,7 @@ PWD /home/g0amer/Desktop/thesis/04_Cross_Modal_Digital_Twin/paper/springer
 INPUT /usr/local/texlive/2025/texmf.cnf
 INPUT /usr/local/texlive/2025/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /home/g0amer/Desktop/thesis/04_Cross_Modal_Digital_Twin/paper/springer/pi_cda_paper_springer.tex
+INPUT pi_cda_paper_springer.tex
 OUTPUT pi_cda_paper_springer.log
 INPUT ./sn-jnl.cls
 INPUT sn-jnl.cls
@@ -212,7 +212,9 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm
 INPUT /usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 INPUT ./figures/paper_ready/methodology.pdf
 INPUT ./figures/paper_ready/methodology.pdf
 INPUT ./figures/paper_ready/methodology.pdf
@@ -273,6 +275,11 @@ INPUT ./figures/paper_ready/few_shot.pdf
 INPUT ./pi_cda_paper_springer.bbl
 INPUT ./pi_cda_paper_springer.bbl
 INPUT pi_cda_paper_springer.bbl
+INPUT ./graphical_abstract.pdf
+INPUT ./graphical_abstract.pdf
+INPUT ./graphical_abstract.pdf
+INPUT ./graphical_abstract.pdf
+INPUT ./graphical_abstract.pdf
 INPUT pi_cda_paper_springer.aux
 INPUT ./pi_cda_paper_springer.out
 INPUT ./pi_cda_paper_springer.out
@@ -296,3 +303,4 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pf
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb

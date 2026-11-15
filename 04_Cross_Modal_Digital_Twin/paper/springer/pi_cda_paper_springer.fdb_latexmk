@@ -1,15 +1,16 @@
 # Fdb version 4
-["bibtex pi_cda_paper_springer"] 1794566969.24431 "pi_cda_paper_springer.aux" "pi_cda_paper_springer.bbl" "pi_cda_paper_springer" 1794566970.26298 0
+["bibtex pi_cda_paper_springer"] 1794665278.33376 "pi_cda_paper_springer.aux" "pi_cda_paper_springer.bbl" "pi_cda_paper_springer" 1794667574.99748 0
   "./references.bib" 1794501767.3335 11395 5486fbb459a760fa1844dcc2c02599c5 ""
   "./sn-mathphys-num.bst" 1794501767.3345 64164 943df446db725f71d6bb625fc0d6f4fc ""
-  "pi_cda_paper_springer.aux" 1794566969.99013 13423 9cddadd8cedb181edc94c5ac397a0471 "pdflatex"
+  "pi_cda_paper_springer.aux" 1794667574.02539 13424 afef93593f42c0cf0259f2e884182845 "pdflatex"
   (generated)
   "pi_cda_paper_springer.bbl"
   "pi_cda_paper_springer.blg"
   (rewritten before read)
-["pdflatex"] 1794566969.40771 "/home/g0amer/Desktop/thesis/04_Cross_Modal_Digital_Twin/paper/springer/pi_cda_paper_springer.tex" "pi_cda_paper_springer.pdf" "pi_cda_paper_springer" 1794566970.26319 0
-  "/home/g0amer/Desktop/thesis/04_Cross_Modal_Digital_Twin/paper/springer/pi_cda_paper_springer.tex" 1794566969.0741 43728 9483a5040b1f6dfc9602a426152f47c0 ""
+["pdflatex"] 1794667572.19996 "pi_cda_paper_springer.tex" "pi_cda_paper_springer.pdf" "pi_cda_paper_springer" 1794667574.99811 0
+  "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
+  "/usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex9.tfm" 1246382020 996 a18840b13b499c08ac2de96a99eda4bc ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -62,6 +63,7 @@
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb" 1248133631 32442 c975af247b6702f7ca0c299af3616b80 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1248133631 37944 359e864bd06cde3b1cf57bb20757fb06 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1248133631 34694 ad62b13721ee8eda1dcc8993c8bd7041 ""
+  "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb" 1215737283 138258 6525c253f16cededa14c7fd0da7f67b2 ""
   "/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1461363279 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/local/texlive/2025/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty" 1576625341 40635 c40361e206be584d448876bba8a64a3b ""
   "/usr/local/texlive/2025/texmf-dist/tex/generic/bitset/bitset.sty" 1576016050 33961 6b5c75130e435b2bfdb9f480a09a39f9 ""
@@ -144,10 +146,11 @@
   "figures/paper_ready/gap.pdf" 1794501767.3555 25212 052d76eb0acb4ef2779fd956e2c24329 ""
   "figures/paper_ready/methodology.pdf" 1794501767.3545 24767 ff4d3b0ed63948cbf92943a8031f0729 ""
   "figures/paper_ready/zero_shot.pdf" 1794501767.3545 16668 4dda0cc5ae02cad39711849bf2da625a ""
-  "pi_cda_paper_springer.aux" 1794566969.99013 13423 9cddadd8cedb181edc94c5ac397a0471 "pdflatex"
-  "pi_cda_paper_springer.bbl" 1794566969.40111 18949 03eed27542afca4be21a1c133880eade "bibtex pi_cda_paper_springer"
-  "pi_cda_paper_springer.out" 1794566969.99113 3069 0d8e3b16c4a16715092bfd798c373c2d "pdflatex"
-  "pi_cda_paper_springer.tex" 1794566969.0741 43728 9483a5040b1f6dfc9602a426152f47c0 ""
+  "graphical_abstract.pdf" 1794667344.01938 47163 10fa36fa9b257f96b5d7f14b24498081 ""
+  "pi_cda_paper_springer.aux" 1794667574.02539 13424 afef93593f42c0cf0259f2e884182845 "pdflatex"
+  "pi_cda_paper_springer.bbl" 1794665278.76128 19011 4b6f105f28dfa694c72b91dd17ac1941 "bibtex pi_cda_paper_springer"
+  "pi_cda_paper_springer.out" 1794667574.02839 3069 0d8e3b16c4a16715092bfd798c373c2d "pdflatex"
+  "pi_cda_paper_springer.tex" 1794667571.91925 44535 d0f15a9a7bd08907d8850be4d4965bda ""
   "sn-jnl.cls" 1794501767.3335 55857 c14ef9d34b3d95356940eaf177aff85f ""
   (generated)
   "pi_cda_paper_springer.aux"

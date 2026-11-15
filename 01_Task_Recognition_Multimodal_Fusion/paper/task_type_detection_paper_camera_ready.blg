@@ -1,0 +1,46 @@
+This is BibTeX, Version 0.99d (TeX Live 2025)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: task_type_detection_paper_camera_ready.aux
+The style file: apalike.bst
+Database file #1: task_type_detection_references.bib
+You've used 18 entries,
+            1935 wiz_defined-function locations,
+            577 strings with 8230 characters,
+and the built_in function-call counts, 8938 in all, are:
+= -- 842
+> -- 489
+< -- 6
++ -- 181
+- -- 174
+* -- 808
+:= -- 1533
+add.period$ -- 55
+call.type$ -- 18
+change.case$ -- 177
+chr.to.int$ -- 17
+cite$ -- 18
+duplicate$ -- 309
+empty$ -- 567
+format.name$ -- 196
+if$ -- 1742
+int.to.chr$ -- 2
+int.to.str$ -- 0
+missing$ -- 18
+newline$ -- 93
+num.names$ -- 54
+pop$ -- 171
+preamble$ -- 1
+purify$ -- 177
+quote$ -- 0
+skip$ -- 227
+stack$ -- 0
+substring$ -- 596
+swap$ -- 56
+text.length$ -- 4
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 108
+warning$ -- 0
+while$ -- 64
+width$ -- 0
+write$ -- 235

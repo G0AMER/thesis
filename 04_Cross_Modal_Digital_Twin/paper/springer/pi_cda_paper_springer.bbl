@@ -50,7 +50,8 @@
 \bauthor{\bsnm{Liu}, \binits{H.}},
 \bauthor{\bsnm{Wang}, \binits{L.}},
 \bauthor{\bsnm{Gao}, \binits{R.X.}}:
-\batitle{Deep learning-based human motion recognition for predictive context-aware human-robot collaboration}.
+\batitle{Deep learning-based human motion recognition for predictive
+  context-aware human-robot collaboration}.
 \bjtitle{CIRP Annals}
 \bvolume{67}(\bissue{1}),
 \bfpage{17}--\blpage{20}
@@ -65,7 +66,8 @@
 \bauthor{\bsnm{Yan}, \binits{S.}},
 \bauthor{\bsnm{Xiong}, \binits{Y.}},
 \bauthor{\bsnm{Lin}, \binits{D.}}:
-\bctitle{Spatial temporal graph convolutional networks for skeleton-based action recognition}.
+\bctitle{Spatial temporal graph convolutional networks for skeleton-based
+  action recognition}.
 In: \bbtitle{Proceedings of the AAAI Conference on Artificial Intelligence},
 vol. \bseriesno{32}
 (\byear{2018}).
@@ -82,8 +84,10 @@ vol. \bseriesno{32}
 \bauthor{\bsnm{Li}, \binits{B.}},
 \bauthor{\bsnm{Deng}, \binits{Y.}},
 \bauthor{\bsnm{Hu}, \binits{W.}}:
-\bctitle{Channel-wise topology refinement graph convolution for skeleton-based action recognition}.
-In: \bbtitle{Proceedings of the IEEE/CVF International Conference on Computer Vision},
+\bctitle{Channel-wise topology refinement graph convolution for skeleton-based
+  action recognition}.
+In: \bbtitle{Proceedings of the IEEE/CVF International Conference on Computer
+  Vision},
 pp. \bfpage{13339}--\blpage{13348}
 (\byear{2021}).
 \doiurl{10.1109/ICCV48922.2021.01311}
@@ -115,7 +119,8 @@ pp. \bfpage{13339}--\blpage{13348}
 \bauthor{\bsnm{Ng}, \binits{T.-T.}},
 \bauthor{\bsnm{Wang}, \binits{G.}}:
 \bctitle{{NTU RGB+D}: A large scale dataset for 3d human activity analysis}.
-In: \bbtitle{Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition},
+In: \bbtitle{Proceedings of the IEEE Conference on Computer Vision and Pattern
+  Recognition},
 pp. \bfpage{1010}--\blpage{1019}
 (\byear{2016}).
 \doiurl{10.1109/CVPR.2016.115}
@@ -131,7 +136,8 @@ pp. \bfpage{1010}--\blpage{1019}
 \bauthor{\bsnm{Wang}, \binits{G.}},
 \bauthor{\bsnm{Duan}, \binits{L.-Y.}},
 \bauthor{\bsnm{Kot}, \binits{A.C.}}:
-\batitle{{NTU RGB+D} 120: A large-scale benchmark for 3d human activity understanding}.
+\batitle{{NTU RGB+D} 120: A large-scale benchmark for 3d human activity
+  understanding}.
 \bjtitle{IEEE Transactions on Pattern Analysis and Machine Intelligence}
 \bvolume{42}(\bissue{10}),
 \bfpage{2684}--\blpage{2701}
@@ -163,7 +169,9 @@ pp. \bfpage{1010}--\blpage{1019}
 \bauthor{\bsnm{Havard}, \binits{V.}},
 \bauthor{\bsnm{Dupuis}, \binits{Y.}},
 \bauthor{\bsnm{Baudry}, \binits{D.}}:
-\batitle{Digital twin of an industrial workstation: A novel method of an auto-labeled data generator using virtual reality for human action recognition in the context of human--robot collaboration}.
+\batitle{Digital twin of an industrial workstation: A novel method of an
+  auto-labeled data generator using virtual reality for human action
+  recognition in the context of human--robot collaboration}.
 \bjtitle{Engineering Applications of Artificial Intelligence}
 \bvolume{118},
 \bfpage{105655}
@@ -179,7 +187,8 @@ pp. \bfpage{1010}--\blpage{1019}
 \bauthor{\bsnm{Havard}, \binits{V.}},
 \bauthor{\bsnm{Baudry}, \binits{D.}},
 \bauthor{\bsnm{Savatier}, \binits{X.}}:
-\bctitle{{InHARD} -- industrial human action recognition dataset in the context of industrial collaborative robotics}.
+\bctitle{{InHARD} -- industrial human action recognition dataset in the context
+  of industrial collaborative robotics}.
 In: \bbtitle{2020 IEEE International Conference on Human-Machine Systems},
 pp. \bfpage{1}--\blpage{6}
 (\byear{2020}).
@@ -195,7 +204,8 @@ pp. \bfpage{1}--\blpage{6}
 \bauthor{\bsnm{Kuang}, \binits{J.}},
 \bauthor{\bsnm{Gui}, \binits{J.}}:
 \bctitle{Heterogeneous skeleton-based action representation learning}.
-In: \bbtitle{Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+In: \bbtitle{Proceedings of the IEEE/CVF Conference on Computer Vision and
+  Pattern Recognition},
 pp. \bfpage{19154}--\blpage{19164}
 (\byear{2025}).
 \doiurl{10.1109/CVPR52734.2025.01784} .
@@ -211,7 +221,8 @@ pp. \bfpage{19154}--\blpage{19164}
 \bauthor{\bsnm{Wu}, \binits{P.}},
 \bauthor{\bsnm{Chen}, \binits{M.}},
 \bauthor{\bsnm{Li}, \binits{C.}}:
-\batitle{Dual-branch differential channel hypergraph convolutional network for human skeleton-based action recognition}.
+\batitle{Dual-branch differential channel hypergraph convolutional network for
+  human skeleton-based action recognition}.
 \bjtitle{PLOS ONE}
 \bvolume{20}(\bissue{10}),
 \bfpage{0332066}
@@ -227,7 +238,9 @@ pp. \bfpage{19154}--\blpage{19164}
 \bauthor{\bsnm{Weistroffer}, \binits{V.}},
 \bauthor{\bsnm{Grandi}, \binits{F.}},
 \bauthor{\bsnm{Peruzzini}, \binits{M.}}:
-\batitle{Digital toolkit for human-centered machine design: Development and testing of an innovative system integrating virtual reality and hmi digital prototypes}.
+\batitle{Digital toolkit for human-centered machine design: Development and
+  testing of an innovative system integrating virtual reality and hmi digital
+  prototypes}.
 \bjtitle{International Journal of Advanced Manufacturing Technology}
 \bvolume{144},
 \bfpage{7717}--\blpage{7735}
@@ -237,7 +250,8 @@ pp. \bfpage{19154}--\blpage{19164}
 \endbibitem
 
 %%% 13
-\bibitem[\protect\citeauthoryear{Tobin et~al.}{2017}]{tobin2017domainrandomization}
+\bibitem[\protect\citeauthoryear{Tobin
+  et~al.}{2017}]{tobin2017domainrandomization}
 \begin{bchapter}
 \bauthor{\bsnm{Tobin}, \binits{J.}},
 \bauthor{\bsnm{Fong}, \binits{R.}},
@@ -245,8 +259,10 @@ pp. \bfpage{19154}--\blpage{19164}
 \bauthor{\bsnm{Schneider}, \binits{J.}},
 \bauthor{\bsnm{Zaremba}, \binits{W.}},
 \bauthor{\bsnm{Abbeel}, \binits{P.}}:
-\bctitle{Domain randomization for transferring deep neural networks from simulation to the real world}.
-In: \bbtitle{2017 IEEE/RSJ International Conference on Intelligent Robots and Systems},
+\bctitle{Domain randomization for transferring deep neural networks from
+  simulation to the real world}.
+In: \bbtitle{2017 IEEE/RSJ International Conference on Intelligent Robots and
+  Systems},
 pp. \bfpage{23}--\blpage{30}
 (\byear{2017}).
 \doiurl{10.1109/IROS.2017.8202133}
@@ -260,8 +276,10 @@ pp. \bfpage{23}--\blpage{30}
 \bauthor{\bsnm{Lang}, \binits{S.}},
 \bauthor{\bsnm{Seidel}, \binits{M.}},
 \bauthor{\bsnm{Hanses}, \binits{M.}}:
-\bctitle{Sim-to-real transfer for a robotics task: Challenges and lessons learned}.
-In: \bbtitle{2024 IEEE 29th International Conference on Emerging Technologies and Factory Automation (ETFA)},
+\bctitle{Sim-to-real transfer for a robotics task: Challenges and lessons
+  learned}.
+In: \bbtitle{2024 IEEE 29th International Conference on Emerging Technologies
+  and Factory Automation (ETFA)},
 pp. \bfpage{1}--\blpage{8}
 (\byear{2024}).
 \doiurl{10.1109/ETFA61755.2024.10711073}
@@ -275,7 +293,8 @@ pp. \bfpage{1}--\blpage{8}
 \oauthor{\bsnm{Havard}, \binits{V.}},
 \oauthor{\bsnm{Baudry}, \binits{D.}},
 \oauthor{\bsnm{Savatier}, \binits{X.}}:
-InHARD -- Industrial Human Action Recognition Dataset in the Context of Industrial Collaborative Robotics.
+InHARD -- Industrial Human Action Recognition Dataset in the Context of
+  Industrial Collaborative Robotics.
 Zenodo
 (2020).
 \doiurl{10.5281/zenodo.4003541} .
@@ -323,7 +342,8 @@ Zenodo
 \bauthor{\bsnm{Wang}, \binits{J.}},
 \bauthor{\bsnm{Jordan}, \binits{M.I.}}:
 \bctitle{Learning transferable features with deep adaptation networks}.
-In: \bbtitle{Proceedings of the 32nd International Conference on Machine Learning}.
+In: \bbtitle{Proceedings of the 32nd International Conference on Machine
+  Learning}.
 \bsertitle{Proceedings of Machine Learning Research},
 vol. \bseriesno{37},
 pp. \bfpage{97}--\blpage{105}
@@ -373,7 +393,8 @@ pp. \bfpage{443}--\blpage{450}
 \bauthor{\bsnm{Zhang}, \binits{K.}},
 \bauthor{\bsnm{Gordon}, \binits{G.}}:
 \bctitle{On learning invariant representations for domain adaptation}.
-In: \bbtitle{Proceedings of the 36th International Conference on Machine Learning}.
+In: \bbtitle{Proceedings of the 36th International Conference on Machine
+  Learning}.
 \bsertitle{Proceedings of Machine Learning Research},
 vol. \bseriesno{97},
 pp. \bfpage{7523}--\blpage{7532}
@@ -388,7 +409,8 @@ pp. \bfpage{7523}--\blpage{7532}
 \bauthor{\bsnm{Saerens}, \binits{M.}},
 \bauthor{\bsnm{Latinne}, \binits{P.}},
 \bauthor{\bsnm{Decaestecker}, \binits{C.}}:
-\batitle{Adjusting the outputs of a classifier to new a priori probabilities: A simple procedure}.
+\batitle{Adjusting the outputs of a classifier to new a priori probabilities: A
+  simple procedure}.
 \bjtitle{Neural Computation}
 \bvolume{14}(\bissue{1}),
 \bfpage{21}--\blpage{41}
@@ -398,11 +420,13 @@ pp. \bfpage{7523}--\blpage{7532}
 \endbibitem
 
 %%% 23
-\bibitem[\protect\citeauthoryear{Tian and Payeur}{2024}]{tian2024temporaladaptation}
+\bibitem[\protect\citeauthoryear{Tian and
+  Payeur}{2024}]{tian2024temporaladaptation}
 \begin{barticle}
 \bauthor{\bsnm{Tian}, \binits{H.}},
 \bauthor{\bsnm{Payeur}, \binits{P.}}:
-\batitle{Unsupervised temporal adaptation in skeleton-based human action recognition}.
+\batitle{Unsupervised temporal adaptation in skeleton-based human action
+  recognition}.
 \bjtitle{Algorithms}
 \bvolume{17}(\bissue{12}),
 \bfpage{581}
@@ -422,7 +446,8 @@ pp. \bfpage{7523}--\blpage{7532}
 \bauthor{\bsnm{Zhao}, \binits{Z.}},
 \bauthor{\bsnm{Xiong}, \binits{J.}},
 \bauthor{\bsnm{Liu}, \binits{C.}}:
-\batitle{Domain adaptation for sensor-based human activity recognition with a graph convolutional network}.
+\batitle{Domain adaptation for sensor-based human activity recognition with a
+  graph convolutional network}.
 \bjtitle{Mathematics}
 \bvolume{12}(\bissue{4}),
 \bfpage{556}
@@ -438,7 +463,8 @@ pp. \bfpage{7523}--\blpage{7532}
 \bauthor{\bsnm{Shi}, \binits{H.}},
 \bauthor{\bsnm{Liu}, \binits{X.}},
 \bauthor{\bsnm{Li}, \binits{J.}}:
-\batitle{Interpretable physics-informed domain adaptation paradigm for cross-machine transfer diagnosis}.
+\batitle{Interpretable physics-informed domain adaptation paradigm for
+  cross-machine transfer diagnosis}.
 \bjtitle{Knowledge-Based Systems}
 \bvolume{288},
 \bfpage{111499}
@@ -459,7 +485,8 @@ pp. \bfpage{7523}--\blpage{7532}
 \bauthor{\bsnm{Cubuk}, \binits{E.D.}},
 \bauthor{\bsnm{Kurakin}, \binits{A.}},
 \bauthor{\bsnm{Li}, \binits{C.-L.}}:
-\bctitle{{FixMatch}: Simplifying semi-supervised learning with consistency and confidence}.
+\bctitle{{FixMatch}: Simplifying semi-supervised learning with consistency and
+  confidence}.
 In: \bbtitle{Advances in Neural Information Processing Systems},
 vol. \bseriesno{33},
 pp. \bfpage{596}--\blpage{608}
@@ -476,7 +503,8 @@ pp. \bfpage{596}--\blpage{608}
 \bauthor{\bsnm{Darrell}, \binits{T.}},
 \bauthor{\bsnm{Saenko}, \binits{K.}}:
 \bctitle{Semi-supervised domain adaptation via minimax entropy}.
-In: \bbtitle{Proceedings of the IEEE/CVF International Conference on Computer Vision},
+In: \bbtitle{Proceedings of the IEEE/CVF International Conference on Computer
+  Vision},
 pp. \bfpage{8049}--\blpage{8057}
 (\byear{2019}).
 \doiurl{10.1109/ICCV.2019.00814}
@@ -504,7 +532,8 @@ pp. \bfpage{4077}--\blpage{4087}
 \bauthor{\bsnm{Cai}, \binits{W.}},
 \bauthor{\bsnm{Liu}, \binits{Q.}},
 \bauthor{\bsnm{Wang}, \binits{Y.}}:
-\batitle{Skeletonx: Data-efficient skeleton-based action recognition via cross-sample feature aggregation}.
+\batitle{Skeletonx: Data-efficient skeleton-based action recognition via
+  cross-sample feature aggregation}.
 \bjtitle{IEEE Transactions on Multimedia}
 (\byear{2025})
 \doiurl{10.1109/TMM.2025.3618561}
@@ -518,7 +547,8 @@ pp. \bfpage{4077}--\blpage{4087}
 \bauthor{\bsnm{Yang}, \binits{S.}},
 \bauthor{\bsnm{Lu}, \binits{X.}},
 \bauthor{\bsnm{Liu}, \binits{J.}}:
-\batitle{Cross-modal contrastive pre-training for few-shot skeleton action recognition}.
+\batitle{Cross-modal contrastive pre-training for few-shot skeleton action
+  recognition}.
 \bjtitle{IEEE Transactions on Circuits and Systems for Video Technology}
 \bvolume{34}(\bissue{10}),
 \bfpage{9798}--\blpage{9807}
@@ -528,7 +558,8 @@ pp. \bfpage{4077}--\blpage{4087}
 \endbibitem
 
 %%% 31
-\bibitem[\protect\citeauthoryear{Balasubramanian et~al.}{2015}]{balasubramanian2015smoothness}
+\bibitem[\protect\citeauthoryear{Balasubramanian
+  et~al.}{2015}]{balasubramanian2015smoothness}
 \begin{barticle}
 \bauthor{\bsnm{Balasubramanian}, \binits{S.}},
 \bauthor{\bsnm{Melendez-Calderon}, \binits{A.}},

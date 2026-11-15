@@ -54,7 +54,7 @@
   In industrial settings, a recognition system must identify workers' actions
   across different workcells, yet collecting and annotating physical recordings
   for every worker, object configuration, and execution style is costly. A
-  a digital twin can provide labelled skeleton sequences in a controllable virtual
+  digital twin can provide labelled skeleton sequences in a controllable virtual
   source domain, but those sequences differ from physical target-domain
   recordings in posture, timing, object interaction, and workcell context, and
   it remains unclear whether a recogniser trained on them transfers to unseen
@@ -79,6 +79,15 @@
   sim-to-real transfer, label efficiency, domain adaptation, industrial workcells}
 
 \maketitle
+
+\section*{Article Highlights}
+\begin{itemize}
+  \item Digital twin recordings cut the physical clips needed to train skeleton action recognition in industrial workcells.
+  \item Training on twin data together with a few labelled physical clips helps most when physical labels are scarce.
+  \item Unlabelled domain adaptation alone does not close the gap between virtual and physical assembly work.
+  \item Virtual and physical workers differ in posture, timing and object handling rather than in sensor noise.
+  \item Label-efficient recognition helps collaborative robots follow worker actions with little annotation effort.
+\end{itemize}
 
 \section{Introduction}
 \label{sec:introduction}
@@ -770,4 +779,11 @@ publication of this article.
 % available upon publication.
 
 \bibliography{references}
+
+\clearpage
+\thispagestyle{empty}
+\begin{center}
+  \textbf{For Table of Contents Only}\\[1em]
+  \includegraphics[width=\textwidth]{graphical_abstract.pdf}
+\end{center}
 \end{document}

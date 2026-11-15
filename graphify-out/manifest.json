@@ -6630,9 +6630,9 @@
     "semantic_hash": ""
   },
   "04_Cross_Modal_Digital_Twin/paper/springer/pi_cda_paper_springer.pdf": {
-    "mtime": 1794566891.2974918,
-    "seen": 1794566897.4663212,
-    "ast_hash": "115bde5536db9c08b23a2b1a46d05dc0",
+    "mtime": 1794664716.5231717,
+    "seen": 1794664744.4632776,
+    "ast_hash": "73dd979fcfe28325af633b95527d1498",
     "semantic_hash": ""
   },
   "04_Cross_Modal_Digital_Twin/paper/elsevier/figures/dataset_collection/inhard_dt_vr_capture.jpg": {
@@ -6687,6 +6687,12 @@
     "mtime": 1794501767.347498,
     "seen": 1794501811.9205642,
     "ast_hash": "a1f1eacf39d7290ca6744bb39b7a1728",
+    "semantic_hash": ""
+  },
+  "04_Cross_Modal_Digital_Twin/paper/springer/graphical_abstract.pdf": {
+    "mtime": 1794664699.636659,
+    "seen": 1794664744.4632723,
+    "ast_hash": "75c6bcf5833a7a146e83b6905b831f4e",
     "semantic_hash": ""
   }
 }
