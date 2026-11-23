@@ -114,4 +114,4 @@ Lead with the **subject-disjoint LOSO** headline (expected honest macro-F1 ≈ 0
 2. `rebuild/loso_benchmark.py` → full 52-subject LOSO, 11 classifiers, per-fold + aggregate metrics, CIs, paired significance, aggregated confusion (raw + normalized), calibration.
 3. `rebuild/ablations.py` → EEG-only / physio-only / fused for the leading models; fusion-benefit table + significance.
 4. `rebuild/make_figures.py` → subject-level macro-F1 boxplot, per-class metrics, aggregated confusion, ablation bars, significance heatmap, latency table.
-5. Rewrite `paper/task_type_detection_paper.tex` (full paper) incorporating everything above; compile to PDF.
+5. Rewrite `paper/1_CoopIS2026_submission/task_type_detection_paper.tex` (full paper) incorporating everything above; compile to PDF.

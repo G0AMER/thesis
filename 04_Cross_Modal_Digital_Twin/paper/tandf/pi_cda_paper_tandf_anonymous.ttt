@@ -1,0 +1,47 @@
+\begin{table}[!t]
+  \centering
+  \caption{Zero-shot transfer and supervised controls over 12 runs.}
+  \label{tab:main}
+  \small
+  \begin{tabular}{lrr}
+    \toprule
+    Method             & \ac{acc} (\%)           & Macro-\ac{f1} (\%)      \\
+    \midrule
+    \ac{dt} in-domain  & $75.47\pm3.54$          & $73.32\pm4.04$          \\
+    \midrule
+    Source-only        & $50.16\pm2.97$          & $\mathbf{40.59\pm2.93}$ \\
+    \ac{dann}          & $46.71\pm3.89$          & $38.17\pm3.00$          \\
+    \ac{coral}         & $48.17\pm4.00$          & $38.88\pm3.10$          \\
+    \ac{mmd}           & $49.21\pm3.18$          & $39.66\pm3.00$          \\
+    \ac{tcmmd}         & $48.35\pm2.79$          & $39.34\pm2.50$          \\
+    \ac{fm}            & $50.75\pm2.91$          & $40.54\pm2.93$          \\
+    \midrule
+    Target oracle      & $82.67\pm2.38$          & $75.22\pm4.04$          \\
+    Source plus target & $\mathbf{83.95\pm1.98}$ & $\mathbf{75.89\pm3.20}$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+\efloatseparator
+ 
+\begin{table}[!t]
+  \centering
+  \caption{Macro-F1 in \% by strategy and labelled clips per class.}
+  \label{tab:fewshot}
+  \small
+  \setlength{\tabcolsep}{3pt}
+  \begin{tabular}{lccccc}
+    \toprule
+    Strategy                         & $k=1$                              & $k=5$                       & $k=10$                  & $k=20$                  & $k=50$                  \\
+    \midrule
+    Scratch                          & $11.36\pm3.18^{-}$                 & $22.46\pm2.97^{-}$          & $34.08\pm2.92^{-}$      & $42.77\pm3.56^{-}$      & $51.39\pm4.50^{-}$      \\
+    Source-only fine-tuning          & $29.28\pm6.06$                     & $45.64\pm3.81$              & $53.10\pm3.80$          & $59.11\pm2.98$          & $64.99\pm3.11$          \\
+    \ac{tcmmd} fine-tuning           & $31.25\pm5.48$                     & $43.95\pm3.74^{-}$          & $52.55\pm2.10$          & $58.40\pm2.64$          & $64.88\pm2.89$          \\
+    Joint                            & $42.50\pm4.09^{+}$                 & $48.43\pm4.04^{+}$          & $52.54\pm3.51$          & $57.06\pm3.60^{-}$      & $61.85\pm3.88^{-}$      \\
+    Joint with \ac{fm}               & $42.12\pm3.91^{+}$                 & $48.00\pm4.04^{+}$          & $52.29\pm3.45$          & $57.02\pm4.15$          & $61.19\pm3.42^{-}$      \\
+    Joint with prototype             & $\mathbf{43.17\pm4.08}^{+}$        & $48.95\pm4.21^{+}$          & $53.35\pm3.70$          & $57.79\pm3.91^{-}$      & $62.91\pm4.02^{-}$      \\
+    Joint prototype then fine-tuning & $41.22\pm4.38^{+}$                 & $\mathbf{49.43\pm3.74}^{+}$ & $\mathbf{54.52\pm3.35}$ & $\mathbf{60.20\pm3.96}$ & $\mathbf{66.27\pm3.46}$ \\
+    \midrule
+    Target oracle                    & \multicolumn{5}{c}{$75.22\pm4.04$}                                                                                                             \\
+    \bottomrule
+  \end{tabular}
+\end{table}

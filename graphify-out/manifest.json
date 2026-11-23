@@ -53,24 +53,6 @@
     "ast_hash": "2deef5d8398fbebd973db2095af370f6",
     "semantic_hash": "2deef5d8398fbebd973db2095af370f6"
   },
-  "01_Task_Recognition_Multimodal_Fusion/paper/article.cls": {
-    "mtime": 1006204460.0,
-    "seen": 1791766257.9251845,
-    "ast_hash": "1d83f5084dd6851bbb8f990661490551",
-    "semantic_hash": "1d83f5084dd6851bbb8f990661490551"
-  },
-  "01_Task_Recognition_Multimodal_Fusion/paper/llncs.cls": {
-    "mtime": 1706524644.0,
-    "seen": 1791766257.9251852,
-    "ast_hash": "5fb5a2dc40571aa40f3d199c00cbb986",
-    "semantic_hash": "5fb5a2dc40571aa40f3d199c00cbb986"
-  },
-  "01_Task_Recognition_Multimodal_Fusion/paper/make_paper_v3.sh": {
-    "mtime": 1788882067.7960074,
-    "seen": 1791766257.9251864,
-    "ast_hash": "b4201bda4951585cddebef88011678eb",
-    "semantic_hash": "b4201bda4951585cddebef88011678eb"
-  },
   "01_Task_Recognition_Multimodal_Fusion/src/08_classic_split_benchmark.py": {
     "mtime": 1788873619.7158995,
     "seen": 1791766257.925187,
@@ -108,10 +90,10 @@
     "semantic_hash": "cf258b8da7cdb1457aa004bf1cc842b1"
   },
   "01_Task_Recognition_Multimodal_Fusion/src/rebuild/make_latex_tables.py": {
-    "mtime": 1788881718.1067536,
-    "seen": 1791766257.9251919,
-    "ast_hash": "313fbb0e63f8bab233b9971d6771e721",
-    "semantic_hash": "313fbb0e63f8bab233b9971d6771e721"
+    "mtime": 1794838539.4856749,
+    "seen": 1794838692.2407904,
+    "ast_hash": "dc7a26654d54d0aec1ad4cc99db2b12e",
+    "semantic_hash": ""
   },
   "01_Task_Recognition_Multimodal_Fusion/src/rebuild/models_registry.py": {
     "mtime": 1788879987.4278717,
@@ -1680,10 +1662,10 @@
     "semantic_hash": "2dcf50aa62f4646bad0d4b678cd43883"
   },
   "01_Task_Recognition_Multimodal_Fusion/REJECTION_RESPONSE_PLAN.md": {
-    "mtime": 1788879903.273747,
-    "seen": 1791766257.9253962,
-    "ast_hash": "f2be1c22a6808563c9dcfc10b9510f11",
-    "semantic_hash": "f2be1c22a6808563c9dcfc10b9510f11"
+    "mtime": 1794838539.4939146,
+    "seen": 1794838692.2424855,
+    "ast_hash": "e89df2e91d8da2e7bc55b971352522a9",
+    "semantic_hash": ""
   },
   "01_Task_Recognition_Multimodal_Fusion/assets/README_RESEARCH.md": {
     "mtime": 1775128580.1761348,
@@ -1900,60 +1882,6 @@
     "seen": 1791766257.9254298,
     "ast_hash": "1ba86804aabcd10afd1636c8c60f1c5b",
     "semantic_hash": "1ba86804aabcd10afd1636c8c60f1c5b"
-  },
-  "01_Task_Recognition_Multimodal_Fusion/paper/Example.pdf": {
-    "mtime": 1790673490.4281812,
-    "seen": 1791766257.9254305,
-    "ast_hash": "7595e844c4199b399e37d60a9462f94d",
-    "semantic_hash": "7595e844c4199b399e37d60a9462f94d"
-  },
-  "01_Task_Recognition_Multimodal_Fusion/paper/SCITEPRESS-eps-converted-to.pdf": {
-    "mtime": 1790623236.6795566,
-    "seen": 1791766257.9254313,
-    "ast_hash": "9c936f14e01be8de677f46b75e9ad549",
-    "semantic_hash": "9c936f14e01be8de677f46b75e9ad549"
-  },
-  "01_Task_Recognition_Multimodal_Fusion/paper/llncsdoc.pdf": {
-    "mtime": 1706525288.0,
-    "seen": 1791766257.925432,
-    "ast_hash": "b58b2fa78cf5f52432d19d949e2b5c2b",
-    "semantic_hash": "b58b2fa78cf5f52432d19d949e2b5c2b"
-  },
-  "01_Task_Recognition_Multimodal_Fusion/paper/orcid-eps-converted-to.pdf": {
-    "mtime": 1790623232.008359,
-    "seen": 1791766257.925433,
-    "ast_hash": "edd22af84a8ea61ad6cf5790526c9127",
-    "semantic_hash": "edd22af84a8ea61ad6cf5790526c9127"
-  },
-  "01_Task_Recognition_Multimodal_Fusion/paper/task_type_detection_paper.pdf": {
-    "mtime": 1788898079.8088703,
-    "seen": 1791766257.9254336,
-    "ast_hash": "bc8729d2b60c6edb0b7e3a2ae06baac6",
-    "semantic_hash": "bc8729d2b60c6edb0b7e3a2ae06baac6"
-  },
-  "01_Task_Recognition_Multimodal_Fusion/paper/task_type_detection_paper_rev.pdf": {
-    "mtime": 1790712428.4824364,
-    "seen": 1791766257.9254344,
-    "ast_hash": "abb019fbf1ff0e8495a8b0595ffb7fa5",
-    "semantic_hash": "abb019fbf1ff0e8495a8b0595ffb7fa5"
-  },
-  "01_Task_Recognition_Multimodal_Fusion/paper/task_type_detection_paper_rev_highlight.pdf": {
-    "mtime": 1790671989.2350645,
-    "seen": 1791766257.925435,
-    "ast_hash": "4469a527bd093b35e9f809a663250801",
-    "semantic_hash": "4469a527bd093b35e9f809a663250801"
-  },
-  "01_Task_Recognition_Multimodal_Fusion/paper/task_type_detection_paper_v3.pdf": {
-    "mtime": 1788912553.6943495,
-    "seen": 1791766257.925436,
-    "ast_hash": "00df2ddd6dabf074bc2a947c6b94c9ab",
-    "semantic_hash": "00df2ddd6dabf074bc2a947c6b94c9ab"
-  },
-  "01_Task_Recognition_Multimodal_Fusion/paper/task_type_detection_paper_v4.pdf": {
-    "mtime": 1788958743.7707775,
-    "seen": 1791766257.9254367,
-    "ast_hash": "4db0dd9d9c329427b2d7bba55f6006a9",
-    "semantic_hash": "4db0dd9d9c329427b2d7bba55f6006a9"
   },
   "02_Danger_State_Detection_Deep_Learning/assets/fig1_pipeline_overview copy.pdf": {
     "mtime": 1783963823.074199,
@@ -2428,84 +2356,6 @@
     "seen": 1791766257.9255002,
     "ast_hash": "ab669f10d5f38093288eb2d77564e886",
     "semantic_hash": "ab669f10d5f38093288eb2d77564e886"
-  },
-  "01_Task_Recognition_Multimodal_Fusion/paper/confusion_matrix_tuned_xgboost.png": {
-    "mtime": 1780136531.108891,
-    "seen": 1791766257.9255009,
-    "ast_hash": "d718446e3da490d6964d482f6d63e0b2",
-    "semantic_hash": "d718446e3da490d6964d482f6d63e0b2"
-  },
-  "01_Task_Recognition_Multimodal_Fusion/paper/confusion_matrix_xgboost_8020_clean.png": {
-    "mtime": 1789155600.6876059,
-    "seen": 1791766257.9255013,
-    "ast_hash": "e1d7cbde18d0b3ed7d023e598b8d89f9",
-    "semantic_hash": "e1d7cbde18d0b3ed7d023e598b8d89f9"
-  },
-  "01_Task_Recognition_Multimodal_Fusion/paper/figures/fig1_confusion_loso.png": {
-    "mtime": 1788895537.6344976,
-    "seen": 1791766257.9255025,
-    "ast_hash": "9f9602eb584ca4df4ee5980708ca01e7",
-    "semantic_hash": "9f9602eb584ca4df4ee5980708ca01e7"
-  },
-  "01_Task_Recognition_Multimodal_Fusion/paper/figures/fig2_perclass.png": {
-    "mtime": 1788895537.6344976,
-    "seen": 1791766257.9255033,
-    "ast_hash": "a36d135609cdd52e2fb143298c28e106",
-    "semantic_hash": "a36d135609cdd52e2fb143298c28e106"
-  },
-  "01_Task_Recognition_Multimodal_Fusion/paper/figures/fig3_loso_subject_box.png": {
-    "mtime": 1788895537.6344976,
-    "seen": 1791766257.9255037,
-    "ast_hash": "07170d1cdf5913caed694608336dadc7",
-    "semantic_hash": "07170d1cdf5913caed694608336dadc7"
-  },
-  "01_Task_Recognition_Multimodal_Fusion/paper/figures/fig4_modality_ablation.png": {
-    "mtime": 1788895537.6344976,
-    "seen": 1791766257.9255044,
-    "ast_hash": "3cf1e074e975cf21b91a190daae73ed3",
-    "semantic_hash": "3cf1e074e975cf21b91a190daae73ed3"
-  },
-  "01_Task_Recognition_Multimodal_Fusion/paper/figures/fig5_generalization_gap.png": {
-    "mtime": 1788895537.6354978,
-    "seen": 1791766257.9255052,
-    "ast_hash": "70504acfd861b0d428d000a514f58ceb",
-    "semantic_hash": "70504acfd861b0d428d000a514f58ceb"
-  },
-  "01_Task_Recognition_Multimodal_Fusion/paper/figures/fig6_significance.png": {
-    "mtime": 1788895537.6354978,
-    "seen": 1791766257.925506,
-    "ast_hash": "da056c1b7c03e3d7069e768cad863c9b",
-    "semantic_hash": "da056c1b7c03e3d7069e768cad863c9b"
-  },
-  "01_Task_Recognition_Multimodal_Fusion/paper/orcid.png": {
-    "mtime": 1540032330.0,
-    "seen": 1791766257.9255068,
-    "ast_hash": "9d926f38b9eb969713bfbbca8c4197cc",
-    "semantic_hash": "9d926f38b9eb969713bfbbca8c4197cc"
-  },
-  "01_Task_Recognition_Multimodal_Fusion/paper/results_detectors.png": {
-    "mtime": 1789236332.1323738,
-    "seen": 1791766257.9255075,
-    "ast_hash": "24fa9ac6ef4218b409be9f856fc5c34e",
-    "semantic_hash": "24fa9ac6ef4218b409be9f856fc5c34e"
-  },
-  "01_Task_Recognition_Multimodal_Fusion/paper/results_fusion.png": {
-    "mtime": 1789236332.2203784,
-    "seen": 1791766257.9255083,
-    "ast_hash": "4ff30b26d4b55ac596d14472b06b26e4",
-    "semantic_hash": "4ff30b26d4b55ac596d14472b06b26e4"
-  },
-  "01_Task_Recognition_Multimodal_Fusion/paper/results_latency.png": {
-    "mtime": 1789236332.4143884,
-    "seen": 1791766257.9255092,
-    "ast_hash": "6c3c333ddfa51fcfacf109a4a3524c72",
-    "semantic_hash": "6c3c333ddfa51fcfacf109a4a3524c72"
-  },
-  "01_Task_Recognition_Multimodal_Fusion/paper/task_pipeline.png": {
-    "mtime": 1789223287.6607974,
-    "seen": 1791766257.92551,
-    "ast_hash": "07bfee54f2c660a4e16dc084d9098160",
-    "semantic_hash": "07bfee54f2c660a4e16dc084d9098160"
   },
   "02_Danger_State_Detection_Deep_Learning/assets/ChatGPT Image Jul 29, 2026, 04_01_33 PM.png": {
     "mtime": 1785337294.1279178,
@@ -6630,9 +6480,9 @@
     "semantic_hash": ""
   },
   "04_Cross_Modal_Digital_Twin/paper/springer/pi_cda_paper_springer.pdf": {
-    "mtime": 1794664716.5231717,
-    "seen": 1794664744.4632776,
-    "ast_hash": "73dd979fcfe28325af633b95527d1498",
+    "mtime": 1794667574.110398,
+    "seen": 1794838692.2427847,
+    "ast_hash": "90814727c2054e81fa3faa1c9738acf8",
     "semantic_hash": ""
   },
   "04_Cross_Modal_Digital_Twin/paper/elsevier/figures/dataset_collection/inhard_dt_vr_capture.jpg": {
@@ -6690,9 +6540,297 @@
     "semantic_hash": ""
   },
   "04_Cross_Modal_Digital_Twin/paper/springer/graphical_abstract.pdf": {
-    "mtime": 1794664699.636659,
-    "seen": 1794664744.4632723,
-    "ast_hash": "75c6bcf5833a7a146e83b6905b831f4e",
+    "mtime": 1794667344.0193818,
+    "seen": 1794838692.242783,
+    "ast_hash": "10fa36fa9b257f96b5d7f14b24498081",
+    "semantic_hash": ""
+  },
+  "01_Task_Recognition_Multimodal_Fusion/paper/1_CoopIS2026_submission/llncs.cls": {
+    "mtime": 1794838509.9356022,
+    "seen": 1794838692.2407572,
+    "ast_hash": "5fb5a2dc40571aa40f3d199c00cbb986",
+    "semantic_hash": ""
+  },
+  "01_Task_Recognition_Multimodal_Fusion/paper/2_LOSO_rebuild_v3/llncs.cls": {
+    "mtime": 1794838509.9386022,
+    "seen": 1794838692.2407615,
+    "ast_hash": "5fb5a2dc40571aa40f3d199c00cbb986",
+    "semantic_hash": ""
+  },
+  "01_Task_Recognition_Multimodal_Fusion/paper/2_LOSO_rebuild_v3/make_paper_v3.sh": {
+    "mtime": 1794838539.4816747,
+    "seen": 1794838692.2407641,
+    "ast_hash": "b09037bb9e6eaaba7695d93d4f1bac80",
+    "semantic_hash": ""
+  },
+  "01_Task_Recognition_Multimodal_Fusion/paper/3_LOSO_rebuild_v4/llncs.cls": {
+    "mtime": 1794838509.9419653,
+    "seen": 1794838692.2407665,
+    "ast_hash": "5fb5a2dc40571aa40f3d199c00cbb986",
+    "semantic_hash": ""
+  },
+  "01_Task_Recognition_Multimodal_Fusion/paper/4_ICAART2027_submission/article.cls": {
+    "mtime": 1794838509.9744043,
+    "seen": 1794838692.2407687,
+    "ast_hash": "1d83f5084dd6851bbb8f990661490551",
+    "semantic_hash": ""
+  },
+  "01_Task_Recognition_Multimodal_Fusion/paper/5_ICAART2027_camera_ready/article.cls": {
+    "mtime": 1794838509.9836977,
+    "seen": 1794838692.2407706,
+    "ast_hash": "1d83f5084dd6851bbb8f990661490551",
+    "semantic_hash": ""
+  },
+  "04_Cross_Modal_Digital_Twin/paper/springer/create_graphical_abstract.py": {
+    "mtime": 1794667341.2031302,
+    "seen": 1794838692.242411,
+    "ast_hash": "0089253de4747c2dc78b8cfc5b4dbe27",
+    "semantic_hash": ""
+  },
+  "01_Task_Recognition_Multimodal_Fusion/paper/1_CoopIS2026_submission/task_type_detection_paper.pdf": {
+    "mtime": 1794838570.9758203,
+    "seen": 1794838692.2425585,
+    "ast_hash": "42b06e03b4fe6ebdfe25a8ce201a9f42",
+    "semantic_hash": ""
+  },
+  "01_Task_Recognition_Multimodal_Fusion/paper/2_LOSO_rebuild_v3/task_type_detection_paper_v3.pdf": {
+    "mtime": 1794838576.9660385,
+    "seen": 1794838692.2425609,
+    "ast_hash": "d458d9050a2114975b483c73d135049a",
+    "semantic_hash": ""
+  },
+  "01_Task_Recognition_Multimodal_Fusion/paper/3_LOSO_rebuild_v4/task_type_detection_paper_v4.pdf": {
+    "mtime": 1794838581.6062074,
+    "seen": 1794838692.2425628,
+    "ast_hash": "edf5bf132ae3dc797b54f8e24423f278",
+    "semantic_hash": ""
+  },
+  "01_Task_Recognition_Multimodal_Fusion/paper/4_ICAART2027_submission/SCITEPRESS-eps-converted-to.pdf": {
+    "mtime": 1794838509.9732985,
+    "seen": 1794838692.2425644,
+    "ast_hash": "9c936f14e01be8de677f46b75e9ad549",
+    "semantic_hash": ""
+  },
+  "01_Task_Recognition_Multimodal_Fusion/paper/4_ICAART2027_submission/orcid-eps-converted-to.pdf": {
+    "mtime": 1794838509.9767323,
+    "seen": 1794838692.2425659,
+    "ast_hash": "edd22af84a8ea61ad6cf5790526c9127",
+    "semantic_hash": ""
+  },
+  "01_Task_Recognition_Multimodal_Fusion/paper/4_ICAART2027_submission/task_type_detection_paper_rev.pdf": {
+    "mtime": 1794838583.487276,
+    "seen": 1794838692.242567,
+    "ast_hash": "bc832ff40e99db2b765e8bc6ace74aa2",
+    "semantic_hash": ""
+  },
+  "01_Task_Recognition_Multimodal_Fusion/paper/4_ICAART2027_submission/task_type_detection_paper_rev_highlight.pdf": {
+    "mtime": 1790671989.2350645,
+    "seen": 1794838692.2425687,
+    "ast_hash": "4469a527bd093b35e9f809a663250801",
+    "semantic_hash": ""
+  },
+  "01_Task_Recognition_Multimodal_Fusion/paper/5_ICAART2027_camera_ready/SCITEPRESS-eps-converted-to.pdf": {
+    "mtime": 1794838509.983434,
+    "seen": 1794838692.2425704,
+    "ast_hash": "9c936f14e01be8de677f46b75e9ad549",
+    "semantic_hash": ""
+  },
+  "01_Task_Recognition_Multimodal_Fusion/paper/5_ICAART2027_camera_ready/orcid-eps-converted-to.pdf": {
+    "mtime": 1794838509.9844265,
+    "seen": 1794838692.242572,
+    "ast_hash": "edd22af84a8ea61ad6cf5790526c9127",
+    "semantic_hash": ""
+  },
+  "01_Task_Recognition_Multimodal_Fusion/paper/5_ICAART2027_camera_ready/task_type_detection_paper_camera_ready.pdf": {
+    "mtime": 1794761181.2988389,
+    "seen": 1794838692.2425737,
+    "ast_hash": "c91379b810d0e9405c1270d8eabef12d",
+    "semantic_hash": ""
+  },
+  "01_Task_Recognition_Multimodal_Fusion/paper/templates/Example.pdf": {
+    "mtime": 1790673490.4281812,
+    "seen": 1794838692.2425754,
+    "ast_hash": "7595e844c4199b399e37d60a9462f94d",
+    "semantic_hash": ""
+  },
+  "01_Task_Recognition_Multimodal_Fusion/paper/templates/llncsdoc.pdf": {
+    "mtime": 1706525288.0,
+    "seen": 1794838692.2425773,
+    "ast_hash": "b58b2fa78cf5f52432d19d949e2b5c2b",
+    "semantic_hash": ""
+  },
+  "01_Task_Recognition_Multimodal_Fusion/paper/1_CoopIS2026_submission/confusion_matrix_tuned_xgboost.png": {
+    "mtime": 1794838509.9446025,
+    "seen": 1794838692.2428076,
+    "ast_hash": "d718446e3da490d6964d482f6d63e0b2",
+    "semantic_hash": ""
+  },
+  "01_Task_Recognition_Multimodal_Fusion/paper/1_CoopIS2026_submission/task_pipeline.png": {
+    "mtime": 1794838509.9461336,
+    "seen": 1794838692.2428093,
+    "ast_hash": "07bfee54f2c660a4e16dc084d9098160",
+    "semantic_hash": ""
+  },
+  "01_Task_Recognition_Multimodal_Fusion/paper/2_LOSO_rebuild_v3/figures/fig1_confusion_loso.png": {
+    "mtime": 1794838509.9496026,
+    "seen": 1794838692.2428112,
+    "ast_hash": "9f9602eb584ca4df4ee5980708ca01e7",
+    "semantic_hash": ""
+  },
+  "01_Task_Recognition_Multimodal_Fusion/paper/2_LOSO_rebuild_v3/figures/fig2_perclass.png": {
+    "mtime": 1794838509.9508505,
+    "seen": 1794838692.2428129,
+    "ast_hash": "a36d135609cdd52e2fb143298c28e106",
+    "semantic_hash": ""
+  },
+  "01_Task_Recognition_Multimodal_Fusion/paper/2_LOSO_rebuild_v3/figures/fig3_loso_subject_box.png": {
+    "mtime": 1794838509.9515135,
+    "seen": 1794838692.242815,
+    "ast_hash": "07170d1cdf5913caed694608336dadc7",
+    "semantic_hash": ""
+  },
+  "01_Task_Recognition_Multimodal_Fusion/paper/2_LOSO_rebuild_v3/figures/fig4_modality_ablation.png": {
+    "mtime": 1794838509.9521024,
+    "seen": 1794838692.2428164,
+    "ast_hash": "3cf1e074e975cf21b91a190daae73ed3",
+    "semantic_hash": ""
+  },
+  "01_Task_Recognition_Multimodal_Fusion/paper/2_LOSO_rebuild_v3/figures/fig5_generalization_gap.png": {
+    "mtime": 1794838509.9528599,
+    "seen": 1794838692.242818,
+    "ast_hash": "70504acfd861b0d428d000a514f58ceb",
+    "semantic_hash": ""
+  },
+  "01_Task_Recognition_Multimodal_Fusion/paper/2_LOSO_rebuild_v3/figures/fig6_significance.png": {
+    "mtime": 1794838509.9533358,
+    "seen": 1794838692.2428198,
+    "ast_hash": "da056c1b7c03e3d7069e768cad863c9b",
+    "semantic_hash": ""
+  },
+  "01_Task_Recognition_Multimodal_Fusion/paper/2_LOSO_rebuild_v3/figures/task_pipeline.png": {
+    "mtime": 1794838509.9587474,
+    "seen": 1794838692.2428215,
+    "ast_hash": "07bfee54f2c660a4e16dc084d9098160",
+    "semantic_hash": ""
+  },
+  "01_Task_Recognition_Multimodal_Fusion/paper/3_LOSO_rebuild_v4/figures/fig1_confusion_loso.png": {
+    "mtime": 1794838509.9629767,
+    "seen": 1794838692.2428231,
+    "ast_hash": "9f9602eb584ca4df4ee5980708ca01e7",
+    "semantic_hash": ""
+  },
+  "01_Task_Recognition_Multimodal_Fusion/paper/3_LOSO_rebuild_v4/figures/fig2_perclass.png": {
+    "mtime": 1794838509.963273,
+    "seen": 1794838692.2428248,
+    "ast_hash": "a36d135609cdd52e2fb143298c28e106",
+    "semantic_hash": ""
+  },
+  "01_Task_Recognition_Multimodal_Fusion/paper/3_LOSO_rebuild_v4/figures/fig3_loso_subject_box.png": {
+    "mtime": 1794838509.9635315,
+    "seen": 1794838692.2428265,
+    "ast_hash": "07170d1cdf5913caed694608336dadc7",
+    "semantic_hash": ""
+  },
+  "01_Task_Recognition_Multimodal_Fusion/paper/3_LOSO_rebuild_v4/figures/fig4_modality_ablation.png": {
+    "mtime": 1794838509.9638677,
+    "seen": 1794838692.2428284,
+    "ast_hash": "3cf1e074e975cf21b91a190daae73ed3",
+    "semantic_hash": ""
+  },
+  "01_Task_Recognition_Multimodal_Fusion/paper/3_LOSO_rebuild_v4/figures/fig5_generalization_gap.png": {
+    "mtime": 1794838509.964008,
+    "seen": 1794838692.24283,
+    "ast_hash": "70504acfd861b0d428d000a514f58ceb",
+    "semantic_hash": ""
+  },
+  "01_Task_Recognition_Multimodal_Fusion/paper/3_LOSO_rebuild_v4/figures/fig6_significance.png": {
+    "mtime": 1794838509.9641948,
+    "seen": 1794838692.2428317,
+    "ast_hash": "da056c1b7c03e3d7069e768cad863c9b",
+    "semantic_hash": ""
+  },
+  "01_Task_Recognition_Multimodal_Fusion/paper/3_LOSO_rebuild_v4/figures/task_pipeline.png": {
+    "mtime": 1794838509.9676998,
+    "seen": 1794838692.2428331,
+    "ast_hash": "07bfee54f2c660a4e16dc084d9098160",
+    "semantic_hash": ""
+  },
+  "01_Task_Recognition_Multimodal_Fusion/paper/4_ICAART2027_submission/confusion_matrix_xgboost_8020_clean.png": {
+    "mtime": 1794838509.9792638,
+    "seen": 1794838692.242835,
+    "ast_hash": "e1d7cbde18d0b3ed7d023e598b8d89f9",
+    "semantic_hash": ""
+  },
+  "01_Task_Recognition_Multimodal_Fusion/paper/4_ICAART2027_submission/orcid.png": {
+    "mtime": 1794838509.9770083,
+    "seen": 1794838692.2428365,
+    "ast_hash": "9d926f38b9eb969713bfbbca8c4197cc",
+    "semantic_hash": ""
+  },
+  "01_Task_Recognition_Multimodal_Fusion/paper/4_ICAART2027_submission/results_detectors.png": {
+    "mtime": 1794838509.9777663,
+    "seen": 1794838692.242838,
+    "ast_hash": "24fa9ac6ef4218b409be9f856fc5c34e",
+    "semantic_hash": ""
+  },
+  "01_Task_Recognition_Multimodal_Fusion/paper/4_ICAART2027_submission/results_fusion.png": {
+    "mtime": 1794838509.9781814,
+    "seen": 1794838692.2428396,
+    "ast_hash": "4ff30b26d4b55ac596d14472b06b26e4",
+    "semantic_hash": ""
+  },
+  "01_Task_Recognition_Multimodal_Fusion/paper/4_ICAART2027_submission/results_latency.png": {
+    "mtime": 1794838509.9786463,
+    "seen": 1794838692.242841,
+    "ast_hash": "6c3c333ddfa51fcfacf109a4a3524c72",
+    "semantic_hash": ""
+  },
+  "01_Task_Recognition_Multimodal_Fusion/paper/4_ICAART2027_submission/task_pipeline.png": {
+    "mtime": 1794838509.9772,
+    "seen": 1794838692.242843,
+    "ast_hash": "07bfee54f2c660a4e16dc084d9098160",
+    "semantic_hash": ""
+  },
+  "01_Task_Recognition_Multimodal_Fusion/paper/5_ICAART2027_camera_ready/confusion_matrix_xgboost_8020_clean.png": {
+    "mtime": 1794838509.9854474,
+    "seen": 1794838692.2428446,
+    "ast_hash": "e1d7cbde18d0b3ed7d023e598b8d89f9",
+    "semantic_hash": ""
+  },
+  "01_Task_Recognition_Multimodal_Fusion/paper/5_ICAART2027_camera_ready/orcid.png": {
+    "mtime": 1794838509.9845023,
+    "seen": 1794838692.2428465,
+    "ast_hash": "9d926f38b9eb969713bfbbca8c4197cc",
+    "semantic_hash": ""
+  },
+  "01_Task_Recognition_Multimodal_Fusion/paper/5_ICAART2027_camera_ready/results_detectors.png": {
+    "mtime": 1794838509.984863,
+    "seen": 1794838692.242849,
+    "ast_hash": "24fa9ac6ef4218b409be9f856fc5c34e",
+    "semantic_hash": ""
+  },
+  "01_Task_Recognition_Multimodal_Fusion/paper/5_ICAART2027_camera_ready/results_fusion.png": {
+    "mtime": 1794838509.9850035,
+    "seen": 1794838692.2428517,
+    "ast_hash": "4ff30b26d4b55ac596d14472b06b26e4",
+    "semantic_hash": ""
+  },
+  "01_Task_Recognition_Multimodal_Fusion/paper/5_ICAART2027_camera_ready/results_latency.png": {
+    "mtime": 1794838509.9851754,
+    "seen": 1794838692.2428544,
+    "ast_hash": "6c3c333ddfa51fcfacf109a4a3524c72",
+    "semantic_hash": ""
+  },
+  "01_Task_Recognition_Multimodal_Fusion/paper/5_ICAART2027_camera_ready/task_pipeline.png": {
+    "mtime": 1794838509.9846673,
+    "seen": 1794838692.2428582,
+    "ast_hash": "07bfee54f2c660a4e16dc084d9098160",
+    "semantic_hash": ""
+  },
+  "04_Cross_Modal_Digital_Twin/paper/springer/graphical_abstract.png": {
+    "mtime": 1794667348.5507843,
+    "seen": 1794838692.24318,
+    "ast_hash": "d1f8c407a1fd2fc16c4b294be5aa17c8",
     "semantic_hash": ""
   }
 }

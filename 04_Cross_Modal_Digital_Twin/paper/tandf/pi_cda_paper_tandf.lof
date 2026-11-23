@@ -1,0 +1,5 @@
+\contentsline {figure}{\numberline {1}{\ignorespaces Evaluation workflow from paired datasets to held-out workers.}}{18}{figure.1}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Virtual and physical capture setups of the two datasets.}}{19}{figure.2}%
+\contentsline {figure}{\numberline {3}{\ignorespaces Macro-F1 of zero-shot transfer and supervised controls.}}{20}{figure.3}%
+\contentsline {figure}{\numberline {4}{\ignorespaces Facing direction and annotated clip duration in both domains.}}{21}{figure.4}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Macro-F1 against the number of labelled physical clips per class.}}{22}{figure.5}%

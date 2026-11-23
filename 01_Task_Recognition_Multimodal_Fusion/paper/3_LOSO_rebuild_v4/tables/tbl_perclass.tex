@@ -1,0 +1,20 @@
+\begin{table}[t]
+\centering
+\small
+\caption{Pooled out-of-fold per-class metrics of the best LOSO model, GB, over all
+5,640 test windows. Each subject contributes only out-of-fold predictions. Window
+counts are the true-label column totals of the pooled confusion matrix.}
+\label{tab:perclass}
+\begin{tabular}{lcccr}
+\toprule
+True label & Precision & Recall & F1 & Windows, $n$ \\
+\midrule
+Cognitive load & 0.536 & 0.556 & 0.546 & 975 \\
+High stress & 0.576 & 0.612 & 0.593 & 224 \\
+Industrial task & 0.868 & 0.839 & 0.854 & 3571 \\
+Low load & 0.502 & 0.586 & 0.541 & 799 \\
+Other, vr-job-sim & 0.000 & 0.000 & 0.000 & 71 \\
+\midrule Total & & & & 5640 \\
+\bottomrule
+\end{tabular}
+\end{table}

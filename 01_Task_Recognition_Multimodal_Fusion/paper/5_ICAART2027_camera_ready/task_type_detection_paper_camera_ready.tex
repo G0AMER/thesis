@@ -1,0 +1,379 @@
+\documentclass[a4paper,twoside]{article}
+
+\usepackage{epsfig}
+\usepackage{subcaption}
+\usepackage{calc}
+\usepackage{amssymb}
+\usepackage{amstext}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{multicol}
+\usepackage{pslatex}
+\usepackage{apalike}
+\usepackage{algorithm2e}
+\usepackage[bottom]{footmisc}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{xcolor}
+\usepackage[printonlyused]{acronym}
+\usepackage{SCITEPRESS}     % Please add other packages that you may need BEFORE the SCITEPRESS.sty package.
+
+\newacro{HRC}{Human-Robot Collaboration}
+\newacro{EEG}{Electroencephalography}
+\newacro{EMG}{Electromyography}
+\newacro{EDA}{Electrodermal Activity}
+\newacro{ECG}{Electrocardiography}
+\newacro{AI}{Artificial Intelligence}
+\newacro{XGBoost}{eXtreme Gradient Boosting}
+\newacro{MLP}{Multilayer Perceptron}
+\newacro{ATTR}{Automatic Task-Type Recognition}
+
+\makeatletter
+\def\splitauthor#1, #2\@nil{#1}
+\def\splityear#1, #2\@nil{#2}
+\newcommand{\citeauthor}[1]{%
+  \if@filesw\immediate\write\@auxout{\string\citation{#1}}\fi
+  \@ifundefined{b@#1}%
+    {{\bf ?}\@warning{Citation `#1' on page \thepage\space undefined}}%
+    {\expandafter\expandafter\expandafter\splitauthor\csname b@#1\endcsname\@nil}%
+}
+\newcommand{\citeyear}[1]{%
+  \if@filesw\immediate\write\@auxout{\string\citation{#1}}\fi
+  \@ifundefined{b@#1}%
+    {{\bf ?}\@warning{Citation `#1' on page \thepage\space undefined}}%
+    {(\expandafter\expandafter\expandafter\splityear\csname b@#1\endcsname\@nil)}%
+}
+\newcommand{\citet}[1]{%
+  \if@filesw\immediate\write\@auxout{\string\citation{#1}}\fi
+  \@ifundefined{b@#1}%
+    {{\bf ?}\@warning{Citation `#1' on page \thepage\space undefined}}%
+    {\expandafter\expandafter\expandafter\splitauthor\csname b@#1\endcsname\@nil~%
+     (\expandafter\expandafter\expandafter\splityear\csname b@#1\endcsname\@nil)}%
+}
+\makeatother
+
+\begin{document}
+
+\title{Task Recognition from Physiological Data Using Multimodal Sensor Fusion for Human-Robot Collaboration}
+
+\author{\authorname{First Author Name\sup{1}\orcidAuthor{0000-0000-0000-0000}, Second Author Name\sup{1}\orcidAuthor{0000-0000-0000-0000} and Third Author Name\sup{2}\orcidAuthor{0000-0000-0000-0000}}
+    \affiliation{\sup{1}Institute of Problem Solving, XYZ University, My Street, MyTown, MyCountry}
+    \affiliation{\sup{2}Department of Computing, Main University, MySecondTown, MyCountry}
+    \email{\{first\_author, second\_author\}@ips.xyz.edu, third\_author@dc.mu.edu}
+}
+
+\keywords{Physiological Signals, Task Recognition, Multimodal Fusion, Human-Robot Collaboration, Assistive Systems.}
+
+\abstract{
+    % Automatic Task-Type Recognition from operators physiological data is a key capability for adaptive assistive human-robot collaboration.
+    % %reste toujours un problème difficile à résoudre, en particulier dans les contextes industriels où les tâches peuvent être complexes et les signaux physiologiques bruyants.
+    % Assistance can be adapted in real time by enabling a robot to detect an operator's current task state from physiological signals quickly and reliably.
+    % This requires handling differences between operators, changes in sensor relationships over time, and imbalanced label distributions.
+    % We propose, in this paper, a compact multimodal pipeline that standardizes preprocessing, fuses sensor-derived features into a unified tabular representation, and trains detectors with class-aware objectives to improve robustness across operators and imbalanced labels.
+    % This pipeline addresses these issues by standardizing preprocessing and fusing modality features into a single tabular representation.
+    % %Physiological features are used to train and evaluate different artificial intelligence algorithms for five labels (cognitive load, high stress, industrial task, low load, and other). 
+    % Different task-types are recognized as cognitive load, high stress and industrial task, after physiological features training and evaluation using \ac{AI} algorithms.
+    % Results show that \ac{XGBoost} achieves the best performance 0.9512 accuracy and 0.9104 macro-F1 scores.
+    % These results indicate that task type recognition could be reliable, which allows its integration into adaptive human-robot collaboration and assistive systems.
+    %Physiological features are used to train and evaluate different artificial intelligence algorithms for five labels (cognitive load, high stress, industrial task, low load, and other)
+    Task-type recognition using physiological information of operators is an essential capability in adaptive and assistive human-robot cooperation. Appropriate assistance can be adapted in real time by enabling a robot to detect an operator’s current task state from physiological signals quickly and reliably. This requires handling differences between operators, changes in sensor relationships over time, and imbalanced label distributions. We propose, in this work, a multimodal pipeline for uniform pre-processing and fusion of features from sensors to a tabular format for training detectors with class-based objectives. The pipeline is applied to MultiPhysio-HRC dataset. Different task-types are recognized as cognitive load, high stress, industrial task, low load, and other. Results show that the fused representation, with \acs{XGBoost} achieves the best performance with 0.95 accuracy and 0.91 macro-F1. A modality ablation confirms that the fused input improves macro-F1 over the single modality for every detector tested, by 0.047 to 0.186.}
+
+\onecolumn \maketitle \normalsize \setcounter{footnote}{0} \acresetall
+
+\section{\uppercase{Introduction}}\label{sec:introduction}
+
+\noindent \ac{HRC} is a paradigm of shared autonomy in which a human operator and a robot cooperate to accomplish a certain task in an efficient and safe way~\cite{selvaggio2021autonomy,borghi2025operatorstress}. For that, a robot needs to be able to constantly recognize the state of an operator and adapt its behavior accordingly to the progress of the interaction. The implementation of this feature involves a training process based on the data collected using sensors from the human operator and the robot. The data of the human side includes physiological and behavioral features, such as \ac{EEG}, \ac{EMG}, \ac{EDA}, \ac{ECG}, respiration and others taken from multimodal dataset designed to discover the intentions of the person.
+
+Although different types of sensors provide different data, the problem of poor fusion leads to overfitting of the subject-specific data or absence of intermodal correlations. Moreover, labels for target tasks are often unbalanced and can not be perfectly separable from the current representation, leading to overfitting and unreliable predictions.
+
+In this paper, we propose a system designed for task-condition recognition, which is based on MultiPhysio-HRC multimodal dataset containing five task conditions: cognitive load, high stress, industrial task, low load and other~\cite{bussolan2025multiphysiohrc}. We build a compact multimodal fusion pipeline that maps heterogeneous physiological signals to a single tabular representation, compare five detectors under one shared protocol, and test whether fusing modalities is justified rather than assuming it. We report the resulting baselines together with their scope so that they can be used in assistive \ac{HRC} applications.
+
+The detectors themselves are standard, and the contribution of this paper lies in the evaluation protocol built around them. We define a deterministic five-class schema that maps all 21 protocol conditions of the dataset by a rule depending only on the recorded condition name. We audit the feature export before any modelling, so that the reported figures rest on 128 physiological features rather than on recording identifiers or duplicated columns. We compare five detectors and test the fused input against the better single modality for each detector under one shared protocol, instead of assuming that fusion helps. Finally, we bound the hold-out figures with a subject-disjoint check and measure inference latency, so that the deployment claims rest on measurement.
+
+%\subsection*{Contributions}
+%This paper makes four contributions. We define a deterministic and reproducible five-class task-condition schema for the \mbox{MultiPhysio-HRC} dataset, in which all 21 protocol conditions are mapped to classes by a rule that depends only on the recorded condition name, with the rule and the per-condition window counts released in full and with no crowdsourcing or subjective rating involved. We then audit the feature export before any modelling so that the reported figures rest on physiological features rather than on the acquisition pipeline's own bookkeeping, which leaves a 128-feature representation. On that representation we run a controlled comparison of five detectors under one shared protocol, and we add a modality ablation for this dataset that tests the fused input against the better single modality per detector and shows that fusion helps in every case, which addresses a gap we identified in prior work where fusion is assumed rather than tested. We close with a candid statement of evaluation scope, since the reported figures are a within-subject ceiling rather than an across-operator estimate, and we quantify the direction of that difference and measure inference latency so that the deployment claims are bounded by measurement.
+
+%\subsection*{Organization}
+The rest of the paper is structured as follows. Section~\ref{sec:related} reviews related work, Section~\ref{sec:method} describes the methodology, Section~\ref{sec:results} presents the benchmark, the ablation, the class-level analysis, the latency, and the subject-disjoint check, and Section~\ref{sec:conclusion} concludes.
+
+\section{\uppercase{Related Work}}\label{sec:related}
+
+\noindent Physiological operator-state recognition for \ac{HRC} has advanced through new datasets, new fusion models, and new evaluation studies. This section outlines recent contributions in each of these areas and identifies the drawback that motivates the present work.
+
+The MultiPhysio-HRC dataset used in this paper was introduced by \citet{bussolan2025multiphysiohrc}, who classified three subject-specific levels of self-reported stress and cognitive load, derived from STAI-Y1 and NASA-TLX scores, under leave-one-subject-out validation. Their random forest, AdaBoost, and \ac{XGBoost} baselines reach mean F1 scores of 0.34 to 0.39 for stress and 0.33 to 0.49 for cognitive load across the physiological, \ac{EEG}, and voice feature sets, each modality being evaluated separately. Those targets come from questionnaire instruments that are not part of the feature export we use, and the source study neither audits its feature export for leakage nor tests whether fusing modalities helps under a controlled design. Our work employs the same dataset but another protocol-based target alongside the audit and fusion test.
+
+\citet{borghi2025operatorstress} studied the stress level of operators during collaboration with robots via a multimodal approach and found that there is considerable variability across individuals. \citet{aygun2022assistive}, who evaluated cognitive workload in assistive robots through physiological data, found significant variability among individuals as well. All these studies indicate the fact that the operator effect is one of the key challenges, yet all of them look at a single target state in a single architecture pipeline.
+
+On the fusion side, \citet{baltrusaitis2019multimodal} provide the standard taxonomy of multimodal machine learning, arguing that heterogeneous streams carry complementary information and that naive fusion can hurt when modalities are redundant or noisy. Recent work has begun to pair fusion with explicit subject-independent design, as in \citet{cheng2025crosssubject}, who fuse \ac{EEG} with eye-tracking for cross-subject cognitive-load recognition and combine a cross-attention fusion mechanism with domain-adversarial adaptation so that the learned representation transfers to unseen participants. That combination is promising, but it still assumes rather than tests the value of fusion itself. The taxonomy of \citet{baltrusaitis2019multimodal} remains largely descriptive, and controlled empirical tests on physiological \ac{HRC} data, where redundancy across channels is high, remain scarce. Our modality ablation is a step toward filling that gap.
+
+On the evaluation side, \citet{iarlori2024cognitiveworkload} survey cognitive-workload estimation from wearable sensors in human-machine interaction and catalogue the evaluation heterogeneity that makes studies hard to compare. \citet{jin2025cognitivestate} provide a recent systematic review of physiological cognitive-state recognition and show that the design of the data split is among the largest drivers of reported performance differences. That concern has since been quantified: \citet{brookshire2024leakage} contrast segment-based and subject-based holdouts on \ac{EEG} and find that the segment-based protocol strongly overestimates performance on new subjects, and their survey of the literature shows that most translational deep-learning studies use exactly that protocol. Reviews of the workload literature reach a parallel conclusion from the task side, where \citet{pusica2025workload} report a significant drop in classification accuracy when workload is induced by multitasking and rated by quantitative task load rather than subjectively, and \citet{diarra2025realworld} note that the metrics used in controlled laboratory studies rarely transfer to real-world settings. These reviews identify the problem but do not supply a concrete recipe for the compact applied setting we target.
+
+Recent work points toward several responses to the difficulties above. \citet{bussolan2025federated} extend the same line of multimodal operator monitoring with federated learning, training on-device over \ac{EEG}, \ac{ECG}, \ac{EDA}, \ac{EMG}, and respiration so that stress prediction is personalized without moving raw signals off the operator's equipment. \citet{wei2025sgatcn} address the task-dependence of workload signatures instead, using a stacked graph attention convolutional network that reaches 0.651 accuracy when the model must generalize across N-back, mental arithmetic, and Sternberg tasks, which shows how much accuracy is lost once the task itself no longer identifies the label. At the representation level, \citet{jiang2024labram} pretrain a large \ac{EEG} model on roughly 2{,}500 hours drawn from about 20 datasets and fine-tune it across clinical and affective tasks, which shows that generic \ac{EEG} representations are now feasible. None of these lines, however, reports a compact audited pipeline on a single public \ac{HRC} dataset that separates the contribution of the features from the contribution of fusion, which is the gap we address.
+
+In summary, prior work establishes that fusion of physiological modalities is promising in principle~\cite{baltrusaitis2019multimodal,cheng2025crosssubject}, that operator-state recognition in \ac{HRC} is hard and subject-dependent, and that evaluation design determines reported performance. What is missing is a compact and reproducible account of task-condition recognition on a public \ac{HRC} dataset that audits the features before modelling, states the label rule exactly, and tests whether fusion helps. The present work addresses that gap.
+
+\section{\uppercase{Methodology}}\label{sec:method}
+
+\subsection{Proposed Solution Pipeline}
+
+\noindent This solution is implemented based on the pipeline described in Figure~\ref{fig:pipeline}. First, the physiological signals get processed and normalized in pre-processing phase, and then get converted into a tabulated form. Alongside that fused representation we retain two modality feature groups, one holding the \ac{EEG} channels and one holding the peripheral channels, because the ablation of Section~\ref{sec:ablation} reuses the identical preprocessing path on each group separately. The three representations are passed to the selected detector models, which ensures a consistent input structure and therefore makes any difference in outcome attributable to the detector rather than to the data preparation.
+
+The preprocessing stage carries more weight than its name suggests, because the export it consumes is not yet a clean feature matrix. That export is a table of 257 columns in which physiological summaries sit beside the acquisition pipeline's own bookkeeping, namely operator and repetition identifiers, dataset flags, and duplicate copies of columns that already exist. Removing that bookkeeping belongs to the method itself rather than to housekeeping, since a model trained on it learns the recording instead of the task and counts some evidence twice, and a pipeline that skips this step cannot separate what the model learned about the task from what it learned about the recording. Section~\ref{sec:prep} states the audit in full, and every detector reported below is trained on the 128 features that survive it.
+
+The fusion step itself operates as follows. The \ac{EEG} block contributes 96 features, which consist of 12 summary statistics per eight channels. Peripheral block contributes with 32 features, which are 8 summary statistics per four signal families (\ac{ECG}, \ac{EDA}, \ac{EMG} and respiration). The combination of the two blocks leads to a 128-dimensional fused vector, which serves as an input to every tabular classifier. In the two-tower deep learning model, the two blocks are not combined on the input layer. Rather, every block is projected into the small embedding by the corresponding tower, and then two embeddings are combined before the output layer. This design lets the network learn a separate representation per modality group before mixing them, which is the structural difference between the two-tower model and the tabular detectors that receive the same 128 features as one flat vector.
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=\columnwidth]{task_pipeline.png}
+    \caption{Proposed pipeline, from preprocessing to the shared evaluation protocol.}\label{fig:pipeline}
+\end{figure}
+
+\subsection{Data and Preprocessing}\label{sec:prep}
+
+\noindent The successful implementation of the detector requires only one preprocessing workflow that is consistent for all models. The main training data set comes from MultiPhysio-HRC, which is a multimodal industrial \ac{HRC} data set with combined physiological and behavioral measurements in both controlled and realistic settings~\cite{bussolan2025multiphysiohrc}. Thus, the same preprocessing steps have been used for each data set. First, all metadata and non-features are deleted. All candidate features then get converted into numerical format, and any columns that are null for the whole export are dropped. Task labels are then mapped into the unified five-class schema of Table~\ref{tab:labels}. Missing values are filled by median imputation, the features are standardized using training-fold statistics only, and the result is assembled into the unified tabular fused representation together with the per-modality feature groups that the ablation of Section~\ref{sec:ablation} reuses.
+
+The column audit deserves a precise statement, because the export we obtained is wider than the physiological measurement it is supposed to contain. Of its 257 columns only 128 hold a genuine physiological feature, and the remaining 129 are bookkeeping of four different kinds that must be separated rather than treated alike. 16 columns carry recording identifiers and trial counters, among them columns prefixed \texttt{ID\_\_} and \texttt{Repetition\_\_}, which record which operator and which repetition produced the row. 8 further columns are dataset metadata and presence flags, which describe the export rather than the person. Neither of the two families above includes a measure that is related to the operator.
+
+Identifier column is an explicitly defined path through which the classifier learns to detect the recording and not the actual class~\cite{brookshire2024leakage}. This needs to be described clearly since in one recording, the identity of the operator does not change while that of the class does. An algorithm able to parse the identifier will be able to remember the identity of the operator of a particular window and score well on withheld data for that operator without having learned any task relevant information. We drop these 24 columns, and with them 24 opportunities to memorize the recording.
+
+96 further columns are byte-identical duplicates, meaning that each one repeats the exact numerical values of an existing \ac{EEG} feature column under a different name. They add no information, but they are not harmless either. A model that weighs columns as evidence now receives the \ac{EEG} block twice, so the duplication would silently give \ac{EEG} a weight of 192 columns against 32 peripheral columns, and any comparison between modalities would be settled by the bookkeeping rather than by the signal. We drop these 96 columns as well, which brings the number of removed columns to 120.
+
+The remaining nine columns are identifier and label keys. Unlike the columns above they are not deleted, because the split and the scoring still need to know which window belongs to which class. They are held aside and are never passed to a detector as inputs. What the detectors see is therefore the 128 genuine features, distributed as 96 \ac{EEG}, 8 \ac{ECG}, 8 \ac{EDA}, 8 \ac{EMG}, and 8 respiration features, which is 257 minus the 120 removed columns and the 9 keys. The retained set contains 328 missing values in total, which median imputation fills using training-fold statistics only.
+
+\subsection{Task-Condition Labels}
+
+\noindent The dataset annotates each recording with the protocol condition that was performed. We therefore define the recognition target as the task condition, which the experimental protocol itself certifies. Each window receives exactly one of five labels, assigned deterministically from the recording's condition name by the rule released with the reproducibility package. Because the labels are a deterministic function of the protocol, they are exact and reproducible, and there is no ambiguity about which condition a window came from.
+
+The five classes are defined by the protocol conditions that produce them, rather than by an abstract psychological interpretation. Table~\ref{tab:labels} gives the complete mapping for all 21 conditions together with the resulting window counts.
+
+\begin{table*}[t]
+    \caption{Deterministic mapping from the 21 protocol conditions to the five classes.}\label{tab:labels}
+    \centering
+    \footnotesize
+    \begin{tabular}{@{}llr@{}}
+        \toprule
+        Class           & Protocol conditions, \texttt{task\_name}                                                               & Windows \\
+        \midrule
+        cognitive load  & \texttt{stroopeasy\_0}, \texttt{stroophard\_0}, \texttt{n-back\_0}, \texttt{hanoi\_0}, \texttt{mat\_0} & 975     \\
+        high stress     & \texttt{vr-plank\_0}                                                                                   & 224     \\
+        industrial task & \texttt{manual-task-1}\dots\texttt{-5}, \texttt{cobot-task-1}\dots\texttt{-5}                          & 3{,}571 \\
+        low load        & \texttt{rest-1}, \texttt{rest-2}, \texttt{rest\_0}, \texttt{meditation\_0}                             & 799     \\
+        other           & \texttt{vr-job-sim\_0}                                                                                 & 71      \\
+        \midrule
+        Total           & 21 conditions                                                                                          & 5{,}640 \\
+        \bottomrule
+    \end{tabular}
+\end{table*}
+
+The mapping is coherent with a physiological hypothesis in each case. The cognitive-load conditions, namely the Stroop battery in its easy and hard variants, the N-back task, the Tower of Hanoi, and an arithmetic and puzzle task, tax working memory and executive control. High stress involves a virtual reality height plank walking paradigm, which is a verified stressor that causes autonomic arousal due to the perception of threat. Industrial task involves up to ten repetitions of an e-bike battery disassembly, of which five are performed manually and five with a collaborative robot. Low load involves rest and voice-guided breathing segments inserted between high demand tasks as a low-demand baseline. The residual class holds a single open-ended virtual-reality job-simulation session that belongs to none of the controlled batteries. We keep it as its own class rather than forcing it into another, and we report its small size explicitly.
+
+The class distribution is strongly imbalanced, with 3{,}571 windows for industrial task against 224 for high stress and 71 for other. In proportional terms the majority class accounts for 63.3 percent of the data, high stress for 4.0 percent, and other for 1.3 percent. A classifier that always predicts industrial task therefore reaches 0.633 accuracy while recovering none of the minority states, which is why accuracy alone cannot rank models on this dataset and why the metrics of Section~\ref{sec:metrics} and the class weights of Section~\ref{sec:formulation} are necessary.
+
+\subsection{Problem Formulation}\label{sec:formulation}
+
+\noindent Task recognition using physiological signals in this work is a supervised classification problem that involves five classes. Let $z_i$ be the measurements derived from the operator through the different sensors synchronized for a particular observation period. After the preprocessing and fusion, each observation period is represented in terms of a feature vector $x_i \in \mathbb{R}^{d}$ with $d = 128$ along with its corresponding class $y_i \in \{1,\ldots,5\}$ representing the five task conditions in the order of cognitive load, high stress, industrial task, low load, and other.
+
+Given a model $f_\theta$ with parameters $\theta$, the class posterior for class $c$ on input $x_i$ is written $p_\theta(y=c\mid x_i)$. To handle the class imbalance documented above, training minimizes a class-weighted cross-entropy objective:
+\begin{equation}
+    \mathcal{L}(\theta)= -\frac{1}{N}\sum_{i=1}^{N}\sum_{c=1}^{5} w_c\,\mathbf{1}[y_i=c] \log p_\theta(y=c\mid x_i),
+    \label{eq:loss}
+\end{equation}
+where $N$ is the number of training windows, $c$ indexes the five classes, $\mathbf{1}[\cdot]$ is the indicator function, and $w_c$ is the weight assigned to class $c$. The predicted label is obtained by
+\begin{equation}
+    \hat{y}_i = \arg\max_{c\in\{1,\ldots,5\}} p_\theta(y=c\mid x_i).
+    \label{eq:pred}
+\end{equation}
+
+The weight $w_c$ is the part of Eq.~\eqref{eq:loss} that responds to the measured imbalance. We set $w_c = N / (5 N_c)$ and then rescale the vector so that its mean is one, where $N_c$ is the number of training windows of class $c$. With equal class sizes this reduces to uniform weighting. On the observed distribution it assigns the majority class a weight of about 0.32 and the smallest class a weight of about 16, which is what prevents the objective from being minimized by a model that simply reproduces the majority class. The word \emph{class-aware} is used throughout to mean exactly this weighting scheme.
+
+\subsection{Algorithm Selection}
+
+\noindent For this research, a collection of algorithms considered practical for application in fused tabular data models will be used: logistic regression, random forest, \ac{XGBoost}~\cite{chen2016xgboost}, \ac{MLP}, and a simple two-tower fusion architecture. The two-tower approach employs the explicit separation of modality groups, as described in Section~\ref{sec:method}. Thus, the emphasis is put on the operational compact fusion design.
+
+\subsection{Training Procedure}
+
+\noindent The training process is meant to be simple, clear, and reproducible for all the analyzed algorithms: first of all, an 80/20 train-test split is done in a stratified way with the random seed set to 42, the preprocessing is fit only to the training data, then applied to the test data. For neural networks, the class-weighted cross-entropy loss with Adam optimizer is used with early stopping applied with the fixed seed and stratified by class on the early-stopping subset; for classic models, the class-balancing is performed by weighting the models where applicable. This training protocol guarantees that any performance differences observed will be a result of different models' behavior, not data preprocessing specifics. The hyperparameters settings are given in Table~\ref{tab:hyper}.
+
+\begin{table*}[t]
+    \caption{Detector hyperparameters on the shared 128-dimensional representation.}\label{tab:hyper}
+    \centering
+    \small
+    \begin{tabular}{@{}lp{11.5cm}@{}}
+        \toprule
+        Model               & Configuration                                                                                                                       \\
+        \midrule
+        Logistic Regression & L2 penalty, \texttt{max\_iter} 2000, balanced class weights                                                                         \\
+        Random Forest       & 300 trees, balanced class weights                                                                                                   \\
+        \acs{XGBoost}       & 400 estimators, depth 6, learning rate 0.05, subsample 0.9, column subsample 0.9                                                    \\
+        \acs{MLP}           & hidden layers 128 and 64, Adam, \texttt{max\_iter} 600                                                                              \\
+        Two-Tower Fusion    & per-modality towers 128 then 64, head 64 then 5, dropout 0.2, Adam at 1e-3, weight decay 1e-4, batch 256, early-stopping patience 8 \\
+        \bottomrule
+    \end{tabular}
+\end{table*}
+
+\subsection{Metrics and Diagnostics}\label{sec:metrics}
+
+\noindent For the current five-class physiological data set, the choice of metrics is affected by the imbalance between the classes and the need for consistent performance throughout all task states, according to the literature~\cite{sokolova2009systematic}. The accuracy metric is proposed as an overall indicator of correctness of classification results, but is not considered conclusive. Section~\ref{sec:method} reveals that the classification accuracy achieved based only on the majority class is 0.633, and previous studies show that the accuracy might be a misleading metric in case of this degree of class imbalance~\cite{jeni2013imbalanced}. Thus, balanced accuracy, representing the average of the recalls of all the classes and better representing the sensitivity to the minority classes such as the low-load task and other similar task states, is included~\cite{brodersen2010balanced}. Furthermore, macro-F1 is chosen as the main ranking metric due to its penalty on low precision and recall of each class equally weighting all classes.
+
+In addition to the scalar metrics, confusion matrix and per-class precision, recall and F1 are analyzed for the selected classifier. This helps to understand the pairs of tasks being confused and makes sure that robust aggregate performance is achieved for each class separately using the same stratified 80/20 hold-out procedure.
+
+% \subsection{Reproducibility}
+% \label{sec:repro}
+% The reported pipeline is fully specified by the following quantities. The dataset contributes 52 operators, 21 protocol conditions, and 5{,}640 analysis windows. Each window is 60 seconds long with 50 percent overlap between consecutive windows, and each feature is a statistical summary computed within the window. No window is discarded, so the analyzed count equals the exported count. The cleaned feature matrix has shape 5{,}640 by 128 and contains 328 missing values. The split is stratified by class with a test fraction of 0.2, giving 4{,}512 training windows and 1{,}128 test windows. Missing values are imputed with training-fold medians, and standardization uses training-fold statistics. The random seed is 42 throughout, and no hyperparameter search was performed on the test set, so the reported figures are single-configuration results rather than the outcome of tuning. Software versions are scikit-learn 1.7.2, XGBoost 3.3.0, PyTorch 2.12.1, pandas 2.3.3, and NumPy 2.3.5.
+
+% The code that produces every number in this paper, the deterministic label rule, the feature manifest recording which columns were kept and which were dropped, and the derived result tables are released together as a reproducibility package so that the pipeline can be rerun end to end.
+
+\section{\uppercase{Results and Discussion}}\label{sec:results}
+
+\subsection{Comparison}
+
+\noindent Table~\ref{tab:results} ranks the detectors under the stratified 80/20 hold-out, and Figure~\ref{fig:results_detectors} shows the three metrics side by side.
+
+\begin{table}[!ht]
+    \caption{Benchmark results under the stratified 80/20 hold-out, ranked by macro-F1.}\label{tab:results}
+    \centering
+    \setlength{\tabcolsep}{3.5pt}
+    \footnotesize
+    \begin{tabular}{lccc}
+        \toprule
+        Model               & Accuracy & Bal.~Acc. & Macro-F1 \\
+        \midrule
+        \acs{XGBoost}       & 0.9512   & 0.8819    & 0.9104   \\
+        Random Forest       & 0.9264   & 0.8350    & 0.8773   \\
+        \acs{MLP}           & 0.9184   & 0.8391    & 0.8457   \\
+        Two-Tower Fusion    & 0.8732   & 0.8350    & 0.8324   \\
+        Logistic Regression & 0.7686   & 0.7132    & 0.6597   \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+The ordering is stable across all three metrics. Tree ensembles lead because the fused input is a table of 128 marginal summaries, which axis-aligned splits exploit directly. \ac{XGBoost} exceeds the random forest by 0.033 macro-F1, since boosting fits further trees on the residual confusions that matter most for the minority classes. The \ac{MLP} trails by 0.065, which is consistent with a 128-by-64 network being large for 4{,}512 training windows, and logistic regression is far behind at 0.6597. The two-tower model matches the random forest in balanced accuracy but is 0.045 lower in macro-F1, so explicit modality separation keeps the model light without beating a tree ensemble at this sample size.
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.85\columnwidth]{results_detectors.png}
+    \caption{Detector ranking across the three evaluation metrics.}\label{fig:results_detectors}
+\end{figure}
+
+\subsection{Ablation Study}\label{sec:ablation}
+
+\noindent To test whether fusion causes the performance, we retrain each tabular detector on \ac{EEG} only with 96 features, peripheral only with 32 features, and the fused 128 features under the identical split, as reported in Table~\ref{tab:ablation}.
+
+\begin{table*}[t]
+    \caption{Modality ablation under the identical hold-out.}\label{tab:ablation}
+    \centering
+    \begin{tabular}{lccccc}
+        \toprule
+        Model               & Better single & Single & Fused & $\Delta$ & McNemar $p$ \\
+        \midrule
+        \acs{XGBoost}       & Peripheral    & 0.841  & 0.910 & $+0.070$ & $<10^{-4}$  \\
+        Random Forest       & \acs{EEG}     & 0.784  & 0.877 & $+0.093$ & $<10^{-4}$  \\
+        \acs{MLP}           & Peripheral    & 0.799  & 0.846 & $+0.047$ & $0.004$     \\
+        Logistic Regression & Peripheral    & 0.475  & 0.661 & $+0.186$ & $<10^{-4}$  \\
+        \bottomrule
+    \end{tabular}
+\end{table*}
+
+Fusion helps every detector, and the gain is significant in all four cases under the exact McNemar test on paired per-window correctness. Logistic regression gains most at $+0.186$, because a linear model cannot build interactions between two partially informative views on its own. The tree ensembles gain $+0.070$ to $+0.093$ and the \ac{MLP} $+0.047$.
+
+The better single modality also differs between detectors, with \ac{EEG} for the random forest and the peripheral channels for the others, so no modality is uniformly dominant, as Figure~\ref{fig:results_fusion} shows.
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.8\columnwidth]{results_fusion.png}
+    \caption{Fusion gain over the best single modality for each detector.}\label{fig:results_fusion}
+\end{figure}
+
+\subsection{Class-Level Analysis}\label{sec:perclass}
+
+\noindent Figure~\ref{fig:cm} and Table~\ref{tab:perclass} show how the selected \acs{XGBoost} detector distributes its errors on the same test split.
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.75\columnwidth]{confusion_matrix_xgboost_8020_clean.png}
+    \caption{Row-normalized confusion matrix for the selected \acs{XGBoost} detector.}\label{fig:cm}
+\end{figure}
+
+\begin{table}[!ht]
+    \caption{Per-class metrics for the selected \acs{XGBoost} detector.}\label{tab:perclass}
+    \centering
+    \begin{tabular}{lrrr}
+        \toprule
+        Class           & Precision & Recall & F1-score \\
+        \midrule
+        Cognitive load  & 0.9368    & 0.9128 & 0.9247   \\
+        High stress     & 0.9091    & 0.8889 & 0.8989   \\
+        Industrial task & 0.9635    & 0.9972 & 0.9800   \\
+        Low load        & 0.9167    & 0.8250 & 0.8684   \\
+        Other           & 1.0000    & 0.7857 & 0.8800   \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+Industrial task is recovered almost perfectly at 0.9972 recall, as the majority class with sustained movement. Low load is hardest at 0.8250 recall, with 11 percent of its windows predicted as industrial task and 6 percent as cognitive load, plausibly because rest after an intensive block carries residual arousal. The residual class reaches a precision of 1.0000 but a recall of 0.7857, and high stress reaches 0.8889 recall, confused mainly with cognitive load.
+
+\subsection{Real-Time Feasibility}
+
+\noindent Table~\ref{tab:latency} and Figure~\ref{fig:results_latency} report the median per-window CPU inference cost after warm-up. Logistic regression is cheapest at about 2.1 microseconds and the random forest costs about 232, roughly 111 times more. All are fast, but cost does not follow accuracy, so a deployment must trade one against the other.
+
+\begin{table}[!ht]
+    \caption{Median per-window inference cost on CPU for each detector.}\label{tab:latency}
+    \centering
+    \setlength{\tabcolsep}{3.5pt}
+    \footnotesize
+    \begin{tabular}{@{}lrr@{}}
+        \toprule
+        Detector            & Latency ($\mu$s) & Throughput (win/s) \\
+        \midrule
+        Logistic Regression & 2.1              & 479,048            \\
+        Two-Tower           & 2.4              & 412,159            \\
+        \acs{MLP}           & 4.9              & 203,033            \\
+        \acs{XGBoost}       & 11.4             & 87,760             \\
+        Random Forest       & 232              & 4,317              \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.75\columnwidth]{results_latency.png}
+    \caption{Median inference cost per window for each detector.}\label{fig:results_latency}
+\end{figure}
+
+\subsection{Subject-Disjoint Check and Scope}\label{sec:scope}
+
+\noindent The hold-out divides windows rather than operators, and windows overlap by 50 percent, so neighbouring windows can fall on both sides of the split. We therefore repeated the benchmark under leave-one-subject-out evaluation, holding out each of the 52 operators in turn with imputation and scaling fitted on the other 51. Pooled over all held-out windows, \acs{XGBoost} reaches 0.50 macro-F1, 0.52 balanced accuracy, and 0.69 accuracy, against 0.633 for the majority-class predictor. The hold-out figures are therefore a within-subject ceiling, and the operator effect is the main difficulty. This is of the same order as the questionnaire-based results of Section~\ref{sec:related}, although the targets differ.
+
+Each class also comes from a different activity, namely physical disassembly, a virtual-reality plank walk, seated rest, and seated cognitive tests, so movement, posture, and setting may contribute to the separability. The two seated classes transfer worst across operators, with 22 percent of cognitive-load windows predicted as low load and 19 percent the other way, and the residual class is never recovered for an unseen operator. We therefore claim recognition of the task condition rather than of mental state, which a contrast within one activity, such as the easy and hard Stroop variants, would test.
+
+% \section{Discussion}
+% \label{sec:discussion}
+
+% \subsection{Threats to Validity}
+
+% The most important limitation of this study concerns the evaluation protocol. The stratified 80/20 split divides windows, not operators, so windows from the same operator appear in both the training and the test partition. Because physiological baselines are strongly operator-specific, part of the measured performance reflects the model recognizing an operator it has already seen rather than recognizing the task condition in a new person. The figures in Tables~\ref{tab:results}, \ref{tab:ablation}, and \ref{tab:perclass} should therefore be read as a within-subject ceiling, that is, as an upper bound on what this representation supports, rather than as an estimate of across-operator performance. A subject-disjoint re-evaluation of the same features, in which all windows of a held-out operator are excluded from training, yields a substantially lower macro-F1, which confirms that the operator effect is the dominant source of difficulty and that our headline numbers are optimistic in absolute terms. We report the within-subject figures because the modality ablation and the detector ranking are both computed under one identical protocol and their relative conclusions are what this paper contributes, but a reader should not transfer the absolute values to a deployment setting without an across-operator study.
+
+% A second limitation is that the recognition target is the protocol condition rather than the operator's experienced state. The dataset also contains self-report instruments, but those are not part of the public feature export, so we cannot claim to recognize self-reported stress or workload. The five classes are behaviourally distinct and protocol-certified, which makes them reproducible, and they are not a substitute for affective ground truth.
+
+% A third limitation is that the residual class rests on 71 windows from a single session. Its per-class figures carry wide uncertainty and should be treated as indicative. We kept it as a separate class rather than merging it precisely so that this weakness is visible rather than hidden inside another class.
+
+% Finally, the feature audit removes the leakage we could detect, namely the recording-identifier columns and the byte-identical duplicates, but we cannot rule out subtler dependencies within the exported features, such as normalization statistics computed across the whole recording.
+
+% \subsection{Privacy and Workplace Use}
+
+% Physiological monitoring in a workplace raises concerns that accuracy figures do not address. Three constraints follow from the design of this system. First, the intended deployment is on-device: the pipeline consumes 128 tabular features per 60-second window and the fastest detectors run in single-digit microseconds, so inference can be performed locally without transmitting raw physiological signals off the operator's equipment. Second, the recognized target is the task condition and not the person, and the system should not be used to score, rank, or evaluate individual operators, since the evaluation above shows that operator identity is entangled with the signal and any per-person comparison would confound the two. Third, participation should be revocable: because assistance is adaptive rather than safety-critical in the conditions studied here, an operator must be able to disable the detector and fall back to a non-adaptive mode without losing robot functionality. These are design commitments rather than empirical findings, and we state them so that the scope of the contribution is clear.
+
+\section{\uppercase{Conclusion}}\label{sec:conclusion}
+
+\noindent Adaptive \ac{HRC} relies on continuously recognizing the operator's task and mental state, such as cognitive workload, acute stress, and physical execution, to provide context-aware assistance. However, decoding these states in industrial environments is challenging due to high inter-subject variability, motion artifacts, differing dynamics between central (\ac{EEG}) and peripheral (\ac{EDA}, \ac{ECG}, \ac{EMG}) sensors, and severe class imbalance. 
+
+To address these issues, this paper proposed a compact multimodal pipeline combining 128 fused physiological features with class-aware learning across five task conditions. Results confirm that multimodal fusion significantly enhances task discrimination, with \ac{XGBoost} delivering the strongest performance under microsecond-level latency.
+
+A modality ablation under the identical protocol shows that the fused input improves macro-F1 over the better single modality for every detector, by between 0.047 and 0.186. Because the hold-out shares operators between its partitions, these figures are a within-subject ceiling, and a leave-one-subject-out evaluation of the same features lowers the macro-F1 of \ac{XGBoost} to 0.50.
+
+Future work will follow three directions. The first is real-life deployment, in which the detector runs on the operator's equipment beside a collaborative robot and is evaluated on operators never seen during training. The second is a wider variety of tasks, adding assembly, inspection, and teleoperation conditions so that the system meets a broader range of physiological patterns and collaborative situations. The third is to separate mental state from activity, by contrasting conditions that share the same movement and setting, such as the easy and hard Stroop variants, and by linking the detector to the questionnaire ratings of the dataset.
+\bibliographystyle{apalike}
+{\small
+    \bibliography{task_type_detection_references}}
+
+\end{document}

@@ -1,0 +1,20 @@
+\begin{table}[t]
+\centering
+\small
+\caption{Generalization gap on the identical clean features. Within-subject is a
+stratified random 80/20 split, in which the same operators appear in both training
+and test, an optimistic ceiling, while LOSO holds whole operators out. The gap
+quantifies how much performance is lost when no data from the target operator is
+available at training time.}
+\label{tab:gap}
+\begin{tabular}{lccc}
+\toprule
+Model & Within-subject & LOSO & Gap \\
+\midrule
+XGBoost & 0.910 & 0.462 & +0.448 \\
+HistGB & 0.911 & 0.451 & +0.459 \\
+RF & 0.877 & 0.430 & +0.447 \\
+MLP & 0.846 & 0.374 & +0.472 \\
+\bottomrule
+\end{tabular}
+\end{table}

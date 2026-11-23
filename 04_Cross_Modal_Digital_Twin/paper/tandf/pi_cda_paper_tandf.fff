@@ -1,0 +1,47 @@
+\begin{figure}[!t]
+  \centering
+  \includegraphics[width=0.9\textwidth]{figures/paper_ready/methodology.pdf}
+  \caption{Evaluation workflow from paired datasets to held-out workers.}
+  \label{fig:methodology}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}[!t]
+  \centering
+  \begin{minipage}[t]{0.485\linewidth}
+    \vspace{0pt}\centering
+    \includegraphics[width=\linewidth]{figures/dataset_collection/inhard_dt_vr_capture.jpg}
+  \end{minipage}\hfill
+  \begin{minipage}[t]{0.485\linewidth}
+    \vspace{0pt}\centering
+    \includegraphics[width= \linewidth]{figures/dataset_collection/inhard_dt_workstation_views.jpg}
+  \end{minipage}
+  \par\smallskip
+  \includegraphics[width=0.5\linewidth]{figures/dataset_collection/inhard_physical_capture.png}
+  \caption{Virtual and physical capture setups of the two datasets.}
+  \label{fig:dataset-collection}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}[!t]
+  \centering
+  \includegraphics[width=.92\textwidth]{figures/paper_ready/zero_shot.pdf}
+  \caption{Macro-F1 of zero-shot transfer and supervised controls.}
+  \label{fig:zeroshot}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}[!t]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/paper_ready/gap.pdf}
+  \caption{Facing direction and annotated clip duration in both domains.}
+  \label{fig:gap}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}[!t]
+  \centering
+  \includegraphics[width=.82\textwidth]{figures/paper_ready/few_shot.pdf}
+  \caption{Macro-F1 against the number of labelled physical clips per class.}
+  \label{fig:fewshot}
+\end{figure}

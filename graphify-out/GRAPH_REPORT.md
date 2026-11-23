@@ -1,17 +1,17 @@
-# Graph Report - thesis  (2026-11-12)
+# Graph Report - thesis  (2026-11-16)
 
 ## Corpus Check
-- 783 files · ~5,116,721 words
+- 787 files · ~5,216,595 words
 - Verdict: corpus is large enough that graph structure adds value.
-- Unclassified: 485 file(s) not represented in the graph (top: (none) 57, .ipynb 48, .tex 45)
+- Unclassified: 515 file(s) not represented in the graph (top: (none) 61, .tex 50, .ipynb 48)
 
 ## Summary
-- 1471 nodes · 2630 edges · 263 communities (58 shown, 205 thin omitted)
-- Extraction: 94% EXTRACTED · 6% INFERRED · 0% AMBIGUOUS · INFERRED: 161 edges (avg confidence: 0.9)
+- 1471 nodes · 2679 edges · 239 communities (55 shown, 184 thin omitted)
+- Extraction: 94% EXTRACTED · 6% INFERRED · 0% AMBIGUOUS · INFERRED: 154 edges (avg confidence: 0.9)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `ebc3153b`
+- Built from commit: `90dab960`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -36,24 +36,23 @@
 - run_pipeline.py
 - build_reference_report.py
 - final_detector_loso_10models.py
-- typing
-- gap_analysis.py
+- numpy
 - features.py
 - build_detailed_reference_report.py
-- JointTraining
+- SI
 - json
 - add_paper_details
-- data.py
+- create_graphical_abstract.py
 - 08_classic_split_benchmark.py
 - EWC
 - dasig_pipeline.py
 - test_v4.py
 - ContinualMetrics
-- LwF
+- TrialData
 - Ameur Gargouri
 - re
-- argparse
-- experiments.py
+- dasig_pipeline.py
+- make_paper_v3.sh
 - train_final_loso.py
 - PI-CDA: Physics-Informed Cross-Modal Domain Adaptation for Skeleton Action Recognition in Industrial Digital Twins
 - Exp03 Definitive Benchmark: Average MSE evolution over training sequence for Naive Fine-Tune, Joint Training, EWC, Online EWC, LwF, DER++, A-GEM across 10 tasks
@@ -61,22 +60,18 @@
 - dasig_preprocessing.py
 - IMU Sensor Placement Diagram (cobot_safety_cas): 5 IMU sensors on human body — Sternum (STR), Right/Left Upper Arm (RUA/LUA), Right/Left Front Arm (RFA/LFA) with coordinate frames
 - DASIGPreprocessConfig
-- harmonic_pipeline.py
 - Confusion matrix for ConvNeXt 1D model on cobot danger state detection: SAFE recall 99.76%, DANGER recall 97.13%, danger false negative rate 2.87%
 - ConvNeXt 1D Confusion Matrix (cobot_safety_cas): SAFE 99.76%, DANGER 97.13% recall — high-performance deep learning classifier
 - ablations.py
-- XGBoost confusion matrix for 5-class task-condition recognition (cognitive_load 0.89, high_stress 0.91, industrial_task 0.99, low_load 0.75, other 0.93) — paper copy
+- XGBoost confusion matrix for 5-class task-condition recognition (cognitive_load, high_stress, industrial_task, low_load, other) — assets copy
 - R2 evolution chart (original): Forgetting Trajectory on Task 0 and Average Accuracy Evolution across 10 incremental tasks, comparing FLAIR, DER++, Online EWC, A-GEM, Joint Training (5 methods, matches presentation version)
 - Exp06 DER-SA: Ablation study bar chart comparing DER++ baseline with ARW-only, FKD-only, JAC-only, pairwise and full DER-SA variants on accuracy and forgetting
 - Exp07 CPG-Net: Ablation bar chart — No gating (EWC only), Random gates, No gate freezing, No importance reg., No gate sparsity vs full CPG-Net on accuracy and forgetting
-- TestAlignTimestamps
 - PI-CDA Per-Class F1 Bar Chart (Legacy Synthetic) — InHARD-DT target, 13 action classes, macro-F1 80.8%
-- diagnostics.py
 - FLAIR vs all baselines across 6 continual learning metrics (ACC, Forgetting, BWT, FWT, Memory Usage, Training Time) — original
 - IEEE-conference-template/IEEEtran.cls
 - Full task-condition recognition pipeline diagram: MultiPhysio-HRC dataset -> Preprocessing -> EEG features (96-d) + Peripheral physio (32-d) -> Fused representation (128-d) -> Detectors -> Task-condition label
 - BenchmarkResult
-- SI
 - Audition LGI2A, sujet n°329220 : préparation des questions (10 min)
 - SequenceDataset
 - 5-Fold CV bar chart comparing post-processed performance of TCN, CRNN+Attention, InceptionTime, U-Net 1D, Transformer on Macro F1 Score, Danger Recall, and Danger Precision; TCN leads Macro F1 (0.647), Transformer leads Danger Recall (0.789)
@@ -85,7 +80,7 @@
 - FLAIR R2 Evolution: Forgetting Trajectory Task 0 and Average Accuracy Evolution across 10 tasks vs baselines
 - _rms_envelope
 - TaskData
-- make_paper_v3.sh
+- CoopIS 2026 Paper #52 Reviews — Task Recognition from Physiological Data Using Multimodal Sensor Fusion
 - Dual boxplot comparing 5 deep learning models (TCN, U-Net 1D, CRNN+Attention, Transformer, InceptionTime) on Danger Recall and Macro F1 over 5 folds; Transformer shows high danger recall (~0.9) but very unstable Macro F1
 - Confusion matrix for best TCN model (Factory Calibrated) on SAFE vs DANGER classification showing raw counts: 59235 TP-safe, 1324 FP-danger, 142 FN-safe, 8393 TP-danger
 - exp01_il_comparison: R[i,j] accuracy matrices (MSE on task j after training up to task i) for 7 continual learning methods: Naive Fine-Tune, Joint Training, EWC, Online EWC, SI, LwF, DER++
@@ -113,20 +108,6 @@
 - SDlogo 3p PDF
 - Test Font PDF
 - 1st Research Thesis PDF
-- Example document (template)
-- Per-class precision, recall and F1-score bar chart for pooled LOSO GradientBoosting on 5-class task-condition recognition
-- Box plot of subject-disjoint LOSO macro-F1 across 52 held-out operators for 11 classifiers (Tree, GaussNB, kNN, LogReg, MLP, ExtraTrees, SVM-RBF, RF, HistGB, XGBoost, GB)
-- Modality ablation bar chart comparing fused, EEG-only, and physio-only LOSO macro-F1 for XGBoost, HistGB, RF, and MLP under subject-disjoint LOSO
-- Generalization gap chart comparing within-subject (80/20) ceiling vs subject-disjoint LOSO macro-F1 for HistGB, XGBoost, RF, and MLP
-- Statistical significance chart: delta macro-F1 vs best (GB) with per-fold Wilcoxon test over 52 folds for 10 classifiers
-- LLNCS documentation (Springer LNCS template doc)
-- ORCID logo icon
-- ORCID logo (template asset)
-- Horizontal bar chart comparing Accuracy, Balanced Accuracy, and Macro-F1 for XGBoost, Random Forest, MLP, Two-Tower, and LogReg detectors on task-condition recognition
-- Lollipop chart showing macro-F1 gain from fused input vs best single modality for LogReg, Random Forest, XGBoost, and MLP classifiers
-- Lollipop chart of inference latency (microseconds per window, log scale) for Random Forest, XGBoost, MLP, Two-Tower, and LogReg classifiers
-- SCITEPRESS logo (template asset)
-- Task Recognition paper v3
 - IMU sensor placement diagram showing 5 body locations (Sternum STR, Right/Left Upper Arm RUA/LUA, Right/Left Front Arm RFA/LFA) with 3-axis coordinate frames for cobot safety motion capture setup
 - Scatter plot of magnetization (kA/m) vs applied field (10^4 A/m) showing nonlinear saturation curve — appears to be an unrelated physics figure placed in the danger detection assets folder
 - Photo of human-robot collaboration experiment: participant seated at table with Tnova cobot arm during DASIG corpus data collection; participant wears eye-tracking glasses
@@ -206,19 +187,12 @@
 - Target/Goal Section Icon - Bullseye with arrow representing objectives and career goals
 - Work Experience Section Icon - Briefcase representing professional work experience
 - hrc-incremental
-- discover_trials
 - copilot-instructions.md
 - claude-mem-context.md
 - butterworth_lowpass
-- RecordingData
 - test_harmonic_loader.py
 - MLPPolicy
-- TrialData
 - _GradReverse
-- GRUNet
-- LSTMNet
-- MLPNet
-- TransformerNet
 - TwoTowerNet
 
 ## God Nodes (most connected - your core abstractions)
@@ -248,7 +222,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (263 total, 205 thin omitted)
+## Communities (239 total, 184 thin omitted)
 
 ### Community 0 - "preprocess.py"
 Cohesion: 0.19
@@ -271,92 +245,100 @@ Cohesion: 0.07
 Nodes (37): arrow(), build_figure(), rbox(), best_model(), fig_ablation(), fig_confusion(), fig_gap(), fig_perclass() (+29 more)
 
 ### Community 6 - "ablations.py"
-Cohesion: 0.12
-Nodes (14): compare(), confusion(), fewshot_grid(), latex_table(), _method_sort_key(), per_class_f1(), per_subject_f1(), pooled_predictions() (+6 more)
+Cohesion: 0.08
+Nodes (19): compare(), confusion(), fewshot_grid(), latex_table(), _method_sort_key(), per_class_f1(), per_subject_f1(), pooled_predictions() (+11 more)
 
 ### Community 7 - "FLAIR 8-Layer Architecture"
 Cohesion: 0.07
 Nodes (41): FLAIR KES 2026 Presentation, Dataset Exploration Report (HARMONIC and DASIG), DASIG Dataset, Preprocessing Pipeline Report (HARMONIC and DASIG), Incremental Learning Benchmark Report (Exp 1), Catastrophic Forgetting, Shared Autonomy Benchmark Report (Exp 01), FLAIR — 03 Incremental Learning README (+33 more)
 
 ### Community 8 - "Task Recognition from Physiological Data Using Multimodal Sensor Fusion for Human-Robot Collaboration (revised)"
-Cohesion: 0.06
-Nodes (38): DER/DER++: Dark Experience Replay for incremental learning, Incremental Learning Algorithms in Autonomous Driving and Robot Lifelong Skill Acquisition, iCaRL: Incremental Classifier and Representation Learning, Real-World Robotics Datasets for Incremental Learning and Lifelong Learning, LIBERO: Lifelong Robot Learning Benchmark Suite, OpenLORIS-Object Dataset for lifelong robotic vision, MultiPhysio-HRC: Multimodal Physiological Signals Dataset for Industrial HRC, MultiPhysio-HRC Dataset (EEG, ECG, EDA, RESP, EMG, Voice, Facial features) (+30 more)
+Cohesion: 0.08
+Nodes (30): DER/DER++: Dark Experience Replay for incremental learning, Incremental Learning Algorithms in Autonomous Driving and Robot Lifelong Skill Acquisition, iCaRL: Incremental Classifier and Representation Learning, Real-World Robotics Datasets for Incremental Learning and Lifelong Learning, LIBERO: Lifelong Robot Learning Benchmark Suite, OpenLORIS-Object Dataset for lifelong robotic vision, MultiPhysio-HRC: Multimodal Physiological Signals Dataset for Industrial HRC, MultiPhysio-HRC Dataset (EEG, ECG, EDA, RESP, EMG, Voice, Facial features) (+22 more)
 
 ### Community 9 - "experiments.py"
-Cohesion: 0.11
+Cohesion: 0.10
 Nodes (13): worker_init_fn(), coral_loss(), DomainDiscriminator, grad_reverse(), mmd_loss(), topology_consistency_loss(), infinite(), _log() (+5 more)
 
 ### Community 10 - "picda/models.py"
 Cohesion: 0.09
-Nodes (10): bn_init(), conv_init(), CTRGC, CTRGCN, MultiScaleTemporalConv, STGCN, STGCNBlock, TCNGCNUnit (+2 more)
+Nodes (11): bn_init(), build_model(), conv_init(), CTRGC, CTRGCN, MultiScaleTemporalConv, STGCN, STGCNBlock (+3 more)
 
 ### Community 11 - "harmonic_pipeline.py"
-Cohesion: 0.14
-Nodes (11): preprocess_trial(), align_timestamps(), compute_participant_stats(), normalize_dataframe(), preprocess_emg(), preprocess_gaze(), preprocess_imu(), PreprocessConfig (+3 more)
+Cohesion: 0.12
+Nodes (13): main(), preprocess_trial(), align_timestamps(), compute_participant_stats(), normalize_dataframe(), preprocess_emg(), preprocess_gaze(), preprocess_imu() (+5 more)
 
 ### Community 12 - "Danger-State Detection in Human-Robot Collaboration Using Deep Learning (IEEE RA-L submission)"
 Cohesion: 0.10
 Nodes (27): Fig 4: Neural Network Architectures for 1D Time-Series Classification (TCN, ConvNeXt 1D, MLP-Mixer 1D, Transformer 1D, InceptionTime), Fig 5: Evaluation Post-Processing Pipeline (Raw Probabilities -> Temporal Debouncing -> Threshold Decision SAFE/DANGER), Fig 5: Evaluation Post-Processing (copy), Fig 6: Model Performance Comparison Table (Threshold=0.77, Median Smoothed; TCN ranked 1st with Macro F1 97.88%), Fig 7: 5-Fold Stratified Cross-Validation Strategy (~55,275 train / ~13,819 validation windows per fold), Pipeline Fig 1: Overview of 4-Phase Deep Learning Pipeline (Data, Training, Evaluation, Deployment), Pipeline Fig 2: Data Pipeline showing Preprocessing & Windowing and Dynamic Kinematic Feature Expansion (65 -> 195 channels), Pipeline Fig 4: Neural Network Architectures for 1D Time-Series Classification (TCN, ConvNeXt 1D, MLP-Mixer 1D, Transformer 1D, InceptionTime) (+19 more)
 
 ### Community 13 - "data_loader.py"
-Cohesion: 0.11
-Nodes (10): build_column_names(), generate_safety_labels(), load_all_subject_info(), load_all_trials(), load_arduino_csv(), load_mimu_csv(), load_subject_info(), load_trial() (+2 more)
+Cohesion: 0.14
+Nodes (8): build_column_names(), generate_safety_labels(), load_all_subject_info(), load_arduino_csv(), load_mimu_csv(), load_subject_info(), load_trial(), SubjectInfo
 
 ### Community 15 - "numpy"
-Cohesion: 0.19
+Cohesion: 0.15
 Nodes (8): ece_from_1hot(), fold_metrics(), load_clean(), main(), per_class_recall(), t_ci95(), estimate_latency_us(), make_models()
 
 ### Community 16 - "Benchmark"
-Cohesion: 0.28
-Nodes (4): Benchmark, predict(), set_seed(), train_supervised()
+Cohesion: 0.24
+Nodes (5): real_probs(), Benchmark, predict(), set_seed(), train_supervised()
 
 ### Community 17 - "run_pipeline.py"
-Cohesion: 0.18
-Nodes (8): split_by_subject(), evaluate_model(), plot_feature_importance(), to_binary_labels(), train_gradient_boosting(), train_random_forest(), main(), parse_args()
+Cohesion: 0.20
+Nodes (7): evaluate_model(), plot_feature_importance(), to_binary_labels(), train_gradient_boosting(), train_random_forest(), main(), parse_args()
 
 ### Community 18 - "build_reference_report.py"
 Cohesion: 0.24
 Nodes (16): build_seed_record(), clean_text(), extract_doi_from_url(), find_openalex_work(), format_authors(), get_crossref_metadata(), get_hrc_citing_papers(), get_json() (+8 more)
 
 ### Community 19 - "final_detector_loso_10models.py"
-Cohesion: 0.15
+Cohesion: 0.16
 Nodes (4): fold_dir(), fold_labels(), make_models(), run_loso_model()
 
-### Community 20 - "typing"
-Cohesion: 0.14
-Nodes (4): TaskResult, build_task_sequence(), load_participant_data(), save_benchmark_results()
-
-### Community 21 - "gap_analysis.py"
-Cohesion: 0.11
-Nodes (19): _angle(), bh_fdr(), cliffs_delta_from_u(), clip_descriptors(), descriptor_table(), domain_shift_tests(), _hf_power(), _hf_ratio() (+11 more)
+### Community 21 - "numpy"
+Cohesion: 0.06
+Nodes (40): all_joint_names(), augment(), AugParams, Canon, few_shot_indices(), freeze_left_arm(), load_clips(), load_index() (+32 more)
 
 ### Community 22 - "features.py"
-Cohesion: 0.18
+Cohesion: 0.20
 Nodes (7): extract_features_bulk(), extract_sensor_features(), extract_window_features(), normalize_features(), segment_all_trials(), sliding_window_segment(), _vector_norm()
 
 ### Community 23 - "build_detailed_reference_report.py"
 Cohesion: 0.11
 Nodes (3): extract_key_contribution(), get_binary(), get_pdf_text_from_url()
 
+### Community 24 - "SI"
+Cohesion: 0.06
+Nodes (4): JointTraining, NaiveFineTune, LwF, SI
+
 ### Community 25 - "json"
-Cohesion: 0.09
-Nodes (14): clean_source(), main(), make_cell_id(), discover_participants(), leave_n_subjects_out(), load_split(), main(), save_split() (+6 more)
+Cohesion: 0.08
+Nodes (16): is_id_repetition_leak(), main(), modality_of(), clean_source(), main(), make_cell_id(), leave_n_subjects_out(), load_split() (+8 more)
 
 ### Community 26 - "add_paper_details"
 Cohesion: 0.12
 Nodes (8): add_hyperlink(), add_paper_details(), build_key_contribution(), build_method_summary(), build_results_summary(), build_work_summary(), extract_approach_details(), main()
 
-### Community 27 - "data.py"
-Cohesion: 0.14
-Nodes (12): all_joint_names(), augment(), AugParams, few_shot_indices(), freeze_left_arm(), load_clips(), load_raw(), random_crop() (+4 more)
+### Community 27 - "create_graphical_abstract.py"
+Cohesion: 0.23
+Nodes (18): arrow(), cobot_scene(), domain_shift(), dots(), efficiency(), filmstrip(), headset(), icon_box() (+10 more)
 
 ### Community 28 - "08_classic_split_benchmark.py"
-Cohesion: 0.13
-Nodes (5): BenchConfig, compute_class_weights(), reshape_to_sequences(), TCNNet, train_torch_model()
+Cohesion: 0.07
+Nodes (9): BenchConfig, compute_class_weights(), GRUNet, LSTMNet, MLPNet, reshape_to_sequences(), TCNNet, train_torch_model() (+1 more)
 
 ### Community 30 - "dasig_pipeline.py"
-Cohesion: 0.11
-Nodes (11): main(), run_dasig_pipeline(), save_preprocessed_recording(), compute_subject_stats(), normalize_features(), load_arduino(), load_mimu(), load_recording() (+3 more)
+Cohesion: 0.13
+Nodes (7): load_arduino(), load_mimu(), load_recording(), load_subjects_info(), RecordingData, RecordingInfo, SubjectInfo
+
+### Community 32 - "ContinualMetrics"
+Cohesion: 0.20
+Nodes (3): ContinualMetrics, TaskResult, run_benchmark()
+
+### Community 33 - "TrialData"
+Cohesion: 0.22
+Nodes (3): load_all_trials(), split_by_subject(), TrialData
 
 ### Community 34 - "Ameur Gargouri"
 Cohesion: 0.19
@@ -366,16 +348,12 @@ Nodes (13): ATISP Laboratory, University of Sfax / ESME Research Lab, Danger Sta
 Cohesion: 0.21
 Nodes (6): discover_pdf_url(), extract_data_details(), extract_full_paper_text(), extract_results_details(), get_arxiv_pdf_text(), get_text()
 
-### Community 36 - "argparse"
-Cohesion: 0.43
-Nodes (3): is_id_repetition_leak(), main(), modality_of()
-
-### Community 37 - "experiments.py"
-Cohesion: 0.15
-Nodes (10): Canon, load_index(), load_splits(), make_splits(), subject_folds(), classification_metrics(), build_model(), get_device() (+2 more)
+### Community 36 - "dasig_pipeline.py"
+Cohesion: 0.23
+Nodes (5): main(), run_dasig_pipeline(), save_preprocessed_recording(), compute_subject_stats(), normalize_features()
 
 ### Community 38 - "train_final_loso.py"
-Cohesion: 0.36
+Cohesion: 0.31
 Nodes (5): build_classifiers(), get_feature_columns(), main(), run_loso(), save_dict_csv()
 
 ### Community 39 - "PI-CDA: Physics-Informed Cross-Modal Domain Adaptation for Skeleton Action Recognition in Industrial Digital Twins"
@@ -391,7 +369,7 @@ Cohesion: 0.29
 Nodes (4): build_dataset_summary(), extract_dataset_details(), extract_dataset_profile(), extract_detail_phrases()
 
 ### Community 42 - "dasig_preprocessing.py"
-Cohesion: 0.20
+Cohesion: 0.18
 Nodes (7): compute_frequency_features(), compute_jerk_features(), compute_time_features(), extract_features_windowed(), _safe_kurtosis(), _safe_skew(), TestFeatureExtraction
 
 ### Community 44 - "IMU Sensor Placement Diagram (cobot_safety_cas): 5 IMU sensors on human body — Sternum (STR), Right/Left Upper Arm (RUA/LUA), Right/Left Front Arm (RFA/LFA) with coordinate frames"
@@ -402,10 +380,6 @@ Nodes (6): IMU Sensor Placement Diagram (cobot_safety_cas): 5 IMU sensors on hum
 Cohesion: 0.14
 Nodes (9): preprocess_recording(), DASIGPreprocessConfig, detect_abrupt_motions(), preprocess_mimu(), segment_around_alarms(), _make_mimu_df(), TestAbruptDetection, TestAlarmSegmentation (+1 more)
 
-### Community 46 - "harmonic_pipeline.py"
-Cohesion: 0.22
-Nodes (4): main(), run_harmonic_pipeline(), save_preprocessed_trial(), TrialInfo
-
 ### Community 47 - "Confusion matrix for ConvNeXt 1D model on cobot danger state detection: SAFE recall 99.76%, DANGER recall 97.13%, danger false negative rate 2.87%"
 Cohesion: 0.40
 Nodes (5): Confusion matrix for ConvNeXt 1D model on cobot danger state detection: SAFE recall 99.76%, DANGER recall 97.13%, danger false negative rate 2.87%, Confusion matrix for InceptionTime model on cobot danger state detection: SAFE recall 98.41%, DANGER recall 97.53%, danger false negative rate 2.47%, Confusion matrix for MLP-Mixer 1D model on cobot danger state detection: SAFE recall 99.76%, DANGER recall 95.88%, danger false negative rate 4.12%, Confusion matrix for TCN model on cobot danger state detection: SAFE recall 99.73%, DANGER recall 97.14%, danger false negative rate 2.86%, Confusion matrix for Transformer 1D model on cobot danger state detection: SAFE recall 96.56%, DANGER recall 95.85%, danger false negative rate 4.15%
@@ -415,12 +389,8 @@ Cohesion: 0.40
 Nodes (5): ConvNeXt 1D Confusion Matrix (cobot_safety_cas): SAFE 99.76%, DANGER 97.13% recall — high-performance deep learning classifier, ConvNeXt 1D Confusion Matrix (cobot_safety_lra): SAFE 99.76%, DANGER 97.13% recall, ConvNeXt 1D Confusion Matrix (cobot_safety_robotica): SAFE 99.76%, DANGER 97.13% recall, ConvNeXt 1D Confusion Matrix (cobot_safety_springer): SAFE 99.76%, DANGER 97.13% recall, ConvNeXt 1D Confusion Matrix (cobot_safety_submission): SAFE 99.76%, DANGER 97.13% recall
 
 ### Community 49 - "ablations.py"
-Cohesion: 0.18
+Cohesion: 0.16
 Nodes (7): cols_of(), indices_of(), load(), loso_sklearn(), loso_twotower(), main(), TwoTower
-
-### Community 50 - "XGBoost confusion matrix for 5-class task-condition recognition (cognitive_load 0.89, high_stress 0.91, industrial_task 0.99, low_load 0.75, other 0.93) — paper copy"
-Cohesion: 0.50
-Nodes (4): XGBoost confusion matrix for 5-class task-condition recognition (cognitive_load, high_stress, industrial_task, low_load, other) — assets copy, XGBoost confusion matrix for 5-class task-condition recognition (cognitive_load 0.89, high_stress 0.91, industrial_task 0.99, low_load 0.75, other 0.93) — paper copy, XGBoost confusion matrix for 5-class task-condition recognition using 80/20 stratified split (cognitive_load 0.91, high_stress 0.89, industrial_task 1.00, low_load 0.82, other 0.79), Pooled LOSO confusion matrix for GradientBoosting classifier on 5-class task-condition recognition with raw window counts
 
 ### Community 51 - "R2 evolution chart (original): Forgetting Trajectory on Task 0 and Average Accuracy Evolution across 10 incremental tasks, comparing FLAIR, DER++, Online EWC, A-GEM, Joint Training (5 methods, matches presentation version)"
 Cohesion: 0.67
@@ -438,21 +408,13 @@ Nodes (4): Exp07 CPG-Net: Ablation bar chart — No gating (EWC only), Random ga
 Cohesion: 0.50
 Nodes (4): PI-CDA Per-Class F1 Bar Chart (Legacy Synthetic) — InHARD-DT target, 13 action classes, macro-F1 80.8%, CT-R-GCN Confusion Matrices — side-by-side comparison of source_only, picda, and oracle conditions on InHARD 13-class action recognition, CT-R-GCN Few-Shot Learning Curve — macro-F1 vs labeled InHARD clips per class (1/5/10-shot) for fine-tune from picda, scratch, and source_only, CT-R-GCN t-SNE Domain Alignment — 2x3 grid showing by-domain and by-class embeddings for source_only, picda, and oracle conditions
 
-### Community 56 - "diagnostics.py"
-Cohesion: 0.19
-Nodes (6): adjust(), em_prior(), fold_table(), real_probs(), _scores(), summarize()
-
 ### Community 57 - "FLAIR vs all baselines across 6 continual learning metrics (ACC, Forgetting, BWT, FWT, Memory Usage, Training Time) — original"
 Cohesion: 1.00
 Nodes (3): FLAIR vs all baselines across 6 continual learning metrics (ACC, Forgetting, BWT, FWT, Memory Usage, Training Time) — original, FLAIR vs all baselines across 6 continual learning metrics (ACC, Forgetting, BWT, FWT, Memory Usage, Training Time) — variant copy, FLAIR vs all baselines across 6 continual learning metrics (ACC, Forgetting, BWT, FWT, Memory Usage, Training Time) — variant copy 2
 
-### Community 59 - "Full task-condition recognition pipeline diagram: MultiPhysio-HRC dataset -> Preprocessing -> EEG features (96-d) + Peripheral physio (32-d) -> Fused representation (128-d) -> Detectors -> Task-condition label"
-Cohesion: 0.67
-Nodes (3): Full task-condition recognition pipeline diagram: MultiPhysio-HRC dataset -> Preprocessing -> EEG features (96-d) + Peripheral physio (32-d) -> Fused representation (128-d) -> Detectors -> Task-condition label, Simplified task-type detection pipeline diagram: Physiological Signals -> Preprocessing -> Feature/Sequence Encoding -> Classifier (XGBoost/BiLSTM/Fusion), Full task-condition recognition pipeline diagram (paper version): MultiPhysio-HRC -> Preprocessing -> EEG/Peripheral features -> Detectors -> Evaluation
-
 ### Community 60 - "BenchmarkResult"
-Cohesion: 0.25
-Nodes (3): BenchmarkResult, results_to_dataframe(), run_all_strategies()
+Cohesion: 0.20
+Nodes (4): BenchmarkResult, results_to_dataframe(), run_all_strategies(), save_benchmark_results()
 
 ### Community 63 - "Audition LGI2A, sujet n°329220 : préparation des questions (10 min)"
 Cohesion: 0.29
@@ -474,33 +436,33 @@ Nodes (3): Confusion matrix for Gradient Boosting classifier on cobot safety SAF
 Cohesion: 0.67
 Nodes (3): CPG-Net R2 Evolution: Forgetting Trajectory Task 0 and Average Accuracy Evolution across 10 tasks, FLAIR R2 Evolution: Forgetting Trajectory Task 0 and Average Accuracy Evolution across 10 tasks vs baselines, FLAIR Paper Copy: R2 Evolution showing Forgetting Trajectory and Average Accuracy Evolution vs baselines
 
-### Community 249 - "discover_trials"
-Cohesion: 0.21
-Nodes (5): discover_trials(), load_participant_trials(), load_trial(), TestDiscovery, TestLoading
+### Community 70 - "TaskData"
+Cohesion: 0.19
+Nodes (3): build_task_sequence(), load_participant_data(), TaskData
 
 ### Community 255 - "test_harmonic_loader.py"
-Cohesion: 0.12
-Nodes (5): get_data_columns(), get_timestamp_column(), harmonic_tree(), TestConstants, TestHelpers
+Cohesion: 0.07
+Nodes (15): run_harmonic_pipeline(), save_preprocessed_trial(), discover_participants(), discover_trials(), get_data_columns(), get_timestamp_column(), load_participant_trials(), load_trial() (+7 more)
 
 ## Knowledge Gaps
-- **254 isolated node(s):** `insert`, `update`, `insert`, `update`, `hrc-incremental` (+249 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 710 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **205 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **233 isolated node(s):** `insert`, `update`, `insert`, `update`, `hrc-incremental` (+228 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 695 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **184 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `ContinualLearner` connect `ContinualLearner` to `ContinualMetrics`, `LwF`, `ReplayBuffer`, `SI`, `typing`, `JointTraining`, `.load`, `BenchmarkResult`, `EWC`, `.__init__`?**
-  _High betweenness centrality (0.036) - this node is a cross-community bridge._
+- **Why does `ContinualLearner` connect `ContinualLearner` to `ContinualMetrics`, `ReplayBuffer`, `typing`, `SI`, `BenchmarkResult`, `EWC`?**
+  _High betweenness centrality (0.037) - this node is a cross-community bridge._
 - **What connects `insert`, `update`, `insert` to the rest of the system?**
-  _254 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _233 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `The work explained in simple terms` be split into smaller, more focused modules?**
   _Cohesion score 0.1111111111111111 - nodes in this community are weakly interconnected._
 - **Why does `EWC` connect `EWC` to `typing`, `ContinualLearner`?**
-  _High betweenness centrality (0.025) - this node is a cross-community bridge._
+  _High betweenness centrality (0.033) - this node is a cross-community bridge._
 - **Should `DASIG Dataset: 60 subjects, 65 MIMU channels, danger/safe labels` be split into smaller, more focused modules?**
   _Cohesion score 0.05 - nodes in this community are weakly interconnected._
-- **Why does `LwF` connect `LwF` to `.__init__`, `typing`, `ContinualLearner`?**
-  _High betweenness centrality (0.017) - this node is a cross-community bridge._
+- **Why does `LwF` connect `SI` to `typing`, `ContinualLearner`?**
+  _High betweenness centrality (0.018) - this node is a cross-community bridge._
 - **Should `test_dasig_loader.py` be split into smaller, more focused modules?**
   _Cohesion score 0.10574712643678161 - nodes in this community are weakly interconnected._

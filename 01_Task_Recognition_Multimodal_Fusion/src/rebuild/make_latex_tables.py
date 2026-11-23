@@ -4,7 +4,7 @@
 v3_rebuild — Stage 4b: emit LaTeX tables from the sealed v3_rebuild results.
 
 Reads benchmark_summary.csv / per_class_{best}.csv / confusion_counts / ablation tables
-and writes LNCS-ready, booktabs table bodies into paper/tables/*.tex.
+and writes LNCS-ready, booktabs table bodies into paper/2_LOSO_rebuild_v3/tables/*.tex.
 The paper main file should simply \\input them (preamble needs \\usepackage{booktabs}).
 
 Run AFTER the LOSO benchmark and ablations have written their CSVs.
@@ -19,7 +19,7 @@ REPO = Path(__file__).resolve().parents[2]
 OUT = REPO / "output" / "research_outputs" / "fusion_training" / "v3_rebuild"
 BENCH = OUT / "benchmark"
 ABL = OUT / "ablation"
-TAB = REPO / "paper" / "tables"
+TAB = REPO / "paper" / "2_LOSO_rebuild_v3" / "tables"
 TAB.mkdir(parents=True, exist_ok=True)
 
 NICE = {"xgboost": "XGBoost", "hist_gradient_boosting": "HistGB", "random_forest": "RF",
@@ -50,7 +50,7 @@ def nice(name: str) -> str:
 
 def write(name: str, body: str) -> None:
     (TAB / name).write_text(body.lstrip("\n"))
-    print(f"wrote paper/tables/{name}")
+    print(f"wrote paper/2_LOSO_rebuild_v3/tables/{name}")
 
 
 # --------------------------------------------------------------------------- 1. benchmark

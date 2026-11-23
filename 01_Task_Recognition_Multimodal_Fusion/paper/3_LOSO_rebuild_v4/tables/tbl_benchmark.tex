@@ -1,0 +1,28 @@
+\begin{table}[t]
+\centering
+\small
+\caption{Subject-disjoint leave-one-subject-out results on the clean 128-feature
+set, with 52 operators. Macro-F1 and balanced accuracy are averaged over the 52
+held-out subjects and shown as mean~$\pm$~std. ECE is computed on pooled out-of-fold
+probabilities. Latency is the per-window CPU inference time of a model fitted on a
+training mini-sample. Best value per column in bold.}
+\label{tab:benchmark}
+\begin{tabular}{lcccccc}
+\toprule
+Model & Macro-F1 & Balanced acc. & Accuracy & ECE & Inference \\
+ & mean$\pm$std & mean$\pm$std & mean$\pm$std & & $\mu$s/window \\
+\midrule
+GB & \textbf{0.466 $\pm$ 0.149} & 0.470 $\pm$ 0.152 & 0.690 $\pm$ 0.197 & \textbf{0.028} & 5 \\
+XGBoost & 0.462 $\pm$ 0.148 & 0.478 $\pm$ 0.153 & 0.654 $\pm$ 0.213 & 0.127 & 19 \\
+HistGB & 0.451 $\pm$ 0.146 & 0.477 $\pm$ 0.143 & 0.627 $\pm$ 0.227 & 0.202 & 13 \\
+RF & 0.430 $\pm$ 0.132 & 0.429 $\pm$ 0.139 & 0.668 $\pm$ 0.208 & 0.153 & 69 \\
+SVM-RBF & 0.422 $\pm$ 0.149 & 0.467 $\pm$ 0.158 & 0.588 $\pm$ 0.217 & 0.178 & 51 \\
+ExtraTrees & 0.421 $\pm$ 0.137 & 0.421 $\pm$ 0.141 & 0.658 $\pm$ 0.221 & 0.167 & 91 \\
+MLP & 0.374 $\pm$ 0.160 & 0.408 $\pm$ 0.161 & 0.548 $\pm$ 0.232 & 0.342 & 2 \\
+LogReg & 0.371 $\pm$ 0.155 & 0.415 $\pm$ 0.157 & 0.552 $\pm$ 0.242 & 0.215 & 2 \\
+kNN & 0.362 $\pm$ 0.118 & 0.356 $\pm$ 0.119 & 0.598 $\pm$ 0.207 & 0.128 & 6 \\
+GaussNB & 0.344 $\pm$ 0.133 & 0.394 $\pm$ 0.140 & 0.491 $\pm$ 0.204 & 0.441 & 20 \\
+Tree & 0.338 $\pm$ 0.131 & 0.350 $\pm$ 0.132 & 0.521 $\pm$ 0.215 & 0.448 & 2 \\
+\bottomrule
+\end{tabular}
+\end{table}

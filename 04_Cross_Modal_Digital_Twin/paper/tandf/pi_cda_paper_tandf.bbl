@@ -1,0 +1,100 @@
+\begin{thebibliography}{31}
+\newcommand{\enquote}[1]{``#1''}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\normalfont{#1}}
+\providecommand{\urlprefix}{}
+
+\bibitem[Balasubramanian et~al.(2015)]{balasubramanian2015smoothness}
+Balasubramanian, Sivakumar, Alejandro Melendez-Calderon, Agnes Roby-Brami, and Etienne Burdet. 2015. ``On the Analysis of Movement Smoothness.'' \emph{Journal of NeuroEngineering and Rehabilitation} 12: 112. https://doi.org/{10.1186/s12984-015-0090-9}.
+
+\bibitem[Ben-David et~al.(2010)]{bendavid2010theory}
+Ben-David, Shai, John Blitzer, Koby Crammer, Alex Kulesza, Fernando Pereira, and Jennifer~Wortman Vaughan. 2010. ``A Theory of Learning from Different Domains.'' \emph{Machine Learning} 79 (1--2): 151--175. https://doi.org/{10.1007/s10994-009-5152-4}.
+
+\bibitem[Chen et~al.(2025)]{chen2025hypergraph}
+Chen, Dong, Kaichen She, Peisong Wu, Mingdong Chen, and Chuanqi Li. 2025. ``Dual-Branch Differential Channel Hypergraph Convolutional Network for Human Skeleton-Based Action Recognition.'' \emph{PLOS ONE} 20 (10): e0332066. https://doi.org/{10.1371/journal.pone.0332066}.
+
+\bibitem[Chen et~al.(2021)]{chen2021ctrgcn}
+Chen, Yuxin, Ziqi Zhang, Chunfeng Yuan, Bing Li, Ying Deng, and Weiming Hu. 2021. ``Channel-wise Topology Refinement Graph Convolution for Skeleton-Based Action Recognition.'' In \emph{Proceedings of the IEEE/CVF International Conference on Computer Vision}, 13339--13348.
+
+\bibitem[Dallel et~al.(2023{\natexlab{a}})]{dallel2023dataset}
+Dallel, Mejdi, Vincent Havard, David Baudry, and Yohan Dupuis. 2023{\natexlab{a}}. ``InHARD-DT -- Industrial Human Action Recognition Dataset -- Digital Twin.'' Zenodo record 7644247.  \urlprefix\url{https://zenodo.org/records/7644247}.
+
+\bibitem[Dallel et~al.(2020{\natexlab{a}})]{dallel2020inhardpaper}
+Dallel, Mejdi, Vincent Havard, David Baudry, and Xavier Savatier. 2020{\natexlab{a}}. ``{InHARD} -- Industrial Human Action Recognition Dataset in the Context of Industrial Collaborative Robotics.'' In \emph{2020 IEEE International Conference on Human-Machine Systems}, 1--6.
+
+\bibitem[Dallel et~al.(2020{\natexlab{b}})]{dallel2020inhard}
+Dallel, Mejdi, Vincent Havard, David Baudry, and Xavier Savatier. 2020{\natexlab{b}}. ``InHARD -- Industrial Human Action Recognition Dataset in the Context of Industrial Collaborative Robotics.''  \urlprefix\url{https://zenodo.org/records/4003541}.
+
+\bibitem[Dallel et~al.(2023{\natexlab{b}})]{dallel2023digital}
+Dallel, Mejdi, Vincent Havard, Yohan Dupuis, and David Baudry. 2023{\natexlab{b}}. ``Digital twin of an industrial workstation: A novel method of an auto-labeled data generator using virtual reality for human action recognition in the context of human--robot collaboration.'' \emph{Engineering Applications of Artificial Intelligence} 118: 105655. https://doi.org/{10.1016/j.engappai.2022.105655}.
+
+\bibitem[Ganin et~al.(2016)]{ganin2016dann}
+Ganin, Yaroslav, Evgeniya Ustinova, Hana Ajakan, Pascal Germain, Hugo Larochelle, Fran{\c{c}}ois Laviolette, Mario Marchand, and Victor Lempitsky. 2016. ``Domain-Adversarial Training of Neural Networks.'' \emph{Journal of Machine Learning Research} 17 (59): 1--35.
+
+\bibitem[He et~al.(2024)]{he2024physicsinformed}
+He, Chao, Hongmei Shi, Xiaorong Liu, and Jianbo Li. 2024. ``Interpretable Physics-Informed Domain Adaptation Paradigm for Cross-Machine Transfer Diagnosis.'' \emph{Knowledge-Based Systems} 288: 111499. https://doi.org/{10.1016/j.knosys.2024.111499}.
+
+\bibitem[Liu et~al.(2020)]{liu2020ntu120}
+Liu, Jun, Amir Shahroudy, Mauricio Perez, Gang Wang, Ling-Yu Duan, and Alex~C. Kot. 2020. ``{NTU RGB+D} 120: A Large-Scale Benchmark for 3D Human Activity Understanding.'' \emph{IEEE Transactions on Pattern Analysis and Machine Intelligence} 42 (10): 2684--2701. https://doi.org/{10.1109/TPAMI.2019.2916873}.
+
+\bibitem[Liu et~al.(2025)]{liu2025skeletonreview}
+Liu, Mengyuan, Hong Liu, Qianshuo Hu, Bin Ren, Junsong Yuan, Jiaying Lin, and Jiajun Wen. 2025. ``3D Skeleton-Based Action Recognition: A Review.'' \emph{arXiv preprint arXiv:2506.00915} https://doi.org/{10.48550/arXiv.2506.00915}.
+
+\bibitem[Long et~al.(2015)]{long2015dan}
+Long, Mingsheng, Yue Cao, Jianmin Wang, and Michael~I. Jordan. 2015. ``Learning Transferable Features with Deep Adaptation Networks.'' In \emph{Proceedings of the 32nd International Conference on Machine Learning}, Vol.~37 of \emph{Proceedings of Machine Learning Research}, 97--105.
+
+\bibitem[Lu et~al.(2024)]{lu2024crossmodalfewshot}
+Lu, Mingqi, Siyuan Yang, Xiaobo Lu, and Jun Liu. 2024. ``Cross-Modal Contrastive Pre-Training for Few-Shot Skeleton Action Recognition.'' \emph{IEEE Transactions on Circuits and Systems for Video Technology} 34 (10): 9798--9807. https://doi.org/{10.1109/TCSVT.2024.3402952}.
+
+\bibitem[Rothert et~al.(2024)]{rothert2024simtoreal}
+Rothert, Jakob~Jonas, Sebastian Lang, Martin Seidel, and Magnus Hanses. 2024. ``Sim-to-Real Transfer for a Robotics Task: Challenges and Lessons Learned.'' In \emph{2024 IEEE 29th International Conference on Emerging Technologies and Factory Automation (ETFA)}, 1--8.
+
+\bibitem[Saerens, Latinne, and Decaestecker(2002)]{saerens2002priors}
+Saerens, Marco, Patrice Latinne, and Christine Decaestecker. 2002. ``Adjusting the Outputs of a Classifier to New a Priori Probabilities: A Simple Procedure.'' \emph{Neural Computation} 14 (1): 21--41. https://doi.org/{10.1162/089976602753284446}.
+
+\bibitem[Saito et~al.(2019)]{saito2019mme}
+Saito, Kuniaki, Donghyun Kim, Stan Sclaroff, Trevor Darrell, and Kate Saenko. 2019. ``Semi-Supervised Domain Adaptation via Minimax Entropy.'' In \emph{Proceedings of the IEEE/CVF International Conference on Computer Vision}, 8049--8057.
+
+\bibitem[Shahroudy et~al.(2016)]{shahroudy2016ntu}
+Shahroudy, Amir, Jun Liu, Tian-Tsong Ng, and Gang Wang. 2016. ``{NTU RGB+D}: A Large Scale Dataset for 3D Human Activity Analysis.'' In \emph{Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition}, 1010--1019.
+
+\bibitem[Snell, Swersky, and Zemel(2017)]{snell2017prototypical}
+Snell, Jake, Kevin Swersky, and Richard Zemel. 2017. ``Prototypical Networks for Few-Shot Learning.'' In \emph{Advances in Neural Information Processing Systems}, Vol.~30, 4077--4087.
+
+\bibitem[Sohn et~al.(2020)]{sohn2020fixmatch}
+Sohn, Kihyuk, David Berthelot, Nicholas Carlini, Zizhao Zhang, Han Zhang, Colin~A. Raffel, Ekin~Dogus Cubuk, Alexey Kurakin, and Chun-Liang Li. 2020. ``{FixMatch}: Simplifying Semi-Supervised Learning with Consistency and Confidence.'' In \emph{Advances in Neural Information Processing Systems}, Vol.~33, 596--608.
+
+\bibitem[Sun and Saenko(2016)]{sun2016deepcoral}
+Sun, Baochen, and Kate Saenko. 2016. ``Deep {CORAL}: Correlation Alignment for Deep Domain Adaptation.'' In \emph{Computer Vision -- ECCV 2016 Workshops}, Vol. 9915 of \emph{Lecture Notes in Computer Science}, 443--450. Cham: Springer.
+
+\bibitem[Tao et~al.(2019)]{tao2019digitaltwin}
+Tao, Fei, He~Zhang, Ang Liu, and A.~Y.~C. Nee. 2019. ``Digital Twin in Industry: State-of-the-Art.'' \emph{IEEE Transactions on Industrial Informatics} 15 (4): 2405--2415. https://doi.org/{10.1109/TII.2018.2873186}.
+
+\bibitem[Tian and Payeur(2024)]{tian2024temporaladaptation}
+Tian, Haitao, and Pierre Payeur. 2024. ``Unsupervised Temporal Adaptation in Skeleton-Based Human Action Recognition.'' \emph{Algorithms} 17 (12): 581. https://doi.org/{10.3390/a17120581}.
+
+\bibitem[Tobin et~al.(2017)]{tobin2017domainrandomization}
+Tobin, Josh, Rachel Fong, Alex Ray, Jonas Schneider, Wojciech Zaremba, and Pieter Abbeel. 2017. ``Domain Randomization for Transferring Deep Neural Networks from Simulation to the Real World.'' In \emph{2017 IEEE/RSJ International Conference on Intelligent Robots and Systems}, 23--30.
+
+\bibitem[Valentini et~al.(2025)]{valentini2025digital}
+Valentini, Lorenzo, Vincent Weistroffer, Fabio Grandi, and Margherita Peruzzini. 2025. ``Digital Toolkit for Human-Centered Machine Design: Development and Testing of an Innovative System Integrating Virtual Reality and HMI Digital Prototypes.'' \emph{International Journal of Advanced Manufacturing Technology} 144: 7717--7735. https://doi.org/{10.1007/s00170-025-16943-4}.
+
+\bibitem[Wang et~al.(2025)]{wang2025heterogeneous}
+Wang, Hongsong, Xiaoyan Ma, Jidong Kuang, and Jie Gui. 2025. ``Heterogeneous Skeleton-Based Action Representation Learning.'' In \emph{Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition}, 19154--19164.  \urlprefix\url{https://openaccess.thecvf.com/content/CVPR2025/html/Wang_Heterogeneous_Skeleton-Based_Action_Representation_Learning_CVPR_2025_paper.html}.
+
+\bibitem[Wang et~al.(2018)]{wang2018hrcmotion}
+Wang, Peng, Hongyi Liu, Lihui Wang, and Robert~X. Gao. 2018. ``Deep Learning-Based Human Motion Recognition for Predictive Context-Aware Human-Robot Collaboration.'' \emph{CIRP Annals} 67 (1): 17--20. https://doi.org/{10.1016/j.cirp.2018.04.066}.
+
+\bibitem[Yan, Xiong, and Lin(2018)]{yan2018stgcn}
+Yan, Sijie, Yuanjun Xiong, and Dahua Lin. 2018. ``Spatial Temporal Graph Convolutional Networks for Skeleton-Based Action Recognition.'' In \emph{Proceedings of the AAAI Conference on Artificial Intelligence}, Vol.~32.
+
+\bibitem[Yang et~al.(2024)]{yang2024domainhar}
+Yang, Jing, Tianzheng Liao, Jingjing Zhao, Yan Yan, Yi-Chun Huang, Zhijia Zhao, Jing Xiong, and Changhong Liu. 2024. ``Domain Adaptation for Sensor-Based Human Activity Recognition with a Graph Convolutional Network.'' \emph{Mathematics} 12 (4): 556. https://doi.org/{10.3390/math12040556}.
+
+\bibitem[Zhang et~al.(2025)]{zhang2025skeletonx}
+Zhang, Zongye, Wenrui Cai, Qingjie Liu, and Yunhong Wang. 2025. ``SkeletonX: Data-Efficient Skeleton-Based Action Recognition via Cross-Sample Feature Aggregation.'' \emph{IEEE Transactions on Multimedia} https://doi.org/{10.1109/TMM.2025.3618561}.
+
+\bibitem[Zhao et~al.(2019)]{zhao2019invariant}
+Zhao, Han, Remi~Tachet des Combes, Kun Zhang, and Geoffrey Gordon. 2019. ``On Learning Invariant Representations for Domain Adaptation.'' In \emph{Proceedings of the 36th International Conference on Machine Learning}, Vol.~97 of \emph{Proceedings of Machine Learning Research}, 7523--7532.
+
+\end{thebibliography}
